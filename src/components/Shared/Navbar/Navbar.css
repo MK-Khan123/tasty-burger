@@ -1,0 +1,32 @@
+.font-style {
+    /* font-family: 'Lilita One', cursive; */
+    font-family: 'Oswald', sans-serif;
+    font-size: 20px;
+    /* font-family: 'Roboto', sans-serif; */
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+#navigation-bar {
+    position: absolute;
+    z-index: 1;
+    width: 100%; /*I had to apply width 100% here manually. Why?*/
+}
+
+.brand-logo {
+    max-width: 120px;
+    max-height: 100px;
+}
+
+.menu-style {
+    color: white;
+    cursor: pointer;
+}
+
+.menu-style:hover {
+    color: rgb(253, 190, 8);
+}
