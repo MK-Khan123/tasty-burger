@@ -15,7 +15,7 @@ const Navbar = () => {
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
-                <div className="collapse navbar-collapse justify-content-end font-style" id="navbarNavDropdown">
+                <div className="collapse navbar-collapse justify-content-end navbar-fonts" id="navbarNavDropdown">
                     <ul className="navbar-nav align-items-center">
                         <li className="nav-item mx-2">
                             <Link className="nav-link active" aria-current="page" to="#">HOME</Link>
@@ -57,7 +57,7 @@ const Navbar = () => {
                         <li>
                             <a className='text-decoration-none text-warning mx-3 fs-3 fw-bold' href="tel:789-654-3210">789-654-3210</a>
                         </li>
-                        <li className='fs-4 menu-style'><FontAwesomeIcon icon={faShoppingCart} /></li>
+                        <li className='fs-4 shoppingCart-style'><FontAwesomeIcon icon={faShoppingCart} /></li>
                     </ul>
                 </div>
             </div>

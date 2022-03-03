@@ -1,4 +1,4 @@
-.font-style {
+.navbar-fonts {
     /* font-family: 'Lilita One', cursive; */
     font-family: 'Oswald', sans-serif;
     font-size: 20px;
@@ -22,11 +22,11 @@ ul {
     max-height: 100px;
 }
 
-.menu-style {
+.shoppingCart-style {
     color: white;
     cursor: pointer;
 }
 
-.menu-style:hover {
+.shoppingCart-style:hover {
     color: rgb(253, 190, 8);
 }
