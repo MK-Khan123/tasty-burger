@@ -1,0 +1,43 @@
+#exploreMenu {
+    margin-bottom: 70px;
+}
+
+#exploreMenu > h5 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 60px;
+    color: #E3000E;
+}
+
+.cardMenu-title {
+    font-family: 'Oswald', sans-serif;
+    color: #642F21;
+}
+
+.cardMenu-body:hover .cardMenu-button2 {
+    display: block;
+}
+
+.cardMenu-body:hover .cardMenu-image {
+    transform: scale(1.2);
+}
+
+.cardMenu-image {
+    transition: all 800ms;
+}
+
+.heart-icon:hover {
+    transition: all 1s;
+    color: #E3000E;
+}
+
+.cardMenu-button1 {
+    font-family: 'Oswald', sans-serif;
+    background-color: #642F21;
+    color: #F7BE27;
+    font-weight: 600;
+}
+
+.cardMenu-button2 {
+    font-family: 'Oswald', sans-serif;
+    display: none;
+}

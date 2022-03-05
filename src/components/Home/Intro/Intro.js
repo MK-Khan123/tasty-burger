@@ -52,8 +52,8 @@ const Intro = () => {
                 </div>
             </div>
 
-            <div class="row mt-5 justify-content-evenly">
-                <div style={{ position: 'relative' }} class="p-2 col-md-5">
+            <div className="row mt-5 justify-content-evenly">
+                <div style={{ position: 'relative' }} className="p-2 col-md-5">
                     <img className='rounded img-fluid' src={introAd1} alt="" />
                     <div className='carousel-caption text-end textInsideImage'>
                         <p>GET YOUR FREE</p>
@@ -61,7 +61,7 @@ const Intro = () => {
                         <button className='btn btn-lg btn-outline-danger'>LEARN MORE</button>
                     </div>
                 </div>
-                <div style={{ position: 'relative' }} class="p-2 col-md-6">
+                <div style={{ position: 'relative' }} className="p-2 col-md-6">
                     <img className='rounded img-fluid' src={introAd2} alt="" />
                     <div className='carousel-caption text-end textInsideImage'>
                         <p>CRISPY CHICKEN</p>

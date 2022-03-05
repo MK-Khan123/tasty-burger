@@ -13,7 +13,7 @@ ul {
 
 #navigation-bar {
     position: absolute;
-    z-index: 1;
+    z-index: 10;
     width: 100%; /*I had to apply width 100% here manually. Why?*/
 }
 
