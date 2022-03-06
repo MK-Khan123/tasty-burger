@@ -8,6 +8,11 @@
     color: #E3000E;
 }
 
+#exploreMenu > p {
+    font-family: 'Roboto', sans-serif;
+    padding: 0 20%;
+}
+
 .cardMenu-title {
     font-family: 'Oswald', sans-serif;
     color: #642F21;

@@ -68,8 +68,7 @@ const ExploreMenu = () => {
     return (
         <section id='exploreMenu' className='container'>
             <h5 className='text-center fw-bold mb-3'>EXPLORE OUR MENU</h5>
-            <p className='text-secondary text-center px-5 mb-4'>Aliquam a augue suscipit, luctus neque purus ipsum neque undo dolor primis libero tempus, blandit a cursus varius magna</p>
-
+            <p className='text-muted text-center fs-5 mb-5'>Aliquam a augue suscipit, luctus neque purus ipsum neque undo dolor primis libero tempus, blandit a cursus varius magna</p>
             <div className="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4">
                 {
                     fakeBurgerData.map(burger => {
@@ -77,8 +76,8 @@ const ExploreMenu = () => {
                         return (
                             <div className="col cardMenu-body">
                                 <div className="card h-100">
-                                    <div style={{overflow: 'hidden'}}>
-                                        <img src={img} className="card-img-top h-100 cardMenu-image" alt="..." />
+                                    <div style={{ overflow: 'hidden' }}>
+                                        <img src={img} className="card-img-top rounded-top cardMenu-image" alt="..." />
                                     </div>
                                     <div className="card-body">
                                         <div className="d-flex justify-content-between">

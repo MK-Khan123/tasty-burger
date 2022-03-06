@@ -1,0 +1,37 @@
+#bestOffers {
+    margin-top: 100px;
+    margin-bottom: 70px;
+}
+
+#bestOffers > h5 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 60px;
+    color: #E3000E;
+}
+
+#bestOffers > p {
+    font-family: 'Roboto', sans-serif;
+    padding: 0 20%;
+}
+
+.priceTag {
+    font-family: 'Oswald', sans-serif;
+    color: #E3000E;
+}
+
+.offerCard-body:hover .offerHover-image {
+    transform: scale(1.2);
+}
+
+.offerCard-body:hover .offerHover-button {
+    display: block;
+}
+
+.offerHover-button {
+    font-family: 'Oswald', sans-serif;
+    display: none;
+}
+
+.offerHover-image {
+    transition: all 800ms;
+}
