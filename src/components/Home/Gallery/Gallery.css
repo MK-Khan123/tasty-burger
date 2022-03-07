@@ -1,0 +1,42 @@
+#imageGallery {
+    margin-top: 100px;
+    margin-bottom: 70px;
+}
+
+#imageGallery > h5 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 3.75em;
+    color: #E3000E;
+}
+
+#imageGallery > p {
+    font-family: 'Roboto', sans-serif;
+    padding: 0 20%;
+}
+
+.cardTitle-alignment {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    font-family: 'Oswald', sans-serif;
+    height: 100%;
+}
+
+.cardHover {
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+
+.galleryImageHover {
+    transition: all 1s;
+}
+
+.imageGallery-card:hover .cardHover{
+    display: block;
+}
+
+.imageGallery-card:hover .galleryImageHover{
+    transform: scale(1.2);
+    filter: brightness(40%);
+}

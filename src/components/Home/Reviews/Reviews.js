@@ -3,7 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import { Parallax, Pagination, Navigation } from "swiper";
+import { Parallax, Autoplay, Pagination, Navigation } from "swiper";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 import './Reviews.css';
@@ -24,25 +24,29 @@ const Reviews = () => {
                 speed={600}
                 parallax={true}
                 loop={true}
+                autoplay={{
+                    delay: 2500,
+                    disableOnInteraction: false,
+                }}
                 pagination={{
                     clickable: true,
                 }}
                 navigation={true}
-                modules={[Parallax, Pagination, Navigation]}
-                className="mySwiper"
+                modules={[Parallax, Autoplay, Pagination, Navigation]}
+                className="mySwiper" id='reviewDiv'
             >
                 <div
                     slot="container-start"
                     className="parallax-bg"
                     style={{
-                        "background-image":
+                        "backgroundImage":
                             `url(${reviewBackground})`,
                     }}
                     data-swiper-parallax="-23%"
                 ></div>
                 <SwiperSlide>
                     <div className="title" data-swiper-parallax="-300">
-                        <img src={review1} alt="" />
+                        <img className='reviewImage' src={review1} alt="" />
                     </div>
                     <div className="subtitle" data-swiper-parallax="-200">
                         <p>
@@ -55,13 +59,13 @@ const Reviews = () => {
                         <FontAwesomeIcon className='text-warning p-1' icon={faStar} />
                         <FontAwesomeIcon className='text-warning p-1' icon={faStar} />
                         <FontAwesomeIcon className='text-warning p-1' icon={faStar} />
-                        <FontAwesomeIcon className='text-warning p-1' icon={faStar} />                        
+                        <FontAwesomeIcon className='text-warning p-1' icon={faStar} />
                     </div>
                     <h4 className='text-uppercase mt-2'>By Sean McMarthy</h4>
                 </SwiperSlide>
                 <SwiperSlide>
                     <div className="title" data-swiper-parallax="-300">
-                        <img src={review2} alt="" />
+                        <img className='reviewImage' src={review2} alt="" />
                     </div>
                     <div className="subtitle" data-swiper-parallax="-200">
                         <p>
@@ -74,13 +78,13 @@ const Reviews = () => {
                         <FontAwesomeIcon className='text-warning p-1' icon={faStar} />
                         <FontAwesomeIcon className='text-warning p-1' icon={faStar} />
                         <FontAwesomeIcon className='text-warning p-1' icon={faStar} />
-                        <FontAwesomeIcon className='text-warning p-1' icon={faStar} />                        
+                        <FontAwesomeIcon className='text-warning p-1' icon={faStar} />
                     </div>
                     <h4 className='text-uppercase mt-2'>By Evelyn Martinez</h4>
                 </SwiperSlide>
                 <SwiperSlide>
                     <div className="title" data-swiper-parallax="-300">
-                        <img src={review3} alt="" />
+                        <img className='reviewImage' src={review3} alt="" />
                     </div>
                     <div className="subtitle" data-swiper-parallax="-200">
                         <p>
@@ -93,13 +97,13 @@ const Reviews = () => {
                         <FontAwesomeIcon className='text-warning p-1' icon={faStar} />
                         <FontAwesomeIcon className='text-warning p-1' icon={faStar} />
                         <FontAwesomeIcon className='text-warning p-1' icon={faStar} />
-                        <FontAwesomeIcon className='text-warning p-1' icon={faStar} />                        
+                        <FontAwesomeIcon className='text-warning p-1' icon={faStar} />
                     </div>
                     <h4 className='text-uppercase mt-2'>By Robert Peterson</h4>
                 </SwiperSlide>
                 <SwiperSlide>
                     <div className="title" data-swiper-parallax="-300">
-                        <img src={review4} alt="" />
+                        <img className='reviewImage' src={review4} alt="" />
                     </div>
                     <div className="subtitle" data-swiper-parallax="-200">
                         <p>
@@ -112,7 +116,7 @@ const Reviews = () => {
                         <FontAwesomeIcon className='text-warning p-1' icon={faStar} />
                         <FontAwesomeIcon className='text-warning p-1' icon={faStar} />
                         <FontAwesomeIcon className='text-warning p-1' icon={faStar} />
-                        <FontAwesomeIcon className='text-warning p-1' icon={faStar} />                        
+                        <FontAwesomeIcon className='text-warning p-1' icon={faStar} />
                     </div>
                     <h4 className='text-uppercase mt-2'>By Leslie Serpas</h4>
                 </SwiperSlide>

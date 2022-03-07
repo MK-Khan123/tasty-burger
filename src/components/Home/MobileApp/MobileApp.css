@@ -1,0 +1,21 @@
+#mobileApp {
+    margin-top: 100px;
+    margin-bottom: 70px;
+    background-color: #F7BE27;
+}
+
+#mobileApp h4 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 2.38em;
+    color: #642F21;
+}
+
+#mobileApp h5 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 4.5em;
+    color: #642F21;
+}
+
+#mobileApp p {
+    font-weight: 200;
+}

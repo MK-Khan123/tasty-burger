@@ -1,0 +1,23 @@
+#delivery {
+    margin-top: 100px;
+    margin-bottom: 70px;
+    max-width: 100vw;
+    background-size: 100% 100%;
+    height: 600px;
+}
+
+#delivery h4 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 2.38rem;
+    color: #642F21;
+}
+
+#delivery h5 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 4.5rem;
+    color: #642F21;
+}
+
+#delivery p {
+    font-weight: 200;
+}
