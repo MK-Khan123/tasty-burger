@@ -1,4 +1,5 @@
 import React from 'react';
+import Footer from '../../Shared/Footer/Footer';
 import BestOffers from '../BestOffers/BestOffers';
 import Delivery from '../Delivery/Delivery';
 import ExploreMenu from '../ExploreMenu/ExploreMenu';
@@ -27,6 +28,7 @@ const Home = () => {
             <Gallery />
             <Sponsors />
             <Delivery />
+            <Footer />
         </div>
     );
 };

@@ -10,6 +10,10 @@ import miniChickenPizza from '../../../images/image-gallery/img-05.jpg';
 import eggsBenedictBurger from '../../../images/image-gallery/img-06.jpg';
 import doubleBaconBurger from '../../../images/image-gallery/img-07.jpg';
 import ribEye from '../../../images/image-gallery/img-08.jpg';
+import grilledSalmon from '../../../images/image-gallery/img-09.jpg';
+import philadelphiaRoll from '../../../images/image-gallery/img-10.jpg';
+import lemonGarlicShrimp from '../../../images/image-gallery/img-11.jpg';
+import spaghettiBolognese from '../../../images/image-gallery/img-12.jpg';
 import { Fade } from 'react-reveal';
 
 const imageGallery = [
@@ -54,8 +58,27 @@ const imageGallery = [
         image: ribEye,
         rating: 4
     },
+    {
+        name: 'Grilled Salmon',
+        image: grilledSalmon,
+        rating: 5
+    },
+    {
+        name: 'Philadelphia Roll',
+        image: philadelphiaRoll,
+        rating: 4
+    },
+    {
+        name: 'Lemon Garlic Shrimp',
+        image: lemonGarlicShrimp,
+        rating: 5
+    },
+    {
+        name: 'Spaghetti Bolognese',
+        image: spaghettiBolognese,
+        rating: 4
+    },
 ];
-// backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${image})`,
 
 const Gallery = () => {
     return (
