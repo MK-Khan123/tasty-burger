@@ -1,10 +1,10 @@
 import React from 'react';
 import './Intro.css';
 import introPic from '../../../images/about-01-img.png';
-import burgerIcon from '../../../images/burger.png';
-import friesIcon from '../../../images/french-fries.png';
-import chickenIcon from '../../../images/chicken-leg.png';
-import saladIcon from '../../../images/salad.png';
+import burgerIcon from '../../../images/icons/burger.png';
+import friesIcon from '../../../images/icons/french-fries.png';
+import chickenIcon from '../../../images/icons/chicken-leg.png';
+import saladIcon from '../../../images/icons/salad.png';
 import introAd1 from '../../../images/introAd-1.jpg';
 import introAd2 from '../../../images/introAd-2.jpg';
 
@@ -20,9 +20,9 @@ const Intro = () => {
                 <div className="col-md-6">
                     <img className='img-fluid' src={introPic} alt="" />
                 </div>
-                <div className="col-md-6 intro-font mt-5 p-5">
+                <div className="col-md-6 introFont mt-5 p-5">
                     <h5>NOTHING BRINGS PEOPLE TOGETHER LIKE A GOOD BURGER</h5>
-                    <p className='text-secondary pt-3'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe cum in assumenda, aut accusamus voluptates, totam doloribus debitis distinctio.</p>
+                    <p className='pt-3'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe cum in assumenda, aut accusamus voluptates, totam doloribus debitis distinctio.</p>
                     <div className="row mt-5">
                         <div className="col-md-3 col-6">
                             <div className='d-flex align-items-center justify-content-center'>

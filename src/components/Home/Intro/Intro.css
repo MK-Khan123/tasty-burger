@@ -3,7 +3,7 @@
     margin-bottom: 70px;
 }
 
-.intro-font h5 {
+.introFont h5 {
     font-family: 'Oswald', sans-serif;
     font-weight: 600;
     font-size: 52px;
@@ -11,7 +11,7 @@
     line-height: 1.35;
 }
 
-.intro-font > p {
+.introFont > p {
     font-family: 'Roboto', sans-serif;
     font-size: 18px;
     line-height: 1.5;
@@ -20,7 +20,6 @@
 .introIcon-size {
     max-width: 70px;
     height: auto;
-    color: #757575;
 }
 
 .introIcon-font {

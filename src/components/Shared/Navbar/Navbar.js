@@ -7,25 +7,25 @@ import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 
 const Navbar = () => {
     return (
-        <nav id='navigation-bar' className="navbar navbar-expand-lg navbar-dark">
+        <nav id='navigationBar' className="navbar navbar-expand-lg navbar-dark">
             <div className="container-fluid">
                 <Link className="navbar-brand" to="#">
-                    <img className='brand-logo' src={logo} alt="" />
+                    <img className='brandLogo' src={logo} alt="" />
                 </Link>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
-                <div className="collapse navbar-collapse justify-content-end navbar-fonts" id="navbarNavDropdown">
+                <div className="collapse navbar-collapse justify-content-end navbarFonts" id="navbarNavDropdown">
                     <ul className="navbar-nav align-items-center">
                         <li className="nav-item mx-2">
-                            <Link className="nav-link active" aria-current="page" to="#">HOME</Link>
+                            <Link className="nav-link active" aria-current="page" to="/home">HOME</Link>
                         </li>
                         <li className="nav-item mx-2 dropdown">
-                            <Link className="nav-link dropdown-toggle" to="#" id="aboutDropdownLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <Link className="nav-link dropdown-toggle" to="/about-testo" id="aboutDropdownLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 ABOUT
                             </Link>
                             <ul className="dropdown-menu" aria-labelledby="aboutDropdownLink">
-                                <li><Link className="dropdown-item" to="#">About Us</Link></li>
+                                <li><Link className="dropdown-item" to="/about-testo">About Us</Link></li>
                                 <li><Link className="dropdown-item" to="#">Meet the Team</Link></li>
                                 <li><Link className="dropdown-item" to="#">F.A.Q.s</Link></li>
                                 <li><Link className="dropdown-item" to="#">Terms and Privacy</Link></li>

@@ -1,0 +1,77 @@
+#aboutBackground {
+    margin-bottom: 70px;
+    max-width: 100vw;
+    background-position: center;
+    background-size: cover;
+    height: 410px;
+}
+
+#aboutBackground h5 {
+    font-size: 4rem;
+    font-family: 'Oswald', sans-serif;
+    margin-bottom: 22rem;
+}
+
+#aboutBackgroundIntro {
+    margin-top: 100px;
+    margin-bottom: 70px;
+}
+
+#aboutBackgroundPromo {
+    max-width: 100vw;
+    background-size: 100% 100%;
+    height: 600px;
+}
+
+#aboutBackgroundPromo p {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+    font-size: 1.2rem;
+    padding: 2% 20%;
+}
+
+#aboutBackgroundPromo h5 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 4.25rem;
+    color: #642F21;
+}
+
+.foodIcon-size {
+    max-width: 70px;
+    height: auto;
+}
+
+#aboutBackgroundPromo2 {
+    margin-top: 100px;
+    margin-bottom: 70px;
+}
+
+#aboutBackgroundPromo2 h5 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 3.25rem;
+    letter-spacing: 1.2px;
+    color: #642F21;
+}
+
+#aboutBackgroundPromo2 p {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.5;
+    font-size: 1.125rem;
+}
+
+#subscription {
+    margin-top: 100px;
+    margin-bottom: 70px;
+    background-color: #F6F9FA;
+}
+
+#subscription h5 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 2.625rem;
+}
+
+#subscription p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.125rem;
+}

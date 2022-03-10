@@ -1,23 +1,23 @@
-.navbar-fonts {
+.navbarFonts {
     /* font-family: 'Lilita One', cursive; */
     font-family: 'Oswald', sans-serif;
     font-size: 20px;
     /* font-family: 'Roboto', sans-serif; */
 }
 
-ul {
+.navbarFonts ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
 }
 
-#navigation-bar {
+#navigationBar {
     position: absolute;
     z-index: 10;
     width: 100%; /*I had to apply width 100% here manually. Why?*/
 }
 
-.brand-logo {
+.brandLogo {
     max-width: 120px;
     max-height: 100px;
 }
