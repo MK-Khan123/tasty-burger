@@ -1,0 +1,31 @@
+#termsAndPrivacyBackground {
+    margin-bottom: 70px;
+    max-width: 100vw;
+    background-position: center;
+    background-size: cover;
+    height: 410px;
+}
+
+#termsAndPrivacyBackground h5 {
+    font-size: 4rem;
+    font-family: 'Oswald', sans-serif;
+    margin-bottom: 22rem;
+}
+
+#termsAndPrivacyDocument {
+    padding: 0 15%;
+}
+
+#termsAndPrivacyDocument h5 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #642F21;
+    padding: 1.5% 0;
+}
+
+#termsAndPrivacyDocument p {
+    font-family: 'Roboto', sans-serif;
+    color: gray;
+    line-height: 1.6;
+}

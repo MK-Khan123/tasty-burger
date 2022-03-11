@@ -1,7 +1,11 @@
 import './App.css';
 import { Routes, Route } from "react-router-dom";
 import Home from './components/Home/Home/Home';
-import AboutTesto from './components/About/AboutTesto';
+import AboutTesto from './components/About/AboutTesto/AboutTesto';
+import Team from './components/About/Team/Team';
+import FAQs from './components/About/FAQs/FAQs';
+import TermsAndPrivacy from './components/About/TermsAndPrivacy/TermsAndPrivacy';
+
 
 function App() {
   return (
@@ -14,6 +18,15 @@ function App() {
       </Routes>
       <Routes>
         <Route path="/about-testo" element={<AboutTesto />} />
+      </Routes>
+      <Routes>
+        <Route path="/team" element={<Team />} />
+      </Routes>
+      <Routes>
+        <Route path="/faqs" element={<FAQs />} />
+      </Routes>
+      <Routes>
+        <Route path="/terms-privacy" element={<TermsAndPrivacy />} />
       </Routes>
     </div>
   );

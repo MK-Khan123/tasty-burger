@@ -1,0 +1,46 @@
+#teamBackground {
+    margin-bottom: 70px;
+    max-width: 100vw;
+    background-position: center;
+    background-size: cover;
+    height: 410px;
+}
+
+#teamBackground h5 {
+    font-size: 4rem;
+    font-family: 'Oswald', sans-serif;
+    margin-bottom: 22rem;
+}
+
+#teamGrid {
+    margin-top: 100px;
+    margin-bottom: 70px;
+}
+
+.memberName {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.25rem;
+    color: #642F21;
+}
+
+.memberTitle {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.25rem;
+    color: #F7BE27;
+}
+
+.teamCardHover:hover .teamCard-icons {
+    display: block;
+}
+
+.teamCardHover:hover .teamCard-image {
+    filter: brightness(60%);
+}
+
+.teamCard-icons {
+    display: none;
+}
+
+.teamCard-image {
+    transition: all 1s;
+}

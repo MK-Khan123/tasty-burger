@@ -1,18 +1,19 @@
 import React from 'react';
-import Navbar from '../Shared/Navbar/Navbar';
+import Navbar from '../../Shared/Navbar/Navbar';
 import './AboutTesto.css';
-import aboutBackground from '../../images/about-testo/about-page.jpg';
-import introPic from '../../images/about-01-img.png';
-import aboutPic1 from '../../images/about-testo/about-1.jpg';
-import burgerIcon from '../../images/icons/burger.png';
-import friesIcon from '../../images/icons/french-fries.png';
-import chickenIcon from '../../images/icons/chicken-leg.png';
-import saladIcon from '../../images/icons/salad.png';
-import dessertIcon from '../../images/icons/dessert.png';
-import drinkIcon from '../../images/icons/cocktail.png';
-import frenchFryPic from '../../images/about-testo/img-10.jpg';
-import burgerPic from '../../images/about-testo/img-15.jpg';
-import Footer from '../Shared/Footer/Footer';
+import aboutBackground from '../../../images/about-testo/about-page.jpg';
+import introPic from '../../../images/about-01-img.png';
+import aboutPic1 from '../../../images/about-testo/about-1.jpg';
+import burgerIcon from '../../../images/icons/burger.png';
+import friesIcon from '../../../images/icons/french-fries.png';
+import chickenIcon from '../../../images/icons/chicken-leg.png';
+import saladIcon from '../../../images/icons/salad.png';
+import dessertIcon from '../../../images/icons/dessert.png';
+import drinkIcon from '../../../images/icons/cocktail.png';
+import frenchFryPic from '../../../images/about-testo/img-10.jpg';
+import burgerPic from '../../../images/about-testo/img-15.jpg';
+import Footer from '../../Shared/Footer/Footer';
+import Subscription from '../../Shared/Subscription/Subscription';
 
 const AboutTesto = () => {
     return (
@@ -78,21 +79,7 @@ const AboutTesto = () => {
                 </div>
             </section>
 
-            <section id='subscription' className='container p-5'>
-                <h5 className='fw-bold text-center'>SUBSCRIBE TO NEWSLETTER</h5>
-                <p className='text-center text-muted'>Subscribe to the weekly newsletter for all the latest updates</p>
-                <div style={{ fontFamily: 'Roboto, sans-serif' }} className="d-flex flex-column justify-content-evenly">
-                    <div className="mb-3">
-                        <label for="exampleInputEmail1" className="form-label">Email address</label>
-                        <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
-                        <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div>
-                    </div>
-                    <div className=''>
-                        <button className='btn btn-danger mb-2'>SIGN UP</button>
-                    </div>
-                </div>
-            </section>
-
+            <Subscription />
             <Footer />
         </section>
     );

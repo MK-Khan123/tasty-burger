@@ -12,11 +12,11 @@ const Footer = () => {
                 <img style={{ maxWidth: '200px' }} className='img-fluid' src={logo} alt="" />
             </div>
             <div className="d-flex justify-content-center align-items-center fs-3 p-4">
-                <FontAwesomeIcon style={{color: '#4867AA'}} className='p-3' icon={faFacebookF} beat transform="grow-1" />
-                <FontAwesomeIcon style={{color: '#179CF0'}} className='p-3' icon={faTwitter} beat transform="grow-1" />
-                <FontAwesomeIcon style={{color: '#24C761'}} className='p-3' icon={faWhatsapp} beat inverse transform="grow-1" />
-                <FontAwesomeIcon className='p-3' icon={faInstagram} beat transform="grow-1" />
-                <FontAwesomeIcon style={{color: '#F20000'}} className='p-3' icon={faYoutube} beat transform="grow-1" />
+                <FontAwesomeIcon style={{ color: '#4867AA' }} className='p-3' icon={faFacebookF} />
+                <FontAwesomeIcon style={{ color: '#179CF0' }} className='p-3' icon={faTwitter} />
+                <FontAwesomeIcon style={{ color: '#24C761' }} className='p-3' icon={faWhatsapp} inverse />
+                <FontAwesomeIcon className='p-3' icon={faInstagram} />
+                <FontAwesomeIcon style={{ color: '#F20000' }} className='p-3' icon={faYoutube} />
             </div>
             <div className="d-flex justify-content-center">
                 <Link to='' className='p-2 text-decoration-none'>ABOUT</Link>
