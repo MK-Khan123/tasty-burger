@@ -5,6 +5,8 @@ import AboutTesto from './components/About/AboutTesto/AboutTesto';
 import Team from './components/About/Team/Team';
 import FAQs from './components/About/FAQs/FAQs';
 import TermsAndPrivacy from './components/About/TermsAndPrivacy/TermsAndPrivacy';
+import ReserveTable from './components/Contacts/ReserveTable/ReserveTable';
+import ContactUs from './components/Contacts/ContactUs/ContactUs';
 
 
 function App() {
@@ -27,6 +29,12 @@ function App() {
       </Routes>
       <Routes>
         <Route path="/terms-privacy" element={<TermsAndPrivacy />} />
+      </Routes>
+      <Routes>
+        <Route path="/reserve-a-table" element={<ReserveTable />} />
+      </Routes>
+      <Routes>
+        <Route path="/contact-us" element={<ContactUs />} />
       </Routes>
     </div>
   );
