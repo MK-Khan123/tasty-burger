@@ -32,7 +32,7 @@ const Navbar = () => {
                             </ul>
                         </li>
                         <li className="nav-item mx-2">
-                            <Link className="nav-link" to="#">OUR MENU</Link>
+                            <Link className="nav-link" to="/main-menu">OUR MENU</Link>
                         </li>
                         <li className="nav-item mx-2 dropdown">
                             <Link className="nav-link dropdown-toggle" to="#" id="shopDropdownLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -41,7 +41,7 @@ const Navbar = () => {
                             <ul className="dropdown-menu" aria-labelledby="shopDropdownLink">
                                 <li><Link className="dropdown-item" to="#">All Items</Link></li>
                                 <li><Link className="dropdown-item" to="#">Single Product</Link></li>
-                                <li><Link className="dropdown-item" to="#">My Account</Link></li>
+                                <li><Link className="dropdown-item" to="/my-account">My Account</Link></li>
                             </ul>
                         </li>
                         <li className="nav-item mx-2 dropdown">

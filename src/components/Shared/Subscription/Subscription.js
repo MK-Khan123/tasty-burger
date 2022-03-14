@@ -8,11 +8,11 @@ const Subscription = () => {
             <p className='text-center text-muted'>Subscribe to the weekly newsletter for all the latest updates</p>
             <div style={{ fontFamily: 'Roboto, sans-serif' }} className="d-flex flex-column justify-content-evenly">
                 <div className="mb-3">
-                    <label for="exampleInputEmail1" className="form-label">Email address</label>
-                    <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
-                    <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div>
+                    <label htmlFor="exampleInputEmail1" className="form-label">Email address</label>
+                    <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp1" />
+                    <div id="emailHelp1" className="form-text">We'll never share your email with anyone else.</div>
                 </div>
-                <div className=''>
+                <div style={{ fontFamily: 'Oswald, sans-serif' }}>
                     <button className='btn btn-danger mb-2'>SIGN UP</button>
                 </div>
             </div>

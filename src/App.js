@@ -7,6 +7,8 @@ import FAQs from './components/About/FAQs/FAQs';
 import TermsAndPrivacy from './components/About/TermsAndPrivacy/TermsAndPrivacy';
 import ReserveTable from './components/Contacts/ReserveTable/ReserveTable';
 import ContactUs from './components/Contacts/ContactUs/ContactUs';
+import MyAccount from './components/Shop/MyAccount/MyAccount';
+import MainMenu from './components/MainMenu/MainMenu';
 
 
 function App() {
@@ -14,26 +16,23 @@ function App() {
     <div>
       <Routes>
         <Route path="/" element={<Home />} />
-      </Routes>
-      <Routes>
+
         <Route path="/home" element={<Home />} />
-      </Routes>
-      <Routes>
+
         <Route path="/about-testo" element={<AboutTesto />} />
-      </Routes>
-      <Routes>
+
         <Route path="/team" element={<Team />} />
-      </Routes>
-      <Routes>
+
         <Route path="/faqs" element={<FAQs />} />
-      </Routes>
-      <Routes>
+
         <Route path="/terms-privacy" element={<TermsAndPrivacy />} />
-      </Routes>
-      <Routes>
+        
+        <Route path="/main-menu" element={<MainMenu />} />
+        
+        <Route path="/my-account" element={<MyAccount />} />
+
         <Route path="/reserve-a-table" element={<ReserveTable />} />
-      </Routes>
-      <Routes>
+
         <Route path="/contact-us" element={<ContactUs />} />
       </Routes>
     </div>

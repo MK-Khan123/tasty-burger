@@ -12,6 +12,20 @@
     margin-bottom: 22rem;
 }
 
+#contactUs-grid {
+    margin-top: 100px;
+    margin-bottom: 70px;
+    font-family: 'Roboto', sans-serif;
+    color: grey;
+}
+
+.contactUs-cardBackground {
+    width: 4rem;
+    height: 4rem;
+    background-color: #F2F2F2;
+    border-radius: 50%;
+}
+
 #leaveMessage {
     font-family: 'Roboto', sans-serif;
     margin-top: 70px;
