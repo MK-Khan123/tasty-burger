@@ -18,65 +18,77 @@ import { Fade } from 'react-reveal';
 
 const imageGallery = [
     {
-        name: 'Classic California',
+        name: 'Classic Burger',
         image: classicCalifornia,
-        rating: 5
+        star: 5,
+        starCount: 12
     },
     {
-        name: 'Margherita Pizza',
+        name: 'Buffalo Chicken Pizza',
         image: margheritaPizza,
-        rating: 4
+        star: 4,
+        starCount: 18
     },
     {
         name: 'Grilled Ribs',
         image: grilledRibs,
-        rating: 5
+        star: 5,
+        starCount: 25
     },
     {
-        name: 'Field Greens Pizza',
+        name: 'Spicy BBQ Chicken Pizza',
         image: fieldGreensPizza,
-        rating: 4
+        star: 4,
+        starCount: 8
 
     },
     {
-        name: 'Mini Chicken Pizza',
+        name: 'Prosciuttio & Arugula Pizza',
         image: miniChickenPizza,
-        rating: 5
+        star: 5,
+        starCount: 16
     },
     {
-        name: 'Eggs Benedict Burger',
+        name: 'Komil Burger',
         image: eggsBenedictBurger,
-        rating: 4
+        star: 4,
+        starCount: 3
     },
     {
-        name: 'Double Bacon Burger',
+        name: 'Ultimate Bacon Burger',
         image: doubleBaconBurger,
-        rating: 5
+        star: 5,
+        starCount: 36
     },
     {
         name: 'Rib Eye',
         image: ribEye,
-        rating: 4
+        star: 4,
+        starCount: 29
     },
     {
         name: 'Grilled Salmon',
         image: grilledSalmon,
-        rating: 5
+        star: 5,
+        starCount: 24
     },
     {
         name: 'Philadelphia Roll',
         image: philadelphiaRoll,
-        rating: 4
+        star: 4,
+        starCount: 11
     },
     {
         name: 'Lemon Garlic Shrimp',
         image: lemonGarlicShrimp,
-        rating: 5
+        star: 5,
+        starCount: 16
     },
     {
         name: 'Spaghetti Bolognese',
         image: spaghettiBolognese,
-        rating: 4
+        star: 4,
+        starCount: 22
     },
 ];
 
@@ -88,9 +100,9 @@ const Gallery = () => {
             <div className="row g-3">
                 {
                     imageGallery.map(imageData => {
-                        const { name, image, rating } = imageData;
+                        const { name, image, star, starCount } = imageData;
                         let ratedStars = [];
-                        for (let i = 1; i <= rating; i++) {
+                        for (let i = 1; i <= star; i++) {
                             ratedStars.push(<FontAwesomeIcon className="text-warning" icon={faStar} />);
                         }
                         return (
@@ -102,7 +114,7 @@ const Gallery = () => {
                                             <Fade bottom>
                                                 <div className="cardTitle-alignment">
                                                     <h5 className="fw-bold text-uppercase card-title">{name}</h5>
-                                                    <p>{rating} {ratedStars.map(star => star)}</p>
+                                                    <p>{star} {ratedStars.map(star => star)} ({starCount})</p>
                                                 </div>
                                             </Fade>
                                         </div>

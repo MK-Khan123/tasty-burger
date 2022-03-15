@@ -7,11 +7,11 @@ import { Parallax, Autoplay, Pagination, Navigation } from "swiper";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 import './Reviews.css';
-import review1 from '../../../images/review1.jpg';
-import review2 from '../../../images/review2.jpg';
-import review3 from '../../../images/review3.jpg';
-import review4 from '../../../images/review4.jpg';
-import reviewBackground from '../../../images/reviews.jpg';
+import review1 from '../../../images/reviews/review1.jpg';
+import review2 from '../../../images/reviews/review2.jpg';
+import review3 from '../../../images/reviews/review3.jpg';
+import review4 from '../../../images/reviews/review4.jpg';
+import reviewBackground from '../../../images/reviews/reviews.jpg';
 
 const Reviews = () => {
     return (

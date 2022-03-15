@@ -11,3 +11,8 @@
     font-family: 'Oswald', sans-serif;
     margin-bottom: 22rem;
 }
+
+#foodItemGrid {
+    margin-top: 100px;
+    margin-bottom: 70px;
+}

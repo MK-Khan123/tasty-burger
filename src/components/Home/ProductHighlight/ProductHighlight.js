@@ -1,8 +1,8 @@
 import React from 'react';
 import './ProductHighlight.css';
-import bigtiBurger from '../../../images/promo-11-img.png';
-import holmBurger from '../../../images/holm-burger.png';
-import komilBurger from '../../../images/komil-burger.png';
+import bigtiBurger from '../../../images/all-food-items/burgers/bigti-burger.png';
+import holmBurger from '../../../images/all-food-items/burgers/holm-burger.png';
+import komilBurger from '../../../images/all-food-items/burgers/komil-burger.png';
 import background from '../../../images/promo-11.jpg';
 
 const ProductHighlight = () => {

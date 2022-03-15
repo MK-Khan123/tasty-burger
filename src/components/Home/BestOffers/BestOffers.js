@@ -3,9 +3,9 @@ import './BestOffers.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar, faHeart } from '@fortawesome/free-regular-svg-icons';
 import { faBagShopping } from '@fortawesome/free-solid-svg-icons';
-import panishBurger from '../../../images/panish-burger.jpg';
-import classicBurger from '../../../images/classic-burger.jpg';
-import crispyBurger from '../../../images/crispy-chicken.jpg';
+import spanishBurger from '../../../images/all-food-items/burgers/spanish-burger.jpg';
+import classicBurger from '../../../images/all-food-items/burgers/classic-burger.jpg';
+import crispyBurger from '../../../images/all-food-items/burgers/crispy-chicken.jpg';
 import { Fade } from 'react-reveal';
 
 const BestOffers = () => {
@@ -17,7 +17,7 @@ const BestOffers = () => {
                 <div className="col-md-4">
                     <div className='offerCard-body'>
                         <div className='rounded-3' style={{ overflow: 'hidden' }}>
-                            <img src={panishBurger} className="card-img-top h-100 rounded-3 offerHover-image" alt="..." />
+                            <img src={spanishBurger} className="card-img-top h-100 rounded-3 offerHover-image" alt="..." />
                         </div>
                         <div className="card-body">
                             <div className="d-flex justify-content-between">
@@ -32,7 +32,7 @@ const BestOffers = () => {
                                     <FontAwesomeIcon className='p-1 fs-4 heart-icon' icon={faHeart} />
                                 </div>
                             </div>
-                            <h5 className="card-title text-uppercase cardMenu-title fw-bold fs-3">Panish Burger</h5>
+                            <h5 className="card-title text-uppercase cardMenu-title fw-bold fs-3">Spanish Burger</h5>
                             <p className="card-text text-muted">Mushroom patty, vegan cheese, lettuce, tomatoes, avocado ligula</p>
                             <div className='d-flex justify-content-between'>
                                 <p className='fs-4 fw-bold priceTag'>$8.95</p>

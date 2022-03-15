@@ -1,12 +1,12 @@
 import React from 'react';
-import panishBurgerPic from '../../../images/panish-burger.jpg';
-import classicBurgerPic from '../../../images/classic-burger.jpg';
-import crispyBurgerPic from '../../../images/crispy-chicken.jpg';
-import ultimateBaconBurgerPic from '../../../images/ultimate-bacon.jpg';
-import blackSheepBurgerPic from '../../../images/black-sheep.jpg';
-import doubleBurgerPic from '../../../images/double-burger.jpg';
-import turkeyBurgerPic from '../../../images/turkey-burger.jpg';
-import smokeyHouseBurgerPic from '../../../images/smokey-house.jpg';
+import spanishBurgerPic from '../../../images/all-food-items/burgers/spanish-burger.jpg';
+import classicBurgerPic from '../../../images/all-food-items/burgers/classic-burger.jpg';
+import crispyBurgerPic from '../../../images/all-food-items/burgers/crispy-chicken.jpg';
+import ultimateBaconBurgerPic from '../../../images/all-food-items/burgers/ultimate-bacon.jpg';
+import blackSheepBurgerPic from '../../../images/all-food-items/burgers/black-sheep.jpg';
+import doubleBurgerPic from '../../../images/all-food-items/burgers/double-burger.jpg';
+import turkeyBurgerPic from '../../../images/all-food-items/burgers/turkey-burger.jpg';
+import smokeyHouseBurgerPic from '../../../images/all-food-items/burgers/smokey-house.jpg';
 import './ExploreMenu.css';
 import Flip from 'react-reveal/Flip';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -15,8 +15,8 @@ import { faBagShopping } from '@fortawesome/free-solid-svg-icons';
 
 const fakeBurgerData = [
     {
-        name: 'Panish Burger',
-        img: panishBurgerPic,
+        name: 'Spanish Burger',
+        img: spanishBurgerPic,
         description: 'Mushroom patty, vegan cheese, lettuce, tomatoes, avocado ligula',
         price: '8.95'
     },
