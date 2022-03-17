@@ -9,6 +9,7 @@ import ReserveTable from './components/Contacts/ReserveTable/ReserveTable';
 import ContactUs from './components/Contacts/ContactUs/ContactUs';
 import MyAccount from './components/Shop/MyAccount/MyAccount';
 import MainMenu from './components/MainMenu/MainMenu';
+import AllItems from './components/Shop/AllItems/AllItems';
 
 
 function App() {
@@ -28,6 +29,8 @@ function App() {
         <Route path="/terms-privacy" element={<TermsAndPrivacy />} />
         
         <Route path="/main-menu" element={<MainMenu />} />
+        
+        <Route path="/all-items" element={<AllItems />} />
         
         <Route path="/my-account" element={<MyAccount />} />
 

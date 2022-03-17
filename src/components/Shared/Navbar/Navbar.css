@@ -1,8 +1,14 @@
+.navFont {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.navFont:hover {
+    color: white;
+}
+
 .navbarFonts {
-    /* font-family: 'Lilita One', cursive; */
     font-family: 'Oswald', sans-serif;
     font-size: 20px;
-    /* font-family: 'Roboto', sans-serif; */
 }
 
 .navbarFonts ul {
@@ -22,11 +28,11 @@
     max-height: 100px;
 }
 
-.shoppingCart-style {
+.shoppingCart-icon {
     color: white;
     cursor: pointer;
 }
 
-.shoppingCart-style:hover {
+.shoppingCart-icon:hover {
     color: rgb(253, 190, 8);
 }

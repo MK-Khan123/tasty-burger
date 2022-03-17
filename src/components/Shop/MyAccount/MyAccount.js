@@ -1,7 +1,7 @@
 import React from 'react';
 import './MyAccount.css';
 import Navbar from '../../Shared/Navbar/Navbar';
-import myAccountBanner from '../../../images/my-account/my-account.jpg';
+import myAccountBanner from '../../../images/shop-tab/shop-tab.jpg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGoogle, faFacebookF } from '@fortawesome/free-brands-svg-icons';
 import Footer from '../../Shared/Footer/Footer';

@@ -1,9 +1,4 @@
-#foodItemGrid {
-    margin-top: 100px;
-    margin-bottom: 70px;
-}
-
-#mainMenuBanner {
+#allItemsBanner {
     margin-bottom: 70px;
     max-width: 100vw;
     background-position: center;
@@ -11,19 +6,14 @@
     height: 410px;
 }
 
-#mainMenuBanner h5 {
+#allItemsBanner h5 {
     font-size: 4rem;
     font-family: 'Oswald', sans-serif;
     margin-bottom: 22rem;
 }
 
-#mainMenuIcons {
+#allItemsGrid {
+    font-family: 'Roboto', sans-serif;
     margin-top: 100px;
-    font-family: 'Oswald', sans-serif;
-}
-
-.mainMenuIcon-size {
-    color: aqua;
-    max-width: 70px;
-    height: auto;
+    margin-bottom: 70px;
 }

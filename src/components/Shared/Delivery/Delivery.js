@@ -9,7 +9,7 @@ const Delivery = () => {
                 <h4>WE GUARANTEE</h4>
                 <h5 className='fw-bold'>30 MINUTES DELIVERY!</h5>
                 <p className='text-center text-muted fs-5'>Aliquam a augue suscipit, luctus neque purus ipsum neque undo dolor primis libero tempus, blandit a cursus varius luctus neque magna</p>
-                <div className="btn btn-outline-danger btn-lg">CALL: 789-654-3210</div>
+                <div style={{fontFamily: 'Roboto, sans-serif'}} className="btn btn-outline-danger btn-lg">CALL: 789-654-3210</div>
             </div>
         </section>
     );

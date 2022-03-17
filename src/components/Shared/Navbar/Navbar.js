@@ -7,7 +7,7 @@ import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 
 const Navbar = () => {
     return (
-        <nav id='navigationBar' className="navbar navbar-expand-lg navbar-dark">
+        <nav style={{backgroundColor: 'rgba(0, 0, 0, 0)'}} id='navigationBar' className="navbar navbar-expand-lg">
             <div className="container-fluid">
                 <Link className="navbar-brand" to="#">
                     <img className='brandLogo' src={logo} alt="" />
@@ -18,10 +18,10 @@ const Navbar = () => {
                 <div className="collapse navbar-collapse justify-content-end navbarFonts" id="navbarNavDropdown">
                     <ul className="navbar-nav align-items-center">
                         <li className="nav-item mx-2">
-                            <Link className="nav-link active" aria-current="page" to="/home">HOME</Link>
+                            <Link className="nav-link navFont" aria-current="page" to="/home">HOME</Link>
                         </li>
                         <li className="nav-item mx-2 dropdown">
-                            <Link className="nav-link dropdown-toggle" to="/about-testo" id="aboutDropdownLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <Link className="nav-link dropdown-toggle navFont" to="/about-testo" id="aboutDropdownLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 ABOUT
                             </Link>
                             <ul className="dropdown-menu" aria-labelledby="aboutDropdownLink">
@@ -32,20 +32,20 @@ const Navbar = () => {
                             </ul>
                         </li>
                         <li className="nav-item mx-2">
-                            <Link className="nav-link" to="/main-menu">OUR MENU</Link>
+                            <Link className="nav-link navFont" to="/main-menu">OUR MENU</Link>
                         </li>
                         <li className="nav-item mx-2 dropdown">
-                            <Link className="nav-link dropdown-toggle" to="#" id="shopDropdownLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <Link className="nav-link dropdown-toggle navFont" to="#" id="shopDropdownLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 SHOP
                             </Link>
                             <ul className="dropdown-menu" aria-labelledby="shopDropdownLink">
-                                <li><Link className="dropdown-item" to="#">All Items</Link></li>
+                                <li><Link className="dropdown-item" to="/all-items">All Items</Link></li>
                                 <li><Link className="dropdown-item" to="#">Single Product</Link></li>
                                 <li><Link className="dropdown-item" to="/my-account">My Account</Link></li>
                             </ul>
                         </li>
-                        <li className="nav-item mx-2 dropdown">
-                            <Link className="nav-link dropdown-toggle" to="#" id="contactsDropdownLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <li className="nav-item mx-2 dropdown navFont">
+                            <Link className="nav-link dropdown-toggle navFont" to="#" id="contactsDropdownLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 CONTACTS
                             </Link>
                             <ul className="dropdown-menu" aria-labelledby="contactsDropdownLink">
@@ -56,7 +56,7 @@ const Navbar = () => {
                         <li>
                             <a className='text-decoration-none text-warning mx-3 fs-3 fw-bold' href="tel:789-654-3210">789-654-3210</a>
                         </li>
-                        <li className='fs-4 shoppingCart-style'><FontAwesomeIcon icon={faShoppingCart} /></li>
+                        <li className='fs-4 shoppingCart-icon'><FontAwesomeIcon icon={faShoppingCart} /></li>
                     </ul>
                 </div>
             </div>
