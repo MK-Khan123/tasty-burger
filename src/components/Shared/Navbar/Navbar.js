@@ -7,7 +7,7 @@ import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 
 const Navbar = () => {
     return (
-        <nav style={{backgroundColor: 'rgba(0, 0, 0, 0)'}} id='navigationBar' className="navbar navbar-expand-lg">
+        <nav style={{backgroundColor: 'rgba(255, 255, 255, 0)'}} id='navigationBar' className="navbar navbar-expand-lg">
             <div className="container-fluid">
                 <Link className="navbar-brand" to="#">
                     <img className='brandLogo' src={logo} alt="" />
@@ -40,7 +40,7 @@ const Navbar = () => {
                             </Link>
                             <ul className="dropdown-menu" aria-labelledby="shopDropdownLink">
                                 <li><Link className="dropdown-item" to="/all-items">All Items</Link></li>
-                                <li><Link className="dropdown-item" to="#">Single Product</Link></li>
+                                <li><Link className="dropdown-item" to="/single-product">Single Product</Link></li>
                                 <li><Link className="dropdown-item" to="/my-account">My Account</Link></li>
                             </ul>
                         </li>
@@ -56,7 +56,7 @@ const Navbar = () => {
                         <li>
                             <a className='text-decoration-none text-warning mx-3 fs-3 fw-bold' href="tel:789-654-3210">789-654-3210</a>
                         </li>
-                        <li className='fs-4 shoppingCart-icon'><FontAwesomeIcon icon={faShoppingCart} /></li>
+                        <Link className='fs-4 shoppingCart-icon' to='/cart'><FontAwesomeIcon icon={faShoppingCart} /></Link>
                     </ul>
                 </div>
             </div>

@@ -1,0 +1,13 @@
+#cart-banner {
+    margin-bottom: 70px;
+    max-width: 100vw;
+    background-position: center;
+    background-size: cover;
+    height: 410px;
+}
+
+#cart-banner h5 {
+    font-size: 4rem;
+    font-family: 'Oswald', sans-serif;
+    margin-bottom: 22rem;
+}

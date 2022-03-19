@@ -28,12 +28,12 @@ const MyAccount = () => {
                                 <div id="emailHelp4" className="form-text">We'll never share your email with anyone else.</div>
                             </div>
                             <div className="mb-3">
-                                <label for="inputPassword" className="form-label">Password</label>
+                                <label htmlFor="inputPassword" className="form-label">Password</label>
                                 <input type="password" className="form-control" id="inputPassword" />
                             </div>
                             <div class="mb-3 form-check">
                                 <input type="checkbox" class="form-check-input" id="inputCheck" />
-                                <label class="form-check-label" for="inputCheck">Remember me</label>
+                                <label class="form-check-label" htmlFor="inputCheck">Remember me</label>
                             </div>
                             <div>
                                 <button type="submit" className="btn btn-warning fw-bold">Log In</button>

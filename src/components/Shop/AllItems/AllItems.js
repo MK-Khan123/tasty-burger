@@ -4,11 +4,11 @@ import './AllItems.css';
 // import axios from 'axios';
 import fakeData from '../../fakeData';
 import allItemsBanner from '../../../images/shop-tab/shop-tab.jpg';
-import FoodItems from '../FoodItems/FoodItems';
-import Pagination from '../Pagination/Pagination';
+import FoodItems from './FoodItems/FoodItems';
+import Pagination from './Pagination/Pagination';
 import Footer from '../../Shared/Footer/Footer';
 
-//All the CSS class is used from MainMenu.css. The styling is identical, hence I didn't make separate classes for this component.
+//All the custom CSS class is used from MainMenu.css. The styling is identical, hence I didn't make separate classes for the same styling for this component.
 
 const AllItems = () => {
 

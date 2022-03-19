@@ -10,6 +10,8 @@ import ContactUs from './components/Contacts/ContactUs/ContactUs';
 import MyAccount from './components/Shop/MyAccount/MyAccount';
 import MainMenu from './components/MainMenu/MainMenu';
 import AllItems from './components/Shop/AllItems/AllItems';
+import ProductDetails from './components/Shop/ProductDetails/ProductDetails';
+import Cart from './components/Cart/Cart';
 
 
 function App() {
@@ -32,11 +34,15 @@ function App() {
         
         <Route path="/all-items" element={<AllItems />} />
         
+        <Route path="/single-product" element={<ProductDetails />} />
+        
         <Route path="/my-account" element={<MyAccount />} />
 
         <Route path="/reserve-a-table" element={<ReserveTable />} />
 
         <Route path="/contact-us" element={<ContactUs />} />
+
+        <Route path="/cart" element={<Cart />} />
       </Routes>
     </div>
   );
