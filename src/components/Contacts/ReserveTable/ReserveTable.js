@@ -1,22 +1,23 @@
 import React from 'react';
-import reserveTableBackground from '../../../images/reserve-table/booking-page.jpg';
 import Footer from '../../Shared/Footer/Footer';
 import MobileApp from '../../Shared/MobileApp/MobileApp';
 import Navbar from '../../Shared/Navbar/Navbar';
 import './ReserveTable.css';
 
 const ReserveTable = () => {
+    const bannerImage = 'https://res.cloudinary.com/dn9k2jkdd/image/upload/v1649786143/testo-burger-project/reserve-table/booking-page_geqouk.jpg';
+
     return (
-        <section id='reserveTable'>
+        <section id='reserve-table'>
             <header style={{ position: 'relative' }} className="container">
                 <Navbar />
             </header>
 
-            <section id='reserveTableBackground' className="container-fluid" style={{ backgroundImage: `url(${reserveTableBackground})` }}>
+            <section id='reserve-table-banner' className="container-fluid" style={{ backgroundImage: `url(${bannerImage})` }}>
                 <h5 className='carousel-caption d-none d-md-block text-white fw-bold'>RESERVE A TABLE</h5>
             </section>
 
-            <section id='reserveTableForm' className='container p-4'>
+            <section id='reserve-table-form' className='container p-4'>
                 <form className='row'>
                     <div className="mb-3 col-md-6">
                         <label htmlFor="inputDate" className="form-label">Date</label>

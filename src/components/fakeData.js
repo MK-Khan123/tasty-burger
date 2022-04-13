@@ -1,41 +1,9 @@
-import bigtiBurger from '../images/all-food-items/burgers/bigti-burger.png';
-import blackSheep from '../images/all-food-items/burgers/black-sheep.jpg';
-import classicBurger from '../images/all-food-items/burgers/classic-burger.jpg';
-import crispyChicken from '../images/all-food-items/burgers/crispy-chicken.jpg';
-import doubleBurger from '../images/all-food-items/burgers/double-burger.jpg';
-import holmBurger from '../images/all-food-items/burgers/holm-burger.png';
-import komilBurger from '../images/all-food-items/burgers/komil-burger.png';
-import smokeyHouse from '../images/all-food-items/burgers/smokey-house.jpg';
-import soughBurger from '../images/all-food-items/burgers/sough-burger.png';
-import spanishBurger from '../images/all-food-items/burgers/spanish-burger.jpg';
-import turkeyBurger from '../images/all-food-items/burgers/turkey-burger.jpg';
-import ultimateBacon from '../images/all-food-items/burgers/ultimate-bacon.jpg';
-import belgianWaffle from '../images/all-food-items/desserts/belgian-waffle.png';
-import cheeseCake from '../images/all-food-items/desserts/cheese-cake.png';
-import chocolateCake from '../images/all-food-items/desserts/chocolate-cake.png';
-import strawberryCake from '../images/all-food-items/desserts/strawberry-cake.png';
-import fettuccineAlfredo from '../images/all-food-items/pasta/fettuccine-alfredo.png';
-import pancettaSpaghetti from '../images/all-food-items/pasta/pancetta-spaghetti.png';
-import spaghettiBolognese from '../images/all-food-items/pasta/spaghetti-bolognese.png';
-import tunaPastaBake from '../images/all-food-items/pasta/tuna-pasta-bake.png';
-import buffaloChickenPizza from '../images/all-food-items/pizza/buffalo-chicken-pizza.png';
-import prosciuttioArugulaPizza from '../images/all-food-items/pizza/prosciuttio-&-arugula-pizza.png';
-import spicyBbqChickenPizza from '../images/all-food-items/pizza/spicy-bbq-chicken-pizza.png';
-import chickenSalad from '../images/all-food-items/salads/chicken-salad.png';
-import greekSalad from '../images/all-food-items/salads/greek-salad.png';
-import spinachSalad from '../images/all-food-items/salads/spinach-salad.png';
-import turkeySalad from '../images/all-food-items/salads/turkey-salad.png';
-import chickenNuggets from '../images/all-food-items/sides/chicken-nuggets.png';
-import frenchFries from '../images/all-food-items/sides/french-fries.png';
-import mozzarellaSticks from '../images/all-food-items/sides/mozzarella-sticks.png';
-import onionRings from '../images/all-food-items/sides/onion-rings.png';
-
 const fakeData = [
     {
-        "category": 'Burger',
+        "category": 'burger',
         "id": 'BGX01',
         "name": 'Bigti Burger',
-        "image": bigtiBurger,
+        "image": 'https://res.cloudinary.com/dn9k2jkdd/image/upload/v1649786131/testo-burger-project/all-food-items/burgers/bigti-burger_uhacul.png',
         "briefInfo": 'Mushroom patty, vegan cheese, lettuce, tomatoes, avocado ligula',
         "description": 'Aliqum mullam blandit tempor sapien gravida donec ipsum, at porta justo. Velna vitae auctor congue magna nihil impedit ligula risus. Mauris donec ociis et magnis sapien sagittis sapien sem congue tempor gravida donec enim ipsum porta justo integer odio velna a purus efficitur ipsum primis in cubilia laoreet augue egestas luctus donec purus and blandit sodales mpedit ligula risus. Mauris donec ociis et magnis sapien',
         "price": 12.95,
@@ -43,10 +11,10 @@ const fakeData = [
         "starCount": 46
     },
     {
-        "category": 'Burger',
+        "category": 'burger',
         "id": 'BGX02',
         "name": 'Black Sheep',
-        "image": blackSheep,
+        "image": 'https://res.cloudinary.com/dn9k2jkdd/image/upload/v1649786130/testo-burger-project/all-food-items/burgers/black-sheep_hyk4vg.jpg',
         "briefInfo": 'Mushroom patty, vegan cheese, lettuce, tomatoes, avocado ligula',
         "description": 'Aliqum mullam blandit tempor sapien gravida donec ipsum, at porta justo. Velna vitae auctor congue magna nihil impedit ligula risus. Mauris donec ociis et magnis sapien sagittis sapien sem congue tempor gravida donec enim ipsum porta justo integer odio velna a purus efficitur ipsum primis in cubilia laoreet augue egestas luctus donec purus and blandit sodales mpedit ligula risus. Mauris donec ociis et magnis sapien',
         "price": 9.75,
@@ -54,10 +22,10 @@ const fakeData = [
         "starCount": 7
     },
     {
-        "category": 'Burger',
+        "category": 'burger',
         "id": 'BGX03',
         "name": 'Classic Burger',
-        "image": classicBurger,
+        "image": 'https://res.cloudinary.com/dn9k2jkdd/image/upload/v1649786133/testo-burger-project/all-food-items/burgers/classic-burger_qr27pp.jpg',
         "briefInfo": 'Mushroom patty, vegan cheese, lettuce, tomatoes, avocado ligula',
         "description": 'Aliqum mullam blandit tempor sapien gravida donec ipsum, at porta justo. Velna vitae auctor congue magna nihil impedit ligula risus. Mauris donec ociis et magnis sapien sagittis sapien sem congue tempor gravida donec enim ipsum porta justo integer odio velna a purus efficitur ipsum primis in cubilia laoreet augue egestas luctus donec purus and blandit sodales mpedit ligula risus. Mauris donec ociis et magnis sapien',
         "price": 7.95,
@@ -65,10 +33,10 @@ const fakeData = [
         "starCount": 12
     },
     {
-        "category": 'Burger',
+        "category": 'burger',
         "id": 'BGX04',
         "name": 'Crispy Chicken',
-        "image": crispyChicken,
+        "image": 'https://res.cloudinary.com/dn9k2jkdd/image/upload/v1649786134/testo-burger-project/all-food-items/burgers/crispy-chicken_k46dxd.jpg',
         "briefInfo": 'Mushroom patty, vegan cheese, lettuce, tomatoes, avocado ligula',
         "description": 'Aliqum mullam blandit tempor sapien gravida donec ipsum, at porta justo. Velna vitae auctor congue magna nihil impedit ligula risus. Mauris donec ociis et magnis sapien sagittis sapien sem congue tempor gravida donec enim ipsum porta justo integer odio velna a purus efficitur ipsum primis in cubilia laoreet augue egestas luctus donec purus and blandit sodales mpedit ligula risus. Mauris donec ociis et magnis sapien',
         "price": 8.50,
@@ -76,10 +44,10 @@ const fakeData = [
         "starCount": 10
     },
     {
-        "category": 'Burger',
+        "category": 'burger',
         "id": 'BGX05',
         "name": 'Double Burger',
-        "image": doubleBurger,
+        "image": 'https://res.cloudinary.com/dn9k2jkdd/image/upload/v1649786133/testo-burger-project/all-food-items/burgers/double-burger_ipj10l.jpg',
         "briefInfo": 'Mushroom patty, vegan cheese, lettuce, tomatoes, avocado ligula',
         "description": 'Aliqum mullam blandit tempor sapien gravida donec ipsum, at porta justo. Velna vitae auctor congue magna nihil impedit ligula risus. Mauris donec ociis et magnis sapien sagittis sapien sem congue tempor gravida donec enim ipsum porta justo integer odio velna a purus efficitur ipsum primis in cubilia laoreet augue egestas luctus donec purus and blandit sodales mpedit ligula risus. Mauris donec ociis et magnis sapien',
         "price": 10.35,
@@ -87,10 +55,10 @@ const fakeData = [
         "starCount": 19
     },
     {
-        "category": 'Burger',
+        "category": 'burger',
         "id": 'BGX06',
         "name": 'Holm Burger',
-        "image": holmBurger,
+        "image": 'https://res.cloudinary.com/dn9k2jkdd/image/upload/v1649786134/testo-burger-project/all-food-items/burgers/holm-burger_zlgtmd.png',
         "briefInfo": 'Mushroom patty, vegan cheese, lettuce, tomatoes, avocado ligula',
         "description": 'Aliqum mullam blandit tempor sapien gravida donec ipsum, at porta justo. Velna vitae auctor congue magna nihil impedit ligula risus. Mauris donec ociis et magnis sapien sagittis sapien sem congue tempor gravida donec enim ipsum porta justo integer odio velna a purus efficitur ipsum primis in cubilia laoreet augue egestas luctus donec purus and blandit sodales mpedit ligula risus. Mauris donec ociis et magnis sapien',
         "price": 11.35,
@@ -98,10 +66,10 @@ const fakeData = [
         "starCount": 17
     },
     {
-        "category": 'Burger',
+        "category": 'burger',
         "id": 'BGX07',
         "name": 'Komil Burger',
-        "image": komilBurger,
+        "image": 'https://res.cloudinary.com/dn9k2jkdd/image/upload/v1649786133/testo-burger-project/all-food-items/burgers/komil-burger_kzqaqv.png',
         "briefInfo": 'Mushroom patty, vegan cheese, lettuce, tomatoes, avocado ligula',
         "description": 'Aliqum mullam blandit tempor sapien gravida donec ipsum, at porta justo. Velna vitae auctor congue magna nihil impedit ligula risus. Mauris donec ociis et magnis sapien sagittis sapien sem congue tempor gravida donec enim ipsum porta justo integer odio velna a purus efficitur ipsum primis in cubilia laoreet augue egestas luctus donec purus and blandit sodales mpedit ligula risus. Mauris donec ociis et magnis sapien',
         "price": 11.40,
@@ -109,10 +77,10 @@ const fakeData = [
         "starCount": 22
     },
     {
-        "category": 'Burger',
+        "category": 'burger',
         "id": 'BGX08',
         "name": 'Smokey House',
-        "image": smokeyHouse,
+        "image": 'https://res.cloudinary.com/dn9k2jkdd/image/upload/v1649786134/testo-burger-project/all-food-items/burgers/smokey-house_rszvfb.jpg',
         "briefInfo": 'Mushroom patty, vegan cheese, lettuce, tomatoes, avocado ligula',
         "description": 'Aliqum mullam blandit tempor sapien gravida donec ipsum, at porta justo. Velna vitae auctor congue magna nihil impedit ligula risus. Mauris donec ociis et magnis sapien sagittis sapien sem congue tempor gravida donec enim ipsum porta justo integer odio velna a purus efficitur ipsum primis in cubilia laoreet augue egestas luctus donec purus and blandit sodales mpedit ligula risus. Mauris donec ociis et magnis sapien',
         "price": 9.50,
@@ -120,10 +88,10 @@ const fakeData = [
         "starCount": 68
     },
     {
-        "category": 'Burger',
+        "category": 'burger',
         "id": 'BGX09',
         "name": 'Sough Burger',
-        "image": soughBurger,
+        "image": 'https://res.cloudinary.com/dn9k2jkdd/image/upload/v1649786134/testo-burger-project/all-food-items/burgers/sough-burger_srlxu4.png',
         "briefInfo": 'Mushroom patty, vegan cheese, lettuce, tomatoes, avocado ligula',
         "description": 'Aliqum mullam blandit tempor sapien gravida donec ipsum, at porta justo. Velna vitae auctor congue magna nihil impedit ligula risus. Mauris donec ociis et magnis sapien sagittis sapien sem congue tempor gravida donec enim ipsum porta justo integer odio velna a purus efficitur ipsum primis in cubilia laoreet augue egestas luctus donec purus and blandit sodales mpedit ligula risus. Mauris donec ociis et magnis sapien',
         "price": 9.95,
@@ -131,10 +99,10 @@ const fakeData = [
         "starCount": 37
     },
     {
-        "category": 'Burger',
+        "category": 'burger',
         "id": 'BGX10',
         "name": 'Spanish Burger',
-        "image": spanishBurger,
+        "image": 'https://res.cloudinary.com/dn9k2jkdd/image/upload/v1649786135/testo-burger-project/all-food-items/burgers/spanish-burger_zw9uqs.jpg',
         "briefInfo": 'Mushroom patty, vegan cheese, lettuce, tomatoes, avocado ligula',
         "description": 'Aliqum mullam blandit tempor sapien gravida donec ipsum, at porta justo. Velna vitae auctor congue magna nihil impedit ligula risus. Mauris donec ociis et magnis sapien sagittis sapien sem congue tempor gravida donec enim ipsum porta justo integer odio velna a purus efficitur ipsum primis in cubilia laoreet augue egestas luctus donec purus and blandit sodales mpedit ligula risus. Mauris donec ociis et magnis sapien',
         "price": 8.95,
@@ -142,10 +110,10 @@ const fakeData = [
         "starCount": 19
     },
     {
-        "category": 'Burger',
+        "category": 'burger',
         "id": 'BGX11',
         "name": 'Turkey Burger',
-        "image": turkeyBurger,
+        "image": 'https://res.cloudinary.com/dn9k2jkdd/image/upload/v1649786134/testo-burger-project/all-food-items/burgers/turkey-burger_far3sh.jpg',
         "briefInfo": 'Mushroom patty, vegan cheese, lettuce, tomatoes, avocado ligula',
         "description": 'Aliqum mullam blandit tempor sapien gravida donec ipsum, at porta justo. Velna vitae auctor congue magna nihil impedit ligula risus. Mauris donec ociis et magnis sapien sagittis sapien sem congue tempor gravida donec enim ipsum porta justo integer odio velna a purus efficitur ipsum primis in cubilia laoreet augue egestas luctus donec purus and blandit sodales mpedit ligula risus. Mauris donec ociis et magnis sapien',
         "price": 8.95,
@@ -153,10 +121,10 @@ const fakeData = [
         "starCount": 8
     },
     {
-        "category": 'Burger',
+        "category": 'burger',
         "id": 'BGX12',
         "name": 'Ultimate Bacon',
-        "image": ultimateBacon,
+        "image": 'https://res.cloudinary.com/dn9k2jkdd/image/upload/v1649786134/testo-burger-project/all-food-items/burgers/ultimate-bacon_nn0zka.jpg',
         "briefInfo": 'Mushroom patty, vegan cheese, lettuce, tomatoes, avocado ligula',
         "description": 'Aliqum mullam blandit tempor sapien gravida donec ipsum, at porta justo. Velna vitae auctor congue magna nihil impedit ligula risus. Mauris donec ociis et magnis sapien sagittis sapien sem congue tempor gravida donec enim ipsum porta justo integer odio velna a purus efficitur ipsum primis in cubilia laoreet augue egestas luctus donec purus and blandit sodales mpedit ligula risus. Mauris donec ociis et magnis sapien',
         "price": 9.99,
@@ -164,10 +132,10 @@ const fakeData = [
         "starCount": 49
     },
     {
-        "category": 'Desserts',
+        "category": 'desserts',
         "id": 'DSX01',
         "name": 'Belgian Waffle',
-        "image": belgianWaffle,
+        "image": 'https://res.cloudinary.com/dn9k2jkdd/image/upload/v1649786134/testo-burger-project/all-food-items/desserts/belgian-waffle_adyeue.png',
         "briefInfo": 'Mushroom patty, vegan cheese, lettuce, tomatoes, avocado ligula',
         "description": 'Aliqum mullam blandit tempor sapien gravida donec ipsum, at porta justo. Velna vitae auctor congue magna nihil impedit ligula risus. Mauris donec ociis et magnis sapien sagittis sapien sem congue tempor gravida donec enim ipsum porta justo integer odio velna a purus efficitur ipsum primis in cubilia laoreet augue egestas luctus donec purus and blandit sodales mpedit ligula risus. Mauris donec ociis et magnis sapien',
         "price": 7.98,
@@ -175,10 +143,10 @@ const fakeData = [
         "starCount": 51
     },
     {
-        "category": 'Desserts',
+        "category": 'desserts',
         "id": 'DSX02',
         "name": 'Cheese Cake',
-        "image": cheeseCake,
+        "image": 'https://res.cloudinary.com/dn9k2jkdd/image/upload/v1649786135/testo-burger-project/all-food-items/desserts/cheese-cake_kn3del.png',
         "briefInfo": 'Mushroom patty, vegan cheese, lettuce, tomatoes, avocado ligula',
         "description": 'Aliqum mullam blandit tempor sapien gravida donec ipsum, at porta justo. Velna vitae auctor congue magna nihil impedit ligula risus. Mauris donec ociis et magnis sapien sagittis sapien sem congue tempor gravida donec enim ipsum porta justo integer odio velna a purus efficitur ipsum primis in cubilia laoreet augue egestas luctus donec purus and blandit sodales mpedit ligula risus. Mauris donec ociis et magnis sapien',
         "price": 7.99,
@@ -186,10 +154,10 @@ const fakeData = [
         "starCount": 105
     },
     {
-        "category": 'Desserts',
+        "category": 'desserts',
         "id": 'DSX03',
         "name": 'Chocolate Cake',
-        "image": chocolateCake,
+        "image": 'https://res.cloudinary.com/dn9k2jkdd/image/upload/v1649786135/testo-burger-project/all-food-items/desserts/chocolate-cake_aqauyo.png',
         "briefInfo": 'Mushroom patty, vegan cheese, lettuce, tomatoes, avocado ligula',
         "description": 'Aliqum mullam blandit tempor sapien gravida donec ipsum, at porta justo. Velna vitae auctor congue magna nihil impedit ligula risus. Mauris donec ociis et magnis sapien sagittis sapien sem congue tempor gravida donec enim ipsum porta justo integer odio velna a purus efficitur ipsum primis in cubilia laoreet augue egestas luctus donec purus and blandit sodales mpedit ligula risus. Mauris donec ociis et magnis sapien',
         "price": 7.99,
@@ -197,10 +165,10 @@ const fakeData = [
         "starCount": 101
     },
     {
-        "category": 'Desserts',
+        "category": 'desserts',
         "id": 'DSX04',
         "name": 'Strawberry Cake',
-        "image": strawberryCake,
+        "image": 'https://res.cloudinary.com/dn9k2jkdd/image/upload/v1649786135/testo-burger-project/all-food-items/desserts/strawberry-cake_zxkqdo.png',
         "briefInfo": 'Mushroom patty, vegan cheese, lettuce, tomatoes, avocado ligula',
         "description": 'Aliqum mullam blandit tempor sapien gravida donec ipsum, at porta justo. Velna vitae auctor congue magna nihil impedit ligula risus. Mauris donec ociis et magnis sapien sagittis sapien sem congue tempor gravida donec enim ipsum porta justo integer odio velna a purus efficitur ipsum primis in cubilia laoreet augue egestas luctus donec purus and blandit sodales mpedit ligula risus. Mauris donec ociis et magnis sapien',
         "price": 8.15,
@@ -208,10 +176,10 @@ const fakeData = [
         "starCount": 99
     },
     {
-        "category": 'Pasta',
+        "category": 'pasta',
         "id": 'PSX01',
         "name": 'Fettuccine Alfredo',
-        "image": fettuccineAlfredo,
+        "image": 'https://res.cloudinary.com/dn9k2jkdd/image/upload/v1649786135/testo-burger-project/all-food-items/pasta/fettuccine-alfredo_oc8xcn.png',
         "briefInfo": 'Mushroom patty, vegan cheese, lettuce, tomatoes, avocado ligula',
         "description": 'Aliqum mullam blandit tempor sapien gravida donec ipsum, at porta justo. Velna vitae auctor congue magna nihil impedit ligula risus. Mauris donec ociis et magnis sapien sagittis sapien sem congue tempor gravida donec enim ipsum porta justo integer odio velna a purus efficitur ipsum primis in cubilia laoreet augue egestas luctus donec purus and blandit sodales mpedit ligula risus. Mauris donec ociis et magnis sapien',
         "price": 7.55,
@@ -219,10 +187,10 @@ const fakeData = [
         "starCount": 5
     },
     {
-        "category": 'Pasta',
+        "category": 'pasta',
         "id": 'PSX02',
         "name": 'Pancetta Spaghetti',
-        "image": pancettaSpaghetti,
+        "image": 'https://res.cloudinary.com/dn9k2jkdd/image/upload/v1649786135/testo-burger-project/all-food-items/pasta/pancetta-spaghetti_xvus4v.png',
         "briefInfo": 'Mushroom patty, vegan cheese, lettuce, tomatoes, avocado ligula',
         "description": 'Aliqum mullam blandit tempor sapien gravida donec ipsum, at porta justo. Velna vitae auctor congue magna nihil impedit ligula risus. Mauris donec ociis et magnis sapien sagittis sapien sem congue tempor gravida donec enim ipsum porta justo integer odio velna a purus efficitur ipsum primis in cubilia laoreet augue egestas luctus donec purus and blandit sodales mpedit ligula risus. Mauris donec ociis et magnis sapien',
         "price": 8.25,
@@ -230,10 +198,10 @@ const fakeData = [
         "starCount": 9
     },
     {
-        "category": 'Pasta',
+        "category": 'pasta',
         "id": 'PSX03',
         "name": 'Spaghetti Bolognese',
-        "image": spaghettiBolognese,
+        "image": 'https://res.cloudinary.com/dn9k2jkdd/image/upload/v1649786136/testo-burger-project/all-food-items/pasta/spaghetti-bolognese_boc39w.png',
         "briefInfo": 'Mushroom patty, vegan cheese, lettuce, tomatoes, avocado ligula',
         "description": 'Aliqum mullam blandit tempor sapien gravida donec ipsum, at porta justo. Velna vitae auctor congue magna nihil impedit ligula risus. Mauris donec ociis et magnis sapien sagittis sapien sem congue tempor gravida donec enim ipsum porta justo integer odio velna a purus efficitur ipsum primis in cubilia laoreet augue egestas luctus donec purus and blandit sodales mpedit ligula risus. Mauris donec ociis et magnis sapien',
         "price": 9.75,
@@ -241,10 +209,10 @@ const fakeData = [
         "starCount": 12
     },
     {
-        "category": 'Pasta',
+        "category": 'pasta',
         "id": 'PSX04',
         "name": 'Tuna Pasta Bake',
-        "image": tunaPastaBake,
+        "image": 'https://res.cloudinary.com/dn9k2jkdd/image/upload/v1649786136/testo-burger-project/all-food-items/pasta/tuna-pasta-bake_oxk6zi.png',
         "briefInfo": 'Mushroom patty, vegan cheese, lettuce, tomatoes, avocado ligula',
         "description": 'Aliqum mullam blandit tempor sapien gravida donec ipsum, at porta justo. Velna vitae auctor congue magna nihil impedit ligula risus. Mauris donec ociis et magnis sapien sagittis sapien sem congue tempor gravida donec enim ipsum porta justo integer odio velna a purus efficitur ipsum primis in cubilia laoreet augue egestas luctus donec purus and blandit sodales mpedit ligula risus. Mauris donec ociis et magnis sapien',
         "price": 9.87,
@@ -252,10 +220,10 @@ const fakeData = [
         "starCount": 19
     },
     {
-        "category": 'Pizza',
+        "category": 'pizza',
         "id": 'PZX01',
         "name": 'Buffalo Chicken Pizza',
-        "image": buffaloChickenPizza,
+        "image": 'https://res.cloudinary.com/dn9k2jkdd/image/upload/v1649786136/testo-burger-project/all-food-items/pizza/buffalo-chicken-pizza_nblcwo.png',
         "briefInfo": 'Mushroom patty, vegan cheese, lettuce, tomatoes, avocado ligula',
         "description": 'Aliqum mullam blandit tempor sapien gravida donec ipsum, at porta justo. Velna vitae auctor congue magna nihil impedit ligula risus. Mauris donec ociis et magnis sapien sagittis sapien sem congue tempor gravida donec enim ipsum porta justo integer odio velna a purus efficitur ipsum primis in cubilia laoreet augue egestas luctus donec purus and blandit sodales mpedit ligula risus. Mauris donec ociis et magnis sapien',
         "price": 12.99,
@@ -263,10 +231,10 @@ const fakeData = [
         "starCount": 18
     },
     {
-        "category": 'Pizza',
+        "category": 'pizza',
         "id": 'PZX02',
         "name": 'Prosciuttio & Arugula Pizza',
-        "image": prosciuttioArugulaPizza,
+        "image": 'https://res.cloudinary.com/dn9k2jkdd/image/upload/v1649786136/testo-burger-project/all-food-items/pizza/prosciuttio-_-arugula-pizza_k5cwd1.png',
         "briefInfo": 'Mushroom patty, vegan cheese, lettuce, tomatoes, avocado ligula',
         "description": 'Aliqum mullam blandit tempor sapien gravida donec ipsum, at porta justo. Velna vitae auctor congue magna nihil impedit ligula risus. Mauris donec ociis et magnis sapien sagittis sapien sem congue tempor gravida donec enim ipsum porta justo integer odio velna a purus efficitur ipsum primis in cubilia laoreet augue egestas luctus donec purus and blandit sodales mpedit ligula risus. Mauris donec ociis et magnis sapien',
         "price": 12.15,
@@ -274,10 +242,10 @@ const fakeData = [
         "starCount": 16
     },
     {
-        "category": 'Pizza',
+        "category": 'pizza',
         "id": 'PZX03',
         "name": 'Spicy BBQ Chicken Pizza',
-        "image": spicyBbqChickenPizza,
+        "image": 'https://res.cloudinary.com/dn9k2jkdd/image/upload/v1649786136/testo-burger-project/all-food-items/pizza/spicy-bbq-chicken-pizza_twvzaz.png',
         "briefInfo": 'Mushroom patty, vegan cheese, lettuce, tomatoes, avocado ligula',
         "description": 'Aliqum mullam blandit tempor sapien gravida donec ipsum, at porta justo. Velna vitae auctor congue magna nihil impedit ligula risus. Mauris donec ociis et magnis sapien sagittis sapien sem congue tempor gravida donec enim ipsum porta justo integer odio velna a purus efficitur ipsum primis in cubilia laoreet augue egestas luctus donec purus and blandit sodales mpedit ligula risus. Mauris donec ociis et magnis sapien',
         "price": 12.55,
@@ -285,10 +253,10 @@ const fakeData = [
         "starCount": 8
     },
     {
-        "category": 'Salads',
+        "category": 'salads',
         "id": 'SLX01',
         "name": 'Chicken Salad',
-        "image": chickenSalad,
+        "image": 'https://res.cloudinary.com/dn9k2jkdd/image/upload/v1649786137/testo-burger-project/all-food-items/salads/chicken-salad_g4opzc.png',
         "briefInfo": 'Mushroom patty, vegan cheese, lettuce, tomatoes, avocado ligula',
         "description": 'Aliqum mullam blandit tempor sapien gravida donec ipsum, at porta justo. Velna vitae auctor congue magna nihil impedit ligula risus. Mauris donec ociis et magnis sapien sagittis sapien sem congue tempor gravida donec enim ipsum porta justo integer odio velna a purus efficitur ipsum primis in cubilia laoreet augue egestas luctus donec purus and blandit sodales mpedit ligula risus. Mauris donec ociis et magnis sapien',
         "price": 7.98,
@@ -296,10 +264,10 @@ const fakeData = [
         "starCount": 91
     },
     {
-        "category": 'Salads',
+        "category": 'salads',
         "id": 'SLX02',
         "name": 'Greek Salad',
-        "image": greekSalad,
+        "image": 'https://res.cloudinary.com/dn9k2jkdd/image/upload/v1649786136/testo-burger-project/all-food-items/salads/greek-salad_lee3hm.png',
         "briefInfo": 'Mushroom patty, vegan cheese, lettuce, tomatoes, avocado ligula',
         "description": 'Aliqum mullam blandit tempor sapien gravida donec ipsum, at porta justo. Velna vitae auctor congue magna nihil impedit ligula risus. Mauris donec ociis et magnis sapien sagittis sapien sem congue tempor gravida donec enim ipsum porta justo integer odio velna a purus efficitur ipsum primis in cubilia laoreet augue egestas luctus donec purus and blandit sodales mpedit ligula risus. Mauris donec ociis et magnis sapien',
         "price": 8.25,
@@ -307,10 +275,10 @@ const fakeData = [
         "starCount": 24
     },
     {
-        "category": 'Salads',
+        "category": 'salads',
         "id": 'SLX03',
         "name": 'Spinach Salad',
-        "image": spinachSalad,
+        "image": 'https://res.cloudinary.com/dn9k2jkdd/image/upload/v1649786137/testo-burger-project/all-food-items/salads/spinach-salad_lrwrsi.png',
         "briefInfo": 'Mushroom patty, vegan cheese, lettuce, tomatoes, avocado ligula',
         "description": 'Aliqum mullam blandit tempor sapien gravida donec ipsum, at porta justo. Velna vitae auctor congue magna nihil impedit ligula risus. Mauris donec ociis et magnis sapien sagittis sapien sem congue tempor gravida donec enim ipsum porta justo integer odio velna a purus efficitur ipsum primis in cubilia laoreet augue egestas luctus donec purus and blandit sodales mpedit ligula risus. Mauris donec ociis et magnis sapien',
         "price": 6.95,
@@ -318,10 +286,10 @@ const fakeData = [
         "starCount": 16
     },
     {
-        "category": 'Salads',
+        "category": 'salads',
         "id": 'SLX04',
         "name": 'Turkey Salad',
-        "image": turkeySalad,
+        "image": 'https://res.cloudinary.com/dn9k2jkdd/image/upload/v1649786137/testo-burger-project/all-food-items/salads/turkey-salad_zk6kme.png',
         "briefInfo": 'Mushroom patty, vegan cheese, lettuce, tomatoes, avocado ligula',
         "description": 'Aliqum mullam blandit tempor sapien gravida donec ipsum, at porta justo. Velna vitae auctor congue magna nihil impedit ligula risus. Mauris donec ociis et magnis sapien sagittis sapien sem congue tempor gravida donec enim ipsum porta justo integer odio velna a purus efficitur ipsum primis in cubilia laoreet augue egestas luctus donec purus and blandit sodales mpedit ligula risus. Mauris donec ociis et magnis sapien',
         "price": 7.95,
@@ -329,10 +297,10 @@ const fakeData = [
         "starCount": 9
     },
     {
-        "category": 'Sides',
+        "category": 'sides',
         "id": 'SDX01',
         "name": 'Chicken Nuggets',
-        "image": chickenNuggets,
+        "image": 'https://res.cloudinary.com/dn9k2jkdd/image/upload/v1649786137/testo-burger-project/all-food-items/sides/chicken-nuggets_tcyglp.png',
         "briefInfo": 'Mushroom patty, vegan cheese, lettuce, tomatoes, avocado ligula',
         "description": 'Aliqum mullam blandit tempor sapien gravida donec ipsum, at porta justo. Velna vitae auctor congue magna nihil impedit ligula risus. Mauris donec ociis et magnis sapien sagittis sapien sem congue tempor gravida donec enim ipsum porta justo integer odio velna a purus efficitur ipsum primis in cubilia laoreet augue egestas luctus donec purus and blandit sodales mpedit ligula risus. Mauris donec ociis et magnis sapien',
         "price": 18.90,
@@ -340,10 +308,10 @@ const fakeData = [
         "starCount": 11
     },
     {
-        "category": 'Sides',
+        "category": 'sides',
         "id": 'SDX02',
         "name": 'French Fries',
-        "image": frenchFries,
+        "image": 'https://res.cloudinary.com/dn9k2jkdd/image/upload/v1649786137/testo-burger-project/all-food-items/sides/french-fries_e8hc62.png',
         "briefInfo": 'Mushroom patty, vegan cheese, lettuce, tomatoes, avocado ligula',
         "description": 'Aliqum mullam blandit tempor sapien gravida donec ipsum, at porta justo. Velna vitae auctor congue magna nihil impedit ligula risus. Mauris donec ociis et magnis sapien sagittis sapien sem congue tempor gravida donec enim ipsum porta justo integer odio velna a purus efficitur ipsum primis in cubilia laoreet augue egestas luctus donec purus and blandit sodales mpedit ligula risus. Mauris donec ociis et magnis sapien',
         "price": 11.88,
@@ -351,10 +319,10 @@ const fakeData = [
         "starCount": 127
     },
     {
-        "category": 'Sides',
+        "category": 'sides',
         "id": 'SDX03',
         "name": 'Mozzarella Sticks',
-        "image": mozzarellaSticks,
+        "image": 'https://res.cloudinary.com/dn9k2jkdd/image/upload/v1649786138/testo-burger-project/all-food-items/sides/mozzarella-sticks_z1p9hi.png',
         "briefInfo": 'Mushroom patty, vegan cheese, lettuce, tomatoes, avocado ligula',
         "description": 'Aliqum mullam blandit tempor sapien gravida donec ipsum, at porta justo. Velna vitae auctor congue magna nihil impedit ligula risus. Mauris donec ociis et magnis sapien sagittis sapien sem congue tempor gravida donec enim ipsum porta justo integer odio velna a purus efficitur ipsum primis in cubilia laoreet augue egestas luctus donec purus and blandit sodales mpedit ligula risus. Mauris donec ociis et magnis sapien',
         "price": 8.50,
@@ -362,10 +330,10 @@ const fakeData = [
         "starCount": 103
     },
     {
-        "category": 'Sides',
+        "category": 'sides',
         "id": 'SDX04',
         "name": 'Onion Rings',
-        "image": onionRings,
+        "image": 'https://res.cloudinary.com/dn9k2jkdd/image/upload/v1649786137/testo-burger-project/all-food-items/sides/onion-rings_r1ok6a.png',
         "briefInfo": 'Mushroom patty, vegan cheese, lettuce, tomatoes, avocado ligula',
         "description": 'Aliqum mullam blandit tempor sapien gravida donec ipsum, at porta justo. Velna vitae auctor congue magna nihil impedit ligula risus. Mauris donec ociis et magnis sapien sagittis sapien sem congue tempor gravida donec enim ipsum porta justo integer odio velna a purus efficitur ipsum primis in cubilia laoreet augue egestas luctus donec purus and blandit sodales mpedit ligula risus. Mauris donec ociis et magnis sapien',
         "price": 9.99,

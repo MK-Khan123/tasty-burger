@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import Navbar from '../../Shared/Navbar/Navbar';
 import './ProductDetails.css';
-import productDetailsBanner from '../../../images/shop-tab/shop-tab.jpg';
 import fakeData from '../../fakeData';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingBag, faStar } from '@fortawesome/free-solid-svg-icons';
@@ -11,6 +10,7 @@ import Footer from '../../Shared/Footer/Footer';
 
 const ProductDetails = () => {
 
+    const bannerImage = 'https://res.cloudinary.com/dn9k2jkdd/image/upload/v1649786144/testo-burger-project/shop-tab/shop-tab_j7hrho.jpg';
     const soughBurger = fakeData.find(product => product.id === 'BGX09');
     const { name, price, briefInfo, description, category, image, star, starCount } = soughBurger;
 
@@ -30,7 +30,7 @@ const ProductDetails = () => {
                 <Navbar />
             </header>
 
-            <section id='product-details-banner' className="container-fluid" style={{ backgroundImage: `url(${productDetailsBanner})` }}>
+            <section id='product-details-banner' className="container-fluid" style={{ backgroundImage: `url(${bannerImage})` }}>
                 <h5 className='carousel-caption d-none d-md-block text-white fw-bold'>ALL ITEMS</h5>
             </section>
 

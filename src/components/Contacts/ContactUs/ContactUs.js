@@ -1,6 +1,5 @@
 import React from 'react';
 import Navbar from '../../Shared/Navbar/Navbar';
-import contactUsBackground from '../../../images/contact-us/contacts-page.jpg';
 import './ContactUs.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLocationDot, faLayerGroup } from '@fortawesome/free-solid-svg-icons';
@@ -9,22 +8,24 @@ import MobileApp from '../../Shared/MobileApp/MobileApp';
 import Footer from '../../Shared/Footer/Footer';
 
 const ContactUs = () => {
+    const bannerImage = 'https://res.cloudinary.com/dn9k2jkdd/image/upload/v1649786140/testo-burger-project/contact-us/contacts-page_ypzxhp.jpg';
+
     return (
-        <section id='contactUs'>
+        <section id='contact-us'>
             <header style={{ position: 'relative' }} className="container">
                 <Navbar />
             </header>
 
-            <section id='contactUsBackground' className="container-fluid" style={{ backgroundImage: `url(${contactUsBackground})` }}>
+            <section id='contact-us-banner' className="container-fluid" style={{ backgroundImage: `url(${bannerImage})` }}>
                 <h5 className='carousel-caption d-none d-md-block text-white fw-bold'>CONTACT US</h5>
             </section>
 
-            <section id='contactUs-grid' className='container'>
+            <section id='contact-us-grid' className='container'>
                 <div className='row'>
                     <div className="col-md-4">
                         <div style={{ boxShadow: '5px 5px 30px gray', maxWidth: "540px" }} className="card rounded-3 px-4 pt-2 mb-3">
                             <div className="row g-0">
-                                <div className="contactUs-cardBackground col-3 d-flex justify-content-center align-items-center">
+                                <div className="contact-us-card-background col-3 d-flex justify-content-center align-items-center">
                                     <div>
                                         <FontAwesomeIcon className='fs-3 text-muted' icon={faLocationDot} />
                                     </div>
@@ -46,7 +47,7 @@ const ContactUs = () => {
                     <div className="col-md-4">
                         <div style={{ boxShadow: '5px 5px 30px gray', maxWidth: "540px" }} className="card rounded-3 px-4 pt-2 mb-3">
                             <div className="row g-0">
-                                <div className="contactUs-cardBackground col-3 d-flex justify-content-center align-items-center">
+                                <div className="contact-us-card-background col-3 d-flex justify-content-center align-items-center">
                                     <div>
                                         <FontAwesomeIcon className='fs-3 text-muted' icon={faClock} />
                                     </div>
@@ -68,7 +69,7 @@ const ContactUs = () => {
                     <div className="col-md-4">
                         <div style={{ boxShadow: '5px 5px 30px gray', maxWidth: "540px" }} className="card rounded-3 px-4 pt-2 mb-3">
                             <div className="row g-0">
-                                <div className="contactUs-cardBackground col-3 d-flex justify-content-center align-items-center">
+                                <div className="contact-us-card-background col-3 d-flex justify-content-center align-items-center">
                                     <div>
                                         <FontAwesomeIcon className='fs-3 text-muted' icon={faLayerGroup} />
                                     </div>
@@ -90,7 +91,7 @@ const ContactUs = () => {
                 </div>
             </section>
 
-            <section id='leaveMessage' className='container py-5'>
+            <section id='leave-message' className='container py-5'>
                 <h5 className='fw-bold py-3'>LEAVE A MESSAGE</h5>
                 <form className='row'>
                     <div className="mb-3 col-md-4">

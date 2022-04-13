@@ -1,23 +1,24 @@
 import React from 'react';
 import './MyAccount.css';
 import Navbar from '../../Shared/Navbar/Navbar';
-import myAccountBanner from '../../../images/shop-tab/shop-tab.jpg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGoogle, faFacebookF } from '@fortawesome/free-brands-svg-icons';
 import Footer from '../../Shared/Footer/Footer';
 
 const MyAccount = () => {
+    const bannerImage = 'https://res.cloudinary.com/dn9k2jkdd/image/upload/v1649786144/testo-burger-project/shop-tab/shop-tab_j7hrho.jpg';
+
     return (
-        <section id='myAccount'>
+        <section id='my-account'>
             <header style={{ position: 'relative' }} className="container">
                 <Navbar />
             </header>
 
-            <section id='myAccountBanner' className="container-fluid" style={{ backgroundImage: `url(${myAccountBanner})` }}>
+            <section id='my-account-banner' className="container-fluid" style={{ backgroundImage: `url(${bannerImage})` }}>
                 <h5 className='carousel-caption d-none d-md-block text-white fw-bold'>MY ACCOUNT</h5>
             </section>
 
-            <section id='userInfo' className='container'>
+            <section id='user-info' className='container'>
                 <div className="row">
                     <div className="col-md-6">
                         <h5 style={{ fontFamily: 'Oswald, sans-serif', fontSize: '2rem' }} className='py-4'>Login</h5>

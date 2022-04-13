@@ -3,7 +3,6 @@ import Navbar from '../../Shared/Navbar/Navbar';
 import './AllItems.css';
 // import axios from 'axios';
 import fakeData from '../../fakeData';
-import allItemsBanner from '../../../images/shop-tab/shop-tab.jpg';
 import FoodItems from './FoodItems/FoodItems';
 import Pagination from './Pagination/Pagination';
 import Footer from '../../Shared/Footer/Footer';
@@ -11,6 +10,8 @@ import Footer from '../../Shared/Footer/Footer';
 //All the custom CSS class is used from MainMenu.css. The styling is identical, hence I didn't make separate classes for the same styling for this component.
 
 const AllItems = () => {
+
+    const bannerImage = 'https://res.cloudinary.com/dn9k2jkdd/image/upload/v1649786144/testo-burger-project/shop-tab/shop-tab_j7hrho.jpg';
 
     const [foodItems, setFoodItems] = useState([]);
     const [loading, setLoading] = useState(false);
@@ -52,16 +53,16 @@ const AllItems = () => {
     };
 
     return (
-        <section id='allItems'>
+        <section id='all-items'>
             <header style={{ position: 'relative' }} className="container">
                 <Navbar />
             </header>
 
-            <section id='allItemsBanner' className="container-fluid" style={{ backgroundImage: `url(${allItemsBanner})` }}>
+            <section id='all-items-banner' className="container-fluid" style={{ backgroundImage: `url(${bannerImage})` }}>
                 <h5 className='carousel-caption d-none d-md-block text-white fw-bold'>ALL ITEMS</h5>
             </section>
 
-            <section id='allItemsGrid' className='container'>
+            <section id='all-items-grid' className='container'>
                 <p className='pt-3'>Showing <span className='fw-bold text-danger'>{indexOfFirstFoodItem + 1} - {(currentPage <= 2) ? indexOfLastFoodItem : (foodItems.length - indexOfFirstFoodItem) + indexOfFirstFoodItem}</span> of {foodItems.length} results</p>
                 <hr />
                 <div className="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4 mt-2">

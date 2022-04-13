@@ -1,4 +1,4 @@
-#allItemsBanner {
+#all-items-banner {
     margin-bottom: 70px;
     max-width: 100vw;
     background-position: center;
@@ -6,13 +6,13 @@
     height: 410px;
 }
 
-#allItemsBanner h5 {
+#all-items-banner h5 {
     font-size: 4rem;
     font-family: 'Oswald', sans-serif;
     margin-bottom: 22rem;
 }
 
-#allItemsGrid {
+#all-items-grid {
     font-family: 'Roboto', sans-serif;
     margin-top: 100px;
     margin-bottom: 70px;

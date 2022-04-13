@@ -1,7 +1,6 @@
 import React from 'react';
 import Navbar from '../Shared/Navbar/Navbar';
 import './Cart.css';
-import cartBanner from '../../images/cart/cart-page.jpg';
 import fakeData from '../fakeData';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrashCan } from '@fortawesome/free-solid-svg-icons';
@@ -9,6 +8,7 @@ import MobileApp from '../Shared/MobileApp/MobileApp';
 import Footer from '../Shared/Footer/Footer';
 
 const Cart = () => {
+    const bannerImage = 'https://res.cloudinary.com/dn9k2jkdd/image/upload/v1649786139/testo-burger-project/cart/cart-page_npf8up.jpg';
 
     const productData = fakeData.slice(0, 2);
     console.log(productData);
@@ -18,7 +18,7 @@ const Cart = () => {
                 <Navbar />
             </header>
 
-            <section id='cart-banner' className="container-fluid" style={{ backgroundImage: `url(${cartBanner})` }}>
+            <section id='cart-banner' className="container-fluid" style={{ backgroundImage: `url(${bannerImage})` }}>
                 <h5 className='carousel-caption d-none d-md-block text-white fw-bold'>SHOPPING CART</h5>
             </section>
 

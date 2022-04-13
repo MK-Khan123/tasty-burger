@@ -1,18 +1,20 @@
 import React from 'react';
 import Navbar from '../../Shared/Navbar/Navbar';
 import './FAQs.css';
-import faqsBackground from '../../../images/faqs/faqs-page.jpg';
 import Subscription from '../../Shared/Subscription/Subscription';
 import Footer from '../../Shared/Footer/Footer';
 
 const FAQs = () => {
+
+    const bannerImage = 'https://res.cloudinary.com/dn9k2jkdd/image/upload/v1649786139/testo-burger-project/faqs/faqs-page_nlurqn.jpg';
+
     return (
         <section id='FAQs'>
             <header style={{ position: 'relative' }} className="container">
                 <Navbar />
             </header>
 
-            <section id='faqsBackground' className="container-fluid" style={{ backgroundImage: `url(${faqsBackground})` }}>
+            <section id='faqs-banner' className="container-fluid" style={{ backgroundImage: `url(${bannerImage})` }}>
                 <h5 className='carousel-caption d-none d-md-block text-white fw-bold'>F.A.Q.S</h5>
             </section>
 

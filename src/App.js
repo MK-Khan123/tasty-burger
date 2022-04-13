@@ -12,6 +12,7 @@ import MainMenu from './components/MainMenu/MainMenu';
 import AllItems from './components/Shop/AllItems/AllItems';
 import ProductDetails from './components/Shop/ProductDetails/ProductDetails';
 import Cart from './components/Cart/Cart';
+import AdminPanel from './components/AdminPanel/AdminPanel';
 
 
 function App() {
@@ -29,18 +30,20 @@ function App() {
         <Route path="/faqs" element={<FAQs />} />
 
         <Route path="/terms-privacy" element={<TermsAndPrivacy />} />
-        
+
         <Route path="/main-menu" element={<MainMenu />} />
-        
+
         <Route path="/all-items" element={<AllItems />} />
-        
+
         <Route path="/single-product" element={<ProductDetails />} />
-        
+
         <Route path="/my-account" element={<MyAccount />} />
 
         <Route path="/reserve-a-table" element={<ReserveTable />} />
 
         <Route path="/contact-us" element={<ContactUs />} />
+
+        <Route path="/admin" element={<AdminPanel />} />
 
         <Route path="/cart" element={<Cart />} />
       </Routes>

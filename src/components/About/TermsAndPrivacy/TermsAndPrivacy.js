@@ -2,21 +2,22 @@ import React from 'react';
 import Delivery from '../../Shared/Delivery/Delivery';
 import Navbar from '../../Shared/Navbar/Navbar';
 import './TermsAndPrivacy.css';
-import termsAndPrivacyBackground from '../../../images/terms-and-privacy/terms-page.jpg';
 import Footer from '../../Shared/Footer/Footer';
 
 const TermsAndPrivacy = () => {
+    const bannerImage = 'https://res.cloudinary.com/dn9k2jkdd/image/upload/v1649786145/testo-burger-project/terms-and-privacy/terms-page_jucdxr.jpg';
+
     return (
-        <section id='termsAndPrivacy'>
+        <section id='terms-and-privacy'>
             <header style={{ position: 'relative' }} className="container">
                 <Navbar />
             </header>
 
-            <section id='termsAndPrivacyBackground' className="container-fluid" style={{ backgroundImage: `url(${termsAndPrivacyBackground})` }}>
+            <section id='terms-and-privacy-banner' className="container-fluid" style={{ backgroundImage: `url(${bannerImage})` }}>
                 <h5 className='carousel-caption d-none d-md-block text-white fw-bold'>TERMS AND PRIVACY</h5>
             </section>
 
-            <main id='termsAndPrivacyDocument' className="container">
+            <main id='terms-and-privacy-document' className="container">
                 <p>Donec sodales, nibh vel (the <span className='fw-bold text-dark'>“Terms”</span>) tristique aliquet, nisi libero suscipit diam, sed tempus ante nulla ut purus. Donec dolor magna, suscipit in magna dignissim, porttitor hendrerit diam. Nunc gravida ultrices felis eget faucibus. Aliquet lorem purus, quis mollis nisi laoreet at vitae. Mauris consequat tortor. Duis fermentum a massa in convallis ultrices interdum.</p>
                 <p>Sagittis congue augue egestas volutpat egestas magna suscipit egestas magna ipsum vitae purus efficitur ipsum primis in cubilia laoreet augue egestas luctus donec diam. Curabitur undo dapibus libero. Quisque eu tristique neque blandit tristique justo aliquam. Aliquam molestie nunc sapien justo, aliquet non molestie sed, venenatis nec purus. Aliquam eget lacinia elit. Vestibulum tincidunt tincidunt massa, et porttitor justo suscipit in magna dignissim</p>
                 <div>

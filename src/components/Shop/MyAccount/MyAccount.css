@@ -1,4 +1,4 @@
-#myAccountBanner {
+#my-account-banner {
     margin-bottom: 70px;
     max-width: 100vw;
     background-position: center;
@@ -6,13 +6,13 @@
     height: 410px;
 }
 
-#myAccountBanner h5 {
+#my-account-banner h5 {
     font-size: 4rem;
     font-family: 'Oswald', sans-serif;
     margin-bottom: 22rem;
 }
 
-#userInfo {
+#user-info {
     margin-top: 100px;
     margin-bottom: 70px;
     font-family: 'Roboto', sans-serif;

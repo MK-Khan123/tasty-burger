@@ -3,7 +3,7 @@
     margin-bottom: 70px;
 }
 
-.introFont h5 {
+.intro-font h5 {
     font-family: 'Oswald', sans-serif;
     font-weight: 600;
     font-size: 52px;
@@ -11,18 +11,18 @@
     line-height: 1.35;
 }
 
-.introFont > p {
+.intro-font>p {
     font-family: 'Roboto', sans-serif;
     font-size: 18px;
     line-height: 1.5;
 }
 
-.introIcon-size {
+.intro-icon-size {
     max-width: 70px;
     height: auto;
 }
 
-.introIcon-font {
+.intro-icon-font {
     font-family: 'Oswald', sans-serif;
     font-weight: 600;
     font-size: 18px;
@@ -30,7 +30,7 @@
     padding-top: 10px;
 }
 
-.textInsideImage {
+.text-inside-image {
     font-family: 'Oswald', sans-serif;
     font-size: 2em;
     color: #6F5E4D;

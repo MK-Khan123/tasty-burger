@@ -1,20 +1,20 @@
-#imageGallery {
+#image-gallery {
     margin-top: 100px;
     margin-bottom: 70px;
 }
 
-#imageGallery > h5 {
+#image-gallery>h5 {
     font-family: 'Oswald', sans-serif;
     font-size: 3.75em;
     color: #E3000E;
 }
 
-#imageGallery > p {
+#image-gallery>p {
     font-family: 'Roboto', sans-serif;
     padding: 0 20%;
 }
 
-.cardTitle-alignment {
+.card-title-alignment {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -22,21 +22,21 @@
     height: 100%;
 }
 
-.cardHover {
+.card-hover {
     width: 100%;
     height: 100%;
     display: none;
 }
 
-.galleryImageHover {
+.gallery-image-hover {
     transition: all 1s;
 }
 
-.imageGallery-card:hover .cardHover{
+.image-gallery-card:hover .card-hover {
     display: block;
 }
 
-.imageGallery-card:hover .galleryImageHover{
+.image-gallery-card:hover .gallery-image-hover {
     transform: scale(1.2);
     filter: brightness(40%);
 }

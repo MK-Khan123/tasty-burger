@@ -1,11 +1,12 @@
 import React from 'react';
 import './Footer.css';
-import logo from '../../../images/logo.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTwitter, faWhatsapp, faFacebookF, faYoutube, faInstagram } from '@fortawesome/free-brands-svg-icons';
 import { Link } from 'react-router-dom';
 
 const Footer = () => {
+    const logo = 'https://res.cloudinary.com/dn9k2jkdd/image/upload/v1649786132/testo-burger-project/logo_lipngj.png';
+
     return (
         <section id='footer' className='container'>
             <div className='text-center'>

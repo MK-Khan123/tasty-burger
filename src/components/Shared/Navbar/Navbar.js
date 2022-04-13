@@ -1,11 +1,12 @@
 import React from 'react';
-import logo from '../../../images/logo.png';
 import { Link } from "react-router-dom";
 import "./Navbar.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 
 const Navbar = () => {
+    const logo = 'https://res.cloudinary.com/dn9k2jkdd/image/upload/v1649786132/testo-burger-project/logo_lipngj.png';
+
     return (
         <nav style={{backgroundColor: 'rgba(255, 255, 255, 0)'}} id='navigationBar' className="navbar navbar-expand-lg">
             <div className="container-fluid">
@@ -52,6 +53,9 @@ const Navbar = () => {
                                 <li><Link className="dropdown-item" to="/reserve-a-table">Reserve a Table</Link></li>
                                 <li><Link className="dropdown-item" to="/contact-us">Contact Us</Link></li>
                             </ul>
+                        </li>
+                        <li className="nav-item mx-2">
+                            <Link className="nav-link navFont" to="/admin">ADMIN</Link>
                         </li>
                         <li>
                             <a className='text-decoration-none text-warning mx-3 fs-3 fw-bold' href="tel:789-654-3210">789-654-3210</a>

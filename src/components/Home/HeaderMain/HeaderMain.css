@@ -1,15 +1,15 @@
-.carouselFonts h5 {
+.carousel-fonts h5 {
     font-family: 'Lilita One', cursive;
     font-size: 7.25rem;
     line-height: 1.1;
     letter-spacing: 3px;
 }
 
-.carouselFonts p {
+.carousel-fonts p {
     font-family: 'Oswald', sans-serif;
     font-size: 1.75rem;
 }
 
-.carouselFonts {
+.carousel-fonts {
     margin-bottom: 100px;
 }

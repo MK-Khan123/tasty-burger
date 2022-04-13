@@ -1,4 +1,4 @@
-#teamBackground {
+#team-banner {
     margin-bottom: 70px;
     max-width: 100vw;
     background-position: center;
@@ -6,41 +6,41 @@
     height: 410px;
 }
 
-#teamBackground h5 {
+#team-banner h5 {
     font-size: 4rem;
     font-family: 'Oswald', sans-serif;
     margin-bottom: 22rem;
 }
 
-#teamGrid {
+#team-grid {
     margin-top: 100px;
     margin-bottom: 70px;
 }
 
-.memberName {
+.member-name {
     font-family: 'Oswald', sans-serif;
     font-size: 1.25rem;
     color: #642F21;
 }
 
-.memberTitle {
+.member-title {
     font-family: 'Roboto', sans-serif;
     font-size: 1.25rem;
     color: #F7BE27;
 }
 
-.teamCardHover:hover .teamCard-icons {
+.team-card-hover:hover .team-card-icons {
     display: block;
 }
 
-.teamCardHover:hover .teamCard-image {
+.team-card-hover:hover .team-card-image {
     filter: brightness(60%);
 }
 
-.teamCard-icons {
+.team-card-icons {
     display: none;
 }
 
-.teamCard-image {
+.team-card-image {
     transition: all 1s;
 }

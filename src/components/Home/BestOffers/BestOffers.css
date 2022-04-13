@@ -1,37 +1,37 @@
-#bestOffers {
+#best-offers {
     margin-top: 100px;
     margin-bottom: 70px;
 }
 
-#bestOffers > h5 {
+#best-offers>h5 {
     font-family: 'Oswald', sans-serif;
     font-size: 3.75em;
     color: #E3000E;
 }
 
-#bestOffers > p {
+#best-offers>p {
     font-family: 'Roboto', sans-serif;
     padding: 0 20%;
 }
 
-.priceTag {
+.price-tag {
     font-family: 'Oswald', sans-serif;
     color: #E3000E;
 }
 
-.offerCard-body:hover .offerHover-image {
+.offer-card-body:hover .offer-hover-image {
     transform: scale(1.2);
 }
 
-.offerCard-body:hover .offerHover-button {
+.offer-card-body:hover .offer-hover-button {
     display: block;
 }
 
-.offerHover-button {
+.offer-hover-button {
     font-family: 'Oswald', sans-serif;
     display: none;
 }
 
-.offerHover-image {
+.offer-hover-image {
     transition: all 800ms;
 }

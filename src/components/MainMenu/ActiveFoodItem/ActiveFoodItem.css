@@ -1,33 +1,33 @@
-.mainMenu-heartIcon:hover {
+.main-menu-heart-icon:hover {
     transition: all 1s;
     color: #E3000E;
 }
 
-.mainMenu-cardTitle {
+.main-menu-card-title {
     font-family: 'Oswald', sans-serif;
     color: #642F21;
 }
 
-.mainMenu-cardBody:hover .mainMenu-cardButton2 {
+.main-menu-card-body:hover .main-menu-card-button2 {
     display: block;
 }
 
-.mainMenu-cardBody:hover .mainMenu-cardImage {
+.main-menu-card-body:hover .main-menu-card-image {
     transform: scale(1.2);
 }
 
-.mainMenu-cardImage {
+.main-menu-card-image {
     transition: all 800ms;
 }
 
-.mainMenu-cardButton1 {
+.main-menu-card-button1 {
     font-family: 'Oswald', sans-serif;
     background-color: #642F21;
     color: #F7BE27;
     font-weight: 600;
 }
 
-.mainMenu-cardButton2 {
+.main-menu-card-button2 {
     font-family: 'Oswald', sans-serif;
     display: none;
 }

@@ -7,13 +7,17 @@ import { Parallax, Autoplay, Pagination, Navigation } from "swiper";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 import './Reviews.css';
-import review1 from '../../../images/reviews/review1.jpg';
-import review2 from '../../../images/reviews/review2.jpg';
-import review3 from '../../../images/reviews/review3.jpg';
-import review4 from '../../../images/reviews/review4.jpg';
-import reviewBackground from '../../../images/reviews/reviews.jpg';
 
 const Reviews = () => {
+    const reviewBackground = 'https://res.cloudinary.com/dn9k2jkdd/image/upload/v1649786144/testo-burger-project/reviews/reviews_s7tyat.jpg';
+
+    const images = {
+        review1: 'https://res.cloudinary.com/dn9k2jkdd/image/upload/v1649786143/testo-burger-project/reviews/review1_sgjcmb.jpg',
+        review2: 'https://res.cloudinary.com/dn9k2jkdd/image/upload/v1649786143/testo-burger-project/reviews/review2_hvb8a7.jpg',
+        review3: 'https://res.cloudinary.com/dn9k2jkdd/image/upload/v1649786143/testo-burger-project/reviews/review3_nufyyg.jpg',
+        review4: 'https://res.cloudinary.com/dn9k2jkdd/image/upload/v1649786143/testo-burger-project/reviews/review4_hc1rtt.jpg'
+    };
+
     return (
         <section id='reviews'>
             <Swiper
@@ -46,7 +50,7 @@ const Reviews = () => {
                 ></div>
                 <SwiperSlide>
                     <div className="title" data-swiper-parallax="-300">
-                        <img className='reviewImage' src={review1} alt="" />
+                        <img className='review-image' src={images.review1} alt="" />
                     </div>
                     <div className="subtitle" data-swiper-parallax="-200">
                         <p>
@@ -65,7 +69,7 @@ const Reviews = () => {
                 </SwiperSlide>
                 <SwiperSlide>
                     <div className="title" data-swiper-parallax="-300">
-                        <img className='reviewImage' src={review2} alt="" />
+                        <img className='review-image' src={images.review2} alt="" />
                     </div>
                     <div className="subtitle" data-swiper-parallax="-200">
                         <p>
@@ -84,7 +88,7 @@ const Reviews = () => {
                 </SwiperSlide>
                 <SwiperSlide>
                     <div className="title" data-swiper-parallax="-300">
-                        <img className='reviewImage' src={review3} alt="" />
+                        <img className='review-image' src={images.review3} alt="" />
                     </div>
                     <div className="subtitle" data-swiper-parallax="-200">
                         <p>
@@ -103,7 +107,7 @@ const Reviews = () => {
                 </SwiperSlide>
                 <SwiperSlide>
                     <div className="title" data-swiper-parallax="-300">
-                        <img className='reviewImage' src={review4} alt="" />
+                        <img className='review-image' src={images.review4} alt="" />
                     </div>
                     <div className="subtitle" data-swiper-parallax="-200">
                         <p>
