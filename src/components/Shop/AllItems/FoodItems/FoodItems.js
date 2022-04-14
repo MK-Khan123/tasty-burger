@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBagShopping } from '@fortawesome/free-solid-svg-icons';
 import { faHeart, faStar } from '@fortawesome/free-regular-svg-icons';
 import { Flip } from 'react-reveal';
+import { Link } from 'react-router-dom';
 
 const FoodItems = ({ currentFoodItems, loading }) => {
 
@@ -17,8 +18,8 @@ const FoodItems = ({ currentFoodItems, loading }) => {
     }
 
     return (
-        currentFoodItems.map(food => {
-            const { name, image, briefInfo, price } = food;
+        currentFoodItems?.map(food => {
+            const { name, image, briefInfo, price, _id } = food;
             return (
                 <div className="col main-menu-card-body">
                     <div className="card h-100">
@@ -40,7 +41,9 @@ const FoodItems = ({ currentFoodItems, loading }) => {
                                             <FontAwesomeIcon className='p-1 fs-4 main-menu-heart-icon' icon={faHeart} />
                                         </div>
                                     </div>
-                                    <h5 className="card-title text-uppercase main-menu-card-title mt-2 fw-bold">{name}</h5>
+                                    <Link className='text-decoration-none' to={`/product-details/${_id}`}>
+                                        <h5 className="card-title text-uppercase main-menu-card-title mt-2 fw-bold">{name}</h5>
+                                    </Link>
                                     <p className="card-text text-muted">{briefInfo}</p>
                                 </div>
                                 <div className='d-flex justify-content-between'>

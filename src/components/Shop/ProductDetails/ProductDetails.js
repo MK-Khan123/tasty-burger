@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Navbar from '../../Shared/Navbar/Navbar';
 import './ProductDetails.css';
 import fakeData from '../../fakeData';
@@ -7,15 +7,33 @@ import { faShoppingBag, faStar } from '@fortawesome/free-solid-svg-icons';
 import { faFacebook, faLinkedin, faPinterest, faTwitter } from '@fortawesome/free-brands-svg-icons';
 import RelatedProducts from './RelatedProducts/RelatedProducts';
 import Footer from '../../Shared/Footer/Footer';
+import { useParams } from 'react-router-dom';
 
 const ProductDetails = () => {
 
     const bannerImage = 'https://res.cloudinary.com/dn9k2jkdd/image/upload/v1649786144/testo-burger-project/shop-tab/shop-tab_j7hrho.jpg';
-    const soughBurger = fakeData.find(product => product.id === 'BGX09');
-    const { name, price, briefInfo, description, category, image, star, starCount } = soughBurger;
+
+    const { id } = useParams();
+    console.log(id);
+    const [productDetails, setProductDetails] = useState({});
+    const [relatedProducts, setRelatedProducts] = useState([]);
+
+    useEffect(() => {
+        fetch(`http://localhost:5000/productDetails/${id}`)
+            .then(res => res.json())
+            .then(data => setProductDetails(data));
+    }, [id]);
+
+    const { name, price, briefInfo, description, category, image, star, starCount } = productDetails;
 
     //To dynamically show the related products in related products section according to category
-    const [relatedProducts] = useState(fakeData.filter(pd => pd.category === category));
+    useEffect(() => {
+        fetch(`http://localhost:5000/products/${category}`)
+            .then(res => res.json())
+            .then(data => setRelatedProducts(data));
+    }, [category]);
+
+    // const [relateProducts] = useState(fakeData.filter(pd => pd.category === category));
     const firstFewRelatedProducts = relatedProducts.slice(0, 4);
 
     //To show the ratings of the product dynamically, using FontAwesome Icon
@@ -31,13 +49,13 @@ const ProductDetails = () => {
             </header>
 
             <section id='product-details-banner' className="container-fluid" style={{ backgroundImage: `url(${bannerImage})` }}>
-                <h5 className='carousel-caption d-none d-md-block text-white fw-bold'>ALL ITEMS</h5>
+                <h5 className='carousel-caption d-none d-md-block text-white fw-bold'>PRODUCT DETAILS</h5>
             </section>
 
             <section className='container'>
                 <div className="row">
                     <div className="col-12 col-md-7">
-                        <img className='img-fluid' src={image} alt="" />
+                        <img style={{ borderRadius: '15px' }} className='img-fluid' src={image} alt="" />
                     </div>
                     <div className="col-12 col-md-5 mt-4 product-details-description">
                         <h4 className='text-uppercase fw-bold'>{name}</h4>

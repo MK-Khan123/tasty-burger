@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Navbar from '../Shared/Navbar/Navbar';
 import './MainMenu.css';
-import foodData from '../fakeData';
 import ActiveFoodItem from './ActiveFoodItem/ActiveFoodItem';
 import Delivery from '../Shared/Delivery/Delivery';
 import Footer from '../Shared/Footer/Footer';
@@ -19,14 +18,14 @@ const MainMenu = () => {
 
     const bannerImage = 'https://res.cloudinary.com/dn9k2jkdd/image/upload/v1649786143/testo-burger-project/main-menu/menu-page_usa15j.jpg';
 
-    const [burgerData] = useState(foodData.filter(pd => pd.category === 'burger'));
-    const [dessertData] = useState(foodData.filter(pd => pd.category === 'desserts'));
-    const [pastaData] = useState(foodData.filter(pd => pd.category === 'pasta'));
-    const [pizzaData] = useState(foodData.filter(pd => pd.category === 'pizza'));
-    const [saladData] = useState(foodData.filter(pd => pd.category === 'salads'));
-    const [sidesData] = useState(foodData.filter(pd => pd.category === 'sides'));
+    const [foodCategory, setFoodCategory] = useState('burger');
+    const [activeFoodData, setActiveFoodData] = useState([]);
 
-    const [activeFoodData, setActiveFoodData] = useState(burgerData);
+    useEffect(() => {
+        fetch(`http://localhost:5000/products/${foodCategory}`)
+        .then(res => res.json())
+        .then(data => setActiveFoodData(data));
+    }, [foodCategory]);    
 
     return (
         <section id='main-menu'>
@@ -40,27 +39,27 @@ const MainMenu = () => {
 
             <section id='main-menu-icons' className='container-fluid'>
                 <div style={{ padding: '0 10%' }} className="row row-cols-2 row-cols-sm-3 row-cols-md-6">
-                    <div className='col text-center' role='button' onClick={() => setActiveFoodData(burgerData)}>
+                    <div className='col text-center' role='button' onClick={() => setFoodCategory('burger')}>
                         <img className='main-menu-icon-size m-3' src={icons.burger} alt="" />
                         <h5>BURGERS</h5>
                     </div>
-                    <div className='col text-center' role='button' onClick={() => setActiveFoodData(dessertData)}>
+                    <div className='col text-center' role='button' onClick={() => setFoodCategory('dessert')}>
                         <img className='main-menu-icon-size m-3' src={icons.dessert} alt="" />
                         <h5>DESSERT</h5>
                     </div>
-                    <div className='col text-center' role='button' onClick={() => setActiveFoodData(pastaData)}>
+                    <div className='col text-center' role='button' onClick={() => setFoodCategory('pasta')}>
                         <img className='main-menu-icon-size m-3' src={icons.pasta} alt="" />
                         <h5>PASTA</h5>
                     </div>
-                    <div className='col text-center' role='button' onClick={() => setActiveFoodData(pizzaData)}>
+                    <div className='col text-center' role='button' onClick={() => setFoodCategory('pizza')}>
                         <img className='main-menu-icon-size m-3' src={icons.pizza} alt="" />
                         <h5>PIZZA</h5>
                     </div>
-                    <div className='col text-center' role='button' onClick={() => setActiveFoodData(saladData)}>
+                    <div className='col text-center' role='button' onClick={() => setFoodCategory('salad')}>
                         <img className='main-menu-icon-size m-3' src={icons.salad} alt="" />
                         <h5>SALAD</h5>
                     </div>
-                    <div className='col text-center' role='button' onClick={() => setActiveFoodData(sidesData)}>
+                    <div className='col text-center' role='button' onClick={() => setFoodCategory('sides')}>
                         <img className='main-menu-icon-size m-3' src={icons.fries} alt="" />
                         <h5>SIDES</h5>
                     </div>

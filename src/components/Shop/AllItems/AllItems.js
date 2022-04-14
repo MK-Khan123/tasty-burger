@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Navbar from '../../Shared/Navbar/Navbar';
 import './AllItems.css';
-// import axios from 'axios';
-import fakeData from '../../fakeData';
 import FoodItems from './FoodItems/FoodItems';
 import Pagination from './Pagination/Pagination';
 import Footer from '../../Shared/Footer/Footer';
@@ -19,14 +17,10 @@ const AllItems = () => {
     const [foodItemsPerPage] = useState(12);
 
     useEffect(() => {
-        // const fetchFoodData = async () => {
-        //     setLoading(true);
-        //     const res = await axios.get(`${fakeData}`);
-        //     setFoodItems(res.data);
-        //     setLoading(false);
-        // }
         setLoading(true);
-        setFoodItems(fakeData);
+        fetch('http://localhost:5000/products')
+            .then(res => res.json())
+            .then(data => setFoodItems(data));
         setLoading(false);
     }, []);
 

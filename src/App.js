@@ -1,5 +1,5 @@
 import './App.css';
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import Home from './components/Home/Home/Home';
 import AboutTesto from './components/About/AboutTesto/AboutTesto';
 import Team from './components/About/Team/Team';
@@ -19,7 +19,7 @@ function App() {
   return (
     <div>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Navigate to="/home" />} />
 
         <Route path="/home" element={<Home />} />
 
@@ -35,7 +35,7 @@ function App() {
 
         <Route path="/all-items" element={<AllItems />} />
 
-        <Route path="/single-product" element={<ProductDetails />} />
+        <Route path="/product-details/:id" element={<ProductDetails />} />
 
         <Route path="/my-account" element={<MyAccount />} />
 
