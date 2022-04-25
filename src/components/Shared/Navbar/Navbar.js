@@ -1,70 +1,339 @@
-import React from 'react';
-import { Link } from "react-router-dom";
+import React, { useState } from 'react';
+import AppBar from '@mui/material/AppBar';
+import Box from '@mui/material/Box';
+import Toolbar from '@mui/material/Toolbar';
+import IconButton from '@mui/material/IconButton';
+import Typography from '@mui/material/Typography';
+import Menu from '@mui/material/Menu';
+import MenuIcon from '@mui/icons-material/Menu';
+import Container from '@mui/material/Container';
+import Avatar from '@mui/material/Avatar';
+import Button from '@mui/material/Button';
+import Tooltip from '@mui/material/Tooltip';
+import MenuItem from '@mui/material/MenuItem';
 import "./Navbar.css";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
+import { NavLink } from 'react-router-dom';
 
 const Navbar = () => {
     const logo = 'https://res.cloudinary.com/dn9k2jkdd/image/upload/v1649786132/testo-burger-project/logo_lipngj.png';
 
+    const pages = [
+        {
+            id: 'PG01',
+            title: 'HOME'
+        },
+        {
+            id: 'PG02',
+            title: 'ABOUT'
+        },
+        {
+            id: 'PG03',
+            title: 'OUR MENU'
+        },
+        {
+            id: 'PG04',
+            title: 'SHOP'
+
+        },
+        {
+            id: 'PG05',
+            title: 'CONTACTS'
+
+        },
+        {
+            id: 'PG06',
+            title: 'ADMIN'
+        }
+    ];
+    const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+
+    const [anchorElNav, setAnchorElNav] = useState(null);
+    const [anchorElUser, setAnchorElUser] = useState(null);
+
+    const [anchorElShop, setAnchorElShop] = useState(null);
+    const [anchorElAbout, setAnchorElAbout] = useState(null);
+    const [anchorElContacts, setAnchorElContacts] = useState(null);
+
+
+    const openAbout = Boolean(anchorElAbout);
+    const openShop = Boolean(anchorElShop);
+    const openContacts = Boolean(anchorElContacts);
+
+    const handleClickAbout = (event) => {
+        setAnchorElAbout(event.currentTarget);
+    };
+
+    const handleCloseAbout = () => {
+        setAnchorElAbout(null);
+    };
+
+    const handleClickShop = (event) => {
+        setAnchorElShop(event.currentTarget);
+    };
+
+    const handleCloseShop = () => {
+        setAnchorElShop(null);
+    };
+
+    const handleClickContacts = (event) => {
+        setAnchorElContacts(event.currentTarget);
+    };
+
+    const handleCloseContacts = () => {
+        setAnchorElContacts(null);
+    };
+
+    const handleOpenNavMenu = (event) => {
+        console.log(event.currentTarget);
+        setAnchorElNav(event.currentTarget);
+    };
+
+    const handleCloseNavMenu = () => {
+        setAnchorElNav(null);
+    };
+
+    const handleOpenUserMenu = (event) => {
+        setAnchorElUser(event.currentTarget);
+    };
+
+    const handleCloseUserMenu = () => {
+        setAnchorElUser(null);
+    };
+
     return (
-        <nav style={{backgroundColor: 'rgba(255, 255, 255, 0)'}} id='navigationBar' className="navbar navbar-expand-lg">
-            <div className="container-fluid">
-                <Link className="navbar-brand" to="#">
-                    <img className='brandLogo' src={logo} alt="" />
-                </Link>
-                <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                    <span className="navbar-toggler-icon"></span>
-                </button>
-                <div className="collapse navbar-collapse justify-content-end navbarFonts" id="navbarNavDropdown">
-                    <ul className="navbar-nav align-items-center">
-                        <li className="nav-item mx-2">
-                            <Link className="nav-link navFont" aria-current="page" to="/home">HOME</Link>
-                        </li>
-                        <li className="nav-item mx-2 dropdown">
-                            <Link className="nav-link dropdown-toggle navFont" to="/about-testo" id="aboutDropdownLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                ABOUT
-                            </Link>
-                            <ul className="dropdown-menu" aria-labelledby="aboutDropdownLink">
-                                <li><Link className="dropdown-item" to="/about-testo">About Us</Link></li>
-                                <li><Link className="dropdown-item" to="/team">Meet the Team</Link></li>
-                                <li><Link className="dropdown-item" to="/faqs">F.A.Q.s</Link></li>
-                                <li><Link className="dropdown-item" to="/terms-privacy">Terms and Privacy</Link></li>
-                            </ul>
-                        </li>
-                        <li className="nav-item mx-2">
-                            <Link className="nav-link navFont" to="/main-menu">OUR MENU</Link>
-                        </li>
-                        <li className="nav-item mx-2 dropdown">
-                            <Link className="nav-link dropdown-toggle navFont" to="#" id="shopDropdownLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                SHOP
-                            </Link>
-                            <ul className="dropdown-menu" aria-labelledby="shopDropdownLink">
-                                <li><Link className="dropdown-item" to="/all-items">All Items</Link></li>
-                                <li><Link className="dropdown-item" to="/product-details/6256ddd6f67917cc7f07f8cf">Single Product</Link></li>
-                                <li><Link className="dropdown-item" to="/my-account">My Account</Link></li>
-                            </ul>
-                        </li>
-                        <li className="nav-item mx-2 dropdown navFont">
-                            <Link className="nav-link dropdown-toggle navFont" to="#" id="contactsDropdownLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                CONTACTS
-                            </Link>
-                            <ul className="dropdown-menu" aria-labelledby="contactsDropdownLink">
-                                <li><Link className="dropdown-item" to="/reserve-a-table">Reserve a Table</Link></li>
-                                <li><Link className="dropdown-item" to="/contact-us">Contact Us</Link></li>
-                            </ul>
-                        </li>
-                        <li className="nav-item mx-2">
-                            <Link className="nav-link navFont" to="/admin">ADMIN</Link>
-                        </li>
-                        <li>
-                            <a className='text-decoration-none text-warning mx-3 fs-3 fw-bold' href="tel:789-654-3210">789-654-3210</a>
-                        </li>
-                        <Link className='fs-4 shoppingCart-icon' to='/cart'><FontAwesomeIcon icon={faShoppingCart} /></Link>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+        <Box sx={{
+            position: 'relative',
+            top: '1.2rem'
+        }}>
+            <AppBar
+                sx={{
+                    '& .MuiButton-text': {
+                        fontFamily: 'Oswald, sans-serif'
+                    }
+                }}
+                style={{
+                    background: 'transparent',
+                    boxShadow: 'none'
+                }}
+                position="absolute"
+            >
+                <Container maxWidth="xl">
+                    <Toolbar disableGutters>
+                        <Typography
+                            variant="h6"
+                            noWrap
+                            component="div"
+                            sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
+                        >
+                            <img style={{ maxWidth: '120px', maxHeight: '100px' }} src={logo} alt="" />
+                        </Typography>
+
+                        <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+                            <IconButton
+                                size="large"
+                                aria-label="account of current user"
+                                aria-controls="menu-appbar"
+                                aria-haspopup="true"
+                                onClick={handleOpenNavMenu}
+                                color="inherit"
+                            >
+                                <MenuIcon />
+                            </IconButton>
+                            <Menu
+                                id="menu-appbar"
+                                anchorEl={anchorElNav}
+                                anchorOrigin={{
+                                    vertical: 'bottom',
+                                    horizontal: 'left',
+                                }}
+                                keepMounted
+                                transformOrigin={{
+                                    vertical: 'top',
+                                    horizontal: 'left',
+                                }}
+                                open={Boolean(anchorElNav)}
+                                onClose={handleCloseNavMenu}
+                                sx={{
+                                    display: { xs: 'block', md: 'none' },
+                                }}
+                            >   {/* This is where you start */}
+                                {pages.map((page) => (
+                                    <MenuItem key={page.id} onClick={handleCloseNavMenu}>
+                                        <Typography textAlign="center">{page.title}</Typography>
+                                    </MenuItem>
+                                ))}
+                            </Menu>
+                        </Box>
+
+                        <Typography
+                            variant="h6"
+                            noWrap
+                            component="div"
+                            sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}
+                        >
+                            LOGO
+                        </Typography>
+
+                        <Box sx={{ flexGrow: 1, justifyContent: 'end', alignItems: 'center', display: { xs: 'none', md: 'flex' } }}>
+
+                            {/* HOME SECTION */}
+                            <Box sx={{ my: 3, pr: 3, fontSize: '20px' }}>
+                                <NavLink to='/home' style={{ textDecoration: 'none', color: 'white' }}>
+                                    HOME
+                                </NavLink>
+                            </Box>
+
+                            {/* ABOUT SECTION */}
+                            <Box sx={{ my: 3, pr: 3 }}>
+                                <Button
+                                    id="navigation-button1"
+                                    aria-controls={openAbout ? 'basic-menu1' : undefined}
+                                    aria-haspopup="true"
+                                    aria-expanded={openAbout ? 'true' : undefined}
+                                    sx={{ color: 'white', fontSize: '20px' }}
+                                    onClick={handleClickAbout}
+                                >
+                                    ABOUT
+                                </Button>
+                                <Menu
+                                    id="basic-menu1"
+                                    anchorEl={anchorElAbout}
+                                    open={openAbout}
+                                    onClose={handleCloseAbout}
+                                    MenuListProps={{
+                                        'aria-labelledby': 'navigation-button1',
+                                    }}
+                                >
+                                    <MenuItem onClick={handleCloseAbout}>
+                                        <NavLink to='/about-testo' style={{ textDecoration: 'none' }}>About Us</NavLink>
+                                    </MenuItem>
+                                    <MenuItem onClick={handleCloseAbout}>
+                                        <NavLink to='/team' style={{ textDecoration: 'none' }}>Meet the Team</NavLink>
+                                    </MenuItem>
+                                    <MenuItem onClick={handleCloseAbout}>
+                                        <NavLink to='/faqs' style={{ textDecoration: 'none' }}>F.A.Q.s</NavLink>
+                                    </MenuItem>
+                                    <MenuItem onClick={handleCloseAbout}>
+                                        <NavLink to='/terms-privacy' style={{ textDecoration: 'none' }}>Terms and Privacy</NavLink>
+                                    </MenuItem>
+                                </Menu>
+                            </Box>
+
+                            {/* OUR MENU SECTION */}
+                            <Box sx={{ my: 3, pr: 3, fontSize: '20px' }}>
+                                <NavLink to='/main-menu' style={{ textDecoration: 'none', color: 'white' }}>
+                                    OUR MENU
+                                </NavLink>
+                            </Box>
+
+                            {/* SHOP SECTION */}
+                            <Box sx={{ my: 3, pr: 3 }}>
+                                <Button
+                                    id="navigation-button2"
+                                    aria-controls={openShop ? 'basic-menu2' : undefined}
+                                    aria-haspopup="true"
+                                    aria-expanded={openShop ? 'true' : undefined}
+                                    onClick={handleClickShop}
+                                    sx={{ color: 'white', fontSize: '20px' }}
+                                >
+                                    SHOP
+                                </Button>
+                                <Menu
+                                    id="basic-menu2"
+                                    anchorEl={anchorElShop}
+                                    open={openShop}
+                                    onClose={handleCloseShop}
+                                    MenuListProps={{
+                                        'aria-labelledby': 'navigation-button2',
+                                    }}
+                                >
+                                    <MenuItem onClick={handleCloseShop}>
+                                        <NavLink to='/all-items' style={{ textDecoration: 'none' }}>All Items</NavLink>
+                                    </MenuItem>
+                                    <MenuItem onClick={handleCloseShop}>
+                                        <NavLink to='/product-details' style={{ textDecoration: 'none' }}>Product Details</NavLink>
+                                    </MenuItem>
+                                    <MenuItem onClick={handleCloseShop}>
+                                        <NavLink to='/my-account' style={{ textDecoration: 'none' }}>My Account</NavLink>
+                                    </MenuItem>
+                                </Menu>
+                            </Box>
+
+                            {/* CONTACTS SECTION */}
+                            <Box sx={{ my: 3, pr: 3 }}>
+                                <Button
+                                    id="navigation-button5"
+                                    aria-controls={openContacts ? 'basic-menu5' : undefined}
+                                    aria-haspopup="true"
+                                    aria-expanded={openContacts ? 'true' : undefined}
+                                    onClick={handleClickContacts}
+                                    sx={{ color: 'white', fontSize: '20px' }}
+                                >
+                                    CONTACTS
+                                </Button>
+                                <Menu
+                                    id="basic-menu5"
+                                    anchorEl={anchorElContacts}
+                                    open={openContacts}
+                                    onClose={handleCloseContacts}
+                                    MenuListProps={{
+                                        'aria-labelledby': 'navigation-button5',
+                                    }}
+                                >
+                                    <MenuItem onClick={handleCloseContacts}>
+                                        <NavLink to='/reserve-a-table' style={{ textDecoration: 'none' }}>Reserve a Table</NavLink>
+                                    </MenuItem>
+                                    <MenuItem onClick={handleCloseContacts}>
+                                        <NavLink to='/contact-us' style={{ textDecoration: 'none' }}>Contact Us</NavLink>
+                                    </MenuItem>
+                                </Menu>
+                            </Box>
+
+                            {/* ADMIN SECTION */}
+                            <Box sx={{ my: 3, pr: 3, fontSize: '20px' }}>
+                                <NavLink to='/admin' style={{ textDecoration: 'none', color: 'white' }}>
+                                    ADMIN
+                                </NavLink>
+                            </Box>
+                        </Box>
+
+                        {/* --------------------------------------------------------------------------------------------- */}
+
+                        {/* THESE ARE USER SETTINGS OPTIONS */}
+
+                        <Box sx={{ flexGrow: 0 }}>
+                            <Tooltip title="Open settings">
+                                <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
+                                    <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+                                </IconButton>
+                            </Tooltip>
+                            <Menu
+                                sx={{ mt: '45px' }}
+                                id="menu-appbar"
+                                anchorEl={anchorElUser}
+                                anchorOrigin={{
+                                    vertical: 'top',
+                                    horizontal: 'right',
+                                }}
+                                keepMounted
+                                transformOrigin={{
+                                    vertical: 'top',
+                                    horizontal: 'right',
+                                }}
+                                open={Boolean(anchorElUser)}
+                                onClose={handleCloseUserMenu}
+                            >
+                                {settings.map((setting) => (
+                                    <MenuItem key={setting} onClick={handleCloseUserMenu}>
+                                        <Typography textAlign="center">{setting}</Typography>
+                                    </MenuItem>
+                                ))}
+                            </Menu>
+                        </Box>
+                    </Toolbar>
+                </Container>
+            </AppBar>
+        </Box >
     );
 };
 

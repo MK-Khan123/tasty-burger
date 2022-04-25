@@ -23,11 +23,6 @@
     width: 100%; /*I had to apply width 100% here manually. Why?*/
 }
 
-.brandLogo {
-    max-width: 120px;
-    max-height: 100px;
-}
-
 .shoppingCart-icon {
     color: white;
     cursor: pointer;

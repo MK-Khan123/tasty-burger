@@ -17,7 +17,7 @@ import AdminPanel from './components/AdminPanel/AdminPanel';
 
 function App() {
   return (
-    <div>
+    <div className='App'>
       <Routes>
         <Route path="/" element={<Navigate to="/home" />} />
 
