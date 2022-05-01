@@ -7,7 +7,7 @@ const AboutIntro = () => {
     const introImage = `https://res.cloudinary.com/dn9k2jkdd/image/upload/v1649786131/testo-burger-project/about-01-img_gvpwo7.png`;
 
     return (
-        <section id='about-background-intro'>
+        <section id='about-intro'>
             <Container>
                 <Grid py={9} container columnSpacing={8}>
                     <Grid item md={6}>
@@ -16,12 +16,14 @@ const AboutIntro = () => {
                     <Grid item md={6}>
                         <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', height: '100%' }}>
                             <Box>
-                                <Box component='h5' sx={{
-                                    fontWeight: '700',
-                                    fontSize: '3.25rem',
-                                    color: '#642F21',
-                                    lineHeight: '1.35'
-                                }}>
+                                <Box
+                                    component='h5'
+                                    sx={{
+                                        fontWeight: '700',
+                                        fontSize: '3.25rem',
+                                        color: '#642F21',
+                                        lineHeight: '1.35'
+                                    }}>
                                     NOTHING BRINGS PEOPLE TOGETHER LIKE A GOOD BURGER
                                 </Box>
                                 <Box

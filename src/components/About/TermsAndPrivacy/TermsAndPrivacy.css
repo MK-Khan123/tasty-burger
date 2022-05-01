@@ -1,31 +1,17 @@
-#terms-and-privacy-banner {
-    margin-bottom: 70px;
-    max-width: 100vw;
-    background-position: center;
-    background-size: cover;
-    height: 410px;
-}
-
-#terms-and-privacy-banner h5 {
-    font-size: 4rem;
-    font-family: 'Oswald', sans-serif;
-    margin-bottom: 22rem;
-}
-
-#terms-and-privacy-document {
-    padding: 0 15%;
+#terms-and-privacy-document {    
+    padding: 6.25rem 15% 0 15%;
 }
 
 #terms-and-privacy-document h5 {
-    font-family: 'Oswald', sans-serif;
-    font-size: 1.5rem;
-    font-weight: 600;
+    font-size: 1.8rem;
+    font-weight: 500;
     color: #642F21;
     padding: 1.5% 0;
 }
 
 #terms-and-privacy-document p {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', sans-serif;    
+    font-weight: 300;
     color: gray;
     line-height: 1.6;
 }
