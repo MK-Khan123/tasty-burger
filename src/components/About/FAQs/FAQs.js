@@ -3,6 +3,7 @@ import Navbar from '../../Shared/Navbar/Navbar';
 import './FAQs.css';
 import Subscription from '../../Shared/Subscription/Subscription';
 import Footer from '../../Shared/Footer/Footer';
+import { Container } from '@mui/material';
 
 const FAQs = () => {
 
@@ -10,8 +11,10 @@ const FAQs = () => {
 
     return (
         <section id='FAQs'>
-            <header style={{ position: 'relative' }} className="container">
-                <Navbar />
+            <header>
+                <Container>
+                    <Navbar />
+                </Container>
             </header>
 
             <section id='faqs-banner' className="container-fluid" style={{ backgroundImage: `url(${bannerImage})` }}>

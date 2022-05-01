@@ -1,3 +1,9 @@
 .App {
     font-family: 'Oswald', sans-serif;
 }
+
+.image-responsive {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
