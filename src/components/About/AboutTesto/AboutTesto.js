@@ -9,7 +9,7 @@ import { Box, Container } from '@mui/material';
 
 const AboutTesto = () => {
 
-    const banner = `https://res.cloudinary.com/dn9k2jkdd/image/upload/v1649786130/testo-burger-project/about-testo/about-page_m8n0cp.jpg`;
+    const bannerImage = `https://res.cloudinary.com/dn9k2jkdd/image/upload/v1649786130/testo-burger-project/about-testo/about-page_m8n0cp.jpg`;
 
     return (
         <section id='about-testo'>
@@ -19,9 +19,9 @@ const AboutTesto = () => {
                 </Container>
             </header>
 
-            <main >
+            <main>
                 <Box sx={{
-                    backgroundImage: `url(${banner})`,
+                    backgroundImage: `url(${bannerImage})`,
                     backgroundPosition: 'center',
                     backgroundSize: 'cover',
                     height: '25.625rem',

@@ -4,14 +4,14 @@ import './AboutIntro.css';
 
 const AboutIntro = () => {
 
-    const intro = `https://res.cloudinary.com/dn9k2jkdd/image/upload/v1649786131/testo-burger-project/about-01-img_gvpwo7.png`;
+    const introImage = `https://res.cloudinary.com/dn9k2jkdd/image/upload/v1649786131/testo-burger-project/about-01-img_gvpwo7.png`;
 
     return (
         <section id='about-background-intro'>
             <Container>
                 <Grid py={9} container columnSpacing={8}>
                     <Grid item md={6}>
-                        <img className='image-responsive' src={intro} alt="" />
+                        <img className='image-responsive' src={introImage} alt="" />
                     </Grid>
                     <Grid item md={6}>
                         <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', height: '100%' }}>

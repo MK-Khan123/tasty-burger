@@ -211,7 +211,7 @@ const Navbar = () => {
                                         <NavLink to='/team' style={{ textDecoration: 'none' }}>Meet the Team</NavLink>
                                     </MenuItem>
                                     <MenuItem onClick={handleCloseAbout}>
-                                        <NavLink to='/faqs' style={{ textDecoration: 'none' }}>F.A.Q.s</NavLink>
+                                        <NavLink to='/faq' style={{ textDecoration: 'none' }}>F.A.Q.s</NavLink>
                                     </MenuItem>
                                     <MenuItem onClick={handleCloseAbout}>
                                         <NavLink to='/terms-privacy' style={{ textDecoration: 'none' }}>Terms and Privacy</NavLink>

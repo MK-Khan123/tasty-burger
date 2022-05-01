@@ -4,7 +4,7 @@ import './AboutPromo1.css';
 
 const AboutPromo1 = () => {
 
-    const about = `https://res.cloudinary.com/dn9k2jkdd/image/upload/v1649786131/testo-burger-project/about-testo/about-1_bv8egs.jpg`;
+    const aboutImage = `https://res.cloudinary.com/dn9k2jkdd/image/upload/v1649786131/testo-burger-project/about-testo/about-1_bv8egs.jpg`;
 
     const icons = {
         burger: `https://res.cloudinary.com/dn9k2jkdd/image/upload/v1649786139/testo-burger-project/icons/burger_qgfla1.png`,
@@ -17,7 +17,7 @@ const AboutPromo1 = () => {
 
     return (
         <section id='about-promo1'>
-            <Container style={{ backgroundImage: `url(${about})`, maxWidth: '100vw', backgroundSize: '100% 100%', height: '37.5rem' }}>
+            <Container style={{ backgroundImage: `url(${aboutImage})`, maxWidth: '100vw', backgroundSize: '100% 100%', height: '37.5rem' }}>
                 <Box sx={{
                     display: 'flex',
                     flexDirection: 'column',

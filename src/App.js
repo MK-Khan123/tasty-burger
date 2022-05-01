@@ -27,7 +27,7 @@ function App() {
 
         <Route path="/team" element={<Team />} />
 
-        <Route path="/faqs" element={<FAQs />} />
+        <Route path="/faq" element={<FAQs />} />
 
         <Route path="/terms-privacy" element={<TermsAndPrivacy />} />
 
