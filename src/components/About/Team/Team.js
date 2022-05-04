@@ -1,11 +1,13 @@
 import React from 'react';
 import './Team.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTwitter, faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons';
 import Navbar from '../../Shared/Navbar/Navbar';
 import { Fade } from 'react-reveal';
 import MobileApp from '../../Shared/MobileApp/MobileApp';
 import Footer from '../../Shared/Footer/Footer';
+import FacebookOutlinedIcon from '@mui/icons-material/FacebookOutlined';
+import TwitterIcon from '@mui/icons-material/Twitter';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import { CardActions, Card, CardContent, CardMedia, Container, Grid, Typography, Box } from '@mui/material';
 
 const Team = () => {
     const teamData = [
@@ -55,46 +57,117 @@ const Team = () => {
 
     return (
         <section id='team-testo'>
-            <header style={{ position: 'relative' }} className="container">
-                <Navbar />
+            <header>
+                <Container>
+                    <Navbar />
+                </Container>
             </header>
 
-            <section id='team-banner' className="container-fluid" style={{ backgroundImage: `url(${bannerImage})` }}>
-                <h5 className='carousel-caption d-none d-md-block text-white fw-bold'>MEET THE TEAM</h5>
-            </section>
+            <main>
+                <CardActions sx={{
+                    backgroundImage: `url(${bannerImage})`,
+                    backgroundPosition: 'center',
+                    backgroundSize: 'cover',
+                    height: '25.625rem',
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center'
+                }}>
+                    <CardActions sx={{ fontSize: '4rem', color: 'white' }} component='h5'>MEET THE TEAM</CardActions>
+                </CardActions>
 
-            <section id='team-grid' className='container'>
-                <div className="row g-3">
-                    {
-                        teamData.map(teamMember => {
-                            const { name, title, image } = teamMember;
-                            return (
-                                <div className="col-md-3 team-card-hover">
-                                    <div className='card rounded-3'>
-                                        <img src={image} className="card-img h-100 rounded-3 team-card-image" alt="..." />
-                                        <div className='team-card-icons'>
-                                            <Fade bottom>
-                                                <div className="card-img-overlay d-flex justify-content-evenly align-items-end">
-                                                    <FontAwesomeIcon className="text-light fs-3" icon={faFacebook} />
-                                                    <FontAwesomeIcon className="text-light fs-3" icon={faTwitter} />
-                                                    <FontAwesomeIcon className="text-light fs-3" icon={faInstagram} />
-                                                </div>
-                                            </Fade>
-                                        </div>
-                                    </div>
-                                    <div className="card-body">
-                                        <h5 className="card-title text-uppercase member-name fw-bold">{name}</h5>
-                                        <p className="card-text member-title">{title}</p>
-                                    </div>
-                                </div>
-                            );
-                        })
-                    }
-                </div>
-            </section>
+                <section id='team-grid'>
+                    <Container>
+                        <Grid container spacing={3}>
+                            {
+                                teamData.map(teamMember => {
+                                    const { name, title, image } = teamMember;
+                                    return (
+                                        <Grid item xs={12} sm={6} md={3}>
+                                            <Card className='team-card' sx={{ maxWidth: 345, border: "none", boxShadow: "none" }}>
+                                                <Box sx={{ height: '300px', position: 'relative' }}>
+                                                    <CardMedia
+                                                        sx={{
+                                                            height: "100%",
+                                                            transition: 'all 1s',
+                                                            position: 'absolute',
+                                                            borderRadius: '10px',
+                                                            '&:hover': {
+                                                                filter: 'brightness(60%)'
+                                                            }
+                                                        }}
+                                                        className='team-card-image'
+                                                        component="img"
+                                                        image={image}
+                                                        alt="team member image"
+                                                    />
+                                                    <Box className='team-card-icons'>
+                                                        <Fade bottom>
+                                                            <Box sx={{
+                                                                display: 'flex',
+                                                                justifyContent: 'space-evenly',
+                                                                alignItems: 'flex-end',
+                                                                height: '300px',
+                                                                padding: '15px',
+                                                                color: 'white'
+                                                            }}>
+                                                                <FacebookOutlinedIcon sx={{
+                                                                    fontSize: '30px',
+                                                                    '&:hover': { color: '#3b5998' }
+                                                                }} />
+                                                                <TwitterIcon sx={{
+                                                                    fontSize: '30px',
+                                                                    '&:hover': { color: '#1DA1F2' }
+                                                                }} />
+                                                                <LinkedInIcon sx={{
+                                                                    fontSize: '30px',
+                                                                    '&:hover': { color: '#0e76a8' }
+                                                                }} />
+                                                            </Box>
+                                                        </Fade>
+                                                    </Box>
+                                                </Box>
+                                                <CardContent sx={{ textAlign: 'center' }}>
+                                                    <Typography
+                                                        sx={{
+                                                            fontFamily: 'Oswald, sans-serif',
+                                                            fontWeight: '500',
+                                                            textTransform: 'uppercase',
+                                                            color: '#642F21'
+                                                        }}
+                                                        gutterBottom
+                                                        variant="h5"
+                                                        component="div"
+                                                    >
+                                                        {name}
+                                                    </Typography>
+                                                    <Typography
+                                                        sx={{
+                                                            fontFamily: 'Roboto, sans-serif',
+                                                            fontWeight: '500',
+                                                            color: '#F7BE27'
+                                                        }}
+                                                        variant="h6"
+                                                        color="text.secondary"
+                                                    >
+                                                        {title}
+                                                    </Typography>
+                                                </CardContent>
+                                            </Card>
+                                        </Grid>
+                                    );
+                                })
+                            }
+                        </Grid>
+                    </Container>
+                </section>
 
-            <MobileApp />
-            <Footer />
+                <MobileApp />
+            </main>
+
+            <footer>
+                <Footer />
+            </footer>
         </section>
     );
 };
