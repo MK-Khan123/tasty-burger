@@ -1,22 +1,62 @@
+import { Box, Button, Container, TextField } from '@mui/material';
 import React from 'react';
 import './Subscription.css';
 
 const Subscription = () => {
+
     return (
-        <section id='subscription' className='container p-5'>
-            <h5 className='fw-bold text-center'>SUBSCRIBE TO NEWSLETTER</h5>
-            <p className='text-center text-muted'>Subscribe to the weekly newsletter for all the latest updates</p>
-            <div style={{ fontFamily: 'Roboto, sans-serif' }} className="d-flex flex-column justify-content-evenly">
-                <div className="mb-3">
-                    <label htmlFor="exampleInputEmail1" className="form-label">Email address</label>
-                    <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp1" />
-                    <div id="emailHelp1" className="form-text">We'll never share your email with anyone else.</div>
-                </div>
-                <div style={{ fontFamily: 'Oswald, sans-serif' }}>
-                    <button className='btn btn-danger mb-2'>SIGN UP</button>
-                </div>
-            </div>
-        </section>
+        <Container>
+            <section id='subscription'>
+                <Box
+                    sx={{
+                        textAlign: 'center',
+                        fontSize: '2.625rem',
+                        fontWeight: '600'
+                    }}
+                    component='h5'
+                >
+                    SUBSCRIBE TO NEWSLETTER
+                </Box>
+                <Box
+                    sx={{
+                        fontFamily: 'Roboto, sans-serif',
+                        textAlign: 'center',
+                        fontSize: '1.125rem',
+                        color: '#888'
+                    }}
+                    component='p'
+                >
+                    Subscribe to the weekly newsletter for all the latest updates
+                </Box>
+                <Box
+                    sx={{
+                        fontFamily: 'Roboto, sans-serif',
+                        display: 'flex',
+                        flexDirection: 'column',
+                        justifyContent: 'space-evenly'
+                    }}
+                >
+                    <Box sx={{ paddingTop: '1.2rem' }}>
+                        <TextField
+                            type='email'
+                            name='email'
+                            label="Email Address"
+                            helperText="We'll never share your email address with anyone else"
+                            fullWidth
+                            id="inputEmail" />
+                    </Box>
+                    <Box sx={{ paddingTop: '1.1rem' }}>
+                        <Button
+                            sx={{ fontFamily: 'Oswald, sans-serif' }}
+                            color='error'
+                            variant='contained'
+                        >
+                            SIGN UP
+                        </Button>
+                    </Box>
+                </Box>
+            </section>
+        </Container >
     );
 };
 
