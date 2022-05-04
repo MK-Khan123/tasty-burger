@@ -11,7 +11,9 @@ const TermsAndPrivacy = () => {
     return (
         <section id='terms-and-privacy'>
             <header>
-                <Navbar />
+                <Container>
+                    <Navbar />
+                </Container>
             </header>
 
             <main>
