@@ -1,3 +1,4 @@
+import { Box, Container, Grid } from '@mui/material';
 import React from 'react';
 import './MobileApp.css';
 
@@ -10,26 +11,26 @@ const MobileApp = () => {
 
     return (
         <section id='mobile-app'>
-            <div className="container">
-                <div className="row align-items-center g-5">
-                    <div className="col-md-6">
-                        <h4>DOWNLOAD MOBILE APP AND</h4>
-                        <h5 className='fw-bold'>SAVE UP TO 20%</h5>
-                        <p>Aliquam a augue suscipit, luctus neque purus ipsum and neque dolor primis libero tempus, blandit varius</p>
-                        <div className="d-flex mt-4">
-                            <div className='pe-2'>
-                                <img style={{maxWidth: '150px'}} className='img-fluid' src={images.appStorePic} alt="" />
-                            </div>
-                            <div className='ps-2'>
-                                <img style={{maxWidth: '150px'}} className='img-fluid' src={images.googlePlayPic} alt="" />
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col-md-6">
-                        <img className='img-fluid' src={images.eShopPic} alt="" />
-                    </div>
-                </div>
-            </div>
+            <Container>
+                <Grid container spacing={3}>
+                    <Grid item md={6} mt={8}>
+                        <Box sx={{ fontSize: '2.375rem', fontWeight: '400', color: '#642F21' }} component='h4'>DOWNLOAD MOBILE APP AND</Box>
+                        <Box sx={{ fontSize: '4.5rem', fontWeight: '700', color: '#642F21' }} component='h5'>SAVE UP TO 20%</Box>
+                        <Box sx={{ fontFamily: 'Roboto, sans-serif', fontSize: '1.1rem', fontWeight: '300' }} component='p'>Aliquam a augue suscipit, luctus neque purus ipsum and neque dolor primis libero tempus, blandit varius</Box>
+                        <Box sx={{ display: 'flex', paddingTop: '20px' }}>
+                            <Box sx={{ paddingRight: '20px' }}>
+                                <img style={{ maxWidth: '150px' }} className='image-responsive' src={images.appStorePic} alt="App Store Pic" />
+                            </Box>
+                            <Box>
+                                <img style={{ maxWidth: '150px' }} className='image-responsive' src={images.googlePlayPic} alt="Google Play Store Pic" />
+                            </Box>
+                        </Box>
+                    </Grid>
+                    <Grid item md={6}>
+                        <img className='image-responsive' src={images.eShopPic} alt="" />
+                    </Grid>
+                </Grid>
+            </Container>
         </section>
     );
 };
