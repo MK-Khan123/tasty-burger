@@ -7,7 +7,7 @@ import Footer from '../../Shared/Footer/Footer';
 import FacebookOutlinedIcon from '@mui/icons-material/FacebookOutlined';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import { CardActions, Card, CardContent, CardMedia, Container, Grid, Typography, Box } from '@mui/material';
+import { Card, CardContent, CardMedia, Container, Grid, Typography, Box } from '@mui/material';
 
 const Team = () => {
     const teamData = [
@@ -64,7 +64,7 @@ const Team = () => {
             </header>
 
             <main>
-                <CardActions sx={{
+                <Box sx={{
                     backgroundImage: `url(${bannerImage})`,
                     backgroundPosition: 'center',
                     backgroundSize: 'cover',
@@ -73,8 +73,8 @@ const Team = () => {
                     justifyContent: 'center',
                     alignItems: 'center'
                 }}>
-                    <CardActions sx={{ fontSize: '4rem', color: 'white' }} component='h5'>MEET THE TEAM</CardActions>
-                </CardActions>
+                    <Box sx={{ fontSize: '4rem', color: 'white' }} component='h5'>MEET THE TEAM</Box>
+                </Box>
 
                 <section id='team-grid'>
                     <Container>
