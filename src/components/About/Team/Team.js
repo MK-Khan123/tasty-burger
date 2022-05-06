@@ -84,7 +84,7 @@ const Team = () => {
                                     const { name, title, image } = teamMember;
                                     return (
                                         <Grid item xs={12} sm={6} md={3}>
-                                            <Card className='team-card' sx={{ maxWidth: 345, border: "none", boxShadow: "none" }}>
+                                            <Card className='team-card' sx={{ border: "none", boxShadow: "none" }}>
                                                 <Box sx={{ height: '300px', position: 'relative' }}>
                                                     <CardMedia
                                                         sx={{

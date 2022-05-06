@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Box, Container, Grid } from '@mui/material';
 import Navbar from '../Shared/Navbar/Navbar';
 import './MainMenu.css';
 import ActiveFoodItem from './ActiveFoodItem/ActiveFoodItem';
@@ -23,57 +24,86 @@ const MainMenu = () => {
 
     useEffect(() => {
         fetch(`http://localhost:5000/products/${foodCategory}`)
-        .then(res => res.json())
-        .then(data => setActiveFoodData(data));
-    }, [foodCategory]);    
+            .then(res => res.json())
+            .then(data => setActiveFoodData(data));
+    }, [foodCategory]);
 
     return (
         <section id='main-menu'>
-            <header style={{ position: 'relative' }} className="container">
-                <Navbar />
+            <header>
+                <Container>
+                    <Navbar />
+                </Container>
             </header>
 
-            <section id='main-menu-banner' className="container-fluid" style={{ backgroundImage: `url(${bannerImage})` }}>
-                <h5 className='carousel-caption d-none d-md-block text-white fw-bold'>MAIN MENU</h5>
-            </section>
+            <main>
+                <Box sx={{
+                    backgroundImage: `url(${bannerImage})`,
+                    backgroundPosition: 'center',
+                    backgroundSize: 'cover',
+                    height: '25.625rem',
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center'
+                }}>
+                    <Box sx={{ fontSize: '4rem', color: 'white' }} component='h5'>MAIN MENU</Box>
+                </Box>
 
-            <section id='main-menu-icons' className='container-fluid'>
-                <div style={{ padding: '0 10%' }} className="row row-cols-2 row-cols-sm-3 row-cols-md-6">
-                    <div className='col text-center' role='button' onClick={() => setFoodCategory('burger')}>
-                        <img className='main-menu-icon-size m-3' src={icons.burger} alt="" />
-                        <h5>BURGERS</h5>
-                    </div>
-                    <div className='col text-center' role='button' onClick={() => setFoodCategory('dessert')}>
-                        <img className='main-menu-icon-size m-3' src={icons.dessert} alt="" />
-                        <h5>DESSERT</h5>
-                    </div>
-                    <div className='col text-center' role='button' onClick={() => setFoodCategory('pasta')}>
-                        <img className='main-menu-icon-size m-3' src={icons.pasta} alt="" />
-                        <h5>PASTA</h5>
-                    </div>
-                    <div className='col text-center' role='button' onClick={() => setFoodCategory('pizza')}>
-                        <img className='main-menu-icon-size m-3' src={icons.pizza} alt="" />
-                        <h5>PIZZA</h5>
-                    </div>
-                    <div className='col text-center' role='button' onClick={() => setFoodCategory('salad')}>
-                        <img className='main-menu-icon-size m-3' src={icons.salad} alt="" />
-                        <h5>SALAD</h5>
-                    </div>
-                    <div className='col text-center' role='button' onClick={() => setFoodCategory('sides')}>
-                        <img className='main-menu-icon-size m-3' src={icons.fries} alt="" />
-                        <h5>SIDES</h5>
-                    </div>
-                </div>
-            </section>
+                <section id='main-menu-icons'>
+                    <Grid container sx={{ padding: '0 10%' }}>
+                        <Grid item xs={6} sm={4} md={2}>
+                            <Box sx={{ textAlign: 'center', margin: '1.8rem', cursor: 'pointer' }} onClick={() => setFoodCategory('burger')}>
+                                <img className='main-menu-icon-size' src={icons.burger} alt="" />
+                                <h5>BURGERS</h5>
+                            </Box>
+                        </Grid>
+                        <Grid item xs={6} sm={4} md={2}>
+                            <Box sx={{ textAlign: 'center', margin: '1.8rem', cursor: 'pointer' }} onClick={() => setFoodCategory('dessert')}>
+                                <img className='main-menu-icon-size' src={icons.dessert} alt="" />
+                                <h5>DESSERT</h5>
+                            </Box>
+                        </Grid>
+                        <Grid item xs={6} sm={4} md={2}>
+                            <Box sx={{ textAlign: 'center', margin: '1.8rem', cursor: 'pointer' }} onClick={() => setFoodCategory('pasta')}>
+                                <img className='main-menu-icon-size' src={icons.pasta} alt="" />
+                                <h5>PASTA</h5>
+                            </Box>
+                        </Grid>
+                        <Grid item xs={6} sm={4} md={2}>
+                            <Box sx={{ textAlign: 'center', margin: '1.8rem', cursor: 'pointer' }} onClick={() => setFoodCategory('pizza')}>
+                                <img className='main-menu-icon-size' src={icons.pizza} alt="" />
+                                <h5>PIZZA</h5>
+                            </Box>
+                        </Grid>
+                        <Grid item xs={6} sm={4} md={2}>
+                            <Box sx={{ textAlign: 'center', margin: '1.8rem', cursor: 'pointer' }} onClick={() => setFoodCategory('salad')}>
+                                <img className='main-menu-icon-size' src={icons.salad} alt="" />
+                                <h5>SALAD</h5>
+                            </Box>
+                        </Grid>
+                        <Grid item xs={6} sm={4} md={2}>
+                            <Box sx={{ textAlign: 'center', margin: '1.8rem', cursor: 'pointer' }} onClick={() => setFoodCategory('sides')}>
+                                <img className='main-menu-icon-size' src={icons.fries} alt="" />
+                                <h5>SIDES</h5>
+                            </Box>
+                        </Grid>
+                    </Grid>
+                </section>
 
-            <section id='food-item-grid' className='container'>
-                <div className="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4">
-                    <ActiveFoodItem activeFoodData={activeFoodData} />
-                </div>
-            </section>
+                <section id='food-item-grid'>
+                    <Container>
+                        <Grid container spacing={3}>
+                            <ActiveFoodItem activeFoodData={activeFoodData} />
+                        </Grid>
+                    </Container>
+                </section>
 
-            <Delivery />
-            <Footer />
+                <Delivery />
+            </main>
+
+            <footer>
+                <Footer />
+            </footer>
         </section>
     );
 };

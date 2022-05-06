@@ -251,7 +251,7 @@ const Navbar = () => {
                                         <NavLink to='/all-items' style={{ textDecoration: 'none' }}>All Items</NavLink>
                                     </MenuItem>
                                     <MenuItem onClick={handleCloseShop}>
-                                        <NavLink to='/product-details' style={{ textDecoration: 'none' }}>Product Details</NavLink>
+                                        <NavLink to='/product-details/6256ddd6f67917cc7f07f8cf' style={{ textDecoration: 'none' }}>Product Details</NavLink>
                                     </MenuItem>
                                     <MenuItem onClick={handleCloseShop}>
                                         <NavLink to='/my-account' style={{ textDecoration: 'none' }}>My Account</NavLink>

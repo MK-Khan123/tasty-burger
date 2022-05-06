@@ -1,33 +1,15 @@
-.main-menu-heart-icon:hover {
-    transition: all 1s;
-    color: #E3000E;
-}
-
 .main-menu-card-title {
     font-family: 'Oswald', sans-serif;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 500;
     color: #642F21;
 }
 
-.main-menu-card-body:hover .main-menu-card-button2 {
+.main-menu-card-body:hover .main-menu-cart-button {
     display: block;
 }
 
-.main-menu-card-body:hover .main-menu-card-image {
-    transform: scale(1.2);
-}
-
-.main-menu-card-image {
-    transition: all 800ms;
-}
-
-.main-menu-card-button1 {
-    font-family: 'Oswald', sans-serif;
-    background-color: #642F21;
-    color: #F7BE27;
-    font-weight: 600;
-}
-
-.main-menu-card-button2 {
-    font-family: 'Oswald', sans-serif;
+.main-menu-cart-button {    
     display: none;
 }
