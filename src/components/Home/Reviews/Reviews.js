@@ -4,9 +4,11 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Parallax, Autoplay, Pagination, Navigation } from "swiper";
+import Rating from '@mui/material/Rating';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 import './Reviews.css';
+import { Box } from '@mui/material';
 
 const Reviews = () => {
     const reviewBackground = 'https://res.cloudinary.com/dn9k2jkdd/image/upload/v1649786144/testo-burger-project/reviews/reviews_s7tyat.jpg';
@@ -48,6 +50,7 @@ const Reviews = () => {
                     }}
                     data-swiper-parallax="-23%"
                 ></div>
+
                 <SwiperSlide>
                     <div className="title" data-swiper-parallax="-300">
                         <img className='review-image' src={images.review1} alt="" />
@@ -58,15 +61,12 @@ const Reviews = () => {
                             dictum mattis velit, sit amet faucibus felis iaculis nec.
                         </p>
                     </div>
-                    <div className='mt-2'>
-                        <FontAwesomeIcon className='text-warning p-1' icon={faStar} />
-                        <FontAwesomeIcon className='text-warning p-1' icon={faStar} />
-                        <FontAwesomeIcon className='text-warning p-1' icon={faStar} />
-                        <FontAwesomeIcon className='text-warning p-1' icon={faStar} />
-                        <FontAwesomeIcon className='text-warning p-1' icon={faStar} />
-                    </div>
-                    <h4 className='text-uppercase mt-2'>By Sean McMarthy</h4>
+                    <Box sx={{ marginTop: '10px' }}>
+                        <Rating name="read-only" value={5} readOnly />
+                    </Box>
+                    <Box component='h4' sx={{ textTransform: 'uppercase', marginTop: '10px' }}>By Sean McMarthy</Box>
                 </SwiperSlide>
+
                 <SwiperSlide>
                     <div className="title" data-swiper-parallax="-300">
                         <img className='review-image' src={images.review2} alt="" />
@@ -77,15 +77,12 @@ const Reviews = () => {
                             dictum mattis velit, sit amet faucibus felis iaculis nec.
                         </p>
                     </div>
-                    <div className='mt-2'>
-                        <FontAwesomeIcon className='text-warning p-1' icon={faStar} />
-                        <FontAwesomeIcon className='text-warning p-1' icon={faStar} />
-                        <FontAwesomeIcon className='text-warning p-1' icon={faStar} />
-                        <FontAwesomeIcon className='text-warning p-1' icon={faStar} />
-                        <FontAwesomeIcon className='text-warning p-1' icon={faStar} />
-                    </div>
-                    <h4 className='text-uppercase mt-2'>By Evelyn Martinez</h4>
+                    <Box sx={{ marginTop: '10px' }}>
+                        <Rating name="read-only" value={5} readOnly />
+                    </Box>
+                    <Box component='h4' sx={{ textTransform: 'uppercase', marginTop: '10px' }}>By Evelyn Martinez</Box>
                 </SwiperSlide>
+
                 <SwiperSlide>
                     <div className="title" data-swiper-parallax="-300">
                         <img className='review-image' src={images.review3} alt="" />
@@ -96,15 +93,12 @@ const Reviews = () => {
                             dictum mattis velit, sit amet faucibus felis iaculis nec.
                         </p>
                     </div>
-                    <div className='mt-2'>
-                        <FontAwesomeIcon className='text-warning p-1' icon={faStar} />
-                        <FontAwesomeIcon className='text-warning p-1' icon={faStar} />
-                        <FontAwesomeIcon className='text-warning p-1' icon={faStar} />
-                        <FontAwesomeIcon className='text-warning p-1' icon={faStar} />
-                        <FontAwesomeIcon className='text-warning p-1' icon={faStar} />
-                    </div>
-                    <h4 className='text-uppercase mt-2'>By Robert Peterson</h4>
+                    <Box sx={{ marginTop: '10px' }}>
+                        <Rating name="read-only" value={5} readOnly />
+                    </Box>
+                    <Box component='h4' sx={{ textTransform: 'uppercase', marginTop: '10px' }}>By Robert Peterson</Box>
                 </SwiperSlide>
+
                 <SwiperSlide>
                     <div className="title" data-swiper-parallax="-300">
                         <img className='review-image' src={images.review4} alt="" />
@@ -115,14 +109,10 @@ const Reviews = () => {
                             dictum mattis velit, sit amet faucibus felis iaculis nec.
                         </p>
                     </div>
-                    <div className='mt-2'>
-                        <FontAwesomeIcon className='text-warning p-1' icon={faStar} />
-                        <FontAwesomeIcon className='text-warning p-1' icon={faStar} />
-                        <FontAwesomeIcon className='text-warning p-1' icon={faStar} />
-                        <FontAwesomeIcon className='text-warning p-1' icon={faStar} />
-                        <FontAwesomeIcon className='text-warning p-1' icon={faStar} />
-                    </div>
-                    <h4 className='text-uppercase mt-2'>By Leslie Serpas</h4>
+                    <Box sx={{ marginTop: '10px' }}>
+                        <Rating name="read-only" value={5} readOnly />
+                    </Box>
+                    <Box component='h4' sx={{ textTransform: 'uppercase', marginTop: '10px' }}>By Leslie Serpas</Box>
                 </SwiperSlide>
             </Swiper>
         </section>
