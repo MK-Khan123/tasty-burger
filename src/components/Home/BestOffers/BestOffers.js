@@ -1,8 +1,8 @@
 import React from 'react';
 import './BestOffers.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faStar, faHeart } from '@fortawesome/free-regular-svg-icons';
-import { faBagShopping } from '@fortawesome/free-solid-svg-icons';
+import { Box, Container, Button, Card, CardActions, CardContent, CardMedia, Grid, Typography, Rating } from '@mui/material';
+import FavoriteIcon from '@mui/icons-material/Favorite';
+import ShoppingBagOutlinedIcon from '@mui/icons-material/ShoppingBagOutlined';
 import { Fade } from 'react-reveal';
 
 const BestOffers = () => {
@@ -13,99 +13,236 @@ const BestOffers = () => {
     };
 
     return (
-        <section id='best-offers' className='container'>
-            <h5 className='text-center fw-bold mb-3'>OUR BEST OFFERS</h5>
-            <p className='text-muted text-center fs-5 mb-5'>Aliquam a augue suscipit, luctus neque purus ipsum neque undo dolor primis libero tempus, blandit a cursus varius magna</p>
-            <div className="row g-3">
-                <div className="col-md-4">
-                    <div className='offer-card-body'>
-                        <div className='rounded-3' style={{ overflow: 'hidden' }}>
-                            <img src={images.spanishBurger} className="card-img-top h-100 rounded-3 offer-hover-image" alt="..." />
-                        </div>
-                        <div className="card-body">
-                            <div className="d-flex justify-content-between">
-                                <div>
-                                    <FontAwesomeIcon className='p-1 text-warning' icon={faStar} />
-                                    <FontAwesomeIcon className='p-1 text-warning' icon={faStar} />
-                                    <FontAwesomeIcon className='p-1 text-warning' icon={faStar} />
-                                    <FontAwesomeIcon className='p-1 text-warning' icon={faStar} />
-                                    <FontAwesomeIcon className='p-1 text-warning' icon={faStar} />
-                                </div>
-                                <div>
-                                    <FontAwesomeIcon className='p-1 fs-4 heart-icon' icon={faHeart} />
-                                </div>
-                            </div>
-                            <h5 className="card-title text-uppercase card-menu-title fw-bold fs-3">Spanish Burger</h5>
-                            <p className="card-text text-muted">Mushroom patty, vegan cheese, lettuce, tomatoes, avocado ligula</p>
-                            <div className='d-flex justify-content-between'>
-                                <p className='fs-4 fw-bold price-tag'>$8.95</p>
-                                <Fade bottom>
-                                    <button className="btn btn-warning rounded-3 offer-hover-button"><FontAwesomeIcon icon={faBagShopping} /> Add to cart</button>
-                                </Fade>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div className="col-md-4">
-                    <div className='offer-card-body'>
-                        <div className="card-body">
-                            <div className="d-flex justify-content-between">
-                                <div>
-                                    <FontAwesomeIcon className='p-1 text-warning' icon={faStar} />
-                                    <FontAwesomeIcon className='p-1 text-warning' icon={faStar} />
-                                    <FontAwesomeIcon className='p-1 text-warning' icon={faStar} />
-                                    <FontAwesomeIcon className='p-1 text-warning' icon={faStar} />
-                                    <FontAwesomeIcon className='p-1 text-warning' icon={faStar} />
-                                </div>
-                                <div>
-                                    <FontAwesomeIcon className='p-1 fs-4 heart-icon' icon={faHeart} />
-                                </div>
-                            </div>
-                            <h5 className="card-title text-uppercase card-menu-title fw-bold fs-3">Classic Burger</h5>
-                            <p className="card-text text-muted">Mushroom patty, vegan cheese, lettuce, tomatoes, avocado ligula</p>
-                            <div className='d-flex justify-content-between'>
-                                <p className='fs-4 fw-bold price-tag'>$7.95</p>
-                                <Fade top>
-                                    <button className="btn btn-warning rounded-3 offer-hover-button"><FontAwesomeIcon icon={faBagShopping} /> Add to cart</button>
-                                </Fade>
-                            </div>
-                        </div>
-                        <div className='rounded-3' style={{ overflow: 'hidden' }}>
-                            <img src={images.classicBurger} className="card-img-bottom h-100 rounded-3 offer-hover-image" alt="..." />
-                        </div>
-                    </div>
-                </div>
-                <div className="col-md-4">
-                    <div className='offer-card-body'>
-                        <div className='rounded-3' style={{ overflow: 'hidden' }}>
-                            <img src={images.crispyBurger} className="card-img-top h-100 offer-hover-image" alt="..." />
-                        </div>
-                        <div className="card-body">
-                            <div className="d-flex justify-content-between">
-                                <div>
-                                    <FontAwesomeIcon className='p-1 text-warning' icon={faStar} />
-                                    <FontAwesomeIcon className='p-1 text-warning' icon={faStar} />
-                                    <FontAwesomeIcon className='p-1 text-warning' icon={faStar} />
-                                    <FontAwesomeIcon className='p-1 text-warning' icon={faStar} />
-                                    <FontAwesomeIcon className='p-1 text-warning' icon={faStar} />
-                                </div>
-                                <div>
-                                    <FontAwesomeIcon className='p-1 fs-4 heart-icon' icon={faHeart} />
-                                </div>
-                            </div>
-                            <h5 className="card-title text-uppercase card-menu-title fw-bold fs-3">Crispy Burger</h5>
-                            <p className="card-text text-muted">Mushroom patty, vegan cheese, lettuce, tomatoes, avocado ligula</p>
-                            <div className='d-flex justify-content-between'>
-                                <p className='fs-4 fw-bold price-tag'>$8.50</p>
-                                <Fade bottom>
-                                    <button className="btn btn-warning rounded-3 offer-hover-button"><FontAwesomeIcon icon={faBagShopping} /> Add to cart</button>
-                                </Fade>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <section id='best-offers'>
+            <Container>
+                <Box component='h5' sx={{
+                    textAlign: 'center',
+                    fontWeight: '500',
+                    marginBottom: '1.5rem',
+                    fontSize: '3.75em',
+                    color: '#E3000E'
+                }}>
+                    OUR BEST OFFERS
+                </Box>
+                <Box component='p'
+                    sx={{
+                        fontFamily: 'Roboto, sans-serif',
+                        padding: '0 20%',
+                        fontWeight: '300',
+                        fontSize: '1.1rem',
+                        color: '#778899',
+                        textAlign: 'center',
+                        marginBottom: '4rem'
+                    }}>
+                    Aliquam a augue suscipit, luctus neque purus ipsum neque undo dolor primis libero tempus, blandit a cursus varius magna
+                </Box>
+                <Grid container spacing={2}>
+                    <Grid item md={4}>
+                        <Card className='offer-card-body' sx={{ borderRadius: '10px', border: "none", boxShadow: "none" }}>
+                            <Box sx={{ overflow: 'hidden' }}>
+                                <CardMedia
+                                    sx={{                                        
+                                        transition: 'all 800ms',
+                                        '&:hover': {
+                                            transform: 'scale(1.2)'
+                                        }
+                                    }}
+                                    component="img"
+                                    image={images.spanishBurger}
+                                    alt=""
+                                >
+                                </CardMedia>
+                            </Box>
+                            <CardContent>
+                                <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
+                                    <div>
+                                        <Rating name="no-value" value={null} />
+                                    </div>
+                                    <div>
+                                        <FavoriteIcon sx={{ color: 'lightgray', '&:hover': { color: 'red' } }} />
+                                    </div>
+                                </Box>
+                                <Typography
+                                    sx={{
+                                        fontFamily: 'Oswald, sans-serif',
+                                        textTransform: 'uppercase',
+                                        fontWeight: '500',
+                                        color: '#642F21'
+                                    }}
+                                    gutterBottom
+                                    variant="h5"
+                                    component="div"
+                                >
+                                    Spanish Burger
+                                </Typography>
+                                <Typography variant="body1" color="text.secondary">
+                                    Mushroom patty, vegan cheese, lettuce, tomatoes, avocado ligula
+                                </Typography>
+                                <CardActions>
+                                    <Box sx={{ width: '100%', display: 'flex', justifyContent: 'space-between' }}>
+                                        <Box component='p' sx={{ color: '#E3000E', fontSize: '1.5rem', fontWeight: '500' }}>$8.95</Box>
+                                        <Box className="offer-hover-button">
+                                            <Fade bottom>
+                                                <Button
+                                                    sx={{
+                                                        fontFamily: 'Oswald, sans-serif',
+                                                        backgroundColor: '#FFCA2C',
+                                                        color: 'black'
+                                                    }}
+                                                >
+                                                    <ShoppingBagOutlinedIcon
+                                                        sx={{
+                                                            fontSize: '20px',
+                                                            marginRight: '5px'
+                                                        }}
+                                                    /> Add to cart
+                                                </Button>
+                                            </Fade>
+                                        </Box>
+                                    </Box>
+                                </CardActions>
+                            </CardContent>
+                        </Card>
+                    </Grid>
+
+                    <Grid item md={4}>
+                        <Card className='offer-card-body' sx={{ borderRadius: '10px', border: "none", boxShadow: "none" }}>
+                            <CardContent>
+                                <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
+                                    <div>
+                                        <Rating name="no-value" value={null} />
+                                    </div>
+                                    <div>
+                                        <FavoriteIcon sx={{ color: 'lightgray', '&:hover': { color: 'red' } }} />
+                                    </div>
+                                </Box>
+                                <Typography
+                                    sx={{
+                                        fontFamily: 'Oswald, sans-serif',
+                                        textTransform: 'uppercase',
+                                        fontWeight: '500',
+                                        color: '#642F21'
+                                    }}
+                                    gutterBottom
+                                    variant="h5"
+                                    component="div"
+                                >
+                                    Classic Burger
+                                </Typography>
+                                <Typography variant="body1" color="text.secondary">
+                                    Mushroom patty, vegan cheese, lettuce, tomatoes, avocado ligula
+                                </Typography>
+                                <CardActions>
+                                    <Box sx={{ width: '100%', display: 'flex', justifyContent: 'space-between' }}>
+                                        <Box component='p' sx={{ color: '#E3000E', fontSize: '1.5rem', fontWeight: '500' }}>$7.95</Box>
+                                        <Box className="offer-hover-button">
+                                            <Fade top>
+                                                <Button
+                                                    sx={{
+                                                        fontFamily: 'Oswald, sans-serif',
+                                                        backgroundColor: '#FFCA2C',
+                                                        color: 'black'
+                                                    }}
+                                                >
+                                                    <ShoppingBagOutlinedIcon
+                                                        sx={{
+                                                            fontSize: '20px',
+                                                            marginRight: '5px'
+                                                        }}
+                                                    /> Add to cart
+                                                </Button>
+                                            </Fade>
+                                        </Box>
+                                    </Box>
+                                </CardActions>
+                            </CardContent>
+                            <Box sx={{ overflow: 'hidden' }}>
+                                <CardMedia
+                                    sx={{
+                                        transition: 'all 800ms',
+                                        '&:hover': {
+                                            transform: 'scale(1.2)'
+                                        }
+                                    }}
+                                    component="img"
+                                    image={images.classicBurger}
+                                    alt=""
+                                >
+                                </CardMedia>
+                            </Box>
+                        </Card>
+                    </Grid>
+
+                    <Grid item md={4}>
+                        <Card className='offer-card-body' sx={{ borderRadius: '10px', border: "none", boxShadow: "none" }}>
+                            <Box sx={{ overflow: 'hidden' }}>
+                                <CardMedia
+                                    sx={{
+                                        transition: 'all 800ms',
+                                        '&:hover': {
+                                            transform: 'scale(1.2)'
+                                        }
+                                    }}
+                                    component="img"
+                                    image={images.crispyBurger}
+                                    alt=""
+                                >
+                                </CardMedia>
+                            </Box>
+                            <CardContent>
+                                <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
+                                    <div>
+                                        <Rating name="no-value" value={null} />
+                                    </div>
+                                    <div>
+                                        <FavoriteIcon sx={{ color: 'lightgray', '&:hover': { color: 'red' } }} />
+                                    </div>
+                                </Box>
+                                <Typography
+                                    sx={{
+                                        fontFamily: 'Oswald, sans-serif',
+                                        textTransform: 'uppercase',
+                                        fontWeight: '500',
+                                        color: '#642F21'
+                                    }}
+                                    gutterBottom
+                                    variant="h5"
+                                    component="div"
+                                >
+                                    Crispy Burger
+                                </Typography>
+                                <Typography variant="body1" color="text.secondary">
+                                    Mushroom patty, vegan cheese, lettuce, tomatoes, avocado ligula
+                                </Typography>
+                                <CardActions>
+                                    <Box sx={{ width: '100%', display: 'flex', justifyContent: 'space-between' }}>
+                                        <Box component='p' sx={{ color: '#E3000E', fontSize: '1.5rem', fontWeight: '500' }}>$8.50</Box>
+                                        <Box className="offer-hover-button">
+                                            <Fade bottom>
+                                                <Button
+                                                    sx={{
+                                                        fontFamily: 'Oswald, sans-serif',
+                                                        backgroundColor: '#FFCA2C',
+                                                        color: 'black'
+                                                    }}
+                                                >
+                                                    <ShoppingBagOutlinedIcon
+                                                        sx={{
+                                                            fontSize: '20px',
+                                                            marginRight: '5px'
+                                                        }}
+                                                    /> Add to cart
+                                                </Button>
+                                            </Fade>
+                                        </Box>
+                                    </Box>
+                                </CardActions>
+                            </CardContent>
+                        </Card>
+                    </Grid>
+                </Grid>
+            </Container>
+        </section >
     );
 };
 

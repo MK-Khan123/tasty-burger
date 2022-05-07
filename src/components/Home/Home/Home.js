@@ -15,20 +15,28 @@ import Sponsors from '../Sponsors/Sponsors';
 
 const Home = () => {
     return (
-        <div className='container-fluid p-0'>
-            <Header />
-            <HeaderMain />
-            <Intro />
-            <ExploreMenu />
-            <ProductHighlight />
-            <SpecialOffers />
-            <Reviews />
-            <BestOffers />
-            <MobileApp />
-            <Gallery />
-            <Sponsors />
-            <Delivery />
-            <Footer />
+        <div>
+            <header>
+                <Header />
+                <HeaderMain />
+            </header>
+
+            <main>                
+                <Intro />
+                <ExploreMenu />
+                <ProductHighlight />
+                <SpecialOffers />
+                <Reviews />
+                <BestOffers />
+                <MobileApp />
+                <Gallery />
+                <Sponsors />
+                <Delivery />
+            </main>
+
+            <footer>
+                <Footer />
+            </footer>
         </div>
     );
 };

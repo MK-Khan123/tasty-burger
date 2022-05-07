@@ -5,8 +5,6 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Parallax, Autoplay, Pagination, Navigation } from "swiper";
 import Rating from '@mui/material/Rating';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faStar } from '@fortawesome/free-solid-svg-icons';
 import './Reviews.css';
 import { Box } from '@mui/material';
 
