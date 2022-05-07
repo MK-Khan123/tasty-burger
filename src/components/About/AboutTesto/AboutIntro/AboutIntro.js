@@ -9,7 +9,7 @@ const AboutIntro = () => {
     return (
         <section id='about-intro'>
             <Container>
-                <Grid py={9} container columnSpacing={8}>
+                <Grid container py={9} columnSpacing={8}>
                     <Grid item md={6}>
                         <img className='image-responsive' src={introImage} alt="" />
                     </Grid>
@@ -19,7 +19,7 @@ const AboutIntro = () => {
                                 <Box
                                     component='h5'
                                     sx={{
-                                        fontWeight: '700',
+                                        fontWeight: '500',
                                         fontSize: '3.25rem',
                                         color: '#642F21',
                                         lineHeight: '1.35'

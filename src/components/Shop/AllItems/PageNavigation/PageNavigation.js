@@ -1,7 +1,8 @@
+import { Pagination } from '@mui/material';
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
-const Pagination = ({ foodItemsPerPage, totalFoodItems, paginate, paginateIncrease, paginateDecrease, currentPage }) => {
+const PageNavigation = ({ foodItemsPerPage, totalFoodItems, paginate, paginateIncrease, paginateDecrease, currentPage }) => {
     const pageNumbers = [];
 
     for (let i = 1; i <= Math.ceil(totalFoodItems / foodItemsPerPage); i++) {
@@ -12,27 +13,28 @@ const Pagination = ({ foodItemsPerPage, totalFoodItems, paginate, paginateIncrea
         <nav className='mt-5 p-4' aria-label="Page navigation">
             <ul className="pagination justify-content-center">
                 <li onClick={() => paginateDecrease(currentPage - 1)} className="page-item">
-                    <Link className="page-link" to="#" aria-label="Previous">
+                    <NavLink className="page-link" to="#" aria-label="Previous">
                         <span aria-hidden="true">&laquo;</span>
-                    </Link>
+                    </NavLink>
                 </li>
                 {
                     pageNumbers.map(number => {
                         return (
                             <li onClick={() => paginate(number)} className="page-item">
-                                <Link className="page-link" to="#">{number}</Link>
+                                <NavLink className="page-link" to="#">{number}</NavLink>
                             </li>
                         );
                     })
                 }
                 <li onClick={() => paginateIncrease(currentPage + 1)} className="page-item">
-                    <Link className="page-link" to="#" aria-label="Next">
+                    <NavLink className="page-link" to="#" aria-label="Next">
                         <span aria-hidden="true">&raquo;</span>
-                    </Link>
+                    </NavLink>
                 </li>
             </ul>
+            <Pagination count={pageNumbers.length} color="primary" />
         </nav>
     );
 };
 
-export default Pagination;
+export default PageNavigation;

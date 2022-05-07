@@ -1,38 +1,39 @@
 #intro {
-    margin-top: 100px;
-    margin-bottom: 70px;
+    margin-top: 6.25rem;
+    margin-bottom: 6.25rem;
 }
 
-.intro-font h5 {
-    font-family: 'Oswald', sans-serif;
-    font-weight: 600;
-    font-size: 52px;
+.intro-font h5 {    
+    font-weight: 500;
+    font-size: 3.25rem;
     color: #642F21;
     line-height: 1.35;
 }
 
 .intro-font>p {
     font-family: 'Roboto', sans-serif;
-    font-size: 18px;
+    font-weight: 300;
+    font-size: 1.125rem;
     line-height: 1.5;
 }
 
 .intro-icon-size {
-    max-width: 70px;
+    max-width: 4.375rem;
     height: auto;
 }
 
-.intro-icon-font {
-    font-family: 'Oswald', sans-serif;
-    font-weight: 600;
-    font-size: 18px;
+.intro-icon-font {    
+    font-weight: 500;
+    font-size: 1.125rem;
     color: #642F21;
     padding-top: 10px;
 }
 
 .text-inside-image {
-    font-family: 'Oswald', sans-serif;
-    font-size: 2em;
+    position: absolute;
+    top: 25%;
+    left: 55%;
+    font-size: 2rem;
     color: #6F5E4D;
     line-height: 1;
 }

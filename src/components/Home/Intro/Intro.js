@@ -1,11 +1,8 @@
+import { Box, Button, Container, Grid } from '@mui/material';
 import React from 'react';
 import './Intro.css';
 
 const Intro = () => {
-    // const adImage = {
-    //     backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${introAd1})`,
-    //     backgroundPosition: 'center'
-    // };
 
     const introPic = 'https://res.cloudinary.com/dn9k2jkdd/image/upload/v1649786131/testo-burger-project/about-01-img_gvpwo7.png';
     const introAd1 = 'https://res.cloudinary.com/dn9k2jkdd/image/upload/v1649786131/testo-burger-project/introAd-1_uspstl.jpg';
@@ -20,61 +17,67 @@ const Intro = () => {
     };
 
     return (
-        <section id='intro' className='container'>
-            <div className="row">
-                <div className="col-md-6">
-                    <img className='img-fluid' src={introPic} alt="" />
-                </div>
-                <div className="col-md-6 intro-font mt-5 p-5">
-                    <h5>NOTHING BRINGS PEOPLE TOGETHER LIKE A GOOD BURGER</h5>
-                    <p className='pt-3'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe cum in assumenda, aut accusamus voluptates, totam doloribus debitis distinctio.</p>
-                    <div className="row mt-5">
-                        <div className="col-md-3 col-6">
-                            <div className='d-flex align-items-center justify-content-center'>
-                                <img className='intro-icon-size' src={icons.burger} alt="" />
-                            </div>
-                            <p className='text-center intro-icon-font'>BURGERS</p>
-                        </div>
-                        <div className="col-md-3 col-6">
-                            <div className='d-flex align-items-center justify-content-center'>
-                                <img className='intro-icon-size' src={icons.fries} alt="" />
-                            </div>
-                            <p className='text-center intro-icon-font'>FRIES</p>
-                        </div>
-                        <div className="col-md-3 col-6">
-                            <div className='d-flex align-items-center justify-content-center'>
-                                <img className='intro-icon-size' src={icons.chicken} alt="" />
-                            </div>
-                            <p className='text-center intro-icon-font'>CHICKEN</p>
-                        </div>
-                        <div className="col-md-3 col-6">
-                            <div className='d-flex align-items-center justify-content-center'>
-                                <img className='intro-icon-size' src={icons.salad} alt="" />
-                            </div>
-                            <p className='text-center intro-icon-font'>SALADS</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <section id='intro'>
+            <Container>
+                <Grid container columnSpacing={8}>
+                    <Grid item md={6}>
+                        <img className='image-responsive' src={introPic} alt="" />
+                    </Grid>
+                    <Grid item md={6} py={8} className="intro-font">
+                        <h5>NOTHING BRINGS PEOPLE TOGETHER LIKE A GOOD BURGER</h5>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe cum in assumenda, aut accusamus voluptates, totam doloribus debitis distinctio.</p>
+                        <Grid container className="mt-5">
+                            <Grid item md={3} xs={6}>
+                                <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
+                                    <img className='intro-icon-size' src={icons.burger} alt="" />
+                                    <p className='intro-icon-font'>BURGERS</p>
+                                </Box>
+                            </Grid>
+                            <Grid item md={3} xs={6}>
+                                <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
+                                    <img className='intro-icon-size' src={icons.fries} alt="" />
+                                    <p className='intro-icon-font'>FRIES</p>
+                                </Box>
+                            </Grid>
+                            <Grid item md={3} xs={6}>
+                                <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
+                                    <img className='intro-icon-size' src={icons.chicken} alt="" />
+                                    <p className='intro-icon-font'>CHICKEN</p>
+                                </Box>
+                            </Grid>
+                            <Grid item md={3} xs={6}>
+                                <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
+                                    <img className='intro-icon-size' src={icons.salad} alt="" />
+                                    <p className='intro-icon-font'>SALADS</p>
+                                </Box>
+                            </Grid>
+                        </Grid>
+                    </Grid>
+                </Grid>
 
-            <div className="row mt-5 justify-content-evenly">
-                <div style={{ position: 'relative' }} className="p-2 col-md-5">
-                    <img className='rounded img-fluid' src={introAd1} alt="" />
-                    <div className='carousel-caption text-end text-inside-image'>
-                        <p>GET YOUR FREE</p>
-                        <p className='fw-bold'>CHEESE FRIES</p>
-                        <button className='btn btn-lg btn-outline-danger'>LEARN MORE</button>
-                    </div>
-                </div>
-                <div style={{ position: 'relative' }} className="p-2 col-md-6">
-                    <img className='rounded img-fluid' src={introAd2} alt="" />
-                    <div className='carousel-caption text-end text-inside-image'>
-                        <p>CRISPY CHICKEN</p>
-                        <p className='fw-bold'>BURGER IS BACK</p>
-                        <button className='btn btn-lg btn-outline-danger'>LEARN MORE</button>
-                    </div>
-                </div>
-            </div>
+                <Grid container pt={4} rowSpacing={2} justifyContent='space-evenly'>
+                    <Grid item md={5}>
+                        <Box sx={{ position: 'relative', maxWidth: '700px' }}>
+                            <img style={{borderRadius: '7px'}} className='image-responsive' src={introAd1} alt="" />
+                            <div className='text-inside-image'>
+                                <p>GET YOUR FREE</p>
+                                <Box component='p' sx={{ fontWeight: 'bold' }}>CHEESE FRIES</Box>
+                                <Button size='large' variant='contained' color='error'>LEARN MORE</Button>
+                            </div>
+                        </Box>
+                    </Grid>
+                    <Grid item md={6}>
+                        <Box sx={{ position: 'relative', maxWidth: '700px' }}>
+                            <img style={{borderRadius: '7px'}} className='image-responsive' src={introAd2} alt="" />
+                            <div className='text-inside-image'>
+                                <p>CRISPY CHICKEN</p>
+                                <Box component='p' sx={{ fontWeight: 'bold' }}>BURGER IS BACK</Box>
+                                <Button size='large' variant='contained' color='error'>LEARN MORE</Button>
+                            </div>
+                        </Box>
+                    </Grid>
+                </Grid>
+            </Container>
         </section>
     );
 };
