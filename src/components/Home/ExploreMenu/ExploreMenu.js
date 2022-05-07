@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import './ExploreMenu.css';
 import Flip from 'react-reveal/Flip';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faStar, faHeart } from '@fortawesome/free-regular-svg-icons';
-import { faBagShopping } from '@fortawesome/free-solid-svg-icons';
-import { Link } from 'react-router-dom';
+import Rating from '@mui/material/Rating';
+import FavoriteIcon from '@mui/icons-material/Favorite';
+import ShoppingBagOutlinedIcon from '@mui/icons-material/ShoppingBagOutlined';
+import { NavLink } from 'react-router-dom';
+import { Box, Container, Button, Card, CardActionArea, CardActions, CardContent, CardMedia, Grid, Typography } from '@mui/material';
+
+//All the custom CSS class is used from ActiveFoodItem.css under the MainMenu component. The styling is identical, hence I didn't make separate classes for the same styling for this component.
 
 const ExploreMenu = () => {
 
@@ -17,49 +20,98 @@ const ExploreMenu = () => {
     }, []);
 
     return (
-        <section id='explore-menu' className='container'>
-            <h5 className='text-center fw-bold mb-3'>EXPLORE OUR MENU</h5>
-            <p className='text-muted text-center fs-5 mb-5'>Aliquam a augue suscipit, luctus neque purus ipsum neque undo dolor primis libero tempus, blandit a cursus varius magna</p>
-            <div className="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4">
-                {
-                    burgerData.map(burger => {
-                        const { name, image, briefInfo, price, _id } = burger;
-                        return (
-                            <div className="col card-menu-body">
-                                <div className="card h-100">
-                                    <div style={{ overflow: 'hidden' }}>
-                                        <img src={image} className="card-img-top rounded-top card-menu-image" alt="..." />
-                                    </div>
-                                    <div className="card-body">
-                                        <div className="d-flex justify-content-between">
-                                            <div>
-                                                <FontAwesomeIcon className='p-1 text-warning' icon={faStar} />
-                                                <FontAwesomeIcon className='p-1 text-warning' icon={faStar} />
-                                                <FontAwesomeIcon className='p-1 text-warning' icon={faStar} />
-                                                <FontAwesomeIcon className='p-1 text-warning' icon={faStar} />
-                                                <FontAwesomeIcon className='p-1 text-warning' icon={faStar} />
-                                            </div>
-                                            <div>
-                                                <FontAwesomeIcon className='p-1 fs-4 heart-icon' icon={faHeart} />
-                                            </div>
-                                        </div>
-                                        <Link className='text-decoration-none' to={`/product-details/${_id}`}>
-                                            <h5 className="card-title text-uppercase card-menu-title mt-2 fw-bold">{name}</h5>
-                                        </Link>
-                                        <p className="card-text text-muted">{briefInfo}</p>
-                                        <div className='d-flex justify-content-between'>
-                                            <button className='btn btn-small btn-dark card-menu-button1'>$ {price}</button>
-                                            <Flip left>
-                                                <button className="btn btn-warning card-menu-button2"><FontAwesomeIcon icon={faBagShopping} /> Add to cart</button>
-                                            </Flip>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        );
-                    })
-                }
-            </div>
+        <section id='explore-menu'>
+            <Container>
+                <Box component='h5' sx={{
+                    textAlign: 'center',
+                    fontWeight: '500',
+                    marginBottom: '1.5rem',
+                    fontSize: '3.75em',
+                    color: '#E3000E'
+                }}>
+                    EXPLORE OUR MENU
+                </Box>
+                <Box component='p'
+                    sx={{
+                        fontFamily: 'Roboto, sans-serif',
+                        padding: '0 20%',
+                        fontWeight: '300',
+                        fontSize: '1.1rem',
+                        color: '#778899',
+                        textAlign: 'center',
+                        marginBottom: '4rem'
+                    }}>
+                    Aliquam a augue suscipit, luctus neque purus ipsum neque undo dolor primis libero tempus, blandit a cursus varius magna
+                </Box>
+                <Grid container spacing={3}>
+                    {
+                        burgerData.map(burger => {
+                            const { name, image, briefInfo, price, _id } = burger;
+                            return (
+                                <Grid item key={_id} sm={4} md={3} className="main-menu-card-body">
+                                    <Card sx={{ height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+                                        <CardActionArea>
+                                            <Box sx={{ overflow: 'hidden' }}>
+                                                <CardMedia
+                                                    sx={{
+                                                        transition: 'all 800ms',
+                                                        '&:hover': {
+                                                            transform: 'scale(1.2)'
+                                                        }
+                                                    }}
+                                                    component="img"
+                                                    image={image}
+                                                    alt=""
+                                                />
+                                            </Box>
+                                            <CardContent>
+                                                <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
+                                                    <div>
+                                                        <Rating name="no-value" value={null} />
+                                                    </div>
+                                                    <div>
+                                                        <FavoriteIcon sx={{ color: 'lightgray', '&:hover': { color: 'red' } }} />
+                                                    </div>
+                                                </Box>
+                                                <Typography gutterBottom variant="h5" component="div">
+                                                    <NavLink className='main-menu-card-title' to={`/product-details/${_id}`}>
+                                                        {name}
+                                                    </NavLink>
+                                                </Typography>
+                                                <Typography variant="body1" color="text.secondary">
+                                                    {briefInfo}
+                                                </Typography>
+                                            </CardContent>
+                                        </CardActionArea>
+                                        <CardActions>
+                                            <Box sx={{ width: '100%', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                                                <Button
+                                                    sx={{
+                                                        fontFamily: 'Oswald, sans-serif',
+                                                        backgroundColor: '#642F21',
+                                                        color: '#F7BE27',
+                                                        fontWeight: '600',
+                                                        '&:hover': {
+                                                            backgroundColor: '#56423D'
+                                                        }
+                                                    }}
+                                                >
+                                                    $ {price}
+                                                </Button>
+                                                <Box className="main-menu-cart-button">
+                                                    <Flip left>
+                                                        <Button sx={{ fontFamily: 'Oswald, sans-serif', backgroundColor: '#FFCA2C', color: 'black' }}><ShoppingBagOutlinedIcon sx={{ fontSize: '20px', marginRight: '5px' }} /> Add to cart</Button>
+                                                    </Flip>
+                                                </Box>
+                                            </Box>
+                                        </CardActions>
+                                    </Card>
+                                </Grid>
+                            );
+                        })
+                    }
+                </Grid>
+            </Container>
         </section>
     );
 };

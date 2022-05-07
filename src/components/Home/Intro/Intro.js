@@ -58,21 +58,21 @@ const Intro = () => {
                 <Grid container pt={4} rowSpacing={2} justifyContent='space-evenly'>
                     <Grid item md={5}>
                         <Box sx={{ position: 'relative', maxWidth: '700px' }}>
-                            <img style={{borderRadius: '7px'}} className='image-responsive' src={introAd1} alt="" />
+                            <img style={{ borderRadius: '7px' }} className='image-responsive' src={introAd1} alt="" />
                             <div className='text-inside-image'>
                                 <p>GET YOUR FREE</p>
                                 <Box component='p' sx={{ fontWeight: 'bold' }}>CHEESE FRIES</Box>
-                                <Button size='large' variant='contained' color='error'>LEARN MORE</Button>
+                                <Button sx={{ fontFamily: 'Oswald, sans-serif' }} size='large' variant='contained' color='error'>LEARN MORE</Button>
                             </div>
                         </Box>
                     </Grid>
                     <Grid item md={6}>
                         <Box sx={{ position: 'relative', maxWidth: '700px' }}>
-                            <img style={{borderRadius: '7px'}} className='image-responsive' src={introAd2} alt="" />
+                            <img style={{ borderRadius: '7px' }} className='image-responsive' src={introAd2} alt="" />
                             <div className='text-inside-image'>
                                 <p>CRISPY CHICKEN</p>
                                 <Box component='p' sx={{ fontWeight: 'bold' }}>BURGER IS BACK</Box>
-                                <Button size='large' variant='contained' color='error'>LEARN MORE</Button>
+                                <Button sx={{ fontFamily: 'Oswald, sans-serif' }} size='large' variant='contained' color='error'>LEARN MORE</Button>
                             </div>
                         </Box>
                     </Grid>

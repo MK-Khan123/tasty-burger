@@ -1,10 +1,9 @@
 #product-highlight {
-    margin-top: 100px;
-    margin-bottom: 70px;
+    margin-top: 6.25rem;
+    margin-bottom: 4.375rem;
 }
 
 .product-highlight-font {
-    font-family: 'Oswald', sans-serif;
     color: white;
     line-height: 1.2;
 }

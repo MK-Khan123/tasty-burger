@@ -1,3 +1,4 @@
+import { Box, Button, Container, Grid } from '@mui/material';
 import React from 'react';
 import './ProductHighlight.css';
 
@@ -11,29 +12,40 @@ const ProductHighlight = () => {
     };
 
     return (
-        <section id='product-highlight' className='container' style={{ backgroundImage: `url(${images.background})`, maxWidth: '100vw' }}>
-            <div style={{ padding: '90px' }} className="row">
-                <div className="col-md-5 col-lg-4 product-highlight-font">
-                    <h5 className='fw-bold' style={{ fontSize: '2.85em' }}>THE</h5>
-                    <h5 className='fw-bold' style={{ fontSize: '5.5em' }}>BIGTI</h5>
-                    <h5 className='fw-bold' style={{ fontSize: '5.5em' }}>BURGER</h5>
-                    <p style={{ fontSize: '1.3em' }}>Mushroom patty, vegan cheese, lettuce, tomatoes, avocado ligula rutrum risus ultrice luctus ligula congue a</p>
-                    <button className='btn btn-lg btn-outline-danger mt-2'>ADD TO CART</button>
-                </div>
-                <div className="col-md-7 col-lg-6">
-                    <img style={{ minWidth: '300px' }} className='img-fluid' src={images.bigtiBurger} alt="" />
-                </div>
-                <div className="col-lg-2 d-flex flex-lg-column justify-content-center py-2">
-                    <div className="card bg-transparent text-dark border p-2 m-auto m-md-2">
-                        <img style={{ maxWidth: '300px' }} src={images.holmBurger} className="card-img" alt="..." />
-                        <h5 className="card-text text-center">Holm Burger</h5>
-                    </div>
-                    <div className="card bg-transparent text-dark border p-2 m-auto m-md-2">
-                        <img style={{ maxWidth: '300px' }} src={images.komilBurger} className="card-img" alt="..." />
-                        <h5 className="card-text text-center">Komil Burger</h5>
-                    </div>
-                </div>
-            </div>
+        <section id='product-highlight' style={{ backgroundImage: `url(${images.background})`, maxWidth: '100vw' }}>
+            <Container>
+                <Grid container spacing={4} sx={{ padding: '5.625rem' }}>
+                    <Grid item md={5} className="product-highlight-font">
+                        <Box component='h5' sx={{ fontSize: '2.85rem' }}>THE</Box>
+                        <Box component='h5' sx={{ fontSize: '5.5rem' }}>BIGTI</Box>
+                        <Box component='h5' sx={{ fontSize: '5.5rem' }}>BURGER</Box>
+                        <Box
+                            component='p'
+                            sx={{
+                                fontFamily: 'Roboto, sans-serif',
+                                fontSize: '1.2rem',
+                                fontWeight: '300',
+                                color: 'black'
+                            }}
+                        >
+                            Mushroom patty, vegan cheese, lettuce, tomatoes, avocado ligula rutrum risus ultrice luctus ligula congue a
+                        </Box>
+                        <Button
+                            sx={{
+                                fontFamily: 'Oswald, sans-serif'
+                            }}
+                            size='large'
+                            variant='contained'
+                            color='error'
+                        >
+                            ADD TO CART
+                        </Button>
+                    </Grid>
+                    <Grid item md={7}>
+                        <img style={{ minWidth: '300px' }} className='image-responsive' src={images.bigtiBurger} alt="" />
+                    </Grid>
+                </Grid>
+            </Container>
         </section>
     );
 };

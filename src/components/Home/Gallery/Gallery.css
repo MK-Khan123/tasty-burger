@@ -1,34 +1,15 @@
 #image-gallery {
-    margin-top: 100px;
-    margin-bottom: 70px;
+    margin-top: 6.25rem;
+    margin-bottom: 4.375rem;
 }
 
-#image-gallery>h5 {
-    font-family: 'Oswald', sans-serif;
-    font-size: 3.75em;
-    color: #E3000E;
-}
-
-#image-gallery>p {
-    font-family: 'Roboto', sans-serif;
-    padding: 0 20%;
-}
-
-.card-title-alignment {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    font-family: 'Oswald', sans-serif;
-    height: 100%;
-}
-
-.card-hover {
+.card-hover {    
     width: 100%;
     height: 100%;
     display: none;
 }
 
-.gallery-image-hover {
+.image-gallery-transform {
     transition: all 1s;
 }
 
@@ -36,7 +17,7 @@
     display: block;
 }
 
-.image-gallery-card:hover .gallery-image-hover {
+.image-gallery-card:hover .image-gallery-transform {
     transform: scale(1.2);
     filter: brightness(40%);
 }
