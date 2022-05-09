@@ -1,7 +1,21 @@
 import React from 'react';
+import { Box } from '@mui/material';
+// Import Swiper React components
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/effect-fade";
+import "swiper/css/pagination";
+
+// import required modules
+import { EffectFade, Pagination } from "swiper";
+
 import './HeaderMain.css';
 
+
 const HeaderMain = () => {
+
     const bannerImages = {
         slide1: 'https://res.cloudinary.com/dn9k2jkdd/image/upload/v1649786133/testo-burger-project/slide-1_jjvtzy.jpg',
         slide2: 'https://res.cloudinary.com/dn9k2jkdd/image/upload/v1649786133/testo-burger-project/slide-2_yzajpy.jpg',
@@ -9,36 +23,91 @@ const HeaderMain = () => {
     };
 
     return (
-        <header id="headerSlideShow" className="carousel slide carousel-fade" data-bs-ride="carousel">
-            <div className="carousel-indicators">
-                <button type="button" data-bs-target="#headerSlideShow" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#headerSlideShow" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#headerSlideShow" data-bs-slide-to="2" aria-label="Slide 3"></button>
-            </div>
-            <div className="carousel-inner">
-                <div className="carousel-item active">
-                    <img src={bannerImages.slide1} className="d-block w-100" alt="..." />
-                    <div className="carousel-caption d-none d-md-block carousel-fonts">
-                        <h5>GOOD TIME, GREAT TASTE</h5>
-                        <p>Open Daily: <span className='text-warning fw-bold'>11:30 AM - 8:30 PM</span></p>
-                    </div>
+        <Swiper
+            spaceBetween={30}
+            effect={"fade"}
+            loop={true}
+            pagination={{
+                clickable: true,
+            }}
+            modules={[EffectFade, Pagination]}
+            id='banner-style'
+        >
+            <SwiperSlide className='banner-slide'>
+                <img src={bannerImages.slide1} alt='' />
+                <div className='banner-text'>
+                    <Box
+                        sx={{ fontSize: { sm: '3rem', md: '4rem', lg: '6.5rem', xl: '12rem' } }}
+                        component='h5'
+                    >
+                        GOOD TIME, GREAT TASTE
+                    </Box>
+                    <Box
+                        sx={{
+                            fontSize: { md: '1.12rem', lg: '1.75rem', xl: '3rem' },
+                            fontFamily: 'Roboto, sans-serif'
+                        }}
+                        component='p'
+                    >
+                        Open Daily: <Box className='banner-text-highlighted' component='span'
+                            sx={{ fontSize: { md: '1.5rem', lg: '2.35rem', xl: '4rem' } }}
+                        >
+                            11:30 AM - 8:30 PM
+                        </Box>
+                    </Box>
                 </div>
-                <div className="carousel-item">
-                    <img src={bannerImages.slide2} className="d-block w-100" alt="..." />
-                    <div className="carousel-caption d-none d-md-block carousel-fonts">
-                        <h5>DISCOVER THE REAL BURGERS</h5>
-                        <p>Enjoy the food you love <span className='text-warning fw-bold'>FROM $6.99</span></p>
-                    </div>
+            </SwiperSlide>
+
+            <SwiperSlide className='banner-slide'>
+                <img src={bannerImages.slide2} alt='' />
+                <div className='banner-text'>
+                    <Box
+                        sx={{ fontSize: { sm: '3rem', md: '4rem', lg: '6.5rem', xl: '12rem' } }}
+                        component='h5'
+                    >
+                        DISCOVER THE REAL BURGERS
+                    </Box>
+                    <Box
+                        sx={{
+                            fontSize: { md: '1.12rem', lg: '1.75rem', xl: '3rem' },
+                            fontFamily: 'Roboto, sans-serif'
+                        }}
+                        component='p'
+                    >
+                        Enjoy the food you love <Box className='banner-text-highlighted' component='span'
+                            sx={{ fontSize: { md: '1.5rem', lg: '2.35rem', xl: '4rem' } }}
+                        >
+                            FROM $6.99
+                        </Box>
+                    </Box>
                 </div>
-                <div className="carousel-item">
-                    <img src={bannerImages.slide3} className="d-block w-100" alt="..." />
-                    <div className="carousel-caption d-none d-md-block carousel-fonts">
-                        <h5>BIG BURGER, LITTLE MONEY</h5>
-                        <p>Order Now: <span className='text-warning fw-bold'>789-654-3210</span></p>
-                    </div>
+            </SwiperSlide>
+
+            <SwiperSlide className='banner-slide'>
+                <img src={bannerImages.slide3} alt='' />
+                <div className='banner-text'>
+                    <Box
+                        sx={{ fontSize: { sm: '3rem', md: '4rem', lg: '6.5rem', xl: '12rem' } }}
+                        component='h5'
+                    >
+                        BIG BURGER, LITTLE MONEY
+                    </Box>
+                    <Box
+                        sx={{
+                            fontSize: { md: '1.12rem', lg: '1.75rem', xl: '3rem' },
+                            fontFamily: 'Roboto, sans-serif'
+                        }}
+                        component='p'
+                    >
+                        Order Now: <Box className='banner-text-highlighted' component='span'
+                            sx={{ fontSize: { md: '1.5rem', lg: '2.35rem', xl: '4rem' } }}
+                        >
+                            789-654-3210
+                        </Box>
+                    </Box>
                 </div>
-            </div>
-        </header>
+            </SwiperSlide>
+        </Swiper>
     );
 };
 

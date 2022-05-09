@@ -3,7 +3,7 @@ import { faBagShopping } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { Flip } from 'react-reveal';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 //All the custom CSS class is used from MainMenu.css. The styling is identical, hence I didn't make separate classes for the same styling for this component.
 const RelatedProducts = ({ firstFewRelatedProducts }) => {
@@ -31,9 +31,9 @@ const RelatedProducts = ({ firstFewRelatedProducts }) => {
                                             <FontAwesomeIcon className='p-1 fs-4 main-menu-heart-icon' icon={faHeart} />
                                         </div>
                                     </div>
-                                    <Link className='text-decoration-none' to={`/product-details/${_id}`}>
+                                    <NavLink className='text-decoration-none' to={`/product-details/${_id}`}>
                                         <h5 className="card-title text-uppercase main-menu-card-title mt-2 fw-bold">{name}</h5>
-                                    </Link>
+                                    </NavLink>
                                     <p className="card-text text-muted">{briefInfo}</p>
                                 </div>
                                 <div className='d-flex justify-content-between'>

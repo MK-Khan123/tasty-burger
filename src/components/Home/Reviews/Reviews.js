@@ -49,7 +49,7 @@ const Reviews = () => {
                     data-swiper-parallax="-23%"
                 ></div>
 
-                <SwiperSlide>
+                <SwiperSlide className='swiper-slide-style'>
                     <div className="title" data-swiper-parallax="-300">
                         <img className='review-image' src={images.review1} alt="" />
                     </div>
@@ -65,7 +65,7 @@ const Reviews = () => {
                     <Box component='h4' sx={{ textTransform: 'uppercase', marginTop: '10px' }}>By Sean McMarthy</Box>
                 </SwiperSlide>
 
-                <SwiperSlide>
+                <SwiperSlide className='swiper-slide-style'>
                     <div className="title" data-swiper-parallax="-300">
                         <img className='review-image' src={images.review2} alt="" />
                     </div>
@@ -81,7 +81,7 @@ const Reviews = () => {
                     <Box component='h4' sx={{ textTransform: 'uppercase', marginTop: '10px' }}>By Evelyn Martinez</Box>
                 </SwiperSlide>
 
-                <SwiperSlide>
+                <SwiperSlide className='swiper-slide-style'>
                     <div className="title" data-swiper-parallax="-300">
                         <img className='review-image' src={images.review3} alt="" />
                     </div>
@@ -97,7 +97,7 @@ const Reviews = () => {
                     <Box component='h4' sx={{ textTransform: 'uppercase', marginTop: '10px' }}>By Robert Peterson</Box>
                 </SwiperSlide>
 
-                <SwiperSlide>
+                <SwiperSlide className='swiper-slide-style'>
                     <div className="title" data-swiper-parallax="-300">
                         <img className='review-image' src={images.review4} alt="" />
                     </div>

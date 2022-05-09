@@ -5,6 +5,7 @@ import "swiper/css/pagination";
 import { Autoplay, Pagination } from "swiper";
 import './Sponsors.css';
 
+//Here swiper-slide-style className is defined on Review.css under the Review component of the Home component.
 const Sponsors = () => {
     const images = {
         brand1: 'https://res.cloudinary.com/dn9k2jkdd/image/upload/v1649786138/testo-burger-project/brands/brand-1_khhjhc.png',
@@ -44,14 +45,14 @@ const Sponsors = () => {
                 modules={[Autoplay, Pagination]}
                 className="mySwiper" id='brand-div-height'
             >
-                <SwiperSlide><img className='brand-image' src={images.brand1} alt="" /></SwiperSlide>
-                <SwiperSlide><img className='brand-image' src={images.brand2} alt="" /></SwiperSlide>
-                <SwiperSlide><img className='brand-image' src={images.brand3} alt="" /></SwiperSlide>
-                <SwiperSlide><img className='brand-image' src={images.brand4} alt="" /></SwiperSlide>
-                <SwiperSlide><img className='brand-image' src={images.brand5} alt="" /></SwiperSlide>
-                <SwiperSlide><img className='brand-image' src={images.brand6} alt="" /></SwiperSlide>
-                <SwiperSlide><img className='brand-image' src={images.brand7} alt="" /></SwiperSlide>
-                <SwiperSlide><img className='brand-image' src={images.brand8} alt="" /></SwiperSlide>
+                <SwiperSlide className='swiper-slide-style'><img className='brand-image' src={images.brand1} alt="" /></SwiperSlide>
+                <SwiperSlide className='swiper-slide-style'><img className='brand-image' src={images.brand2} alt="" /></SwiperSlide>
+                <SwiperSlide className='swiper-slide-style'><img className='brand-image' src={images.brand3} alt="" /></SwiperSlide>
+                <SwiperSlide className='swiper-slide-style'><img className='brand-image' src={images.brand4} alt="" /></SwiperSlide>
+                <SwiperSlide className='swiper-slide-style'><img className='brand-image' src={images.brand5} alt="" /></SwiperSlide>
+                <SwiperSlide className='swiper-slide-style'><img className='brand-image' src={images.brand6} alt="" /></SwiperSlide>
+                <SwiperSlide className='swiper-slide-style'><img className='brand-image' src={images.brand7} alt="" /></SwiperSlide>
+                <SwiperSlide className='swiper-slide-style'><img className='brand-image' src={images.brand8} alt="" /></SwiperSlide>
             </Swiper>
         </section>
     );
