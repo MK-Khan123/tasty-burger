@@ -3,61 +3,34 @@
     border-radius: 10px;
     font-size: 1.125rem;
     font-family: 'Roboto', sans-serif;
-    max-width: 70px;
+    max-width: 4.375rem;
 }
 
-#product-details-banner {
-    margin-bottom: 70px;
-    max-width: 100vw;
-    background-position: center;
-    background-size: cover;
-    height: 410px;
-}
-
-#product-details-banner h5 {
-    font-size: 4rem;
-    font-family: 'Oswald', sans-serif;
-    margin-bottom: 22rem;
-}
-
-.product-details-description h4 {
-    font-family: 'Oswald', sans-serif;
+.product-description-typography h4 {
     font-size: 3.5rem;
     color: #642F21;
+    text-transform: uppercase;
 }
 
-.product-details-description h5 {
-    font-family: 'Oswald', sans-serif;
+.product-description-typography h5 {
     font-size: 2.375rem;
-}
-
-.product-details-description p {
-    font-family: 'Roboto', sans-serif;
-    font-size: 1.125rem;
-}
-
-.product-details-icon-hover:hover {
-    cursor: pointer;
     color: #FFC107;
 }
 
-#product-description h2 {
-    font-family: 'Oswald', sans-serif;
-    color: #642F21;
+.product-description-typography p {
+    font-family: 'Roboto', sans-serif;
+    color: #6C757D;
+    font-size: 1.125rem;
+    font-weight: 300;
 }
 
-#product-description p {
-    font-family: 'Roboto', sans-serif;
+.product-description-icons {
+    font-size: 1.5625rem;
+    margin: 0.625rem;
 }
 
 #related-products {
-    margin-top: 80px;
-    margin-bottom: 70px;
+    margin-top: 5rem;
+    margin-bottom: 4.375rem;
     background-color: #F6F9FA;
-}
-
-#related-products h2 {
-    font-family: 'Oswald', sans-serif;
-    color: #642F21;
-    font-size: 3.75rem;
 }

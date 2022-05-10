@@ -1,13 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import Navbar from '../../Shared/Navbar/Navbar';
 import './ProductDetails.css';
-import fakeData from '../../fakeData';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faShoppingBag, faStar } from '@fortawesome/free-solid-svg-icons';
-import { faFacebook, faLinkedin, faPinterest, faTwitter } from '@fortawesome/free-brands-svg-icons';
+import FacebookRoundedIcon from '@mui/icons-material/FacebookRounded';
+import TwitterIcon from '@mui/icons-material/Twitter';
+import WhatsAppIcon from '@mui/icons-material/WhatsApp';
+import PinterestIcon from '@mui/icons-material/Pinterest';
+import ShoppingBagOutlinedIcon from '@mui/icons-material/ShoppingBagOutlined';
+import StarRoundedIcon from '@mui/icons-material/StarRounded';
 import RelatedProducts from './RelatedProducts/RelatedProducts';
 import Footer from '../../Shared/Footer/Footer';
 import { useParams } from 'react-router-dom';
+import { Box, Button, Container, Grid } from '@mui/material';
 
 const ProductDetails = () => {
 
@@ -39,65 +42,131 @@ const ProductDetails = () => {
     //To show the ratings of the product dynamically, using FontAwesome Icon
     let ratedStars = [];
     for (let i = 1; i <= star; i++) {
-        ratedStars.push(<FontAwesomeIcon className="text-warning" icon={faStar} />);
+        ratedStars.push(<StarRoundedIcon sx={{ color: '#FFC107' }} />);
     }
 
     return (
         <section id='product-details'>
-            <header style={{ position: 'relative' }} className="container">
-                <Navbar />
+            <header>
+                <Container>
+                    <Navbar />
+                </Container>
             </header>
 
-            <section id='product-details-banner' className="container-fluid" style={{ backgroundImage: `url(${bannerImage})` }}>
-                <h5 className='carousel-caption d-none d-md-block text-white fw-bold'>PRODUCT DETAILS</h5>
-            </section>
+            <main>
+                <Box sx={{
+                    backgroundImage: `url(${bannerImage})`,
+                    backgroundPosition: 'center',
+                    backgroundSize: 'cover',
+                    height: '25.625rem',
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center'
+                }}>
+                    <Box sx={{ fontSize: '4rem', color: 'white', textAlign: 'center' }} component='h5'>PRODUCT DETAILS</Box>
+                </Box>
 
-            <section className='container'>
-                <div className="row">
-                    <div className="col-12 col-md-7">
-                        <img style={{ borderRadius: '15px' }} className='img-fluid' src={image} alt="" />
-                    </div>
-                    <div className="col-12 col-md-5 mt-4 product-details-description">
-                        <h4 className='text-uppercase fw-bold'>{name}</h4>
-                        <h5 className='text-warning fw-bold'>$ {price}</h5>
-                        <p className='text-muted'>
-                            <span className='text-warning pe-2'>{ratedStars}</span>
-                            ({starCount} customer review)
-                        </p>
-                        <p className='text-muted'>{briefInfo}</p>
-                        <p className='text-muted'>Category: {category}</p>
-                        <div className="d-flex">
-                            <input className='input-design' type="number" defaultValue={1} min='1' />
-                            <button style={{ fontFamily: 'Roboto, sans-serif' }} className='btn btn-warning px-4 py-2 mx-3'><FontAwesomeIcon icon={faShoppingBag} /> Add to cart</button>
-                        </div>
-                        <div className="d-flex pt-4 align-items-center">
-                            <div className='fw-bold fs-5 text-secondary'>Share this: </div>
-                            <div className="d-flex fs-5 ps-2">
-                                <FontAwesomeIcon className='px-2 product-details-icon-hover' icon={faFacebook} />
-                                <FontAwesomeIcon className='px-2 product-details-icon-hover' icon={faTwitter} />
-                                <FontAwesomeIcon className='px-2 product-details-icon-hover' icon={faLinkedin} />
-                                <FontAwesomeIcon className='px-2 product-details-icon-hover' icon={faPinterest} />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+                <section id='product-description'>
+                    <Container>
+                        <Grid container columnSpacing={3}>
+                            <Grid item xs={12} md={7} mt={5}>
+                                <img style={{ borderRadius: '0.625rem', margin: 'auto' }} className='image-responsive' src={image} alt="" />
+                            </Grid>
+                            <Grid item xs={12} md={5} mt={7} className="product-description-typography">
+                                <h4>{name}</h4>
+                                <h5>$ {price}</h5>
+                                <p><span>{ratedStars}</span>({starCount} customer review)</p>
+                                <p>{briefInfo}</p>
+                                <p>Category: <Box sx={{ textTransform: 'capitalize' }} component='span'>{category}</Box></p>
+                                <Box>
+                                    <input className='input-design' type="number" defaultValue={1} min='1' />
+                                    <Button
+                                        sx={{
+                                            fontFamily: 'Oswald, sans-serif',
+                                            backgroundColor: '#FFCA2C',
+                                            borderRadius: '0.5rem',
+                                            color: 'black',
+                                            marginLeft: '0.625rem'
+                                        }}
+                                    >
+                                        <ShoppingBagOutlinedIcon sx={{ fontSize: '1.25rem', marginRight: '5px' }} /> Add to cart
+                                    </Button>
+                                </Box>
+                                <Box sx={{ display: 'flex', alignItems: 'center', marginTop: '2rem' }}>
+                                    <Box sx={{ fontWeight: '600', color: '#6C757D', fontSize: '1.2rem' }}>Share this: </Box>
+                                    <Box>
+                                        <FacebookRoundedIcon
+                                            className='product-description-icons'
+                                            sx={{ '&:hover': { color: '#4867AA', cursor: 'pointer' } }}
+                                        />
+                                        <TwitterIcon
+                                            className='product-description-icons'
+                                            sx={{ '&:hover': { color: '#179CF0', cursor: 'pointer' } }}
+                                        />
+                                        <WhatsAppIcon
+                                            className='product-description-icons'
+                                            sx={{ '&:hover': { color: '#24C761', cursor: 'pointer' } }}
+                                        />
+                                        <PinterestIcon
+                                            className='product-description-icons'
+                                            sx={{ '&:hover': { color: '#BE0216', cursor: 'pointer' } }}
+                                        />
+                                    </Box>
+                                </Box>
+                            </Grid>
+                        </Grid>
 
-            <section id='product-description' className='container mt-5'>
-                <h2>Description</h2>
-                <p className='text-secondary py-3'>{description}</p>
-            </section>
+                        <section>
+                            <Box sx={{ marginTop: '2rem' }}>
+                                <Box
+                                    component='h5'
+                                    sx={{
+                                        color: '#642F21',
+                                        fontSize: '2rem'
+                                    }}
+                                >
+                                    Description
+                                </Box>
+                                <Box
+                                    component='p'
+                                    sx={{
+                                        fontFamily: 'Roboto, sans-serif',
+                                        color: '#6C757D',
+                                        marginTop: '1.5rem',
+                                        fontWeight: '300'
+                                    }}
+                                >
+                                    {description}
+                                </Box>
+                            </Box>
+                        </section>
+                    </Container>
+                </section>
 
-            <section id='related-products' className='container-fluid'>
-                <div className="container pb-5">
-                    <h2 className='text-center fw-bold pt-5'>RELATED PRODUCTS</h2>
-                    <div className="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4 mt-4">
-                        <RelatedProducts firstFewRelatedProducts={firstFewRelatedProducts} />
-                    </div>
-                </div>
-            </section>
+                <section id='related-products'>
+                    <Container>
+                        <Box sx={{ paddingTop: '3.5rem', paddingBottom: '6rem' }}>
+                            <Box
+                                sx={{
+                                    textAlign: 'center',
+                                    fontSize: '3.75rem',
+                                    color: '#642F21'
+                                }}
+                                component='h5'
+                            >
+                                RELATED PRODUCTS
+                            </Box>
+                            <Grid container spacing={2} mt={3}>
+                                <RelatedProducts firstFewRelatedProducts={firstFewRelatedProducts} />
+                            </Grid>
+                        </Box>
+                    </Container>
+                </section>
+            </main>
 
-            <Footer />
+            <footer>
+                <Footer />
+            </footer>
         </section>
     );
 };

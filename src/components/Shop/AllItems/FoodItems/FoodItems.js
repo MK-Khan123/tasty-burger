@@ -6,6 +6,7 @@ import ShoppingBagOutlinedIcon from '@mui/icons-material/ShoppingBagOutlined';
 import { Flip } from 'react-reveal';
 import { NavLink } from 'react-router-dom';
 
+//All the custom CSS class is used from ActiveFoodItem.css under the MainMenu component. The styling is identical, hence I didn't make separate classes for the same styling for this component.
 const FoodItems = ({ currentFoodItems, loading }) => {
 
     if (loading) {

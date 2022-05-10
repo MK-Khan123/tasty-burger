@@ -1,5 +1,6 @@
 import React from 'react';
 import { Box } from '@mui/material';
+import './HeaderMain.css';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -10,8 +11,6 @@ import "swiper/css/pagination";
 
 // import required modules
 import { EffectFade, Pagination } from "swiper";
-
-import './HeaderMain.css';
 
 
 const HeaderMain = () => {
