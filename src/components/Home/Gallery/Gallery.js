@@ -47,7 +47,7 @@ const Gallery = () => {
                             }
 
                             return (
-                                <Grid item sm={6} md={3} className="image-gallery-card">
+                                <Grid item key={name} sm={6} md={3} className="image-gallery-card">
                                     <Card sx={{ position: 'relative', borderRadius: '8px' }}>
                                         <CardMedia
                                             className='image-gallery-transform'

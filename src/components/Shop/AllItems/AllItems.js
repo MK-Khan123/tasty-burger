@@ -30,22 +30,10 @@ const AllItems = () => {
     const indexOfFirstFoodItem = indexOfLastFoodItem - foodItemsPerPage;
     const currentFoodItems = foodItems.slice(indexOfFirstFoodItem, indexOfLastFoodItem);
 
-    //Get Page Number
-    const paginate = pageNumber => setCurrentPage(pageNumber);
-
-    //Decrease page number
-    const paginateDecrease = pageNumber => {
-        if (pageNumber >= 1) {
-            setCurrentPage(pageNumber);
-        }
-    };
-
-    //Increase page number
-    const paginateIncrease = pageNumber => {
-        if (pageNumber <= 3) {
-            setCurrentPage(pageNumber);
-        }
-    };
+    //Get Page Number    
+    const handlePageChange = (event, value) => {
+        setCurrentPage(value);
+    }
 
     return (
         <section id='all-items'>
@@ -70,18 +58,16 @@ const AllItems = () => {
 
                 <section id='all-items-grid'>
                     <Container>
-                        <Box>Showing <Box sx={{ fontWeight: 'bold', color: 'red'}} component='span'>{indexOfFirstFoodItem + 1} - {(currentPage <= 2) ? indexOfLastFoodItem : (foodItems.length - indexOfFirstFoodItem) + indexOfFirstFoodItem}</Box> of {foodItems.length} results</Box>
+                        <Box>Showing <Box sx={{ fontWeight: 'bold', color: 'red' }} component='span'>{indexOfFirstFoodItem + 1} - {(currentPage <= 2) ? indexOfLastFoodItem : (foodItems.length - indexOfFirstFoodItem) + indexOfFirstFoodItem}</Box> of {foodItems.length} results</Box>
                         <hr />
                         <Grid container spacing={3} mt={3}>
                             <FoodItems currentFoodItems={currentFoodItems} loading={loading} />
-                        </Grid>                        
+                        </Grid>
                         <PageNavigation
                             foodItemsPerPage={foodItemsPerPage}
                             totalFoodItems={foodItems.length}
-                            paginate={paginate}
                             currentPage={currentPage}
-                            paginateIncrease={paginateIncrease}
-                            paginateDecrease={paginateDecrease}
+                            handlePageChange={handlePageChange}
                         />
                     </Container>
                 </section>
