@@ -1,4 +1,4 @@
-import React from 'react';
+import { Box, Button, Container, Grid, TextField } from '@mui/material';
 import Footer from '../../Shared/Footer/Footer';
 import MobileApp from '../../Shared/MobileApp/MobileApp';
 import Navbar from '../../Shared/Navbar/Navbar';
@@ -9,44 +9,112 @@ const ReserveTable = () => {
 
     return (
         <section id='reserve-table'>
-            <header style={{ position: 'relative' }} className="container">
-                <Navbar />
+            <header>
+                <Container>
+                    <Navbar />
+                </Container>
             </header>
 
-            <section id='reserve-table-banner' className="container-fluid" style={{ backgroundImage: `url(${bannerImage})` }}>
-                <h5 className='carousel-caption d-none d-md-block text-white fw-bold'>RESERVE A TABLE</h5>
-            </section>
+            <main>
+                <Box sx={{
+                    backgroundImage: `url(${bannerImage})`,
+                    backgroundPosition: 'center',
+                    backgroundSize: 'cover',
+                    height: '25.625rem',
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center'
+                }}>
+                    <Box sx={{ fontSize: '4rem', color: 'white' }} component='h5'>RESERVE A TABLE</Box>
+                </Box>
 
-            <section id='reserve-table-form' className='container p-4'>
-                <form className='row'>
-                    <div className="mb-3 col-md-6">
-                        <label htmlFor="inputDate" className="form-label">Date</label>
-                        <input type="date" className="form-control" id="inputDate" aria-describedby="dateHelp" />
-                    </div>
-                    <div className="mb-3 col-md-6">
-                        <label htmlFor="inputName1" className="form-label">Name</label>
-                        <input type="text" className="form-control" id="inputName1" />
-                    </div>
-                    <div className="mb-3 col-md-6">
-                        <label htmlFor="inputEmail1" className="form-label">Email address</label>
-                        <input type="email" className="form-control" id="inputEmail1" aria-describedby="emailHelp3" />
-                        <div id="emailHelp3" className="form-text">We'll never share your email with anyone else.</div>
-                    </div>
-                    <div className="mb-3 col-md-6">
-                        <label htmlFor="inputPhone" className="form-label">Phone</label>
-                        <input type="tel" className="form-control" id="inputPhone" />
-                    </div>
-                    <div className="mb-3">
-                        <textarea className="form-control" placeholder="Your message..." id="textArea1" style={{ height: "100px" }}></textarea>
-                    </div>
-                    <div>
-                        <button style={{ fontFamily: 'Oswald, sans-serif', fontSize: '1.2rem' }} type="submit" className="btn btn-danger">Request Booking</button>
-                    </div>
-                </form>
-            </section>
+                <section id='reserve-table-form'>
+                    <Container>
+                        <Grid container spacing={2}>
+                            <Grid item xs={12} md={6} mb={2}>
+                                <TextField
+                                    id="outlined-basic"
+                                    type="date"
+                                    label="Date"
+                                    InputLabelProps={{
+                                        shrink: true
+                                    }}
+                                    size="small"
+                                    fullWidth
+                                />
+                            </Grid>
+                            <Grid item xs={12} md={6} mb={2}>
+                                <TextField
+                                    id="outlined-basic"
+                                    label="Name"
+                                    type="text"
+                                    InputLabelProps={{
+                                        shrink: true
+                                    }}
+                                    fullWidth
+                                    size="small"
+                                />
+                            </Grid>
+                            <Grid item xs={12} md={6} mb={2}>
+                                <TextField
+                                    id="outlined-basic"
+                                    label="Email address"
+                                    type="email"
+                                    InputLabelProps={{
+                                        shrink: true
+                                    }}
+                                    fullWidth
+                                    size="small"
+                                    helperText="We'll never share your email with anyone else."
+                                />
+                            </Grid>
+                            <Grid item xs={12} md={6} mb={2}>
+                                <TextField
+                                    id="outlined-number"
+                                    label="Phone Number"
+                                    type="tel"
+                                    InputLabelProps={{
+                                        shrink: true
+                                    }}
+                                    fullWidth
+                                    size="small"
+                                />
+                            </Grid>
+                            <Grid item xs={12} mb={2}>
+                                <TextField
+                                    id="outlined-multiline-static"
+                                    label="Your message..."
+                                    InputLabelProps={{
+                                        shrink: true
+                                    }}
+                                    fullWidth
+                                    multiline
+                                    rows={5}
+                                />
+                            </Grid>
+                            <Grid item xs={12}>
+                                <Button
+                                    sx={{
+                                        fontFamily: 'Oswald, sans-serif',
+                                        fontSize: '1.2rem'
+                                    }}
+                                    variant='contained'
+                                    color='error'
+                                    type="submit"
+                                >
+                                    Request Booking
+                                </Button>
+                            </Grid>
+                        </Grid>
+                    </Container>
+                </section>
 
-            <MobileApp />
-            <Footer />
+                <MobileApp />
+            </main>
+
+            <footer>
+                <Footer />
+            </footer>
         </section>
     );
 };

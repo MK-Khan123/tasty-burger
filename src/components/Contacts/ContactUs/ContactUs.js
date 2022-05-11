@@ -6,22 +6,103 @@ import { faLocationDot, faLayerGroup } from '@fortawesome/free-solid-svg-icons';
 import { faClock } from '@fortawesome/free-regular-svg-icons';
 import MobileApp from '../../Shared/MobileApp/MobileApp';
 import Footer from '../../Shared/Footer/Footer';
+import { Box, Container, Grid } from '@mui/material';
 
 const ContactUs = () => {
     const bannerImage = 'https://res.cloudinary.com/dn9k2jkdd/image/upload/v1649786140/testo-burger-project/contact-us/contacts-page_ypzxhp.jpg';
 
     return (
         <section id='contact-us'>
-            <header style={{ position: 'relative' }} className="container">
-                <Navbar />
+            <header>
+                <Container>
+                    <Navbar />
+                </Container>
             </header>
 
-            <section id='contact-us-banner' className="container-fluid" style={{ backgroundImage: `url(${bannerImage})` }}>
-                <h5 className='carousel-caption d-none d-md-block text-white fw-bold'>CONTACT US</h5>
-            </section>
+            <Box sx={{
+                backgroundImage: `url(${bannerImage})`,
+                backgroundPosition: 'center',
+                backgroundSize: 'cover',
+                height: '25.625rem',
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center'
+            }}>
+                <Box sx={{ fontSize: '4rem', color: 'white' }} component='h5'>CONTACT US</Box>
+            </Box>
 
-            <section id='contact-us-grid' className='container'>
-                <div className='row'>
+            <section id='contact-us-grid'>
+                <Container>
+                    <Grid container>
+                        <Grid item md={4}>
+                            <div style={{ boxShadow: '5px 5px 30px gray', maxWidth: "540px" }} className="card rounded-3 px-4 pt-2 mb-3">
+                                <div className="row g-0">
+                                    <div className="contact-us-card-background col-3 d-flex justify-content-center align-items-center">
+                                        <div>
+                                            <FontAwesomeIcon className='fs-3 text-muted' icon={faLocationDot} />
+                                        </div>
+                                    </div>
+                                    <div className="col-9">
+                                        <div className="card-body">
+                                            <h5 style={{ fontFamily: 'Oswald, sans-serif', color: '#642F21' }} className="card-title fw-bold">LOCATION</h5>
+                                            <p className="card-text m-0">Phone: 789-654-3210</p>
+                                            <p className="card-text">House: 65, Road: 31,
+                                                <br />
+                                                Sector: 07, Uttara, Dhaka-1230
+                                            </p>
+                                            <p className="card-text"><small>Daily 11 AM to 10 PM</small></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </Grid>
+                        <div className="col-md-4">
+                            <div style={{ boxShadow: '5px 5px 30px gray', maxWidth: "540px" }} className="card rounded-3 px-4 pt-2 mb-3">
+                                <div className="row g-0">
+                                    <div className="contact-us-card-background col-3 d-flex justify-content-center align-items-center">
+                                        <div>
+                                            <FontAwesomeIcon className='fs-3 text-muted' icon={faClock} />
+                                        </div>
+                                    </div>
+                                    <div className="col-9">
+                                        <div className="card-body">
+                                            <h5 style={{ fontFamily: 'Oswald, sans-serif', color: '#642F21' }} className="card-title fw-bold">WORKING HOURS</h5>
+                                            <p className="card-text m-0">Phone: 789-654-3210</p>
+                                            <p className="card-text">House: 65, Road: 31,
+                                                <br />
+                                                Sector: 07, Uttara, Dhaka-1230
+                                            </p>
+                                            <p className="card-text"><small>Daily 11 AM to 10 PM</small></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="col-md-4">
+                            <div style={{ boxShadow: '5px 5px 30px gray', maxWidth: "540px" }} className="card rounded-3 px-4 pt-2 mb-3">
+                                <div className="row g-0">
+                                    <div className="contact-us-card-background col-3 d-flex justify-content-center align-items-center">
+                                        <div>
+                                            <FontAwesomeIcon className='fs-3 text-muted' icon={faLayerGroup} />
+                                        </div>
+                                    </div>
+                                    <div className="col-9">
+                                        <div className="card-body">
+                                            <h5 style={{ fontFamily: 'Oswald, sans-serif', color: '#642F21' }} className="card-title fw-bold">ORDER NOW</h5>
+                                            <p className="card-text m-0">Phone: 789-654-3210</p>
+                                            <p className="card-text">House: 65, Road: 31,
+                                                <br />
+                                                Sector: 07, Uttara, Dhaka-1230
+                                            </p>
+                                            <p className="card-text"><small>Daily 11 AM to 10 PM</small></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </Grid>
+                </Container>
+                {/* <div className='row'>
                     <div className="col-md-4">
                         <div style={{ boxShadow: '5px 5px 30px gray', maxWidth: "540px" }} className="card rounded-3 px-4 pt-2 mb-3">
                             <div className="row g-0">
@@ -88,7 +169,7 @@ const ContactUs = () => {
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> */}
             </section>
 
             <section id='leave-message' className='container py-5'>
