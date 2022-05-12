@@ -1,10 +1,12 @@
 import React from 'react';
 import './MyAccount.css';
 import Navbar from '../../Shared/Navbar/Navbar';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGoogle, faFacebookF } from '@fortawesome/free-brands-svg-icons';
+import FacebookRoundedIcon from '@mui/icons-material/FacebookRounded';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import TwitterIcon from '@mui/icons-material/Twitter';
+import GoogleIcon from '@mui/icons-material/Google';
 import Footer from '../../Shared/Footer/Footer';
-import { Box, Container, Grid } from '@mui/material';
+import { Box, Button, Checkbox, Container, FormControlLabel, FormGroup, Grid, TextField, Typography } from '@mui/material';
 
 const MyAccount = () => {
     const bannerImage = 'https://res.cloudinary.com/dn9k2jkdd/image/upload/v1649786144/testo-burger-project/shop-tab/shop-tab_j7hrho.jpg';
@@ -34,50 +36,94 @@ const MyAccount = () => {
                     <Container>
                         <Grid container mt={4} spacing={3}>
                             <Grid item md={6}>
-                                <h5 style={{ fontFamily: 'Oswald, sans-serif', fontSize: '2rem' }} className='py-4'>Login</h5>
-                                <form className='p-4 rounded-3 border border-2'>
-                                    <div className="mb-3">
-                                        <label htmlFor="inputEmail3" className="form-label">Email address</label>
-                                        <input type="email" className="form-control" id="inputEmail3" aria-describedby="emailHelp4" />
-                                        <div id="emailHelp4" className="form-text">We'll never share your email with anyone else.</div>
-                                    </div>
-                                    <div className="mb-3">
-                                        <label htmlFor="inputPassword" className="form-label">Password</label>
-                                        <input type="password" className="form-control" id="inputPassword" />
-                                    </div>
-                                    <div class="mb-3 form-check">
-                                        <input type="checkbox" class="form-check-input" id="inputCheck" />
-                                        <label class="form-check-label" htmlFor="inputCheck">Remember me</label>
-                                    </div>
-                                    <div>
-                                        <button type="submit" className="btn btn-warning fw-bold">Log In</button>
-                                    </div>
+                                <Box component='h5' sx={{ fontFamily: 'Oswald, sans-serif', fontSize: '2rem' }} py={2}>Login</Box>
+                                <form style={{ border: '2px solid #DEE2E6', borderRadius: '8px', padding: '35px 25px' }}>
+                                    <TextField sx={{ mb: 2 }}
+                                        id="outlined-basic"
+                                        label="Your Email"
+                                        type="email"
+                                        InputLabelProps={{
+                                            shrink: true
+                                        }}
+                                        required
+                                        fullWidth
+                                        size="small"
+                                        helperText="We'll never share your email with anyone else."
+                                    />
+                                    <TextField sx={{ mb: 2 }}
+                                        id="outlined-password-input"
+                                        type="password"
+                                        label="Password"
+                                        size="small"
+                                        required
+                                        fullWidth
+                                        InputLabelProps={{
+                                            shrink: true
+                                        }}
+                                        autoComplete="current-password"
+                                    />
+                                    <FormGroup sx={{ mb: 2 }}>
+                                        <FormControlLabel control={<Checkbox defaultChecked />} label="Remember me" />
+                                    </FormGroup>
+
+                                    <Button size='large' sx={{ fontWeight: '700', backgroundColor: '#FFC107', color: 'black', '&:hover': { backgroundColor: '#FFCA2C' } }} type="submit">Log In</Button>
                                 </form>
                             </Grid>
                             <Grid item md={6}>
-                                <h5 style={{ fontFamily: 'Oswald, sans-serif', fontSize: '2rem' }} className='py-4'>Register</h5>
-                                <form className='p-4 rounded-3 border border-2'>
-                                    <div className="mb-3">
-                                        <label htmlFor="inputName" className="form-label">Username</label>
-                                        <input type="text" className="form-control" id="inputName" />
-                                    </div>
-                                    <div className="mb-3">
-                                        <label htmlFor="inputEmail4" className="form-label">Email address</label>
-                                        <input type="email" className="form-control" id="inputEmail4" aria-describedby="emailHelp5" />
-                                        <div id="emailHelp5" className="form-text">We'll never share your email with anyone else.</div>
-                                    </div>
-                                    <div class="mb-3">
-                                        <div class="form-text">Your personal data will be used to support your experience throughout this website, to manage access to your account, and for other purposes described in our privacy policy.</div>
-                                    </div>
-                                    <div>
-                                        <button type="submit" className="btn btn-warning fw-bold">Register</button>
-                                    </div>
+                                <Box component='h5' sx={{ fontFamily: 'Oswald, sans-serif', fontSize: '2rem' }} py={2}>Register</Box>
+                                <form style={{ border: '2px solid #DEE2E6', borderRadius: '8px', padding: '35px 25px' }}>
+                                    <TextField sx={{ mb: 2 }}
+                                        id="outlined-basic1"
+                                        label="Your Email"
+                                        type="email"
+                                        InputLabelProps={{
+                                            shrink: true
+                                        }}
+                                        required
+                                        fullWidth
+                                        size="small"
+                                        helperText="We'll never share your email with anyone else."
+                                    />
+                                    <TextField sx={{ mb: 3 }}
+                                        id="outlined-password-input1"
+                                        type="password"
+                                        label="Your Password"
+                                        size="small"
+                                        required
+                                        fullWidth
+                                        InputLabelProps={{
+                                            shrink: true
+                                        }}
+                                        autoComplete="current-password"
+                                    />
+                                    <TextField
+                                        id="outlined-password-input2"
+                                        type="password"
+                                        label="Confirm Your Password"
+                                        size="small"
+                                        required
+                                        fullWidth
+                                        InputLabelProps={{
+                                            shrink: true
+                                        }}
+                                        autoComplete="current-password"
+                                    />
+                                    <Typography variant="body2" my={3} color="text.secondary" gutterBottom>Your personal data will be used to support your experience throughout this website, to manage access to your account, and for other purposes described in our privacy policy.</Typography>
+
+                                    <Button size='large' sx={{ fontWeight: '700', backgroundColor: '#FFC107', color: 'black', '&:hover': { backgroundColor: '#FFCA2C' } }} type="submit">Register</Button>
                                 </form>
                             </Grid>
-                            <div className='p-5'>
-                                <div className="btn btn-lg btn-outline-danger m-3">Sign in with <FontAwesomeIcon icon={faGoogle} /></div>
-                                <div className="btn btn-lg btn-outline-primary m-3">Sign in with <FontAwesomeIcon icon={faFacebookF} /></div>
-                            </div>
+                            <Grid item xs={12}>
+                                <Box sx={{ textAlign: 'center' }} mt={4}>
+                                    <Typography sx={{ fontFamily: 'Oswald, sans-serif', fontWeight: '500' }} variant="h5" gutterBottom component="div">
+                                        OR SIGN IN USING
+                                    </Typography>
+                                    <GoogleIcon className="google-icon" />
+                                    <TwitterIcon className="twitter-icon" />
+                                    <FacebookRoundedIcon className="facebook-icon" />
+                                    <GitHubIcon className="github-icon" />
+                                </Box>
+                            </Grid>
                         </Grid>
                     </Container>
                 </section>

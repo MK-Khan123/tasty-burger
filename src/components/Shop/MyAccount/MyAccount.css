@@ -1,3 +1,47 @@
 #user-info {
     font-family: 'Roboto', sans-serif;
 }
+
+.google-icon {
+    margin: 1rem;
+    font-size: 2rem;
+    color: #525252;
+    cursor: pointer;
+}
+
+.google-icon:hover {
+    color: #DB4437;
+}
+
+.twitter-icon {
+    margin: 1rem;
+    font-size: 2rem;
+    color: #525252;
+    cursor: pointer;
+}
+
+.twitter-icon:hover {
+    color: #1DA1F2;
+}
+
+.facebook-icon {
+    margin: 1rem;
+    font-size: 2rem;
+    color: #525252;
+    cursor: pointer;
+}
+
+.facebook-icon:hover {
+    color: #3b5998;
+}
+
+.github-icon {
+    margin: 1rem;
+    font-size: 2rem;
+    color: #525252;
+    cursor: pointer;
+}
+
+.github-icon:hover {
+    color: #40DFEF;
+}
