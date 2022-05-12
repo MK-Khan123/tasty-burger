@@ -1,8 +1,7 @@
 #contact-us-grid {
-    margin-top: 100px;
-    margin-bottom: 70px;
+    margin-top: 6.25rem;
+    margin-bottom: 4.375rem;
     font-family: 'Roboto', sans-serif;
-    color: grey;
 }
 
 .contact-us-card-background {
@@ -10,16 +9,19 @@
     height: 4rem;
     background-color: #F2F2F2;
     border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #leave-message {
     font-family: 'Roboto', sans-serif;
-    margin-top: 70px;
-    margin-bottom: 70px;
+    margin-bottom: 4.375rem;
 }
 
 #leave-message h5 {
     font-family: 'Oswald', sans-serif;
     color: #642F21;
     font-size: 3.125rem;
+    padding: 1.5rem 0;
 }
