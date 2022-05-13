@@ -17,7 +17,6 @@ const ProductDetails = () => {
     const bannerImage = 'https://res.cloudinary.com/dn9k2jkdd/image/upload/v1649786144/testo-burger-project/shop-tab/shop-tab_j7hrho.jpg';
 
     const { id } = useParams();
-    console.log(id);
     const [productDetails, setProductDetails] = useState({});
     const [relatedProducts, setRelatedProducts] = useState([]);
 

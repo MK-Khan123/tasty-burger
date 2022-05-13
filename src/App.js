@@ -13,6 +13,7 @@ import AllItems from './components/Shop/AllItems/AllItems';
 import ProductDetails from './components/Shop/ProductDetails/ProductDetails';
 import Cart from './components/Cart/Cart';
 import AdminPanel from './components/AdminPanel/AdminPanel';
+import Checkout from './components/Checkout/Checkout';
 
 
 function App() {
@@ -46,6 +47,8 @@ function App() {
         <Route path="/admin" element={<AdminPanel />} />
 
         <Route path="/cart" element={<Cart />} />
+
+        <Route path="/checkout" element={<Checkout />} />
       </Routes>
     </div>
   );
