@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import IconButton from '@mui/material/IconButton';
@@ -7,15 +7,25 @@ import Box from '@mui/material/Box';
 import ArrowDropDownRoundedIcon from '@mui/icons-material/ArrowDropDownRounded';
 import { NestedMenuItem } from 'mui-nested-menu';
 import { NavLink } from 'react-router-dom';
-import './NavItemsSidebar.css';
 
-const NavItemsSidebar = ({ handleOpenNavMenu, handleCloseNavMenu, anchorElNav, openNav }) => {
+const NavItemsSidebar = () => {
+
+    const [anchorElNav, setAnchorElNav] = useState(null);
+    const openNav = Boolean(anchorElNav);
+
+    const handleOpenNavMenu = (event) => {
+        setAnchorElNav(event.currentTarget);
+    };
+
+    const handleCloseNavMenu = () => {
+        setAnchorElNav(null);
+    };
 
     return (
         <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
                 size="large"
-                aria-label="account of current user"
+                aria-label="Menu Bar"
                 aria-controls="menu-appbar"
                 aria-haspopup="true"
                 onClick={handleOpenNavMenu}
@@ -27,18 +37,18 @@ const NavItemsSidebar = ({ handleOpenNavMenu, handleCloseNavMenu, anchorElNav, o
                 id="menu-appbar"
                 anchorOrigin={{
                     vertical: 'bottom',
-                    horizontal: 'left',
+                    horizontal: 'left'
                 }}
                 keepMounted
                 transformOrigin={{
                     vertical: 'top',
-                    horizontal: 'left',
+                    horizontal: 'left'
                 }}
                 anchorEl={anchorElNav}
                 open={openNav}
                 onClose={handleCloseNavMenu}
                 sx={{
-                    display: { xs: 'block', md: 'none' },
+                    display: { xs: 'block', md: 'none' }
                 }}
             >
                 {/* HOME SECTION */}

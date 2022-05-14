@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Avatar from '@mui/material/Avatar';
 import Tooltip from '@mui/material/Tooltip';
 import Box from '@mui/material/Box';
@@ -7,12 +7,25 @@ import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import Typography from '@mui/material/Typography';
 
-const UserSettings = ({ handleOpenUserMenu, handleCloseUserMenu, anchorElUser, settings }) => {
+const UserSettings = () => {
+
+    const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+
+    const [anchorElUser, setAnchorElUser] = useState(null);
+
+    const handleOpenUserMenu = (event) => {
+        setAnchorElUser(event.currentTarget);
+    };
+
+    const handleCloseUserMenu = () => {
+        setAnchorElUser(null);
+    };
+
     return (
         <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
                 <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                    <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+                    <Avatar alt="Andrew Simons" src="/static/images/avatar/2.jpg" />
                 </IconButton>
             </Tooltip>
             <Menu
@@ -21,19 +34,19 @@ const UserSettings = ({ handleOpenUserMenu, handleCloseUserMenu, anchorElUser, s
                 anchorEl={anchorElUser}
                 anchorOrigin={{
                     vertical: 'top',
-                    horizontal: 'right',
+                    horizontal: 'right'
                 }}
                 keepMounted
                 transformOrigin={{
                     vertical: 'top',
-                    horizontal: 'right',
+                    horizontal: 'right'
                 }}
                 open={Boolean(anchorElUser)}
                 onClose={handleCloseUserMenu}
             >
                 {settings.map((setting) => (
                     <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                        <Typography textAlign="center">{setting}</Typography>
+                        <Typography sx={{ fontFamily: 'Oswald, sans-serif', textAlign: "center" }}>{setting}</Typography>
                     </MenuItem>
                 ))}
             </Menu>
