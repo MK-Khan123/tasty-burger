@@ -1,5 +1,6 @@
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider, onAuthStateChanged, GithubAuthProvider } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signInWithPopup, signOut, GoogleAuthProvider, onAuthStateChanged, GithubAuthProvider } from "firebase/auth";
 import { useEffect, useState } from "react";
+
 import initializeAuthentication from "../Firebase/firebase.initialize";
 
 initializeAuthentication();
@@ -37,6 +38,15 @@ const useFirebase = () => {
                 alert(errorMessage);
                 setError(errorMessage);
             });
+    }
+
+    const logout = () => {
+        signOut(auth).then(() => {
+            setUser({});
+            alert('Signed out successfully');
+        }).catch((error) => {
+            alert(error);
+        });
     }
 
     const signInUsingGoogle = () => {
@@ -84,11 +94,12 @@ const useFirebase = () => {
                 // ...
             }
         });
-    }, []);
+    }, [auth]);
 
     return {
         user,
         error,
+        logout,
         signInUsingGoogle,
         signInUsingGithub,
         registerUsingEmail,
@@ -97,3 +108,4 @@ const useFirebase = () => {
 };
 
 export default useFirebase;
+

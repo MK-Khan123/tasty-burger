@@ -15,12 +15,14 @@ import Cart from './components/Cart/Cart';
 import AdminPanel from './components/AdminPanel/AdminPanel';
 import Checkout from './components/Checkout/Checkout';
 import AuthProvider from './context/AuthProvider';
+import CustomizedSnackbar from './components/Shared/CustomizedSnackbar/CustomizedSnackbar';
 
 
 function App() {
   return (
     <div className='App'>
       <AuthProvider>
+        <CustomizedSnackbar />
         <Routes>
           <Route path="/" element={<Navigate to="/home" />} />
 
