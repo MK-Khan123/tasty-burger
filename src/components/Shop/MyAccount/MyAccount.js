@@ -7,9 +7,12 @@ import TwitterIcon from '@mui/icons-material/Twitter';
 import GoogleIcon from '@mui/icons-material/Google';
 import Footer from '../../Shared/Footer/Footer';
 import { Box, Button, Checkbox, Container, FormControlLabel, FormGroup, Grid, TextField, Typography } from '@mui/material';
+import useAuth from '../../../hooks/useAuth';
 
 const MyAccount = () => {
     const bannerImage = 'https://res.cloudinary.com/dn9k2jkdd/image/upload/v1649786144/testo-burger-project/shop-tab/shop-tab_j7hrho.jpg';
+
+    const { signInUsingGoogle, signInUsingGithub } = useAuth();
 
     return (
         <section id='my-account'>
@@ -118,10 +121,10 @@ const MyAccount = () => {
                                     <Typography sx={{ fontFamily: 'Oswald, sans-serif', fontWeight: '500' }} variant="h5" gutterBottom component="div">
                                         OR SIGN IN USING
                                     </Typography>
-                                    <GoogleIcon className="google-icon" />
+                                    <GoogleIcon onClick={signInUsingGoogle} className="google-icon" />
                                     <TwitterIcon className="twitter-icon" />
                                     <FacebookRoundedIcon className="facebook-icon" />
-                                    <GitHubIcon className="github-icon" />
+                                    <GitHubIcon onClick={signInUsingGithub} className="github-icon" />
                                 </Box>
                             </Grid>
                         </Grid>
