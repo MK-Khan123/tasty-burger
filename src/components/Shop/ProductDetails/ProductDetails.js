@@ -21,7 +21,7 @@ const ProductDetails = () => {
     const [relatedProducts, setRelatedProducts] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/productDetails/${id}`)
+        fetch(`https://morning-badlands-52849.herokuapp.com/productDetails/${id}`)
             .then(res => res.json())
             .then(data => setProductDetails(data));
     }, [id]);
@@ -30,7 +30,7 @@ const ProductDetails = () => {
 
     //To dynamically show the related products in related products section according to category
     useEffect(() => {
-        fetch(`http://localhost:5000/products/${category}`)
+        fetch(`https://morning-badlands-52849.herokuapp.com/products/${category}`)
             .then(res => res.json())
             .then(data => setRelatedProducts(data));
     }, [category]);

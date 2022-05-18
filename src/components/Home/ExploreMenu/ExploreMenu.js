@@ -14,7 +14,7 @@ const ExploreMenu = () => {
     const [burgerData, setBurgerData] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/filteredBurger')
+        fetch('https://morning-badlands-52849.herokuapp.com/filteredBurger')
             .then(res => res.json())
             .then(data => setBurgerData(data));
     }, []);

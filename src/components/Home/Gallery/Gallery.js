@@ -8,7 +8,7 @@ const Gallery = () => {
     const [imageGallery, setImageGallery] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/gallery')
+        fetch('https://morning-badlands-52849.herokuapp.com/gallery')
             .then(res => res.json())
             .then(data => setImageGallery(data));
     }, []);

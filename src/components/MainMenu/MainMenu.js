@@ -23,7 +23,7 @@ const MainMenu = () => {
     const [activeFoodData, setActiveFoodData] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/products/${foodCategory}`)
+        fetch(`https://morning-badlands-52849.herokuapp.com/products/${foodCategory}`)
             .then(res => res.json())
             .then(data => setActiveFoodData(data));
     }, [foodCategory]);
