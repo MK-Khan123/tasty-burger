@@ -6,8 +6,28 @@ import Rating from '@mui/material/Rating';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import ShoppingBagOutlinedIcon from '@mui/icons-material/ShoppingBagOutlined';
 import { NavLink } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { addToCart } from '../../../store/cart';
 
 const ActiveFoodItem = ({ activeFoodData }) => {
+
+    const dispatch = useDispatch();
+    const cartItems = useSelector(state => state.entities.cart);
+
+    const handleAddToCart = (foodItemData) => {
+        const { category, name, image, price, _id } = foodItemData;
+        const foodData = {
+            category,
+            name,
+            image,
+            price,
+            _id,
+            quantity: 1
+        };
+        dispatch(addToCart(foodData));
+    }
+
+    console.log(cartItems);
 
     return (
         activeFoodData.map(foodItem => {
@@ -65,7 +85,17 @@ const ActiveFoodItem = ({ activeFoodData }) => {
                                 </Button>
                                 <Box className="main-menu-cart-button">
                                     <Flip left>
-                                        <Button sx={{ fontFamily: 'Oswald, sans-serif', backgroundColor: '#FFCA2C', color: 'black' }}><ShoppingBagOutlinedIcon sx={{ fontSize: '20px', marginRight: '5px' }} /> Add to cart</Button>
+                                        <Button
+                                            onClick={() => handleAddToCart(foodItem)}
+                                            sx={{
+                                                fontFamily: 'Oswald, sans-serif',
+                                                backgroundColor: '#FFCA2C',
+                                                color: 'black'
+                                            }}
+                                        >
+                                            <ShoppingBagOutlinedIcon sx={{ fontSize: '20px', marginRight: '5px' }} />
+                                            Add to cart
+                                        </Button>
                                     </Flip>
                                 </Box>
                             </Box>
