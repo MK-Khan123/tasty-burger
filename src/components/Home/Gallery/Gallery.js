@@ -82,13 +82,15 @@ const Gallery = () => {
                                                                 fontWeight: '500',
                                                                 textTransform: 'uppercase'
                                                             }}
-                                                            gutterBottom
                                                             variant="h6"
                                                             component="div"
                                                         >
                                                             {name}
                                                         </Typography>
-                                                        <p>{star} {ratedStars} ({starCount})</p>
+                                                        <Box mt={0} mb={4} component='p' sx={{ display: 'flex', alignItems: 'center' }}>
+                                                            <Box mr={1}>{ratedStars}</Box>
+                                                            <Box>({starCount})</Box>
+                                                        </Box>
                                                     </Fade>
                                                 </Box>
                                             </Box>

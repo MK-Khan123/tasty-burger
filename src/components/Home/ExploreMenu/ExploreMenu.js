@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import './ExploreMenu.css';
 import Flip from 'react-reveal/Flip';
 import Rating from '@mui/material/Rating';
 import FavoriteIcon from '@mui/icons-material/Favorite';
@@ -100,7 +99,16 @@ const ExploreMenu = () => {
                                                 </Button>
                                                 <Box className="main-menu-cart-button">
                                                     <Flip left>
-                                                        <Button sx={{ fontFamily: 'Oswald, sans-serif', backgroundColor: '#FFCA2C', color: 'black' }}><ShoppingBagOutlinedIcon sx={{ fontSize: '20px', marginRight: '5px' }} /> Add to cart</Button>
+                                                        <Button
+                                                            sx={{
+                                                                fontFamily: 'Oswald, sans-serif',
+                                                                backgroundColor: '#FFCA2C',
+                                                                color: 'black'
+                                                            }}
+                                                        >
+                                                            <ShoppingBagOutlinedIcon sx={{ fontSize: '20px', marginRight: '5px' }} />
+                                                            Add to cart
+                                                        </Button>
                                                     </Flip>
                                                 </Box>
                                             </Box>

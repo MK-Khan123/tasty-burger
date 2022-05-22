@@ -23,10 +23,10 @@ const Intro = () => {
                     <Grid item md={6}>
                         <img className='image-responsive' src={introPic} alt="" />
                     </Grid>
-                    <Grid item md={6} py={8} className="intro-font">
+                    <Grid item md={6} pt={8} className="intro-font">
                         <h5>NOTHING BRINGS PEOPLE TOGETHER LIKE A GOOD BURGER</h5>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe cum in assumenda, aut accusamus voluptates, totam doloribus debitis distinctio.</p>
-                        <Grid container className="mt-5">
+                        <Grid container mt={4}>
                             <Grid item md={3} xs={6}>
                                 <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
                                     <img className='intro-icon-size' src={icons.burger} alt="" />
@@ -55,13 +55,13 @@ const Intro = () => {
                     </Grid>
                 </Grid>
 
-                <Grid container pt={4} rowSpacing={2} justifyContent='space-evenly'>
+                <Grid container pt={6} rowSpacing={2} justifyContent='space-evenly'>
                     <Grid item md={5}>
                         <Box sx={{ position: 'relative', maxWidth: '700px' }}>
                             <img style={{ borderRadius: '7px' }} className='image-responsive' src={introAd1} alt="" />
                             <div className='text-inside-image'>
-                                <p>GET YOUR FREE</p>
-                                <Box component='p' sx={{ fontWeight: 'bold' }}>CHEESE FRIES</Box>
+                                <Box m={0}>GET YOUR FREE</Box>
+                                <Box component='p' mt={1} mb={1} sx={{ fontWeight: 'bold' }}>CHEESE FRIES</Box>
                                 <Button sx={{ fontFamily: 'Oswald, sans-serif' }} size='large' variant='contained' color='error'>LEARN MORE</Button>
                             </div>
                         </Box>
@@ -70,8 +70,8 @@ const Intro = () => {
                         <Box sx={{ position: 'relative', maxWidth: '700px' }}>
                             <img style={{ borderRadius: '7px' }} className='image-responsive' src={introAd2} alt="" />
                             <div className='text-inside-image'>
-                                <p>CRISPY CHICKEN</p>
-                                <Box component='p' sx={{ fontWeight: 'bold' }}>BURGER IS BACK</Box>
+                                <Box m={0}>CRISPY CHICKEN</Box>
+                                <Box component='p' mt={1} mb={1} sx={{ fontWeight: 'bold' }}>BURGER IS BACK</Box>
                                 <Button sx={{ fontFamily: 'Oswald, sans-serif' }} size='large' variant='contained' color='error'>LEARN MORE</Button>
                             </div>
                         </Box>

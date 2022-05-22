@@ -40,7 +40,11 @@ const HeaderMain = () => {
                 <img src={bannerImages.slide1} alt='' />
                 <div className='banner-text'>
                     <Box
-                        sx={{ fontSize: { sm: '3rem', md: '4rem', lg: '6.5rem', xl: '12rem' } }}
+                        sx={{
+                            fontSize: { xs: '2rem', sm: '3rem', md: '4rem', lg: '6.5rem', xl: '12rem' },
+                            margin: '0',
+                            fontWeight: '500'
+                        }}
                         component='h5'
                     >
                         GOOD TIME, GREAT TASTE
@@ -65,7 +69,11 @@ const HeaderMain = () => {
                 <img src={bannerImages.slide2} alt='' />
                 <div className='banner-text'>
                     <Box
-                        sx={{ fontSize: { sm: '3rem', md: '4rem', lg: '6.5rem', xl: '12rem' } }}
+                        sx={{
+                            fontSize: { xs: '2rem', sm: '3rem', md: '4rem', lg: '6.5rem', xl: '12rem' },
+                            margin: '0',
+                            fontWeight: '500'
+                        }}
                         component='h5'
                     >
                         DISCOVER THE REAL BURGERS
@@ -90,7 +98,11 @@ const HeaderMain = () => {
                 <img src={bannerImages.slide3} alt='' />
                 <div className='banner-text'>
                     <Box
-                        sx={{ fontSize: { sm: '3rem', md: '4rem', lg: '6.5rem', xl: '12rem' } }}
+                        sx={{
+                            fontSize: { xs: '2rem', sm: '3rem', md: '4rem', lg: '6.5rem', xl: '12rem' },
+                            margin: '0',
+                            fontWeight: '500'
+                        }}
                         component='h5'
                     >
                         BIG BURGER, LITTLE MONEY

@@ -24,13 +24,16 @@ const Delivery = () => {
                         fontWeight: '400',
                         textAlign: 'center'
                     }}
-                    component='h4'
                 >
                     WE GUARANTEE
                 </Box>
                 <Box
-                    sx={{ fontSize: '4.5rem', color: '#642F21', textAlign: 'center' }}
-                    component='h5'
+                    sx={{
+                        fontSize: '4.5rem',
+                        color: '#642F21',
+                        textAlign: 'center',
+                        fontWeight: '500'
+                    }}
                 >
                     30 MINUTES DELIVERY!
                 </Box>
@@ -41,7 +44,7 @@ const Delivery = () => {
                         fontSize: '1.1rem',
                         fontWeight: '300',
                         textAlign: 'center',
-                        paddingY: '10px'
+                        lineHeight: '1.5'
                     }}
                     component='p'
                 >

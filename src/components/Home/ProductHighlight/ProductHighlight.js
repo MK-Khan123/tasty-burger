@@ -14,16 +14,16 @@ const ProductHighlight = () => {
     return (
         <section id='product-highlight' style={{ backgroundImage: `url(${images.background})`, maxWidth: '100vw' }}>
             <Container>
-                <Grid container spacing={4} sx={{ padding: '5.625rem' }}>
+                <Grid container spacing={4} sx={{ padding: '4rem' }}>
                     <Grid item md={5} className="product-highlight-font">
-                        <Box component='h5' sx={{ fontSize: '2.85rem' }}>THE</Box>
-                        <Box component='h5' sx={{ fontSize: '5.5rem' }}>BIGTI</Box>
-                        <Box component='h5' sx={{ fontSize: '5.5rem' }}>BURGER</Box>
+                        <Box sx={{ fontSize: '2.85rem', fontWeight: '500' }}>THE</Box>
+                        <Box sx={{ fontSize: '5.5rem', fontWeight: '500' }}>BIGTI</Box>
+                        <Box sx={{ fontSize: '5.5rem', fontWeight: '500' }}>BURGER</Box>
                         <Box
                             component='p'
                             sx={{
                                 fontFamily: 'Roboto, sans-serif',
-                                fontSize: '1.2rem',
+                                fontSize: '1.1rem',
                                 fontWeight: '300',
                                 color: 'black'
                             }}
@@ -31,9 +31,7 @@ const ProductHighlight = () => {
                             Mushroom patty, vegan cheese, lettuce, tomatoes, avocado ligula rutrum risus ultrice luctus ligula congue a
                         </Box>
                         <Button
-                            sx={{
-                                fontFamily: 'Oswald, sans-serif'
-                            }}
+                            sx={{ fontFamily: 'Oswald, sans-serif' }}
                             size='large'
                             variant='contained'
                             color='error'

@@ -41,7 +41,7 @@ const BestOffers = () => {
                         <Card className='offer-card-body' sx={{ borderRadius: '10px', border: "none", boxShadow: "none" }}>
                             <Box sx={{ overflow: 'hidden' }}>
                                 <CardMedia
-                                    sx={{                                        
+                                    sx={{
                                         transition: 'all 800ms',
                                         '&:hover': {
                                             transform: 'scale(1.2)'
@@ -79,8 +79,8 @@ const BestOffers = () => {
                                     Mushroom patty, vegan cheese, lettuce, tomatoes, avocado ligula
                                 </Typography>
                                 <CardActions>
-                                    <Box sx={{ width: '100%', display: 'flex', justifyContent: 'space-between' }}>
-                                        <Box component='p' sx={{ color: '#E3000E', fontSize: '1.5rem', fontWeight: '500' }}>$8.95</Box>
+                                    <Box sx={{ width: '100%', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                                        <Box component='p' my={0} sx={{ color: '#E3000E', fontSize: '1.5rem', fontWeight: '500' }}>$8.95</Box>
                                         <Box className="offer-hover-button">
                                             <Fade bottom>
                                                 <Button
@@ -133,8 +133,8 @@ const BestOffers = () => {
                                     Mushroom patty, vegan cheese, lettuce, tomatoes, avocado ligula
                                 </Typography>
                                 <CardActions>
-                                    <Box sx={{ width: '100%', display: 'flex', justifyContent: 'space-between' }}>
-                                        <Box component='p' sx={{ color: '#E3000E', fontSize: '1.5rem', fontWeight: '500' }}>$7.95</Box>
+                                    <Box sx={{ width: '100%', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                                        <Box component='p' my={0} sx={{ color: '#E3000E', fontSize: '1.5rem', fontWeight: '500' }}>$7.95</Box>
                                         <Box className="offer-hover-button">
                                             <Fade top>
                                                 <Button
@@ -215,8 +215,8 @@ const BestOffers = () => {
                                     Mushroom patty, vegan cheese, lettuce, tomatoes, avocado ligula
                                 </Typography>
                                 <CardActions>
-                                    <Box sx={{ width: '100%', display: 'flex', justifyContent: 'space-between' }}>
-                                        <Box component='p' sx={{ color: '#E3000E', fontSize: '1.5rem', fontWeight: '500' }}>$8.50</Box>
+                                    <Box sx={{ width: '100%', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                                        <Box component='p' my={0} sx={{ color: '#E3000E', fontSize: '1.5rem', fontWeight: '500' }}>$8.50</Box>
                                         <Box className="offer-hover-button">
                                             <Fade bottom>
                                                 <Button
