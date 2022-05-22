@@ -57,12 +57,12 @@ const ProductDetails = () => {
                     backgroundImage: `url(${bannerImage})`,
                     backgroundPosition: 'center',
                     backgroundSize: 'cover',
-                    height: '25.625rem',
+                    height: '26rem',
                     display: 'flex',
                     justifyContent: 'center',
                     alignItems: 'center'
                 }}>
-                    <Box sx={{ fontSize: '4rem', color: 'white', textAlign: 'center' }} component='h5'>PRODUCT DETAILS</Box>
+                    <Box sx={{ fontSize: '4rem', color: 'white', textAlign: 'center', fontWeight: '500' }} component='h5'>PRODUCT DETAILS</Box>
                 </Box>
 
                 <section id='product-description'>
@@ -116,7 +116,7 @@ const ProductDetails = () => {
                         </Grid>
 
                         <section>
-                            <Box sx={{ marginTop: '2rem' }}>
+                            <Box>
                                 <Box
                                     component='h5'
                                     sx={{
@@ -144,7 +144,7 @@ const ProductDetails = () => {
 
                 <section id='related-products'>
                     <Container>
-                        <Box sx={{ paddingTop: '3.5rem', paddingBottom: '6rem' }}>
+                        <Box sx={{ paddingTop: '0.1rem', paddingBottom: '6rem' }}>
                             <Box
                                 sx={{
                                     textAlign: 'center',

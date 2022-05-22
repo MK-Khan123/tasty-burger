@@ -7,17 +7,7 @@ import { Flip } from 'react-reveal';
 import { NavLink } from 'react-router-dom';
 
 //All the custom CSS class is used from ActiveFoodItem.css under the MainMenu component. The styling is identical, hence I didn't make separate classes for the same styling for this component.
-const FoodItems = ({ currentFoodItems, loading }) => {
-
-    if (loading) {
-        return (
-            <div className="d-flex justify-content-center">
-                <div className="spinner-grow text-warning" role="status">
-                    <span className="visually-hidden">Loading...</span>
-                </div>
-            </div>
-        );
-    }
+const FoodItems = ({ currentFoodItems }) => {
 
     return (
         currentFoodItems?.map(food => {

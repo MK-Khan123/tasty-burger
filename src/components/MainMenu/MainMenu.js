@@ -5,6 +5,7 @@ import './MainMenu.css';
 import ActiveFoodItem from './ActiveFoodItem/ActiveFoodItem';
 import Delivery from '../Shared/Delivery/Delivery';
 import Footer from '../Shared/Footer/Footer';
+import LoadingSpinner from '../Shared/LoadingSpinner/LoadingSpinner';
 
 const MainMenu = () => {
 
@@ -21,11 +22,16 @@ const MainMenu = () => {
 
     const [foodCategory, setFoodCategory] = useState('burger');
     const [activeFoodData, setActiveFoodData] = useState([]);
+    const [isLoading, setIsLoading] = useState(false);
 
     useEffect(() => {
+        setIsLoading(true);
         fetch(`https://morning-badlands-52849.herokuapp.com/products/${foodCategory}`)
             .then(res => res.json())
-            .then(data => setActiveFoodData(data));
+            .then(data => {
+                setActiveFoodData(data);
+                setIsLoading(false);
+            });
     }, [foodCategory]);
 
     return (
@@ -54,37 +60,37 @@ const MainMenu = () => {
                         <Grid item xs={6} sm={4} md={2}>
                             <Box sx={{ textAlign: 'center', margin: '1.8rem', cursor: 'pointer' }} onClick={() => setFoodCategory('burger')}>
                                 <img className='main-menu-icon-size' src={icons.burger} alt="" />
-                                <h5>BURGERS</h5>
+                                <Box fontWeight="600">BURGERS</Box>
                             </Box>
                         </Grid>
                         <Grid item xs={6} sm={4} md={2}>
                             <Box sx={{ textAlign: 'center', margin: '1.8rem', cursor: 'pointer' }} onClick={() => setFoodCategory('dessert')}>
                                 <img className='main-menu-icon-size' src={icons.dessert} alt="" />
-                                <h5>DESSERT</h5>
+                                <Box fontWeight="600">DESSERT</Box>
                             </Box>
                         </Grid>
                         <Grid item xs={6} sm={4} md={2}>
                             <Box sx={{ textAlign: 'center', margin: '1.8rem', cursor: 'pointer' }} onClick={() => setFoodCategory('pasta')}>
                                 <img className='main-menu-icon-size' src={icons.pasta} alt="" />
-                                <h5>PASTA</h5>
+                                <Box fontWeight="600">PASTA</Box>
                             </Box>
                         </Grid>
                         <Grid item xs={6} sm={4} md={2}>
                             <Box sx={{ textAlign: 'center', margin: '1.8rem', cursor: 'pointer' }} onClick={() => setFoodCategory('pizza')}>
                                 <img className='main-menu-icon-size' src={icons.pizza} alt="" />
-                                <h5>PIZZA</h5>
+                                <Box fontWeight="600">PIZZA</Box>
                             </Box>
                         </Grid>
                         <Grid item xs={6} sm={4} md={2}>
                             <Box sx={{ textAlign: 'center', margin: '1.8rem', cursor: 'pointer' }} onClick={() => setFoodCategory('salad')}>
                                 <img className='main-menu-icon-size' src={icons.salad} alt="" />
-                                <h5>SALAD</h5>
+                                <Box fontWeight="600">SALAD</Box>
                             </Box>
                         </Grid>
                         <Grid item xs={6} sm={4} md={2}>
                             <Box sx={{ textAlign: 'center', margin: '1.8rem', cursor: 'pointer' }} onClick={() => setFoodCategory('sides')}>
                                 <img className='main-menu-icon-size' src={icons.fries} alt="" />
-                                <h5>SIDES</h5>
+                                <Box fontWeight="600">SIDES</Box>
                             </Box>
                         </Grid>
                     </Grid>
@@ -92,9 +98,12 @@ const MainMenu = () => {
 
                 <section id='food-item-grid'>
                     <Container>
-                        <Grid container spacing={3}>
-                            <ActiveFoodItem activeFoodData={activeFoodData} />
-                        </Grid>
+                        {
+                            isLoading ? <LoadingSpinner /> :
+                                <Grid container spacing={3}>
+                                    <ActiveFoodItem activeFoodData={activeFoodData} />
+                                </Grid>
+                        }
                     </Container>
                 </section>
 
