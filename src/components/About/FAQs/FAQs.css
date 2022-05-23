@@ -1,15 +1,15 @@
 #questions {
-    padding-top: 6.25rem;
-}
-
-#questions h5 {    
-    color: #642F21;
-    padding: 4% 0;
-    font-weight: 500;
+    margin-top: 6.25rem;
 }
 
 #questions p {
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
     color: gray;
+    line-height: 1.5;
+}
+
+.questions-font {
+    color: #642F21;
+    font-weight: 500;
 }
