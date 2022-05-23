@@ -43,7 +43,7 @@ const FoodItems = ({ currentFoodItems }) => {
                                         {name}
                                     </NavLink>
                                 </Typography>
-                                <Typography variant="body1" color="text.secondary">
+                                <Typography sx={{ fontFamily: 'Roboto, sans-serif' }} variant="body1" color="text.secondary">
                                     {briefInfo}
                                 </Typography>
                             </CardContent>
@@ -52,10 +52,9 @@ const FoodItems = ({ currentFoodItems }) => {
                             <Box sx={{ width: '100%', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                                 <Button
                                     sx={{
-                                        fontFamily: 'Oswald, sans-serif',
                                         backgroundColor: '#642F21',
                                         color: '#F7BE27',
-                                        fontWeight: '600',
+                                        fontWeight: '500',
                                         '&:hover': {
                                             backgroundColor: '#56423D'
                                         }
@@ -65,7 +64,19 @@ const FoodItems = ({ currentFoodItems }) => {
                                 </Button>
                                 <Box className="main-menu-cart-button">
                                     <Flip left>
-                                        <Button sx={{ fontFamily: 'Oswald, sans-serif', backgroundColor: '#FFCA2C', color: 'black' }}><ShoppingBagOutlinedIcon sx={{ fontSize: '20px', marginRight: '5px' }} /> Add to cart</Button>
+                                        <Button
+                                            variant='contained'
+                                            sx={{
+                                                backgroundColor: '#FFCA2C',
+                                                color: 'black',
+                                                '&:hover': {
+                                                    backgroundColor: '#FFCA2C'
+                                                }
+                                            }}
+                                        >
+                                            <ShoppingBagOutlinedIcon sx={{ fontSize: '20px', marginRight: '5px' }} />
+                                            Add to cart
+                                        </Button>
                                     </Flip>
                                 </Box>
                             </Box>

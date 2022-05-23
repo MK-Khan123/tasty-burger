@@ -51,12 +51,12 @@ const AllItems = () => {
                     backgroundImage: `url(${bannerImage})`,
                     backgroundPosition: 'center',
                     backgroundSize: 'cover',
-                    height: '25.625rem',
+                    height: '26rem',
                     display: 'flex',
                     justifyContent: 'center',
                     alignItems: 'center'
                 }}>
-                    <Box sx={{ fontSize: '4rem', color: 'white' }} component='h5'>ALL ITEMS</Box>
+                    <Box sx={{ fontSize: '4rem', color: 'white', fontWeight: '500' }} component='h5'>ALL ITEMS</Box>
                 </Box>
 
                 <section id='all-items-grid'>
@@ -64,9 +64,9 @@ const AllItems = () => {
                         <Box>Showing <Box sx={{ fontWeight: 'bold', color: 'red' }} component='span'>{indexOfFirstFoodItem + 1} - {(currentPage <= 2) ? indexOfLastFoodItem : (foodItems.length - indexOfFirstFoodItem) + indexOfFirstFoodItem}</Box> of {foodItems.length} results</Box>
                         <hr />
                         {
-                            isLoading ? <LoadingSpinner /> :
+                            isLoading ? <Box mt={6}><LoadingSpinner /></Box> :
                                 <Grid container spacing={3} mt={3}>
-                                    <FoodItems currentFoodItems={currentFoodItems} loading={isLoading} />
+                                    <FoodItems currentFoodItems={currentFoodItems} />
                                 </Grid>
                         }
                         <PageNavigation

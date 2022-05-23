@@ -20,12 +20,12 @@ const ReserveTable = () => {
                     backgroundImage: `url(${bannerImage})`,
                     backgroundPosition: 'center',
                     backgroundSize: 'cover',
-                    height: '25.625rem',
+                    height: '26rem',
                     display: 'flex',
                     justifyContent: 'center',
                     alignItems: 'center'
                 }}>
-                    <Box sx={{ fontSize: '4rem', color: 'white' }} component='h5'>RESERVE A TABLE</Box>
+                    <Box sx={{ fontSize: '4rem', color: 'white', fontWeight: '500' }} component='h5'>RESERVE A TABLE</Box>
                 </Box>
 
                 <section id='reserve-table-form'>
@@ -33,7 +33,6 @@ const ReserveTable = () => {
                         <Grid container spacing={2}>
                             <Grid item xs={12} md={6} mb={2}>
                                 <TextField
-                                    id="outlined-basic"
                                     type="date"
                                     label="Date"
                                     InputLabelProps={{
@@ -45,7 +44,6 @@ const ReserveTable = () => {
                             </Grid>
                             <Grid item xs={12} md={6} mb={2}>
                                 <TextField
-                                    id="outlined-basic"
                                     label="Name"
                                     type="text"
                                     InputLabelProps={{
@@ -57,7 +55,6 @@ const ReserveTable = () => {
                             </Grid>
                             <Grid item xs={12} md={6} mb={2}>
                                 <TextField
-                                    id="outlined-basic"
                                     label="Email address"
                                     type="email"
                                     InputLabelProps={{
@@ -70,7 +67,6 @@ const ReserveTable = () => {
                             </Grid>
                             <Grid item xs={12} md={6} mb={2}>
                                 <TextField
-                                    id="outlined-number"
                                     label="Phone Number"
                                     type="tel"
                                     InputLabelProps={{
@@ -82,7 +78,6 @@ const ReserveTable = () => {
                             </Grid>
                             <Grid item xs={12} mb={2}>
                                 <TextField
-                                    id="outlined-multiline-static"
                                     label="Your message..."
                                     InputLabelProps={{
                                         shrink: true
@@ -94,10 +89,7 @@ const ReserveTable = () => {
                             </Grid>
                             <Grid item xs={12}>
                                 <Button
-                                    sx={{
-                                        fontFamily: 'Oswald, sans-serif',
-                                        fontSize: '1.2rem'
-                                    }}
+                                    sx={{ fontSize: '1.2rem' }}
                                     variant='contained'
                                     color='error'
                                     type="submit"

@@ -24,12 +24,12 @@ const ContactUs = () => {
                     backgroundImage: `url(${bannerImage})`,
                     backgroundPosition: 'center',
                     backgroundSize: 'cover',
-                    height: '25.625rem',
+                    height: '26rem',
                     display: 'flex',
                     justifyContent: 'center',
                     alignItems: 'center'
                 }}>
-                    <Box sx={{ fontSize: '4rem', color: 'white' }} component='h5'>CONTACT US</Box>
+                    <Box sx={{ fontSize: '4rem', color: 'white', fontWeight: '500' }} component='h5'>CONTACT US</Box>
                 </Box>
 
                 <section id='contact-us-grid'>
@@ -47,7 +47,6 @@ const ContactUs = () => {
                                             <CardContent>
                                                 <Typography variant='h6' component='div'
                                                     sx={{
-                                                        fontFamily: 'Oswald, sans-serif',
                                                         color: '#642F21',
                                                         fontWeight: '600'
                                                     }}
@@ -68,7 +67,6 @@ const ContactUs = () => {
                             </Grid>
                             <Grid item xs={12} md={4}>
                                 <Card sx={{ boxShadow: '5px 5px 30px gray', maxWidth: "540px", borderRadius: '8px' }}>
-
                                     <Grid container>
                                         <Grid item xs={2} p={2}>
                                             <div className="contact-us-card-background">
@@ -79,7 +77,6 @@ const ContactUs = () => {
                                             <CardContent>
                                                 <Typography variant='h6' component='div'
                                                     sx={{
-                                                        fontFamily: 'Oswald, sans-serif',
                                                         color: '#642F21',
                                                         fontWeight: '600'
                                                     }}
@@ -111,7 +108,6 @@ const ContactUs = () => {
                                             <CardContent>
                                                 <Typography variant='h6' component='div'
                                                     sx={{
-                                                        fontFamily: 'Oswald, sans-serif',
                                                         color: '#642F21',
                                                         fontWeight: '600'
                                                     }}
@@ -138,7 +134,7 @@ const ContactUs = () => {
                     <Container>
                         <h5>LEAVE A MESSAGE</h5>
                         <Grid container spacing={2}>
-                            <Grid item xs={12} md={4} mb={2}>
+                            <Grid item xs={12} md={4} mb={{ xs: 2, md: 0 }}>
                                 <TextField
                                     id="outlined-basic"
                                     label="Your Name"
@@ -150,7 +146,7 @@ const ContactUs = () => {
                                     size="small"
                                 />
                             </Grid>
-                            <Grid item xs={12} md={4} mb={2}>
+                            <Grid item xs={12} md={4} mb={{ xs: 2, md: 0 }}>
                                 <TextField
                                     id="outlined-basic"
                                     label="Your Email"
@@ -163,7 +159,7 @@ const ContactUs = () => {
                                     helperText="We'll never share your email with anyone else."
                                 />
                             </Grid>
-                            <Grid item xs={12} md={4} mb={2}>
+                            <Grid item xs={12} md={4} mb={{ xs: 2, md: 0 }}>
                                 <TextField
                                     id="outlined-basic"
                                     label="What is this about? ..."
@@ -175,7 +171,7 @@ const ContactUs = () => {
                                     size="small"
                                 />
                             </Grid>
-                            <Grid item xs={12} mb={2}>
+                            <Grid item xs={12} mb={1}>
                                 <TextField
                                     id="outlined-multiline-static"
                                     label="Your message..."
@@ -189,10 +185,7 @@ const ContactUs = () => {
                             </Grid>
                             <Grid item xs={12}>
                                 <Button
-                                    sx={{
-                                        fontFamily: 'Oswald, sans-serif',
-                                        fontSize: '1.2rem'
-                                    }}
+                                    sx={{ fontSize: '1.2rem' }}
                                     variant='contained'
                                     color='error'
                                     type="submit"
