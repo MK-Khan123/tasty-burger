@@ -15,25 +15,28 @@ const BestOffers = () => {
     return (
         <section id='best-offers'>
             <Container>
-                <Box component='h5' sx={{
-                    textAlign: 'center',
-                    fontWeight: '500',
-                    marginBottom: '1.5rem',
-                    fontSize: '3.75em',
-                    color: '#E3000E'
-                }}>
+                <Box component='h5'
+                    sx={{
+                        textAlign: 'center',
+                        fontWeight: '500',
+                        marginBottom: '1.5rem',
+                        marginTop: '4.375rem',
+                        fontSize: '3.75rem',
+                        color: '#E3000E'
+                    }}>
                     OUR BEST OFFERS
                 </Box>
                 <Box component='p'
                     sx={{
                         fontFamily: 'Roboto, sans-serif',
-                        padding: '0 20%',
+                        paddingX: { xs: '10%', md: '20%' },
                         fontWeight: '300',
                         fontSize: '1.1rem',
                         color: '#778899',
                         textAlign: 'center',
-                        marginBottom: '4rem'
-                    }}>
+                        marginBottom: '3rem'
+                    }}
+                >
                     Aliquam a augue suscipit, luctus neque purus ipsum neque undo dolor primis libero tempus, blandit a cursus varius magna
                 </Box>
                 <Grid container spacing={2}>
@@ -64,7 +67,6 @@ const BestOffers = () => {
                                 </Box>
                                 <Typography
                                     sx={{
-                                        fontFamily: 'Oswald, sans-serif',
                                         textTransform: 'uppercase',
                                         fontWeight: '500',
                                         color: '#642F21'
@@ -75,7 +77,7 @@ const BestOffers = () => {
                                 >
                                     Spanish Burger
                                 </Typography>
-                                <Typography variant="body1" color="text.secondary">
+                                <Typography sx={{ fontFamily: 'Roboto, sans-serif' }} variant="body1" color="text.secondary">
                                     Mushroom patty, vegan cheese, lettuce, tomatoes, avocado ligula
                                 </Typography>
                                 <CardActions>
@@ -85,7 +87,6 @@ const BestOffers = () => {
                                             <Fade bottom>
                                                 <Button
                                                     sx={{
-                                                        fontFamily: 'Oswald, sans-serif',
                                                         backgroundColor: '#FFCA2C',
                                                         color: 'black'
                                                     }}
@@ -118,7 +119,6 @@ const BestOffers = () => {
                                 </Box>
                                 <Typography
                                     sx={{
-                                        fontFamily: 'Oswald, sans-serif',
                                         textTransform: 'uppercase',
                                         fontWeight: '500',
                                         color: '#642F21'
@@ -129,7 +129,7 @@ const BestOffers = () => {
                                 >
                                     Classic Burger
                                 </Typography>
-                                <Typography variant="body1" color="text.secondary">
+                                <Typography sx={{ fontFamily: 'Roboto, sans-serif' }} variant="body1" color="text.secondary">
                                     Mushroom patty, vegan cheese, lettuce, tomatoes, avocado ligula
                                 </Typography>
                                 <CardActions>
@@ -139,7 +139,6 @@ const BestOffers = () => {
                                             <Fade top>
                                                 <Button
                                                     sx={{
-                                                        fontFamily: 'Oswald, sans-serif',
                                                         backgroundColor: '#FFCA2C',
                                                         color: 'black'
                                                     }}
@@ -200,7 +199,6 @@ const BestOffers = () => {
                                 </Box>
                                 <Typography
                                     sx={{
-                                        fontFamily: 'Oswald, sans-serif',
                                         textTransform: 'uppercase',
                                         fontWeight: '500',
                                         color: '#642F21'
@@ -211,7 +209,7 @@ const BestOffers = () => {
                                 >
                                     Crispy Burger
                                 </Typography>
-                                <Typography variant="body1" color="text.secondary">
+                                <Typography sx={{ fontFamily: 'Roboto, sans-serif' }} variant="body1" color="text.secondary">
                                     Mushroom patty, vegan cheese, lettuce, tomatoes, avocado ligula
                                 </Typography>
                                 <CardActions>
@@ -221,7 +219,6 @@ const BestOffers = () => {
                                             <Fade bottom>
                                                 <Button
                                                     sx={{
-                                                        fontFamily: 'Oswald, sans-serif',
                                                         backgroundColor: '#FFCA2C',
                                                         color: 'black'
                                                     }}

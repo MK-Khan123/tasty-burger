@@ -19,23 +19,13 @@ const Navbar = () => {
     const cart = useSelector(state => state.entities.cart);
 
     return (
-        <Box
-            sx={{
-                position: 'relative',
-                top: '1.2rem'
-            }}
-        >
+        <Box sx={{ position: 'relative' }}>
             <AppBar
+                position="absolute"
                 sx={{
-                    '& .MuiButton-text': {
-                        fontFamily: 'Oswald, sans-serif'
-                    }
-                }}
-                style={{
                     background: 'transparent',
                     boxShadow: 'none'
                 }}
-                position="absolute"
             >
                 <Container maxWidth="xl">
                     <Toolbar disableGutters>

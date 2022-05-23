@@ -60,9 +60,9 @@ const Intro = () => {
                         <Box sx={{ position: 'relative', maxWidth: '700px' }}>
                             <img style={{ borderRadius: '7px' }} className='image-responsive' src={introAd1} alt="" />
                             <div className='text-inside-image'>
-                                <Box m={0}>GET YOUR FREE</Box>
+                                <Box component='p' m={0}>GET YOUR FREE</Box>
                                 <Box component='p' mt={1} mb={1} sx={{ fontWeight: 'bold' }}>CHEESE FRIES</Box>
-                                <Button sx={{ fontFamily: 'Oswald, sans-serif' }} size='large' variant='contained' color='error'>LEARN MORE</Button>
+                                <Button size='large' variant='contained' color='error'>LEARN MORE</Button>
                             </div>
                         </Box>
                     </Grid>
@@ -70,9 +70,9 @@ const Intro = () => {
                         <Box sx={{ position: 'relative', maxWidth: '700px' }}>
                             <img style={{ borderRadius: '7px' }} className='image-responsive' src={introAd2} alt="" />
                             <div className='text-inside-image'>
-                                <Box m={0}>CRISPY CHICKEN</Box>
+                                <Box component='p' m={0}>CRISPY CHICKEN</Box>
                                 <Box component='p' mt={1} mb={1} sx={{ fontWeight: 'bold' }}>BURGER IS BACK</Box>
-                                <Button sx={{ fontFamily: 'Oswald, sans-serif' }} size='large' variant='contained' color='error'>LEARN MORE</Button>
+                                <Button size='large' variant='contained' color='error'>LEARN MORE</Button>
                             </div>
                         </Box>
                     </Grid>

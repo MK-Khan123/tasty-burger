@@ -24,12 +24,12 @@ const AboutTesto = () => {
                     backgroundImage: `url(${bannerImage})`,
                     backgroundPosition: 'center',
                     backgroundSize: 'cover',
-                    height: '25.625rem',
+                    height: '26rem',
                     display: 'flex',
                     justifyContent: 'center',
                     alignItems: 'center'
                 }}>
-                    <Box sx={{ fontSize: '4rem', color: 'white' }} component='h5'>ABOUT TESTO</Box>
+                    <Box sx={{ fontSize: '4rem', color: 'white', fontWeight: '500' }} component='h5'>ABOUT TESTO</Box>
                 </Box>
                 <AboutIntro />
                 <AboutPromo1 />

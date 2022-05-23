@@ -1,14 +1,13 @@
 #food-item-grid {
-    margin-top: 6.25rem;
+    margin-top: 3rem;
     margin-bottom: 4.375rem;
 }
 
 #main-menu-icons {
-    margin-top: 6.25rem;
+    margin-top: 4rem;
 }
 
 .main-menu-icon-size {
-    max-width: 4.375rem;
-    height: auto;
+    max-width: 4.375rem;    
     margin-bottom: 5px;
 }

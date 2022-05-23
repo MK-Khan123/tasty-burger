@@ -26,7 +26,7 @@ const MobileApp = () => {
                         <Box
                             sx={{
                                 fontSize: '4.5rem',
-                                fontWeight: '700',
+                                fontWeight: '600',
                                 color: '#642F21'
                             }}
                         >
@@ -51,7 +51,7 @@ const MobileApp = () => {
                             </Box>
                         </Box>
                     </Grid>
-                    <Grid mt={{ xs: 4, md: 0 }} item md={6}>
+                    <Grid item md={6} mt={{ xs: 4, md: 0 }}>
                         <img className='image-responsive' src={images.eShopPic} alt="" />
                     </Grid>
                 </Grid>

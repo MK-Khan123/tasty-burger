@@ -16,25 +16,29 @@ const Gallery = () => {
     return (
         <section id='image-gallery'>
             <Container>
-                <Box component='h5' sx={{
-                    textAlign: 'center',
-                    fontWeight: '500',
-                    marginBottom: '1.5rem',
-                    fontSize: '3.75em',
-                    color: '#E3000E'
-                }}>
+                <Box component='h5'
+                    sx={{
+                        textAlign: 'center',
+                        fontWeight: '500',
+                        marginBottom: '1.5rem',
+                        marginTop: '4.375rem',
+                        fontSize: '3.75rem',
+                        color: '#E3000E'
+                    }}
+                >
                     IMAGE GALLERY
                 </Box>
                 <Box component='p'
                     sx={{
                         fontFamily: 'Roboto, sans-serif',
-                        padding: '0 20%',
+                        paddingX: { xs: '10%', md: '20%' },
                         fontWeight: '300',
                         fontSize: '1.1rem',
                         color: '#778899',
                         textAlign: 'center',
-                        marginBottom: '4rem'
-                    }}>
+                        marginBottom: '3rem'
+                    }}
+                >
                     Aliquam a augue suscipit, luctus neque purus ipsum neque undo dolor primis libero tempus, blandit a cursus varius magna
                 </Box>
                 <Grid container spacing={2}>
@@ -52,7 +56,7 @@ const Gallery = () => {
                                         <CardMedia
                                             className='image-gallery-transform'
                                             component="img"
-                                            alt="green iguana"
+                                            alt={name + ' picture'}
                                             image={image}
                                         />
                                         <Box
@@ -61,7 +65,7 @@ const Gallery = () => {
                                                 top: 0,
                                                 right: 0,
                                                 bottom: 0,
-                                                left: 0
+                                                left: 0,                                                
                                             }}
                                         >
                                             <Box className='card-hover'>
@@ -72,13 +76,13 @@ const Gallery = () => {
                                                         justifyContent: 'flex-end',
                                                         height: '100%',
                                                         color: 'white',
+                                                        boxSizing: 'border-box',
                                                         padding: '1rem'
                                                     }}
                                                 >
                                                     <Fade bottom>
                                                         <Typography
                                                             sx={{
-                                                                fontFamily: 'Oswald, sans-serif',
                                                                 fontWeight: '500',
                                                                 textTransform: 'uppercase'
                                                             }}
@@ -87,7 +91,7 @@ const Gallery = () => {
                                                         >
                                                             {name}
                                                         </Typography>
-                                                        <Box mt={0} mb={4} component='p' sx={{ display: 'flex', alignItems: 'center' }}>
+                                                        <Box sx={{ display: 'flex', alignItems: 'center' }}>
                                                             <Box mr={1}>{ratedStars}</Box>
                                                             <Box>({starCount})</Box>
                                                         </Box>

@@ -13,18 +13,18 @@ const SpecialOffers = () => {
     return (
         <section id='special-offers'>
             <Container>
-                <Grid container spacing={3}>
+                <Grid container spacing={2}>
                     <Grid item md={6}>
-                        <img style={{borderRadius: '8px'}} className='image-responsive' src={images.offer1} alt="" />
+                        <img style={{ borderRadius: '8px' }} className='image-responsive' src={images.offer1} alt="" />
                     </Grid>
                     <Grid item md={6}>
-                        <img style={{borderRadius: '8px'}} className='image-responsive' src={images.offer2} alt="" />
+                        <img style={{ borderRadius: '8px' }} className='image-responsive' src={images.offer2} alt="" />
                     </Grid>
                     <Grid item md={6}>
-                        <img style={{borderRadius: '8px'}} className='image-responsive' src={images.offer3} alt="" />
+                        <img style={{ borderRadius: '8px' }} className='image-responsive' src={images.offer3} alt="" />
                     </Grid>
                     <Grid item md={6}>
-                        <img style={{borderRadius: '8px'}} className='image-responsive' src={images.offer4} alt="" />
+                        <img style={{ borderRadius: '8px' }} className='image-responsive' src={images.offer4} alt="" />
                     </Grid>
                 </Grid>
             </Container>

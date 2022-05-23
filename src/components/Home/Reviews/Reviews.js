@@ -64,7 +64,6 @@ const Reviews = () => {
                     </Box>
                     <Typography
                         sx={{
-                            fontFamily: 'Oswald, sans-serif',
                             textTransform: 'uppercase',
                             marginTop: '10px'
                         }}
@@ -91,7 +90,6 @@ const Reviews = () => {
                     </Box>
                     <Typography
                         sx={{
-                            fontFamily: 'Oswald, sans-serif',
                             textTransform: 'uppercase',
                             marginTop: '10px'
                         }}
@@ -118,7 +116,6 @@ const Reviews = () => {
                     </Box>
                     <Typography
                         sx={{
-                            fontFamily: 'Oswald, sans-serif',
                             textTransform: 'uppercase',
                             marginTop: '10px'
                         }}
@@ -145,7 +142,6 @@ const Reviews = () => {
                     </Box>
                     <Typography
                         sx={{
-                            fontFamily: 'Oswald, sans-serif',
                             textTransform: 'uppercase',
                             marginTop: '10px'
                         }}

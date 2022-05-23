@@ -40,21 +40,21 @@ const HeaderMain = () => {
                 <img src={bannerImages.slide1} alt='' />
                 <div className='banner-text'>
                     <Box
+                        component='h5'
                         sx={{
                             fontSize: { xs: '2rem', sm: '3rem', md: '4rem', lg: '6.5rem', xl: '12rem' },
                             margin: '0',
                             fontWeight: '500'
                         }}
-                        component='h5'
                     >
                         GOOD TIME, GREAT TASTE
                     </Box>
                     <Box
+                        component='p'
                         sx={{
                             fontSize: { md: '1.12rem', lg: '1.75rem', xl: '3rem' },
                             fontFamily: 'Roboto, sans-serif'
                         }}
-                        component='p'
                     >
                         Open Daily: <Box className='banner-text-highlighted' component='span'
                             sx={{ fontSize: { md: '1.5rem', lg: '2.35rem', xl: '4rem' } }}
@@ -69,21 +69,21 @@ const HeaderMain = () => {
                 <img src={bannerImages.slide2} alt='' />
                 <div className='banner-text'>
                     <Box
+                        component='h5'
                         sx={{
                             fontSize: { xs: '2rem', sm: '3rem', md: '4rem', lg: '6.5rem', xl: '12rem' },
                             margin: '0',
                             fontWeight: '500'
                         }}
-                        component='h5'
                     >
                         DISCOVER THE REAL BURGERS
                     </Box>
                     <Box
+                        component='p'
                         sx={{
                             fontSize: { md: '1.12rem', lg: '1.75rem', xl: '3rem' },
                             fontFamily: 'Roboto, sans-serif'
                         }}
-                        component='p'
                     >
                         Enjoy the food you love <Box className='banner-text-highlighted' component='span'
                             sx={{ fontSize: { md: '1.5rem', lg: '2.35rem', xl: '4rem' } }}
@@ -98,21 +98,21 @@ const HeaderMain = () => {
                 <img src={bannerImages.slide3} alt='' />
                 <div className='banner-text'>
                     <Box
+                        component='h5'
                         sx={{
                             fontSize: { xs: '2rem', sm: '3rem', md: '4rem', lg: '6.5rem', xl: '12rem' },
                             margin: '0',
                             fontWeight: '500'
                         }}
-                        component='h5'
                     >
                         BIG BURGER, LITTLE MONEY
                     </Box>
                     <Box
+                        component='p'
                         sx={{
                             fontSize: { md: '1.12rem', lg: '1.75rem', xl: '3rem' },
                             fontFamily: 'Roboto, sans-serif'
                         }}
-                        component='p'
                     >
                         Order Now: <Box className='banner-text-highlighted' component='span'
                             sx={{ fontSize: { md: '1.5rem', lg: '2.35rem', xl: '4rem' } }}
