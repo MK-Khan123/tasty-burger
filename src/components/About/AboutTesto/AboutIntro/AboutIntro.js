@@ -22,8 +22,10 @@ const AboutIntro = () => {
                                         fontWeight: '500',
                                         fontSize: '3.25rem',
                                         color: '#642F21',
-                                        lineHeight: '1.35'
-                                    }}>
+                                        lineHeight: '1.35',
+                                        margin: 0
+                                    }}
+                                >
                                     NOTHING BRINGS PEOPLE TOGETHER LIKE A GOOD BURGER
                                 </Box>
                                 <Box
@@ -55,7 +57,7 @@ const AboutIntro = () => {
                                     size='large'
                                     color='error'
                                     variant='contained'
-                                    sx={{ marginTop: '2rem', fontFamily: 'Oswald, sans-serif', fontSize: '1rem' }}
+                                    sx={{ marginTop: '2rem', fontSize: '1rem' }}
                                 >
                                     ABOUT MORE
                                 </Button>

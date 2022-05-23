@@ -10,25 +10,26 @@ const AboutPromo2 = () => {
     return (
         <section id='about-promo2'>
             <Container>
-                <Grid pt={12} container columnSpacing={8} rowSpacing={4}>
+                <Grid container pt={12} columnSpacing={4} rowSpacing={4}>
                     <Grid item xs={12} md={6}>
                         <Box
                             component='h5'
                             sx={{
                                 fontSize: '3.25rem',
-                                letterSpacing: '1.2px',
+                                lineHeight: '1.2',
                                 color: '#642F21',
-                                fontWeight: '500'
+                                fontWeight: '500',
+                                margin: 0
                             }}
                         >
                             DISCOVER THE NEW TASTE OF THE BURGER
                         </Box>
-                        <p style={{ fontWeight: '300' }}>Porta semper lacus cursus, feugiat primis ultrice and ligula risus auctor an tempus feugiat dolor lacinia cubilia a curae integer orci congue and metus mollislorem primis</p>
+                        <p>Porta semper lacus cursus, feugiat primis ultrice and ligula risus auctor an tempus feugiat dolor lacinia cubilia a curae integer orci congue and metus mollislorem primis</p>
                         <img style={{ borderRadius: '5px' }} className='image-responsive' src={frenchFryPic} alt="" />
                     </Grid>
                     <Grid item xs={12} md={6}>
                         <img style={{ borderRadius: '5px' }} className='image-responsive' src={burgerPic} alt="" />
-                        <p style={{ fontWeight: '300', paddingTop: '1.25rem' }}>Porta semper lacus cursus, feugiat primis ultrice and ligula risus auctor an tempus feugiat dolor lacinia cubilia a curae integer.</p>
+                        <p>Porta semper lacus cursus, feugiat primis ultrice and ligula risus auctor an tempus feugiat dolor lacinia cubilia a curae integer.</p>
                     </Grid>
                 </Grid>
             </Container>

@@ -8,23 +8,24 @@ const Subscription = () => {
         <Container>
             <section id='subscription'>
                 <Box
+                    component='h5'
                     sx={{
                         textAlign: 'center',
                         fontSize: '2.625rem',
-                        fontWeight: '600'
+                        fontWeight: '600',
+                        margin: 0
                     }}
-                    component='h5'
                 >
                     SUBSCRIBE TO NEWSLETTER
                 </Box>
                 <Box
+                    component='p'
                     sx={{
                         fontFamily: 'Roboto, sans-serif',
                         textAlign: 'center',
                         fontSize: '1.125rem',
                         color: '#888'
                     }}
-                    component='p'
                 >
                     Subscribe to the weekly newsletter for all the latest updates
                 </Box>
@@ -42,17 +43,10 @@ const Subscription = () => {
                             name='email'
                             label="Email Address"
                             helperText="We'll never share your email address with anyone else"
-                            fullWidth
-                            id="inputEmail" />
+                            fullWidth />
                     </Box>
                     <Box sx={{ paddingTop: '1.1rem' }}>
-                        <Button
-                            sx={{ fontFamily: 'Oswald, sans-serif' }}
-                            color='error'
-                            variant='contained'
-                        >
-                            SIGN UP
-                        </Button>
+                        <Button color='error' variant='contained'>SIGN UP</Button>
                     </Box>
                 </Box>
             </section>
