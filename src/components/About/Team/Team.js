@@ -68,12 +68,12 @@ const Team = () => {
                     backgroundImage: `url(${bannerImage})`,
                     backgroundPosition: 'center',
                     backgroundSize: 'cover',
-                    height: '25.625rem',
+                    height: '26rem',
                     display: 'flex',
                     justifyContent: 'center',
                     alignItems: 'center'
                 }}>
-                    <Box sx={{ fontSize: '4rem', color: 'white' }} component='h5'>MEET THE TEAM</Box>
+                    <Box sx={{ fontSize: '4rem', color: 'white', fontWeight: '500' }} component='h5'>MEET THE TEAM</Box>
                 </Box>
 
                 <section id='team-grid'>
@@ -88,7 +88,7 @@ const Team = () => {
                                                 <Box sx={{ height: '300px', position: 'relative' }}>
                                                     <CardMedia
                                                         sx={{
-                                                            height: "100%",
+                                                            height: '100%',
                                                             transition: 'all 1s',
                                                             position: 'absolute',
                                                             borderRadius: '10px',
@@ -101,48 +101,38 @@ const Team = () => {
                                                         image={image}
                                                         alt="team member image"
                                                     />
-                                                    <Box
-                                                        sx={{
-                                                            position: 'absolute',
-                                                            top: 0,
-                                                            right: 0,
-                                                            bottom: 0,
-                                                            left: 0
-                                                        }}
-                                                    >
-                                                        <Box className='team-card-icons'>
-                                                            <Fade bottom>
-                                                                <Box
-                                                                    sx={{
-                                                                        display: 'flex',
-                                                                        justifyContent: 'space-evenly',
-                                                                        alignItems: 'flex-end',
-                                                                        height: '300px',
-                                                                        padding: '15px',
-                                                                        color: 'white'
-                                                                    }}
-                                                                >
-                                                                    <FacebookOutlinedIcon sx={{
-                                                                        fontSize: '30px',
-                                                                        '&:hover': { color: '#3b5998' }
-                                                                    }} />
-                                                                    <TwitterIcon sx={{
-                                                                        fontSize: '30px',
-                                                                        '&:hover': { color: '#1DA1F2' }
-                                                                    }} />
-                                                                    <LinkedInIcon sx={{
-                                                                        fontSize: '30px',
-                                                                        '&:hover': { color: '#0e76a8' }
-                                                                    }} />
-                                                                </Box>
-                                                            </Fade>
-                                                        </Box>
+                                                    <Box className='team-card-icons'>
+                                                        <Fade bottom>
+                                                            <Box
+                                                                sx={{
+                                                                    display: 'flex',
+                                                                    justifyContent: 'space-evenly',
+                                                                    alignItems: 'flex-end',
+                                                                    boxSizing: 'border-box',
+                                                                    height: '300px',
+                                                                    padding: '15px',
+                                                                    color: 'white'
+                                                                }}
+                                                            >
+                                                                <FacebookOutlinedIcon sx={{
+                                                                    fontSize: '30px',
+                                                                    '&:hover': { color: '#3b5998' }
+                                                                }} />
+                                                                <TwitterIcon sx={{
+                                                                    fontSize: '30px',
+                                                                    '&:hover': { color: '#1DA1F2' }
+                                                                }} />
+                                                                <LinkedInIcon sx={{
+                                                                    fontSize: '30px',
+                                                                    '&:hover': { color: '#0e76a8' }
+                                                                }} />
+                                                            </Box>
+                                                        </Fade>
                                                     </Box>
                                                 </Box>
                                                 <CardContent sx={{ textAlign: 'center' }}>
                                                     <Typography
                                                         sx={{
-                                                            fontFamily: 'Oswald, sans-serif',
                                                             fontWeight: '500',
                                                             textTransform: 'uppercase',
                                                             color: '#642F21'

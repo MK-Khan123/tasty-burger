@@ -1,6 +1,5 @@
 #team-grid {
     margin-top: 6.25rem;
-    margin-bottom: 4.375rem;
 }
 
 .team-card:hover .team-card-icons {
@@ -12,5 +11,5 @@
 }
 
 .team-card-icons {
-    display: none;   
+    display: none;
 }
