@@ -21,12 +21,12 @@ const TermsAndPrivacy = () => {
                     backgroundImage: `url(${bannerImage})`,
                     backgroundPosition: 'center',
                     backgroundSize: 'cover',
-                    height: '25.625rem',
+                    height: '26rem',
                     display: 'flex',
                     justifyContent: 'center',
                     alignItems: 'center'
                 }}>
-                    <Box sx={{ fontSize: '4rem', color: 'white' }} component='h5'>TERMS AND PRIVACY</Box>
+                    <Box sx={{ fontSize: '4rem', color: 'white', fontWeight: '500' }} component='h5'>TERMS AND PRIVACY</Box>
                 </Box>
                 <Container>
                     <section id='terms-and-privacy-document'>
@@ -66,6 +66,7 @@ const TermsAndPrivacy = () => {
                         </div>
                     </section>
                 </Container>
+
                 <Delivery />
             </main>
 
