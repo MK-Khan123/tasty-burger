@@ -8,12 +8,15 @@
 
 .product-description-typography h4 {
     font-size: 3.5rem;
+    font-weight: 600;
+    margin: 0;
     color: #642F21;
     text-transform: uppercase;
 }
 
 .product-description-typography h5 {
     font-size: 2.375rem;
+    margin: 0;
     color: #FFC107;
 }
 
@@ -26,6 +29,7 @@
 
 .product-description-icons {
     font-size: 1.5625rem;
+    color: #525252;
     margin: 0.625rem;
 }
 

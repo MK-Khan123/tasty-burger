@@ -12,7 +12,7 @@ const RelatedProducts = ({ firstFewRelatedProducts }) => {
         firstFewRelatedProducts?.map(foodItem => {
             const { name, image, briefInfo, price, _id } = foodItem;
             return (
-                <Grid item key={_id} sm={4} md={3} className="main-menu-card-body">
+                <Grid item key={_id} sm={6} md={3} className="main-menu-card-body">
                     <Card sx={{ height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
                         <CardActionArea>
                             <Box sx={{ overflow: 'hidden' }}>
@@ -42,7 +42,7 @@ const RelatedProducts = ({ firstFewRelatedProducts }) => {
                                         {name}
                                     </NavLink>
                                 </Typography>
-                                <Typography variant="body1" color="text.secondary">
+                                <Typography sx={{ fontFamily: 'Roboto, sans-serif' }} variant="body1" color="text.secondary">
                                     {briefInfo}
                                 </Typography>
                             </CardContent>
@@ -51,7 +51,6 @@ const RelatedProducts = ({ firstFewRelatedProducts }) => {
                             <Box sx={{ width: '100%', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                                 <Button
                                     sx={{
-                                        fontFamily: 'Oswald, sans-serif',
                                         backgroundColor: '#642F21',
                                         color: '#F7BE27',
                                         fontWeight: '600',
@@ -64,7 +63,18 @@ const RelatedProducts = ({ firstFewRelatedProducts }) => {
                                 </Button>
                                 <Box className="main-menu-cart-button">
                                     <Flip left>
-                                        <Button sx={{ fontFamily: 'Oswald, sans-serif', backgroundColor: '#FFCA2C', color: 'black' }}><ShoppingBagOutlinedIcon sx={{ fontSize: '20px', marginRight: '5px' }} /> Add to cart</Button>
+                                        <Button
+                                            sx={{
+                                                backgroundColor: '#FFCA2C',
+                                                color: 'black',
+                                                '&:hover': {
+                                                    backgroundColor: '#FFCA2C'
+                                                }
+                                            }}
+                                        >
+                                            <ShoppingBagOutlinedIcon sx={{ fontSize: '20px', marginRight: '5px' }} />
+                                            Add to cart
+                                        </Button>
                                     </Flip>
                                 </Box>
                             </Box>

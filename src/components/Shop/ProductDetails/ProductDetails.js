@@ -38,7 +38,7 @@ const ProductDetails = () => {
     // const [relateProducts] = useState(fakeData.filter(pd => pd.category === category));
     const firstFewRelatedProducts = relatedProducts.slice(0, 4);
 
-    //To show the ratings of the product dynamically, using FontAwesome Icon
+    //To show the ratings of the product dynamically, using MUI Icon
     let ratedStars = [];
     for (let i = 1; i <= star; i++) {
         ratedStars.push(<StarRoundedIcon sx={{ color: '#FFC107' }} />);
@@ -81,17 +81,16 @@ const ProductDetails = () => {
                                     <input className='input-design' type="number" defaultValue={1} min='1' />
                                     <Button
                                         sx={{
-                                            fontFamily: 'Oswald, sans-serif',
-                                            backgroundColor: '#FFCA2C',
                                             borderRadius: '0.5rem',
                                             color: 'black',
-                                            marginLeft: '0.625rem'
+                                            marginLeft: '0.625rem',
+                                            backgroundImage: 'radial-gradient( circle farthest-corner at 10% 20%,  rgba(255,209,67,1) 0%, rgba(255,145,83,1) 90% )'
                                         }}
                                     >
                                         <ShoppingBagOutlinedIcon sx={{ fontSize: '1.25rem', marginRight: '5px' }} /> Add to cart
                                     </Button>
                                 </Box>
-                                <Box sx={{ display: 'flex', alignItems: 'center', marginTop: '2rem' }}>
+                                <Box sx={{ display: 'flex', alignItems: 'center', marginTop: '1.5rem' }}>
                                     <Box sx={{ fontWeight: '600', color: '#6C757D', fontSize: '1.2rem' }}>Share this: </Box>
                                     <Box>
                                         <FacebookRoundedIcon
@@ -120,6 +119,8 @@ const ProductDetails = () => {
                                 <Box
                                     component='h5'
                                     sx={{
+                                        marginBottom: 0,
+                                        marginTop: '1.5rem',
                                         color: '#642F21',
                                         fontSize: '2rem'
                                     }}
@@ -131,7 +132,7 @@ const ProductDetails = () => {
                                     sx={{
                                         fontFamily: 'Roboto, sans-serif',
                                         color: '#6C757D',
-                                        marginTop: '1.5rem',
+                                        lineHeight: '1.5',
                                         fontWeight: '300'
                                     }}
                                 >
@@ -146,12 +147,15 @@ const ProductDetails = () => {
                     <Container>
                         <Box sx={{ paddingTop: '0.1rem', paddingBottom: '6rem' }}>
                             <Box
+                                component='h5'
                                 sx={{
+                                    marginY: '3rem',
                                     textAlign: 'center',
                                     fontSize: '3.75rem',
-                                    color: '#642F21'
+                                    color: '#642F21',
+                                    fontWeight: '500',
+                                    lineHeight: '1.2'
                                 }}
-                                component='h5'
                             >
                                 RELATED PRODUCTS
                             </Box>

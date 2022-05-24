@@ -52,7 +52,7 @@ const ExploreMenu = () => {
                         burgerData.map(burger => {
                             const { name, image, briefInfo, price, _id } = burger;
                             return (
-                                <Grid item key={_id} sm={4} md={3} className="main-menu-card-body">
+                                <Grid item key={_id} sm={6} md={4} lg={3} className="main-menu-card-body">
                                     <Card
                                         sx={{
                                             height: '100%',
