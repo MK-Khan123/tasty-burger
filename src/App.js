@@ -19,6 +19,7 @@ import CustomizedSnackbar from './components/Shared/CustomizedSnackbar/Customize
 import { Provider } from 'react-redux';
 import configureAppStore from './store/configureAppStore';
 import { createTheme, ThemeProvider } from '@mui/material';
+import CartProvider from './contexts/CartProvider';
 
 const theme = createTheme({
   typography: {
@@ -45,40 +46,42 @@ function App() {
     <div className='App'>
       <AuthProvider>
         <Provider store={store}>
-          <ThemeProvider theme={theme}>
-            <CustomizedSnackbar />
-            <Routes>
-              <Route path="/" element={<Navigate to="/home" />} />
+          <CartProvider>
+            <ThemeProvider theme={theme}>
+              <CustomizedSnackbar />
+              <Routes>
+                <Route path="/" element={<Navigate to="/home" />} />
 
-              <Route path="/home" element={<Home />} />
+                <Route path="/home" element={<Home />} />
 
-              <Route path="/about-testo" element={<AboutTesto />} />
+                <Route path="/about-testo" element={<AboutTesto />} />
 
-              <Route path="/team" element={<Team />} />
+                <Route path="/team" element={<Team />} />
 
-              <Route path="/faq" element={<FAQs />} />
+                <Route path="/faq" element={<FAQs />} />
 
-              <Route path="/terms-privacy" element={<TermsAndPrivacy />} />
+                <Route path="/terms-privacy" element={<TermsAndPrivacy />} />
 
-              <Route path="/main-menu" element={<MainMenu />} />
+                <Route path="/main-menu" element={<MainMenu />} />
 
-              <Route path="/all-items" element={<AllItems />} />
+                <Route path="/all-items" element={<AllItems />} />
 
-              <Route path="/product-details/:id" element={<ProductDetails />} />
+                <Route path="/product-details/:id" element={<ProductDetails />} />
 
-              <Route path="/my-account" element={<MyAccount />} />
+                <Route path="/my-account" element={<MyAccount />} />
 
-              <Route path="/reserve-a-table" element={<ReserveTable />} />
+                <Route path="/reserve-a-table" element={<ReserveTable />} />
 
-              <Route path="/contact-us" element={<ContactUs />} />
+                <Route path="/contact-us" element={<ContactUs />} />
 
-              <Route path="/admin" element={<AdminPanel />} />
+                <Route path="/admin" element={<AdminPanel />} />
 
-              <Route path="/cart" element={<Cart />} />
+                <Route path="/cart" element={<Cart />} />
 
-              <Route path="/checkout" element={<Checkout />} />
-            </Routes>
-          </ThemeProvider>
+                <Route path="/checkout" element={<Checkout />} />
+              </Routes>
+            </ThemeProvider>
+          </CartProvider>
         </Provider>
       </AuthProvider>
     </div>
