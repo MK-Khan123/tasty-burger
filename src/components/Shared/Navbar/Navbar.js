@@ -7,16 +7,16 @@ import Container from '@mui/material/Container';
 import LocalMallRoundedIcon from '@mui/icons-material/LocalMallRounded';
 import { Badge } from '@mui/material';
 import { NavLink } from 'react-router-dom';
-import { useSelector } from 'react-redux';
 import UserSettings from './UserSettings/UserSettings';
 import NavItems from './NavItems/NavItems';
 import NavItemsSidebar from './NavItemsSidebar/NavItemsSidebar';
 import './Navbar.css';
+import useRedux from '../../../hooks/useRedux';
 
 const Navbar = () => {
     const logo = 'https://res.cloudinary.com/dn9k2jkdd/image/upload/v1649786132/testo-burger-project/logo_lipngj.png';
 
-    const cart = useSelector(state => state.entities.cart);
+    const { cartItems } = useRedux();
 
     return (
         <Box sx={{ position: 'relative' }}>
@@ -49,7 +49,7 @@ const Navbar = () => {
                         {/* CART ICON SECTION */}
                         <Box sx={{ my: 3, pr: 3 }}>
                             <NavLink to='/cart' style={{ textDecoration: 'none', color: 'white' }}>
-                                <Badge badgeContent={cart.length} color="error">
+                                <Badge badgeContent={cartItems.length} color="error">
                                     <LocalMallRoundedIcon sx={{ fontSize: '1.5rem' }} />
                                 </Badge>
                             </NavLink>
