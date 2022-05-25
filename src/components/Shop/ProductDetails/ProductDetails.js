@@ -77,19 +77,15 @@ const ProductDetails = () => {
                                 <p><span>{ratedStars}</span>({starCount} customer review)</p>
                                 <p>{briefInfo}</p>
                                 <p>Category: <Box sx={{ textTransform: 'capitalize' }} component='span'>{category}</Box></p>
-                                <Box>
-                                    <input className='input-design' type="number" defaultValue={1} min='1' />
-                                    <Button
-                                        sx={{
-                                            borderRadius: '0.5rem',
-                                            color: 'black',
-                                            marginLeft: '0.625rem',
-                                            backgroundImage: 'radial-gradient( circle farthest-corner at 10% 20%,  rgba(255,209,67,1) 0%, rgba(255,145,83,1) 90% )'
-                                        }}
-                                    >
-                                        <ShoppingBagOutlinedIcon sx={{ fontSize: '1.25rem', marginRight: '5px' }} /> Add to cart
-                                    </Button>
-                                </Box>
+                                <Button
+                                    sx={{
+                                        borderRadius: '0.5rem',
+                                        color: 'black',
+                                        backgroundImage: 'radial-gradient( circle farthest-corner at 10% 20%,  rgba(255,209,67,1) 0%, rgba(255,145,83,1) 90% )'
+                                    }}
+                                >
+                                    <ShoppingBagOutlinedIcon sx={{ fontSize: '1.25rem', marginRight: '5px' }} /> Add to cart
+                                </Button>
                                 <Box sx={{ display: 'flex', alignItems: 'center', marginTop: '1.5rem' }}>
                                     <Box sx={{ fontWeight: '600', color: '#6C757D', fontSize: '1.2rem' }}>Share this: </Box>
                                     <Box>

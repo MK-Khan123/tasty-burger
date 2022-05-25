@@ -23,7 +23,7 @@ const ActiveFoodItem = ({ foodItem }) => {
     }, [_id, cartItems]);
 
     return (
-        <Grid item key={_id} sm={6} md={4} lg={3} className="main-menu-card-body">
+        <Grid item sm={6} md={4} lg={3} className="main-menu-card-body">
             <Card sx={{ height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
                 <CardActionArea>
                     <Box sx={{ overflow: 'hidden' }}>

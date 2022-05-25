@@ -120,11 +120,11 @@ const NavItemsSidebar = () => {
                 </NestedMenuItem>
 
                 {/* ADMIN SECTION */}
-                <MenuItem onClick={handleCloseNavMenu}>
+                {/* <MenuItem onClick={handleCloseNavMenu}>
                     <NavLink to='/admin' className='navLink-custom-style'>
                         ADMIN
                     </NavLink>
-                </MenuItem>
+                </MenuItem> */}
             </Menu>
         </Box>
     );

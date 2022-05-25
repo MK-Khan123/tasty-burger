@@ -50,7 +50,7 @@ const Cart = () => {
                                     sx={{
                                         backgroundColor: '#F7F6F7',
                                         padding: '1.2rem',
-                                        borderRadius: '8px',
+                                        borderRadius: '0 0 8px 8px',
                                         borderTop: '3px solid crimson',
                                         display: 'flex',
                                         alignItems: 'center'

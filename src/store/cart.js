@@ -8,9 +8,23 @@ const cartSlice = createSlice({
             cart.push(action.payload);
         },
 
-        removeFromCart: (cart, action) => cart.filter(product => product._id !== action.payload._id)
+        removeFromCart: (cart, action) => cart.filter(product => product._id !== action.payload._id),
+
+        addQuantity: (cart, action) => {
+            const product = cart.find(product => product._id === action.payload._id);
+            product.quantity = product.quantity + 1;
+        },
+
+        reduceQuantity: (cart, action) => {
+            const product = cart.find(pd => pd._id === action.payload._id);
+            if (product.quantity === 1) {
+                return cart.filter(pd => pd._id !== action.payload._id);
+            } else {
+                product.quantity = product.quantity - 1;
+            }
+        }
     }
 });
 
-export const { addToCart, removeFromCart } = cartSlice.actions;
+export const { addToCart, removeFromCart, addQuantity, reduceQuantity } = cartSlice.actions;
 export default cartSlice.reducer;

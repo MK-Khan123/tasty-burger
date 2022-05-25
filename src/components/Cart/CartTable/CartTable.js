@@ -7,10 +7,12 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import DeleteOutlineRoundedIcon from '@mui/icons-material/DeleteOutlineRounded';
+import IndeterminateCheckBoxRoundedIcon from '@mui/icons-material/IndeterminateCheckBoxRounded';
+import AddBoxRoundedIcon from '@mui/icons-material/AddBoxRounded';
 import { styled } from '@mui/material/styles';
 import { Box, Button } from '@mui/material';
-import './CartTable.css';
 import useRedux from '../../../hooks/useRedux';
+import './CartTable.css';
 
 const CartTable = ({ cartItems }) => {
 
@@ -34,7 +36,7 @@ const CartTable = ({ cartItems }) => {
         },
     }));
 
-    const { handleRemoveFromCart } = useRedux();
+    const { handleRemoveFromCart, handleAddQuantity, handleReduceQuantity } = useRedux();
 
     return (
         <section id='cart-table'>
@@ -45,14 +47,14 @@ const CartTable = ({ cartItems }) => {
                             <StyledTableCell align='center'>#</StyledTableCell>
                             <StyledTableCell>Product</StyledTableCell>
                             <StyledTableCell>Price</StyledTableCell>
-                            <StyledTableCell>Quantity</StyledTableCell>
-                            <StyledTableCell>Total</StyledTableCell>
+                            <StyledTableCell align="center">Quantity</StyledTableCell>
+                            <StyledTableCell align="center">Total</StyledTableCell>
                             <StyledTableCell align="center">Actions</StyledTableCell>
                         </TableRow>
                     </TableHead>
                     <TableBody>
                         {cartItems.map((product, index) => {
-                            const { name, image, price, _id } = product;
+                            const { name, image, price, _id, quantity } = product;
                             return (
                                 <StyledTableRow key={name}>
                                     <StyledTableCell align='center' component="th" scope="row">
@@ -65,10 +67,26 @@ const CartTable = ({ cartItems }) => {
                                         </Box>
                                     </StyledTableCell>
                                     <StyledTableCell>$ {price}</StyledTableCell>
-                                    <StyledTableCell>
-                                        <input className='input-design' type="number" defaultValue={1} min='1' />
+                                    <StyledTableCell align="center">
+                                        <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                                            <IndeterminateCheckBoxRoundedIcon
+                                                onClick={() => handleReduceQuantity(_id)}
+                                                sx={{
+                                                    cursor: 'pointer',
+                                                    color: 'rgba(244, 0, 9, 0.8)'
+                                                }}
+                                            />
+                                            <Box mx={1}>{quantity}</Box>
+                                            <AddBoxRoundedIcon
+                                                onClick={() => handleAddQuantity(_id)}
+                                                sx={{
+                                                    cursor: 'pointer',
+                                                    color: 'rgba(0, 130, 0, 0.8)'
+                                                }}
+                                            />
+                                        </Box>
                                     </StyledTableCell>
-                                    <StyledTableCell>$ {price}</StyledTableCell>
+                                    <StyledTableCell align="center">$ {price}</StyledTableCell>
                                     <StyledTableCell align="center">
                                         <DeleteOutlineRoundedIcon
                                             onClick={() => handleRemoveFromCart(_id)}

@@ -159,11 +159,11 @@ const NavItems = () => {
             </Box>
 
             {/* ADMIN SECTION */}
-            <Box sx={{ my: 3, pr: 3, fontSize: '1.25rem' }}>
+            {/* <Box sx={{ my: 3, pr: 3, fontSize: '1.25rem' }}>
                 <NavLink to='/admin' style={{ textDecoration: 'none', color: 'white' }}>
                     ADMIN
                 </NavLink>
-            </Box>
+            </Box> */}
         </Box>
     );
 };

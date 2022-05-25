@@ -102,7 +102,7 @@ const MainMenu = () => {
                             isLoading ? <LoadingSpinner /> :
                                 <Grid container spacing={3}>
                                     {
-                                        activeFoodData.map(foodItem => <ActiveFoodItem foodItem={foodItem} />)
+                                        activeFoodData.map(foodItem => <ActiveFoodItem key={foodItem._id} foodItem={foodItem} />)
                                     }
                                 </Grid>
                         }

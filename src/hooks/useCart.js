@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { addToCart, removeFromCart } from '../store/cart';
+import { addToCart, removeFromCart, addQuantity, reduceQuantity } from '../store/cart';
 
 const useCart = () => {
 
@@ -23,9 +23,19 @@ const useCart = () => {
 
     const handleRemoveFromCart = (_id) => dispatch(removeFromCart({ _id }));
 
+    const handleAddQuantity = (_id) => {
+        dispatch(addQuantity({ _id }));
+    };
+
+    const handleReduceQuantity = (_id) => {
+        dispatch(reduceQuantity({ _id }));
+    };
+
     return {
         handleAddToCart,
         handleRemoveFromCart,
+        handleAddQuantity,
+        handleReduceQuantity,
         cartItems
     };
 };
