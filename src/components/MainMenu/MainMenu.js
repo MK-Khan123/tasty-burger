@@ -101,7 +101,9 @@ const MainMenu = () => {
                         {
                             isLoading ? <LoadingSpinner /> :
                                 <Grid container spacing={3}>
-                                    <ActiveFoodItem activeFoodData={activeFoodData} />
+                                    {
+                                        activeFoodData.map(foodItem => <ActiveFoodItem foodItem={foodItem} />)
+                                    }
                                 </Grid>
                         }
                     </Container>
