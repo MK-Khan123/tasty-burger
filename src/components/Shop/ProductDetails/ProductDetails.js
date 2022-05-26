@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import Navbar from '../../Shared/Navbar/Navbar';
-import './ProductDetails.css';
 import FacebookRoundedIcon from '@mui/icons-material/FacebookRounded';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
@@ -11,6 +10,8 @@ import RelatedProducts from './RelatedProducts/RelatedProducts';
 import Footer from '../../Shared/Footer/Footer';
 import { useParams } from 'react-router-dom';
 import { Box, Button, Container, Grid } from '@mui/material';
+import './ProductDetails.css';
+import useRedux from '../../../hooks/useRedux';
 
 const ProductDetails = () => {
 
@@ -19,6 +20,8 @@ const ProductDetails = () => {
     const { id } = useParams();
     const [productDetails, setProductDetails] = useState({});
     const [relatedProducts, setRelatedProducts] = useState([]);
+
+    const { handleAddToCart, cartItems } = useRedux();
 
     useEffect(() => {
         fetch(`https://morning-badlands-52849.herokuapp.com/productDetails/${id}`)
@@ -35,7 +38,6 @@ const ProductDetails = () => {
             .then(data => setRelatedProducts(data));
     }, [category]);
 
-    // const [relateProducts] = useState(fakeData.filter(pd => pd.category === category));
     const firstFewRelatedProducts = relatedProducts.slice(0, 4);
 
     //To show the ratings of the product dynamically, using MUI Icon
@@ -156,7 +158,15 @@ const ProductDetails = () => {
                                 RELATED PRODUCTS
                             </Box>
                             <Grid container spacing={2} mt={3}>
-                                <RelatedProducts firstFewRelatedProducts={firstFewRelatedProducts} />
+                                {
+                                    firstFewRelatedProducts?.map(foodItem =>
+                                        <RelatedProducts
+                                            key={foodItem._id}
+                                            foodItem={foodItem}
+                                            cartItems={cartItems}
+                                            handleAddToCart={handleAddToCart}
+                                        />)
+                                }
                             </Grid>
                         </Box>
                     </Container>
