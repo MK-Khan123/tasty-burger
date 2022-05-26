@@ -11,10 +11,9 @@ import IndeterminateCheckBoxRoundedIcon from '@mui/icons-material/IndeterminateC
 import AddBoxRoundedIcon from '@mui/icons-material/AddBoxRounded';
 import { styled } from '@mui/material/styles';
 import { Box, Button } from '@mui/material';
-import useRedux from '../../../hooks/useRedux';
 import './CartTable.css';
 
-const CartTable = ({ cartItems }) => {
+const CartTable = ({ cartItems, handleRemoveFromCart, handleAddQuantity, handleReduceQuantity }) => {
 
     const StyledTableCell = styled(TableCell)(({ theme }) => ({
         [`&.${tableCellClasses.head}`]: {
@@ -35,8 +34,6 @@ const CartTable = ({ cartItems }) => {
             border: 0,
         },
     }));
-
-    const { handleRemoveFromCart, handleAddQuantity, handleReduceQuantity } = useRedux();
 
     return (
         <section id='cart-table'>
@@ -86,7 +83,7 @@ const CartTable = ({ cartItems }) => {
                                             />
                                         </Box>
                                     </StyledTableCell>
-                                    <StyledTableCell align="center">$ {price}</StyledTableCell>
+                                    <StyledTableCell align="center">$ {price * quantity}</StyledTableCell>
                                     <StyledTableCell align="center">
                                         <DeleteOutlineRoundedIcon
                                             onClick={() => handleRemoveFromCart(_id)}

@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { addToCart, removeFromCart, addQuantity, reduceQuantity } from '../store/cart';
 
@@ -5,8 +6,16 @@ const useCart = () => {
 
     const cartItems = useSelector(state => state.entities.cart);
     const dispatch = useDispatch();
+    
+    //To calculate the total bill on Cart
+    const [cartTotal, setCartTotal] = useState(0);
 
-    console.log(cartItems);
+    useEffect(() => {
+        const cartProductPrice = cartItems.map(product => product.quantity * product.price);
+        const totalProductPrice = cartProductPrice.reduce((previousPrice, currentPrice) => previousPrice + currentPrice, 0).toFixed(2);
+        setCartTotal(parseFloat(totalProductPrice));
+    }, [cartItems]);
+
 
     const handleAddToCart = (foodItemData) => {
         const { category, name, image, price, _id } = foodItemData;
@@ -36,6 +45,7 @@ const useCart = () => {
         handleRemoveFromCart,
         handleAddQuantity,
         handleReduceQuantity,
+        cartTotal,
         cartItems
     };
 };

@@ -1,20 +1,19 @@
-import React from 'react';
 import Navbar from '../Shared/Navbar/Navbar';
 import MobileApp from '../Shared/MobileApp/MobileApp';
 import Footer from '../Shared/Footer/Footer';
 import { Box, Button, Container, Typography } from '@mui/material';
+import { NavLink } from 'react-router-dom';
 import SentimentVeryDissatisfiedIcon from '@mui/icons-material/SentimentVeryDissatisfied';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
 import CartTable from './CartTable/CartTable';
 import CartTotal from './CartTotal/CartTotal';
 import useRedux from '../../hooks/useRedux';
-import { NavLink } from 'react-router-dom';
 
 const Cart = () => {
     const bannerImage = 'https://res.cloudinary.com/dn9k2jkdd/image/upload/v1649786139/testo-burger-project/cart/cart-page_npf8up.jpg';
 
-    const { cartItems } = useRedux();
+    const { cartItems, cartTotal, handleRemoveFromCart, handleAddQuantity, handleReduceQuantity } = useRedux();
 
     return (
         <section id='cart'>
@@ -41,8 +40,15 @@ const Cart = () => {
                     {
                         (cartItems.length > 0) ?
                             <div>
-                                <CartTable cartItems={cartItems} />
-                                <CartTotal />
+                                <CartTable
+                                    cartItems={cartItems}
+                                    handleRemoveFromCart={handleRemoveFromCart}
+                                    handleAddQuantity={handleAddQuantity}
+                                    handleReduceQuantity={handleReduceQuantity}
+                                />
+                                <CartTotal
+                                    cartTotal={cartTotal}
+                                />
                             </div> :
 
                             <Box marginTop='6.25rem'>

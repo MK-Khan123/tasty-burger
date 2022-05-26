@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { Box, Button, Grid, Typography } from '@mui/material';
 import './CartTotal.css';
 
-const CartTotal = () => {
+const CartTotal = ({ cartTotal }) => {
     return (
         <section id='cart-total'>
             <Grid container>
@@ -18,7 +18,7 @@ const CartTotal = () => {
                                 Subtotal
                             </Typography>
                             <Typography fontWeight={400} variant="h6" component="div">
-                                $ 39.5
+                                $ {cartTotal}
                             </Typography>
                         </Box>
                         <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
@@ -26,7 +26,7 @@ const CartTotal = () => {
                                 VAT (10%)
                             </Typography>
                             <Typography fontWeight={400} variant="h6" component="div">
-                                $ 3.95
+                                $ {(cartTotal * 0.1).toFixed(2)}
                             </Typography>
                         </Box>
                         <hr />
@@ -35,7 +35,7 @@ const CartTotal = () => {
                                 TOTAL
                             </Typography>
                             <Typography variant="h6" component="div">
-                                $ 39.5
+                                $ {(cartTotal + (cartTotal * 0.1)).toFixed(2)}
                             </Typography>
                         </Box>
                         <Box py={2}>
