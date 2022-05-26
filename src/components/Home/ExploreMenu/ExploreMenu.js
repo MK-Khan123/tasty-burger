@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-
 import { Box, Container, Grid } from '@mui/material';
 import useRedux from '../../../hooks/useRedux';
 import ExploreMenuItem from './ExploreMenuItem/ExploreMenuItem';
