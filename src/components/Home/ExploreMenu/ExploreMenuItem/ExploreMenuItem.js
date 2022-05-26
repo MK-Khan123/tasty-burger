@@ -1,18 +1,18 @@
 import React, { useEffect, useState } from 'react';
-import { Box, Button, Card, CardActionArea, CardActions, CardContent, CardMedia, Grid, Typography } from '@mui/material';
-import './ActiveFoodItem.css';
-import { Flip } from 'react-reveal';
+import Flip from 'react-reveal/Flip';
 import Rating from '@mui/material/Rating';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import ShoppingBagOutlinedIcon from '@mui/icons-material/ShoppingBagOutlined';
+import { Box, Button, Card, CardActionArea, CardActions, CardContent, CardMedia, Grid, Typography } from '@mui/material';
 import { NavLink } from 'react-router-dom';
 
-const ActiveFoodItem = ({ foodItem, cartItems, handleAddToCart }) => {
+const ExploreMenuItem = ({ burger, cartItems, handleAddToCart }) => {
 
-    const { name, image, briefInfo, price, _id } = foodItem;
+    const { name, image, briefInfo, price, _id } = burger;
 
     const [productAdded, setProductAdded] = useState(false);
 
+    //Once a product is added a different button will appear indicating the product is added on cart.
     useEffect(() => {
         const pd = cartItems.find(pd => pd._id === _id)
         if (pd) {
@@ -21,8 +21,15 @@ const ActiveFoodItem = ({ foodItem, cartItems, handleAddToCart }) => {
     }, [_id, cartItems]);
 
     return (
-        <Grid item sm={6} md={4} lg={3} className="main-menu-card-body">
-            <Card sx={{ height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+        <Grid item key={_id} sm={6} md={4} lg={3} className="main-menu-card-body">
+            <Card
+                sx={{
+                    height: '100%',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'space-between'
+                }}
+            >
                 <CardActionArea>
                     <Box sx={{ overflow: 'hidden' }}>
                         <CardMedia
@@ -57,7 +64,14 @@ const ActiveFoodItem = ({ foodItem, cartItems, handleAddToCart }) => {
                     </CardContent>
                 </CardActionArea>
                 <CardActions>
-                    <Box sx={{ width: '100%', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                    <Box
+                        sx={{
+                            width: '100%',
+                            display: 'flex',
+                            justifyContent: 'space-between',
+                            alignItems: 'center'
+                        }}
+                    >
                         <Button
                             sx={{
                                 backgroundColor: '#642F21',
@@ -82,7 +96,7 @@ const ActiveFoodItem = ({ foodItem, cartItems, handleAddToCart }) => {
                                             Product Added !
                                         </Button> :
                                         <Button
-                                            onClick={() => handleAddToCart(foodItem)}
+                                            onClick={() => handleAddToCart(burger)}
                                             variant='contained'
                                             sx={{
                                                 backgroundColor: '#FFCA2C',
@@ -105,4 +119,4 @@ const ActiveFoodItem = ({ foodItem, cartItems, handleAddToCart }) => {
     );
 };
 
-export default ActiveFoodItem;
+export default ExploreMenuItem;

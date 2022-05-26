@@ -6,6 +6,7 @@ import ActiveFoodItem from './ActiveFoodItem/ActiveFoodItem';
 import Delivery from '../Shared/Delivery/Delivery';
 import Footer from '../Shared/Footer/Footer';
 import LoadingSpinner from '../Shared/LoadingSpinner/LoadingSpinner';
+import useRedux from '../../hooks/useRedux';
 
 const MainMenu = () => {
 
@@ -23,6 +24,8 @@ const MainMenu = () => {
     const [foodCategory, setFoodCategory] = useState('burger');
     const [activeFoodData, setActiveFoodData] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
+
+    const { handleAddToCart, cartItems } = useRedux();
 
     useEffect(() => {
         setIsLoading(true);
@@ -102,7 +105,14 @@ const MainMenu = () => {
                             isLoading ? <LoadingSpinner /> :
                                 <Grid container spacing={3}>
                                     {
-                                        activeFoodData.map(foodItem => <ActiveFoodItem key={foodItem._id} foodItem={foodItem} />)
+                                        activeFoodData.map(foodItem =>
+                                            <ActiveFoodItem
+                                                key={foodItem._id}
+                                                foodItem={foodItem}
+                                                cartItems={cartItems}
+                                                handleAddToCart={handleAddToCart}
+                                            />
+                                        )
                                     }
                                 </Grid>
                         }
