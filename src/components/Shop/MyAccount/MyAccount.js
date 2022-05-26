@@ -7,12 +7,37 @@ import TwitterIcon from '@mui/icons-material/Twitter';
 import GoogleIcon from '@mui/icons-material/Google';
 import Footer from '../../Shared/Footer/Footer';
 import { Box, Button, Checkbox, Container, FormControlLabel, FormGroup, Grid, TextField, Typography } from '@mui/material';
+import { styled } from '@mui/material/styles';
+import { useForm } from "react-hook-form";
 import useAuth from '../../../hooks/useAuth';
 
 const MyAccount = () => {
     const bannerImage = 'https://res.cloudinary.com/dn9k2jkdd/image/upload/v1649786144/testo-burger-project/shop-tab/shop-tab_j7hrho.jpg';
 
-    const { signInUsingGoogle, signInUsingGithub } = useAuth();
+    const CssTextField = styled(TextField)({
+        '& .MuiInputLabel-root': {
+            fontFamily: 'Roboto, sans-serif'
+        },
+
+        '& .MuiOutlinedInput-root': {
+            fontFamily: 'Roboto, sans-serif'
+        },
+
+        '& .MuiFormHelperText-root': {
+            fontFamily: 'Roboto, sans-serif'
+        }
+    });
+
+    const { signInUsingGoogle, signInUsingGithub, signInUsingEmail, registerUsingEmail } = useAuth();
+
+    //For handling Login
+    const { register, formState: { errors: loginError }, handleSubmit: handleSubmitLogin } = useForm();
+
+    //For handling registration
+    const { register: register2, formState: { errors: registrationError }, handleSubmit: handleSubmitRegistration } = useForm();
+
+    const login = data => signInUsingEmail(data.email, data.password);
+    const registration = data => registerUsingEmail(data.email, data.password);
 
     return (
         <section id='my-account'>
@@ -51,35 +76,39 @@ const MyAccount = () => {
                                     Login
                                 </Box>
                                 <form
+                                    onSubmit={handleSubmitLogin(login)}
                                     style={{
                                         border: '2px solid #DEE2E6',
                                         borderRadius: '8px',
                                         padding: '35px 25px'
                                     }}
                                 >
-                                    <TextField sx={{ mb: 2 }}
+                                    <CssTextField sx={{ mb: 2 }}
                                         id="outlined-basic"
                                         label="Your Email"
                                         type="email"
                                         InputLabelProps={{
                                             shrink: true
                                         }}
-                                        required
+                                        {...register("email", { required: "Email is required" })}
+                                        error={!!loginError.email}
+                                        helperText={loginError?.email ? loginError.email.message : null}
                                         fullWidth
                                         size="small"
-                                        helperText="We'll never share your email with anyone else."
                                     />
-                                    <TextField sx={{ mb: 2 }}
+                                    <CssTextField sx={{ mb: 2 }}
                                         id="outlined-password-input"
                                         type="password"
                                         label="Password"
                                         size="small"
-                                        required
+                                        {...register("password", { required: "Password is required" })}
+                                        error={!!loginError.password}
+                                        helperText={loginError?.password ? loginError.password.message : null}
                                         fullWidth
                                         InputLabelProps={{
                                             shrink: true
                                         }}
-                                        autoComplete="current-password"
+                                    // autoComplete="current-password"
                                     />
                                     <FormGroup sx={{ mb: 2 }}>
                                         <FormControlLabel control={<Checkbox defaultChecked />} label="Remember me" />
@@ -111,49 +140,53 @@ const MyAccount = () => {
                                     Register
                                 </Box>
                                 <form
+                                    onSubmit={handleSubmitRegistration(registration)}
                                     style={{
                                         border: '2px solid #DEE2E6',
                                         borderRadius: '8px',
                                         padding: '35px 25px'
                                     }}
                                 >
-                                    <TextField sx={{ mb: 2 }}
+                                    <CssTextField sx={{ mb: 2 }}
                                         id="outlined-basic1"
                                         label="Your Email"
                                         type="email"
                                         InputLabelProps={{
                                             shrink: true
                                         }}
-                                        required
+                                        {...register2("email", { required: "Email is required" })}
+                                        error={!!registrationError.email}
+                                        helperText={registrationError?.email ? registrationError.email.message : null}
                                         fullWidth
                                         size="small"
-                                        helperText="We'll never share your email with anyone else."
                                     />
-                                    <TextField sx={{ mb: 3 }}
+                                    <CssTextField sx={{ mb: 3 }}
                                         id="outlined-password-input1"
                                         type="password"
                                         label="Your Password"
                                         size="small"
-                                        required
                                         fullWidth
                                         InputLabelProps={{
                                             shrink: true
                                         }}
-                                        autoComplete="current-password"
+                                        {...register2("password", { required: "Password is required" })}
+                                        error={!!registrationError.password}
+                                        helperText={registrationError?.password ? registrationError.password.message : null}
+                                    // autoComplete="current-password"
                                     />
-                                    <TextField
+                                    <CssTextField
                                         id="outlined-password-input2"
                                         type="password"
                                         label="Confirm Your Password"
                                         size="small"
-                                        required
                                         fullWidth
                                         InputLabelProps={{
                                             shrink: true
                                         }}
-                                        autoComplete="current-password"
+                                    // autoComplete="current-password"
                                     />
                                     <Typography
+                                        fontFamily={'Roboto, sans-serif'}
                                         variant="body2"
                                         color="text.secondary"
                                         gutterBottom

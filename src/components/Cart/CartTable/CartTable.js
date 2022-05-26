@@ -10,7 +10,7 @@ import DeleteOutlineRoundedIcon from '@mui/icons-material/DeleteOutlineRounded';
 import IndeterminateCheckBoxRoundedIcon from '@mui/icons-material/IndeterminateCheckBoxRounded';
 import AddBoxRoundedIcon from '@mui/icons-material/AddBoxRounded';
 import { styled } from '@mui/material/styles';
-import { Box, Button } from '@mui/material';
+import Box from '@mui/material/Box';
 import './CartTable.css';
 
 const CartTable = ({ cartItems, handleRemoveFromCart, handleAddQuantity, handleReduceQuantity }) => {
@@ -96,10 +96,6 @@ const CartTable = ({ cartItems, handleRemoveFromCart, handleAddQuantity, handleR
                     </TableBody>
                 </Table>
             </TableContainer>
-
-            <Box textAlign='end' py={3}>
-                <Button color='success' variant='contained'>Update Cart</Button>
-            </Box>
         </section>
     );
 };
