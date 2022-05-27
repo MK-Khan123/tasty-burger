@@ -1,11 +1,13 @@
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signInWithPopup, signOut, GoogleAuthProvider, onAuthStateChanged, GithubAuthProvider } from "firebase/auth";
 import { useEffect, useState } from "react";
-
+import Swal from "sweetalert2";
+import withReactContent from 'sweetalert2-react-content';
 import initializeAuthentication from "../Firebase/firebase.initialize";
 
 initializeAuthentication();
 
 const useFirebase = () => {
+    const MySwal = withReactContent(Swal);
 
     const [user, setUser] = useState({});
     const [error, setError] = useState('');
@@ -21,7 +23,11 @@ const useFirebase = () => {
             })
             .catch((error) => {
                 const errorMessage = error.message;
-                alert(errorMessage);
+                MySwal.fire({
+                    title: 'Registration Failed!',
+                    icon: 'error',
+                    text: `${errorMessage}`
+                })
                 setError(errorMessage);
             });
     }
@@ -35,7 +41,21 @@ const useFirebase = () => {
             })
             .catch((error) => {
                 const errorMessage = error.message;
-                alert(errorMessage);
+                if (errorMessage) {
+                    // Swal.fire({
+                    //     // title: `Well Done ${loggedInUser.displayName}!!`,
+                    //     // text: `You Have To Pay Us ${total}$!`,
+                    //     icon: 'success',
+                    //     button: 'OK!',
+                    //     position: 'center',
+                    // });
+                    MySwal.fire({
+                        title: 'Login Failed',
+                        icon: 'error',
+                        text: `${errorMessage}`
+                    })
+                }
+                // alert(errorMessage);
                 setError(errorMessage);
             });
     }
