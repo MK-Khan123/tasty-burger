@@ -1,4 +1,13 @@
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signInWithPopup, signOut, GoogleAuthProvider, onAuthStateChanged, GithubAuthProvider } from "firebase/auth";
+import {
+    getAuth,
+    createUserWithEmailAndPassword,
+    signInWithEmailAndPassword,
+    signInWithPopup,
+    signOut,
+    GoogleAuthProvider,
+    onAuthStateChanged,
+    GithubAuthProvider
+} from "firebase/auth";
 import { useEffect, useState } from "react";
 import Swal from "sweetalert2";
 import withReactContent from 'sweetalert2-react-content';
@@ -19,6 +28,11 @@ const useFirebase = () => {
             .then((userCredential) => {
                 // Signed in 
                 const user = userCredential.user;
+                MySwal.fire({
+                    title: 'Successfully Registered!',
+                    icon: 'success',
+                    text: `Please login using your email and password`
+                });
                 setUser(user);
             })
             .catch((error) => {
@@ -27,7 +41,7 @@ const useFirebase = () => {
                     title: 'Registration Failed!',
                     icon: 'error',
                     text: `${errorMessage}`
-                })
+                });
                 setError(errorMessage);
             });
     }
@@ -37,6 +51,11 @@ const useFirebase = () => {
             .then((userCredential) => {
                 // Signed in 
                 const user = userCredential.user;
+                MySwal.fire({
+                    title: 'Successfully Logged In!',
+                    icon: 'success',
+                    text: `Please go to menu to order`
+                });
                 setUser(user);
             })
             .catch((error) => {

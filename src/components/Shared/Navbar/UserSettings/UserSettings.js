@@ -14,6 +14,8 @@ const UserSettings = () => {
     const { user, logout } = useAuth();
     const { displayName, photoURL } = user;
 
+    console.log(user);
+
     const [anchorElUser, setAnchorElUser] = useState(null);
 
     const handleOpenUserMenu = (event) => {

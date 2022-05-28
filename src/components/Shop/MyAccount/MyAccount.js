@@ -1,43 +1,43 @@
 import React from 'react';
-import './MyAccount.css';
-import Navbar from '../../Shared/Navbar/Navbar';
+import { Box, Button, Checkbox, Container, FormControlLabel, FormGroup, Grid, TextField, Typography } from '@mui/material';
+import { styled } from '@mui/material/styles';
+import { useForm } from "react-hook-form";
 import FacebookRoundedIcon from '@mui/icons-material/FacebookRounded';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import GoogleIcon from '@mui/icons-material/Google';
 import Footer from '../../Shared/Footer/Footer';
-import { Box, Button, Checkbox, Container, FormControlLabel, FormGroup, Grid, TextField, Typography } from '@mui/material';
-import { styled } from '@mui/material/styles';
-import { useForm } from "react-hook-form";
+import Navbar from '../../Shared/Navbar/Navbar';
 import useAuth from '../../../hooks/useAuth';
+import './MyAccount.css';
+
+const CssTextField = styled(TextField)({
+    '& .MuiInputLabel-root': {
+        fontFamily: 'Roboto, sans-serif'
+    },
+
+    '& .MuiOutlinedInput-root': {
+        fontFamily: 'Roboto, sans-serif'
+    },
+
+    '& .MuiFormHelperText-root': {
+        fontFamily: 'Roboto, sans-serif'
+    }
+});
 
 const MyAccount = () => {
     const bannerImage = 'https://res.cloudinary.com/dn9k2jkdd/image/upload/v1649786144/testo-burger-project/shop-tab/shop-tab_j7hrho.jpg';
-
-    const CssTextField = styled(TextField)({
-        '& .MuiInputLabel-root': {
-            fontFamily: 'Roboto, sans-serif'
-        },
-
-        '& .MuiOutlinedInput-root': {
-            fontFamily: 'Roboto, sans-serif'
-        },
-
-        '& .MuiFormHelperText-root': {
-            fontFamily: 'Roboto, sans-serif'
-        }
-    });
 
     const { signInUsingGoogle, signInUsingGithub, signInUsingEmail, registerUsingEmail } = useAuth();
 
     //For handling Login
     const { register, formState: { errors: loginError }, handleSubmit: handleSubmitLogin } = useForm();
 
-    //For handling registration
-    const { register: register2, formState: { errors: registrationError }, handleSubmit: handleSubmitRegistration } = useForm();
+    //For handling Registration (Sign up)
+    const { register: register2, formState: { errors: registrationError }, handleSubmit: handleSubmitRegistration, watch } = useForm();
 
-    const login = data => signInUsingEmail(data.email, data.password);
-    const registration = data => registerUsingEmail(data.email, data.password);
+    const login = data => signInUsingEmail(data.loginEmail, data.loginPassword);
+    const registration = data => registerUsingEmail(data.registrationEmail, data.registrationPassword);
 
     return (
         <section id='my-account'>
@@ -85,29 +85,29 @@ const MyAccount = () => {
                                 >
                                     <CssTextField sx={{ mb: 2 }}
                                         id="outlined-basic"
-                                        label="Your Email"
+                                        label="Email"
                                         type="email"
+                                        fullWidth
+                                        size="small"
                                         InputLabelProps={{
                                             shrink: true
                                         }}
-                                        {...register("email", { required: "Email is required" })}
-                                        error={!!loginError.email}
-                                        helperText={loginError?.email ? loginError.email.message : null}
-                                        fullWidth
-                                        size="small"
+                                        {...register("loginEmail", { required: "Email is required" })}
+                                        error={!!loginError.loginEmail}
+                                        helperText={loginError?.loginEmail ? loginError.loginEmail.message : null}
                                     />
                                     <CssTextField sx={{ mb: 2 }}
                                         id="outlined-password-input"
                                         type="password"
                                         label="Password"
                                         size="small"
-                                        {...register("password", { required: "Password is required" })}
-                                        error={!!loginError.password}
-                                        helperText={loginError?.password ? loginError.password.message : null}
                                         fullWidth
                                         InputLabelProps={{
                                             shrink: true
                                         }}
+                                        {...register("loginPassword", { required: "Password is required" })}
+                                        error={!!loginError.loginPassword}
+                                        helperText={loginError?.loginPassword ? loginError.loginPassword.message : null}
                                     // autoComplete="current-password"
                                     />
                                     <FormGroup sx={{ mb: 2 }}>
@@ -149,40 +149,62 @@ const MyAccount = () => {
                                 >
                                     <CssTextField sx={{ mb: 2 }}
                                         id="outlined-basic1"
-                                        label="Your Email"
-                                        type="email"
+                                        label="Name"
+                                        type="text"
+                                        size="small"
+                                        fullWidth
                                         InputLabelProps={{
                                             shrink: true
                                         }}
-                                        {...register2("email", { required: "Email is required" })}
-                                        error={!!registrationError.email}
-                                        helperText={registrationError?.email ? registrationError.email.message : null}
-                                        fullWidth
+                                        {...register2("registrationName", { required: "Name is required" })}
+                                        error={!!registrationError.registrationName}
+                                        helperText={registrationError?.registrationName ? registrationError.registrationName.message : null}
+                                    />
+                                    <CssTextField sx={{ mb: 2 }}
+                                        id="outlined-basic2"
+                                        label="Email"
+                                        type="email"
                                         size="small"
+                                        fullWidth
+                                        InputLabelProps={{
+                                            shrink: true
+                                        }}
+                                        {...register2("registrationEmail", { required: "Email is required" })}
+                                        error={!!registrationError.registrationEmail}
+                                        helperText={registrationError?.registrationEmail ? registrationError.registrationEmail.message : null}
                                     />
                                     <CssTextField sx={{ mb: 3 }}
                                         id="outlined-password-input1"
                                         type="password"
-                                        label="Your Password"
+                                        label="Password"
                                         size="small"
                                         fullWidth
                                         InputLabelProps={{
                                             shrink: true
                                         }}
-                                        {...register2("password", { required: "Password is required" })}
-                                        error={!!registrationError.password}
-                                        helperText={registrationError?.password ? registrationError.password.message : null}
+                                        {...register2("registrationPassword", { required: "Password is required" })}
+                                        error={!!registrationError.registrationPassword}
+                                        helperText={registrationError?.registrationPassword ? registrationError.registrationPassword.message : null}
                                     // autoComplete="current-password"
                                     />
                                     <CssTextField
                                         id="outlined-password-input2"
                                         type="password"
-                                        label="Confirm Your Password"
+                                        label="Confirm Password"
                                         size="small"
                                         fullWidth
                                         InputLabelProps={{
                                             shrink: true
                                         }}
+                                        {...register2("confirmPassword", {
+                                            validate: val => {
+                                                if (watch('registrationPassword') !== val) {
+                                                    return "Password and Confirm Password do no match";
+                                                }
+                                            }
+                                        })}
+                                        error={!!registrationError.confirmPassword}
+                                        helperText={registrationError?.confirmPassword ? registrationError.confirmPassword.message : null}
                                     // autoComplete="current-password"
                                     />
                                     <Typography

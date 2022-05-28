@@ -83,7 +83,7 @@ const CartTable = ({ cartItems, handleRemoveFromCart, handleAddQuantity, handleR
                                             />
                                         </Box>
                                     </StyledTableCell>
-                                    <StyledTableCell align="center">$ {price * quantity}</StyledTableCell>
+                                    <StyledTableCell align="center">$ {(price * quantity).toFixed(2)}</StyledTableCell>
                                     <StyledTableCell align="center">
                                         <DeleteOutlineRoundedIcon
                                             onClick={() => handleRemoveFromCart(_id)}
