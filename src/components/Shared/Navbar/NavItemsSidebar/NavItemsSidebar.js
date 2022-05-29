@@ -52,11 +52,11 @@ const NavItemsSidebar = () => {
                 }}
             >
                 {/* HOME SECTION */}
-                <MenuItem onClick={handleCloseNavMenu}>
-                    <NavLink to='/home' className='navLink-custom-style'>
+                <NavLink to='/home' className='navLink-custom-style'>
+                    <MenuItem onClick={handleCloseNavMenu}>
                         HOME
-                    </NavLink>
-                </MenuItem>
+                    </MenuItem>
+                </NavLink>
 
                 {/* ABOUT SECTION */}
                 <NestedMenuItem
@@ -65,26 +65,34 @@ const NavItemsSidebar = () => {
                     label="ABOUT"
                     parentMenuOpen={openNav}
                 >
-                    <MenuItem onClick={handleCloseNavMenu}>
-                        <NavLink to='/about-testo' className='navLink-custom-style'>About Us</NavLink>
-                    </MenuItem>
-                    <MenuItem onClick={handleCloseNavMenu}>
-                        <NavLink to='/team' className='navLink-custom-style'>Meet the Team</NavLink>
-                    </MenuItem>
-                    <MenuItem onClick={handleCloseNavMenu}>
-                        <NavLink to='/faq' className='navLink-custom-style'>F.A.Q.s</NavLink>
-                    </MenuItem>
-                    <MenuItem onClick={handleCloseNavMenu}>
-                        <NavLink to='/terms-privacy' className='navLink-custom-style'>Terms and Privacy</NavLink>
-                    </MenuItem>
+                    <NavLink to='/about-testo' className='navLink-custom-style'>
+                        <MenuItem onClick={handleCloseNavMenu}>
+                            About Us
+                        </MenuItem>
+                    </NavLink>
+                    <NavLink to='/team' className='navLink-custom-style'>
+                        <MenuItem onClick={handleCloseNavMenu}>
+                            Meet the Team
+                        </MenuItem>
+                    </NavLink>
+                    <NavLink to='/faq' className='navLink-custom-style'>
+                        <MenuItem onClick={handleCloseNavMenu}>
+                            F.A.Q.s
+                        </MenuItem>
+                    </NavLink>
+                    <NavLink to='/terms-privacy' className='navLink-custom-style'>
+                        <MenuItem onClick={handleCloseNavMenu}>
+                            Terms and Privacy
+                        </MenuItem>
+                    </NavLink>
                 </NestedMenuItem>
 
                 {/* OUR MENU SECTION */}
-                <MenuItem onClick={handleCloseNavMenu}>
-                    <NavLink to='/main-menu' className='navLink-custom-style'>
+                <NavLink to='/main-menu' className='navLink-custom-style'>
+                    <MenuItem onClick={handleCloseNavMenu}>
                         OUR MENU
-                    </NavLink>
-                </MenuItem>
+                    </MenuItem>
+                </NavLink>
 
                 {/* SHOP SECTION */}
                 <NestedMenuItem
@@ -93,15 +101,21 @@ const NavItemsSidebar = () => {
                     label="SHOP"
                     parentMenuOpen={openNav}
                 >
-                    <MenuItem onClick={handleCloseNavMenu}>
-                        <NavLink to='/all-items' className='navLink-custom-style'>All Items</NavLink>
-                    </MenuItem>
-                    <MenuItem onClick={handleCloseNavMenu}>
-                        <NavLink to='/product-details/6256ddd6f67917cc7f07f8cf' className='navLink-custom-style'>Product Details</NavLink>
-                    </MenuItem>
-                    <MenuItem onClick={handleCloseNavMenu}>
-                        <NavLink to='/my-account' className='navLink-custom-style'>My Account</NavLink>
-                    </MenuItem>
+                    <NavLink to='/all-items' className='navLink-custom-style'>
+                        <MenuItem onClick={handleCloseNavMenu}>
+                            All Items
+                        </MenuItem>
+                    </NavLink>
+                    <NavLink to='/product-details/6256ddd6f67917cc7f07f8cf' className='navLink-custom-style'>
+                        <MenuItem onClick={handleCloseNavMenu}>
+                            Product Details
+                        </MenuItem>
+                    </NavLink>
+                    <NavLink to='/my-account' className='navLink-custom-style'>
+                        <MenuItem onClick={handleCloseNavMenu}>
+                            My Account
+                        </MenuItem>
+                    </NavLink>
                 </NestedMenuItem>
 
                 {/* CONTACTS SECTION */}
@@ -111,20 +125,24 @@ const NavItemsSidebar = () => {
                     label="CONTACTS"
                     parentMenuOpen={openNav}
                 >
-                    <MenuItem onClick={handleCloseNavMenu}>
-                        <NavLink to='/reserve-a-table' className='navLink-custom-style'>Reserve a Table</NavLink>
-                    </MenuItem>
-                    <MenuItem onClick={handleCloseNavMenu}>
-                        <NavLink to='/contact-us' className='navLink-custom-style'>Contact Us</NavLink>
-                    </MenuItem>
+                    <NavLink to='/reserve-a-table' className='navLink-custom-style'>
+                        <MenuItem onClick={handleCloseNavMenu}>
+                            Reserve a Table
+                        </MenuItem>
+                    </NavLink>
+                    <NavLink to='/contact-us' className='navLink-custom-style'>
+                        <MenuItem onClick={handleCloseNavMenu}>
+                            Contact Us
+                        </MenuItem>
+                    </NavLink>
                 </NestedMenuItem>
 
                 {/* ADMIN SECTION */}
-                {/* <MenuItem onClick={handleCloseNavMenu}>
-                    <NavLink to='/admin' className='navLink-custom-style'>
-                        ADMIN
-                    </NavLink>
-                </MenuItem> */}
+                {/* <NavLink to='/admin' className='navLink-custom-style'>
+                <MenuItem onClick={handleCloseNavMenu}>                    
+                        ADMIN                    
+                </MenuItem>
+                </NavLink> */}
             </Menu>
         </Box>
     );

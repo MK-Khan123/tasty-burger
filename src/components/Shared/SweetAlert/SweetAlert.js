@@ -10,3 +10,11 @@ const sweetAlert = (title, icon, message) => MySwal.fire({
 });
 
 export default sweetAlert;
+
+// Swal.fire({
+//     title: `Well Done ${loggedInUser.displayName}!!`,
+//     text: `You Have To Pay Us ${total}$!`,
+//     icon: 'success',
+//     button: 'OK!',
+//     position: 'center',
+// });

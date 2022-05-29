@@ -6,7 +6,7 @@ import ExpandMoreRoundedIcon from '@mui/icons-material/ExpandMoreRounded';
 import MenuItem from '@mui/material/MenuItem';
 import { NavLink } from 'react-router-dom';
 
-const NavItems = () => {    
+const NavItems = () => {
 
     const [anchorElShop, setAnchorElShop] = useState(null);
     const [anchorElAbout, setAnchorElAbout] = useState(null);
@@ -71,18 +71,26 @@ const NavItems = () => {
                         'aria-labelledby': 'navigation-button1',
                     }}
                 >
-                    <MenuItem onClick={handleCloseAbout}>
-                        <NavLink to='/about-testo' className='navLink-custom-style'>About Us</NavLink>
-                    </MenuItem>
-                    <MenuItem onClick={handleCloseAbout}>
-                        <NavLink to='/team' className='navLink-custom-style'>Meet the Team</NavLink>
-                    </MenuItem>
-                    <MenuItem onClick={handleCloseAbout}>
-                        <NavLink to='/faq' className='navLink-custom-style'>F.A.Q.s</NavLink>
-                    </MenuItem>
-                    <MenuItem onClick={handleCloseAbout}>
-                        <NavLink to='/terms-privacy' className='navLink-custom-style'>Terms and Privacy</NavLink>
-                    </MenuItem>
+                    <NavLink to='/about-testo' className='navLink-custom-style'>
+                        <MenuItem onClick={handleCloseAbout}>
+                            About Us
+                        </MenuItem>
+                    </NavLink>
+                    <NavLink to='/team' className='navLink-custom-style'>
+                        <MenuItem onClick={handleCloseAbout}>
+                            Meet the Team
+                        </MenuItem>
+                    </NavLink>
+                    <NavLink to='/faq' className='navLink-custom-style'>
+                        <MenuItem onClick={handleCloseAbout}>
+                            F.A.Q.s
+                        </MenuItem>
+                    </NavLink>
+                    <NavLink to='/terms-privacy' className='navLink-custom-style'>
+                        <MenuItem onClick={handleCloseAbout}>
+                            Terms and Privacy
+                        </MenuItem>
+                    </NavLink>
                 </Menu>
             </Box>
 
@@ -115,15 +123,21 @@ const NavItems = () => {
                         'aria-labelledby': 'navigation-button2',
                     }}
                 >
-                    <MenuItem onClick={handleCloseShop}>
-                        <NavLink to='/all-items' className='navLink-custom-style'>All Items</NavLink>
-                    </MenuItem>
-                    <MenuItem onClick={handleCloseShop}>
-                        <NavLink to='/product-details/6256ddd6f67917cc7f07f8cf' className='navLink-custom-style'>Product Details</NavLink>
-                    </MenuItem>
-                    <MenuItem onClick={handleCloseShop}>
-                        <NavLink to='/my-account' className='navLink-custom-style'>My Account</NavLink>
-                    </MenuItem>
+                    <NavLink to='/all-items' className='navLink-custom-style'>
+                        <MenuItem onClick={handleCloseShop}>
+                            All Items
+                        </MenuItem>
+                    </NavLink>
+                    <NavLink to='/product-details/6256ddd6f67917cc7f07f8cf' className='navLink-custom-style'>
+                        <MenuItem onClick={handleCloseShop}>
+                            Product Details
+                        </MenuItem>
+                    </NavLink>
+                    <NavLink to='/my-account' className='navLink-custom-style'>
+                        <MenuItem onClick={handleCloseShop}>
+                            My Account
+                        </MenuItem>
+                    </NavLink>
                 </Menu>
             </Box>
 
@@ -149,12 +163,16 @@ const NavItems = () => {
                         'aria-labelledby': 'navigation-button3',
                     }}
                 >
-                    <MenuItem onClick={handleCloseContacts}>
-                        <NavLink to='/reserve-a-table' className='navLink-custom-style'>Reserve a Table</NavLink>
-                    </MenuItem>
-                    <MenuItem onClick={handleCloseContacts}>
-                        <NavLink to='/contact-us' className='navLink-custom-style'>Contact Us</NavLink>
-                    </MenuItem>
+                    <NavLink to='/reserve-a-table' className='navLink-custom-style'>
+                        <MenuItem onClick={handleCloseContacts}>
+                            Reserve a Table
+                        </MenuItem>
+                    </NavLink>
+                    <NavLink to='/contact-us' className='navLink-custom-style'>
+                        <MenuItem onClick={handleCloseContacts}>
+                            Contact Us
+                        </MenuItem>
+                    </NavLink>
                 </Menu>
             </Box>
 

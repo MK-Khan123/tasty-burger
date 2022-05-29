@@ -49,16 +49,16 @@ const UserSettings = () => {
                 open={Boolean(anchorElUser)}
                 onClose={handleCloseUserMenu}
             >
-                <MenuItem onClick={handleCloseUserMenu}>
-                    <NavLink to='/profile' className='navLink-custom-style'>
+                <NavLink to='/profile' className='navLink-custom-style'>
+                    <MenuItem onClick={handleCloseUserMenu}>
                         <Typography sx={{ textAlign: "center" }}>Profile</Typography>
-                    </NavLink>
-                </MenuItem>
-                <MenuItem onClick={handleCloseUserMenu}>
-                    <NavLink to='/dashboard' className='navLink-custom-style'>
+                    </MenuItem>
+                </NavLink>
+                <NavLink to='/dashboard' className='navLink-custom-style'>
+                    <MenuItem onClick={handleCloseUserMenu}>
                         <Typography sx={{ textAlign: "center" }}>Dashboard</Typography>
-                    </NavLink>
-                </MenuItem>
+                    </MenuItem>
+                </NavLink>
                 {
                     email ? (<MenuItem onClick={handleCloseUserMenu}>
                         <Typography onClick={logout} sx={{ textAlign: "center" }}>Logout</Typography>

@@ -1,6 +1,20 @@
 import { Box, Button, Container, TextField } from '@mui/material';
-import React from 'react';
+import { styled } from '@mui/material/styles';
 import './Subscription.css';
+
+const SubscriptionTextField = styled(TextField)({
+    '& .MuiInputLabel-root': {
+        fontFamily: 'Roboto, sans-serif'
+    },
+
+    '& .MuiOutlinedInput-root': {
+        fontFamily: 'Roboto, sans-serif'
+    },
+
+    '& .MuiFormHelperText-root': {
+        fontFamily: 'Roboto, sans-serif'
+    }
+});
 
 const Subscription = () => {
 
@@ -31,16 +45,15 @@ const Subscription = () => {
                 </Box>
                 <Box
                     sx={{
-                        fontFamily: 'Roboto, sans-serif',
                         display: 'flex',
                         flexDirection: 'column',
                         justifyContent: 'space-evenly'
                     }}
                 >
                     <Box sx={{ paddingTop: '1.2rem' }}>
-                        <TextField
+                        <SubscriptionTextField
+                            size='small'
                             type='email'
-                            name='email'
                             label="Email Address"
                             helperText="We'll never share your email address with anyone else"
                             fullWidth />

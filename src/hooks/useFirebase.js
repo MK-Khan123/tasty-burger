@@ -9,15 +9,12 @@ import {
     GithubAuthProvider
 } from "firebase/auth";
 import { useEffect, useState } from "react";
-import Swal from "sweetalert2";
-import withReactContent from 'sweetalert2-react-content';
 import sweetAlert from "../components/Shared/SweetAlert/SweetAlert";
 import initializeAuthentication from "../Firebase/firebase.initialize";
 
 initializeAuthentication();
 
 const useFirebase = () => {
-    const MySwal = withReactContent(Swal);
 
     const [user, setUser] = useState({});
     const [error, setError] = useState('');
@@ -29,20 +26,12 @@ const useFirebase = () => {
             .then((userCredential) => {
                 // Signed in 
                 const user = userCredential.user;
-                MySwal.fire({
-                    title: 'Successfully Registered!',
-                    icon: 'success',
-                    text: `Please login using your email and password`
-                });
                 setUser(user);
+                sweetAlert('Successfully Registered!', 'success', 'Please login using your email and password');
             })
             .catch((error) => {
                 const errorMessage = error.message;
-                MySwal.fire({
-                    title: 'Registration Failed!',
-                    icon: 'error',
-                    text: `${errorMessage}`
-                });
+                sweetAlert('Registration Failed!', 'error', errorMessage);
                 setError(errorMessage);
             });
     }
@@ -53,20 +42,11 @@ const useFirebase = () => {
                 // Signed in 
                 const user = userCredential.user;
                 setUser(user);
-                sweetAlert('Successfully Logged In!', 'success', 'Please go to Menu to order');
+                sweetAlert('Successfully Logged In!', 'success');
             })
             .catch((error) => {
                 const errorMessage = error.message;
-                if (errorMessage) {
-                    // Swal.fire({
-                    //     // title: `Well Done ${loggedInUser.displayName}!!`,
-                    //     // text: `You Have To Pay Us ${total}$!`,
-                    //     icon: 'success',
-                    //     button: 'OK!',
-                    //     position: 'center',
-                    // });
-                    sweetAlert('Login Failed', 'error', errorMessage);
-                }
+                sweetAlert('Login Failed', 'error', errorMessage);
                 setError(errorMessage);
             });
     }
@@ -74,7 +54,7 @@ const useFirebase = () => {
     const logout = () => {
         signOut(auth).then(() => {
             setUser({});
-            sweetAlert('Logged out successfully', 'success');
+            sweetAlert('Logged out successfully!', 'success');
         }).catch((error) => {
             alert(error);
         });
@@ -88,10 +68,11 @@ const useFirebase = () => {
             .then((result) => {
                 const user = result.user;
                 setUser(user);
-
+                sweetAlert('Successfully Signed In!', 'success');
+                // ...
             }).catch((error) => {
                 const errorMessage = error.message;
-                alert(errorMessage);
+                sweetAlert('Login Failed', 'error', errorMessage);
                 setError(errorMessage);
             });
     }
@@ -104,10 +85,11 @@ const useFirebase = () => {
             .then((result) => {
                 const user = result.user;
                 setUser(user);
+                sweetAlert('Successfully Signed In!', 'success');
                 // ...
             }).catch((error) => {
                 const errorMessage = error.message;
-                alert(errorMessage);
+                sweetAlert('Login Failed', 'error', errorMessage);
                 setError(errorMessage);
             });
     }

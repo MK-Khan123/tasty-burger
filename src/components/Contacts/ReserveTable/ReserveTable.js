@@ -1,8 +1,23 @@
 import { Box, Button, Container, Grid, TextField } from '@mui/material';
+import { styled } from '@mui/material/styles';
 import Footer from '../../Shared/Footer/Footer';
 import MobileApp from '../../Shared/MobileApp/MobileApp';
 import Navbar from '../../Shared/Navbar/Navbar';
 import './ReserveTable.css';
+
+const ReserveTableTextField = styled(TextField)({
+    '& .MuiInputLabel-root': {
+        fontFamily: 'Roboto, sans-serif'
+    },
+
+    '& .MuiOutlinedInput-root': {
+        fontFamily: 'Roboto, sans-serif'
+    },
+
+    '& .MuiFormHelperText-root': {
+        fontFamily: 'Roboto, sans-serif'
+    }
+});
 
 const ReserveTable = () => {
     const bannerImage = 'https://res.cloudinary.com/dn9k2jkdd/image/upload/v1649786143/testo-burger-project/reserve-table/booking-page_geqouk.jpg';
@@ -32,7 +47,7 @@ const ReserveTable = () => {
                     <Container>
                         <Grid container spacing={2}>
                             <Grid item xs={12} md={6} mb={2}>
-                                <TextField
+                                <ReserveTableTextField
                                     type="date"
                                     label="Date"
                                     InputLabelProps={{
@@ -43,7 +58,7 @@ const ReserveTable = () => {
                                 />
                             </Grid>
                             <Grid item xs={12} md={6} mb={2}>
-                                <TextField
+                                <ReserveTableTextField
                                     label="Name"
                                     type="text"
                                     InputLabelProps={{
@@ -54,7 +69,7 @@ const ReserveTable = () => {
                                 />
                             </Grid>
                             <Grid item xs={12} md={6} mb={2}>
-                                <TextField
+                                <ReserveTableTextField
                                     label="Email address"
                                     type="email"
                                     InputLabelProps={{
@@ -66,7 +81,7 @@ const ReserveTable = () => {
                                 />
                             </Grid>
                             <Grid item xs={12} md={6} mb={2}>
-                                <TextField
+                                <ReserveTableTextField
                                     label="Phone Number"
                                     type="tel"
                                     InputLabelProps={{
@@ -77,7 +92,7 @@ const ReserveTable = () => {
                                 />
                             </Grid>
                             <Grid item xs={12} mb={2}>
-                                <TextField
+                                <ReserveTableTextField
                                     label="Your message..."
                                     InputLabelProps={{
                                         shrink: true

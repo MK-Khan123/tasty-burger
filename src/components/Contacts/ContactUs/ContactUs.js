@@ -1,12 +1,27 @@
 import React from 'react';
-import Navbar from '../../Shared/Navbar/Navbar';
-import './ContactUs.css';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import LayersIcon from '@mui/icons-material/Layers';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import MobileApp from '../../Shared/MobileApp/MobileApp';
 import Footer from '../../Shared/Footer/Footer';
 import { Box, Button, Card, CardContent, Container, Grid, TextField, Typography } from '@mui/material';
+import { styled } from '@mui/material/styles';
+import Navbar from '../../Shared/Navbar/Navbar';
+import './ContactUs.css';
+
+const ContactTextField = styled(TextField)({
+    '& .MuiInputLabel-root': {
+        fontFamily: 'Roboto, sans-serif'
+    },
+
+    '& .MuiOutlinedInput-root': {
+        fontFamily: 'Roboto, sans-serif'
+    },
+
+    '& .MuiFormHelperText-root': {
+        fontFamily: 'Roboto, sans-serif'
+    }
+});
 
 const ContactUs = () => {
     const bannerImage = 'https://res.cloudinary.com/dn9k2jkdd/image/upload/v1649786140/testo-burger-project/contact-us/contacts-page_ypzxhp.jpg';
@@ -135,8 +150,7 @@ const ContactUs = () => {
                         <h5>LEAVE A MESSAGE</h5>
                         <Grid container spacing={2}>
                             <Grid item xs={12} md={4} mb={{ xs: 2, md: 0 }}>
-                                <TextField
-                                    id="outlined-basic"
+                                <ContactTextField                                    
                                     label="Your Name"
                                     type="text"
                                     InputLabelProps={{
@@ -147,8 +161,7 @@ const ContactUs = () => {
                                 />
                             </Grid>
                             <Grid item xs={12} md={4} mb={{ xs: 2, md: 0 }}>
-                                <TextField
-                                    id="outlined-basic"
+                                <ContactTextField                                    
                                     label="Your Email"
                                     type="email"
                                     InputLabelProps={{
@@ -160,8 +173,7 @@ const ContactUs = () => {
                                 />
                             </Grid>
                             <Grid item xs={12} md={4} mb={{ xs: 2, md: 0 }}>
-                                <TextField
-                                    id="outlined-basic"
+                                <ContactTextField                                    
                                     label="What is this about? ..."
                                     type="text"
                                     InputLabelProps={{
@@ -172,9 +184,9 @@ const ContactUs = () => {
                                 />
                             </Grid>
                             <Grid item xs={12} mb={1}>
-                                <TextField
-                                    id="outlined-multiline-static"
+                                <ContactTextField                                    
                                     label="Your message..."
+                                    type="text"
                                     InputLabelProps={{
                                         shrink: true
                                     }}
