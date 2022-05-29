@@ -12,7 +12,7 @@ import { NavLink } from 'react-router-dom';
 const UserSettings = () => {
 
     const { user, logout } = useAuth();
-    const { displayName, photoURL } = user;
+    const { displayName, email, photoURL } = user;
 
     console.log(user);
 
@@ -51,17 +51,17 @@ const UserSettings = () => {
             >
                 <MenuItem onClick={handleCloseUserMenu}>
                     <NavLink to='/profile' className='navLink-custom-style'>
-                        <Typography sx={{ fontFamily: 'Oswald, sans-serif', textAlign: "center" }}>Profile</Typography>
+                        <Typography sx={{ textAlign: "center" }}>Profile</Typography>
                     </NavLink>
                 </MenuItem>
                 <MenuItem onClick={handleCloseUserMenu}>
                     <NavLink to='/dashboard' className='navLink-custom-style'>
-                        <Typography sx={{ fontFamily: 'Oswald, sans-serif', textAlign: "center" }}>Dashboard</Typography>
+                        <Typography sx={{ textAlign: "center" }}>Dashboard</Typography>
                     </NavLink>
                 </MenuItem>
                 {
-                    displayName ? (<MenuItem onClick={handleCloseUserMenu}>
-                        <Typography onClick={logout} sx={{ fontFamily: 'Oswald, sans-serif', textAlign: "center" }}>Logout</Typography>
+                    email ? (<MenuItem onClick={handleCloseUserMenu}>
+                        <Typography onClick={logout} sx={{ textAlign: "center" }}>Logout</Typography>
                     </MenuItem>) :
                         (<MenuItem onClick={handleCloseUserMenu}>
                             <NavLink to='/my-account' className='navLink-custom-style'>Login</NavLink>

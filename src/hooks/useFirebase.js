@@ -11,6 +11,7 @@ import {
 import { useEffect, useState } from "react";
 import Swal from "sweetalert2";
 import withReactContent from 'sweetalert2-react-content';
+import sweetAlert from "../components/Shared/SweetAlert/SweetAlert";
 import initializeAuthentication from "../Firebase/firebase.initialize";
 
 initializeAuthentication();
@@ -51,12 +52,8 @@ const useFirebase = () => {
             .then((userCredential) => {
                 // Signed in 
                 const user = userCredential.user;
-                MySwal.fire({
-                    title: 'Successfully Logged In!',
-                    icon: 'success',
-                    text: `Please go to menu to order`
-                });
                 setUser(user);
+                sweetAlert('Successfully Logged In!', 'success', 'Please go to Menu to order');
             })
             .catch((error) => {
                 const errorMessage = error.message;
@@ -68,13 +65,8 @@ const useFirebase = () => {
                     //     button: 'OK!',
                     //     position: 'center',
                     // });
-                    MySwal.fire({
-                        title: 'Login Failed',
-                        icon: 'error',
-                        text: `${errorMessage}`
-                    })
+                    sweetAlert('Login Failed', 'error', errorMessage);
                 }
-                // alert(errorMessage);
                 setError(errorMessage);
             });
     }
@@ -82,7 +74,7 @@ const useFirebase = () => {
     const logout = () => {
         signOut(auth).then(() => {
             setUser({});
-            alert('Signed out successfully');
+            sweetAlert('Logged out successfully', 'success');
         }).catch((error) => {
             alert(error);
         });
