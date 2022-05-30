@@ -5,7 +5,7 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import { Badge } from '@mui/material';
+import Badge from '@mui/material/Badge';
 import { NavLink } from 'react-router-dom';
 import UserSettings from './UserSettings/UserSettings';
 import NavItems from './NavItems/NavItems';

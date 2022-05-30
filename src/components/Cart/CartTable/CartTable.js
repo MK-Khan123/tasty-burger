@@ -13,27 +13,27 @@ import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import './CartTable.css';
 
+const StyledTableCell = styled(TableCell)(({ theme }) => ({
+    [`&.${tableCellClasses.head}`]: {
+        fontSize: '1.3rem',
+    },
+    [`&.${tableCellClasses.body}`]: {
+        padding: '0.5rem',
+        fontSize: '1.1rem',
+    },
+}));
+
+const StyledTableRow = styled(TableRow)(({ theme }) => ({
+    '&:nth-of-type(odd)': {
+        backgroundColor: theme.palette.action.hover,
+    },
+    // hide last border
+    '&:last-child td, &:last-child th': {
+        border: 0,
+    },
+}));
+
 const CartTable = ({ cartItems, handleRemoveFromCart, handleAddQuantity, handleReduceQuantity }) => {
-
-    const StyledTableCell = styled(TableCell)(({ theme }) => ({
-        [`&.${tableCellClasses.head}`]: {
-            fontSize: '1.3rem',
-        },
-        [`&.${tableCellClasses.body}`]: {
-            padding: '0.5rem',
-            fontSize: '1.1rem',
-        },
-    }));
-
-    const StyledTableRow = styled(TableRow)(({ theme }) => ({
-        '&:nth-of-type(odd)': {
-            backgroundColor: theme.palette.action.hover,
-        },
-        // hide last border
-        '&:last-child td, &:last-child th': {
-            border: 0,
-        },
-    }));
 
     return (
         <section id='cart-table'>
@@ -53,7 +53,7 @@ const CartTable = ({ cartItems, handleRemoveFromCart, handleAddQuantity, handleR
                         {cartItems.map((product, index) => {
                             const { name, image, price, _id, quantity } = product;
                             return (
-                                <StyledTableRow key={name}>
+                                <StyledTableRow key={_id}>
                                     <StyledTableCell align='center' component="th" scope="row">
                                         {index + 1}
                                     </StyledTableCell>
@@ -87,7 +87,8 @@ const CartTable = ({ cartItems, handleRemoveFromCart, handleAddQuantity, handleR
                                     <StyledTableCell align="center">
                                         <DeleteOutlineRoundedIcon
                                             onClick={() => handleRemoveFromCart(_id)}
-                                            sx={{ fontSize: '2rem', color: '#525252', '&:hover': { color: '#DC3545', cursor: 'pointer' } }} />
+                                            sx={{ fontSize: '2rem', color: '#525252', '&:hover': { color: '#DC3545', cursor: 'pointer' } }}
+                                        />
                                     </StyledTableCell>
                                 </StyledTableRow>
                             );

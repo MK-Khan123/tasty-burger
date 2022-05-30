@@ -1,0 +1,18 @@
+.cart-item-container {
+    width: 22rem;
+    max-height: 90vh;
+    overflow: auto;
+}
+
+.cart-item-container::-webkit-scrollbar {
+    width: 5px;
+}
+
+.cart-item-container::-webkit-scrollbar-thumb {
+    background: #10b981a6;
+    border-radius: 2px;
+}
+
+.cart-item-container::-webkit-scrollbar-track {
+    background: #f6f1f1;
+}
