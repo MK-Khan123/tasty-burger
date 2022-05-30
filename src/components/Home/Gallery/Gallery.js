@@ -44,14 +44,14 @@ const Gallery = () => {
                 <Grid container spacing={2}>
                     {
                         imageGallery.map(imageData => {
-                            const { name, image, star, starCount } = imageData;
+                            const { name, image, star, starCount, _id } = imageData;
                             let ratedStars = [];
                             for (let i = 1; i <= star; i++) {
                                 ratedStars.push(<StarRoundedIcon sx={{ color: '#FFCA2C' }} />);
                             }
 
                             return (
-                                <Grid item key={name} sm={6} md={3} className="image-gallery-card">
+                                <Grid item key={_id} sm={6} md={3} className="image-gallery-card">
                                     <Card sx={{ position: 'relative', borderRadius: '8px' }}>
                                         <CardMedia
                                             className='image-gallery-transform'

@@ -15,11 +15,11 @@ import Cart from './components/Cart/Cart';
 import AdminPanel from './components/AdminPanel/AdminPanel';
 import Checkout from './components/Checkout/Checkout';
 import AuthProvider from './contexts/AuthProvider';
-import CustomizedSnackbar from './components/Shared/CustomizedSnackbar/CustomizedSnackbar';
 import { Provider } from 'react-redux';
 import configureAppStore from './store/configureAppStore';
 import { createTheme, ThemeProvider } from '@mui/material';
 import CartProvider from './contexts/CartProvider';
+import TemporaryDrawer from './components/Shared/Drawer/Drawer';
 
 const theme = createTheme({
   typography: {
@@ -48,7 +48,7 @@ function App() {
         <Provider store={store}>
           <CartProvider>
             <ThemeProvider theme={theme}>
-              <CustomizedSnackbar />
+              <TemporaryDrawer />
               <Routes>
                 <Route path="/" element={<Navigate to="/home" />} />
 

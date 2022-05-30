@@ -60,12 +60,19 @@ const UserSettings = () => {
                     </MenuItem>
                 </NavLink>
                 {
-                    email ? (<MenuItem onClick={handleCloseUserMenu}>
-                        <Typography onClick={logout} sx={{ textAlign: "center" }}>Logout</Typography>
-                    </MenuItem>) :
-                        (<MenuItem onClick={handleCloseUserMenu}>
-                            <NavLink to='/my-account' className='navLink-custom-style'>Login</NavLink>
-                        </MenuItem>)
+                    email ? (
+                        <Typography onClick={logout} sx={{ textAlign: "center" }}>
+                            <MenuItem onClick={handleCloseUserMenu}>
+                                Logout
+                            </MenuItem>
+                        </Typography>
+                    ) : (
+                        <NavLink to='/my-account' className='navLink-custom-style'>
+                            <MenuItem onClick={handleCloseUserMenu}>
+                                Login
+                            </MenuItem>
+                        </NavLink>
+                    )
                 }
             </Menu>
         </Box>

@@ -4,7 +4,7 @@ import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
-import LocalMallRoundedIcon from '@mui/icons-material/LocalMallRounded';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { Badge } from '@mui/material';
 import { NavLink } from 'react-router-dom';
 import UserSettings from './UserSettings/UserSettings';
@@ -50,7 +50,7 @@ const Navbar = () => {
                         <Box sx={{ my: 3, pr: 3 }}>
                             <NavLink to='/cart' style={{ textDecoration: 'none', color: 'white' }}>
                                 <Badge badgeContent={cartItems.length} color="error">
-                                    <LocalMallRoundedIcon sx={{ fontSize: '1.5rem' }} />
+                                    <ShoppingCartIcon sx={{ fontSize: '1.5rem' }} />
                                 </Badge>
                             </NavLink>
                         </Box>
