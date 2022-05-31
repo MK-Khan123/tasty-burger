@@ -20,6 +20,7 @@ import configureAppStore from './store/configureAppStore';
 import { createTheme, ThemeProvider } from '@mui/material';
 import CartProvider from './contexts/CartProvider';
 import TemporaryDrawer from './components/Shared/Drawer/Drawer';
+import NotFound from './components/NotFound/NotFound';
 
 const theme = createTheme({
   typography: {
@@ -79,6 +80,8 @@ function App() {
                 <Route path="/cart" element={<Cart />} />
 
                 <Route path="/checkout" element={<Checkout />} />
+
+                <Route path='*' element={<NotFound />} />
               </Routes>
             </ThemeProvider>
           </CartProvider>

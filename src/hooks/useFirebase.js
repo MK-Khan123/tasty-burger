@@ -4,6 +4,7 @@ import {
     signInWithEmailAndPassword,
     signInWithPopup,
     signOut,
+    updateProfile,
     GoogleAuthProvider,
     onAuthStateChanged,
     GithubAuthProvider
@@ -21,10 +22,14 @@ const useFirebase = () => {
 
     const auth = getAuth();
 
-    const registerUsingEmail = (email, password) => {
+    const registerUsingEmail = (name, email, password) => {
         createUserWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
-                // Signed in 
+                // Signed in
+                updateProfile(auth.currentUser, {
+                    displayName: name,
+                    photoURL: 'https://res.cloudinary.com/dn9k2jkdd/image/upload/v1653990800/avatars/robot_nh7ris.png'
+                });
                 const user = userCredential.user;
                 setUser(user);
                 sweetAlert('Successfully Registered!', 'success', 'Please login using your email and password');
@@ -32,7 +37,6 @@ const useFirebase = () => {
             .catch((error) => {
                 const errorMessage = error.message;
                 sweetAlert('Registration Failed!', 'error', errorMessage);
-                setError(errorMessage);
             });
     }
 

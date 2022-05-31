@@ -77,7 +77,7 @@ const Cart = () => {
                                             marginTop: '1.5rem'
                                         }}
                                     >
-                                        Return to shop <ShoppingBagIcon sx={{ paddingX: '5px' }} />
+                                        Return to Menu <ShoppingBagIcon sx={{ paddingLeft: '5px', color: '#393e46' }} />
                                     </Button>
                                 </NavLink>
                             </Box>

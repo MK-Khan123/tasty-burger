@@ -36,8 +36,15 @@ const MyAccount = () => {
     //For handling Registration (Sign up)
     const { register: register2, formState: { errors: registrationError }, handleSubmit: handleSubmitRegistration, watch } = useForm();
 
-    const login = data => signInUsingEmail(data.loginEmail, data.loginPassword);
-    const registration = data => registerUsingEmail(data.registrationEmail, data.registrationPassword);
+    const login = data => {
+        const { loginEmail, loginPassword } = data;
+        return signInUsingEmail(loginEmail, loginPassword);
+    };
+
+    const registration = data => {
+        const { registrationName, registrationEmail, registrationPassword } = data;
+        return registerUsingEmail(registrationName, registrationEmail, registrationPassword);
+    };
 
     return (
         <section id='my-account'>
