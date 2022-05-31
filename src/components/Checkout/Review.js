@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { Fragment } from 'react';
 import Typography from '@mui/material/Typography';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
@@ -37,9 +37,9 @@ const payments = [
   { name: 'Expiry date', detail: '04/2024' },
 ];
 
-export default function Review() {
+const Review = () => {
   return (
-    <React.Fragment>
+    <Fragment>
       <Typography variant="h6" gutterBottom>
         Order summary
       </Typography>
@@ -72,18 +72,20 @@ export default function Review() {
           </Typography>
           <Grid container>
             {payments.map((payment) => (
-              <React.Fragment key={payment.name}>
+              <Fragment key={payment.name}>
                 <Grid item xs={6}>
                   <Typography gutterBottom>{payment.name}</Typography>
                 </Grid>
                 <Grid item xs={6}>
                   <Typography gutterBottom>{payment.detail}</Typography>
                 </Grid>
-              </React.Fragment>
+              </Fragment>
             ))}
           </Grid>
         </Grid>
       </Grid>
-    </React.Fragment>
+    </Fragment>
   );
 }
+
+export default Review;

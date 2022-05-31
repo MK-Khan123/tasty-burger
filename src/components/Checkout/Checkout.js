@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { Fragment, useState } from 'react';
 import CssBaseline from '@mui/material/CssBaseline';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
@@ -16,13 +16,14 @@ import AddressForm from './AddressForm';
 import PaymentForm from './PaymentForm';
 import Review from './Review';
 import { NavLink } from 'react-router-dom';
+import useAuth from '../../hooks/useAuth';
 
-function Copyright() {
+const Copyright = () => {
   return (
     <Typography variant="body2" color="text.secondary" align="center">
       {'Copyright © '}
-      <Link color="inherit" href="https://mui.com/">
-        Your Website
+      <Link color="inherit" href="https://testo-burger.web.app/">
+        Testo Burger Website
       </Link>{' '}
       {new Date().getFullYear()}
       {'.'}
@@ -34,10 +35,10 @@ const steps = ['Shipping address', 'Payment details', 'Review your order'];
 
 const logo = 'https://res.cloudinary.com/dn9k2jkdd/image/upload/v1649786132/testo-burger-project/logo_lipngj.png';
 
-function getStepContent(step) {
+const getStepContent = (step, user) => {
   switch (step) {
     case 0:
-      return <AddressForm />;
+      return <AddressForm user={user} />;
     case 1:
       return <PaymentForm />;
     case 2:
@@ -49,8 +50,8 @@ function getStepContent(step) {
 
 const theme = createTheme();
 
-export default function Checkout() {
-  const [activeStep, setActiveStep] = React.useState(0);
+const Checkout = () => {
+  const [activeStep, setActiveStep] = useState(0);
 
   const handleNext = () => {
     setActiveStep(activeStep + 1);
@@ -59,6 +60,8 @@ export default function Checkout() {
   const handleBack = () => {
     setActiveStep(activeStep - 1);
   };
+
+  const { user } = useAuth();
 
   return (
     <ThemeProvider theme={theme}>
@@ -73,11 +76,9 @@ export default function Checkout() {
         }}
       >
         <Toolbar>
-          <Typography variant="h6" color="inherit" noWrap>
-            <NavLink to='/home'>
-              <img style={{ maxWidth: '120px', maxHeight: '100px' }} src={logo} alt="" />
-            </NavLink>
-          </Typography>
+          <NavLink to='/home'>
+            <img style={{ maxWidth: '120px', maxHeight: '100px' }} src={logo} alt="" />
+          </NavLink>
         </Toolbar>
       </AppBar>
       <Container component="main" maxWidth="sm" sx={{ mb: 4 }}>
@@ -92,9 +93,9 @@ export default function Checkout() {
               </Step>
             ))}
           </Stepper>
-          <React.Fragment>
+          <Fragment>
             {activeStep === steps.length ? (
-              <React.Fragment>
+              <Fragment>
                 <Typography variant="h5" gutterBottom>
                   Thank you for your order.
                 </Typography>
@@ -103,10 +104,10 @@ export default function Checkout() {
                   confirmation, and will send you an update when your order has
                   shipped.
                 </Typography>
-              </React.Fragment>
+              </Fragment>
             ) : (
-              <React.Fragment>
-                {getStepContent(activeStep)}
+              <Fragment>
+                {getStepContent(activeStep, user)}
                 <Box sx={{ display: 'flex', justifyContent: 'flex-end' }}>
                   {activeStep !== 0 && (
                     <Button onClick={handleBack} sx={{ mt: 3, ml: 1 }}>
@@ -122,12 +123,14 @@ export default function Checkout() {
                     {activeStep === steps.length - 1 ? 'Place order' : 'Next'}
                   </Button>
                 </Box>
-              </React.Fragment>
+              </Fragment>
             )}
-          </React.Fragment>
+          </Fragment>
         </Paper>
         <Copyright />
       </Container>
     </ThemeProvider>
   );
 }
+
+export default Checkout;

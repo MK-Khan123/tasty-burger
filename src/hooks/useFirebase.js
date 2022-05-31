@@ -67,7 +67,6 @@ const useFirebase = () => {
     const signInUsingGoogle = () => {
 
         const googleAuthProvider = new GoogleAuthProvider();
-
         signInWithPopup(auth, googleAuthProvider)
             .then((result) => {
                 const user = result.user;
@@ -84,7 +83,6 @@ const useFirebase = () => {
     const signInUsingGithub = () => {
 
         const githubAuthProvider = new GithubAuthProvider();
-
         signInWithPopup(auth, githubAuthProvider)
             .then((result) => {
                 const user = result.user;
