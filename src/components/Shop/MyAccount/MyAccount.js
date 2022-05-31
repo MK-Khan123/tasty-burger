@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Box, Button, Checkbox, Container, FormControlLabel, FormGroup, Grid, TextField, Typography } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import { useForm } from "react-hook-form";
@@ -31,13 +31,46 @@ const MyAccount = () => {
     const { signInUsingGoogle, signInUsingGithub, signInUsingEmail, registerUsingEmail } = useAuth();
 
     //For handling Login
-    const { register, formState: { errors: loginError }, handleSubmit: handleSubmitLogin } = useForm();
+    const {
+        register: registerLogin,
+        formState: {
+            errors: loginError,
+            isSubmitSuccessful: isLoginSubmitSuccessful
+        },
+        handleSubmit: handleSubmitLogin,
+        reset: resetLogin
+    } = useForm();
 
     //For handling Registration (Sign up)
-    const { register: register2, formState: { errors: registrationError }, handleSubmit: handleSubmitRegistration, watch } = useForm();
+    const {
+        register: registerSignUp,
+        formState: {
+            errors: registrationError,
+            isSubmitSuccessful: isRegistrationSubmitSuccessful
+        },
+        handleSubmit: handleSubmitRegistration,
+        watch,
+        reset: resetRegistration
+    } = useForm();
+
+    //This useEffect is used to clear input fields after successful Login form and Registration form submission
+    useEffect(() => {
+        if (isLoginSubmitSuccessful) {
+            resetLogin();
+        }
+        if (isRegistrationSubmitSuccessful) {
+            resetRegistration();
+        }
+    }, [
+        isLoginSubmitSuccessful, 
+        isRegistrationSubmitSuccessful, 
+        resetLogin, 
+        resetRegistration
+    ]);
 
     const login = data => {
         const { loginEmail, loginPassword } = data;
+        console.log(data);
         return signInUsingEmail(loginEmail, loginPassword);
     };
 
@@ -99,7 +132,7 @@ const MyAccount = () => {
                                         InputLabelProps={{
                                             shrink: true
                                         }}
-                                        {...register("loginEmail", { required: "Email is required" })}
+                                        {...registerLogin("loginEmail", { required: "Email is required" })}
                                         error={!!loginError.loginEmail}
                                         helperText={loginError?.loginEmail ? loginError.loginEmail.message : null}
                                     />
@@ -112,7 +145,7 @@ const MyAccount = () => {
                                         InputLabelProps={{
                                             shrink: true
                                         }}
-                                        {...register("loginPassword", { required: "Password is required" })}
+                                        {...registerLogin("loginPassword", { required: "Password is required" })}
                                         error={!!loginError.loginPassword}
                                         helperText={loginError?.loginPassword ? loginError.loginPassword.message : null}
                                     // autoComplete="current-password"
@@ -163,7 +196,7 @@ const MyAccount = () => {
                                         InputLabelProps={{
                                             shrink: true
                                         }}
-                                        {...register2("registrationName", { required: "Name is required" })}
+                                        {...registerSignUp("registrationName", { required: "Name is required" })}
                                         error={!!registrationError.registrationName}
                                         helperText={registrationError?.registrationName ? registrationError.registrationName.message : null}
                                     />
@@ -176,7 +209,7 @@ const MyAccount = () => {
                                         InputLabelProps={{
                                             shrink: true
                                         }}
-                                        {...register2("registrationEmail", { required: "Email is required" })}
+                                        {...registerSignUp("registrationEmail", { required: "Email is required" })}
                                         error={!!registrationError.registrationEmail}
                                         helperText={registrationError?.registrationEmail ? registrationError.registrationEmail.message : null}
                                     />
@@ -189,7 +222,7 @@ const MyAccount = () => {
                                         InputLabelProps={{
                                             shrink: true
                                         }}
-                                        {...register2("registrationPassword", { required: "Password is required" })}
+                                        {...registerSignUp("registrationPassword", { required: "Password is required" })}
                                         error={!!registrationError.registrationPassword}
                                         helperText={registrationError?.registrationPassword ? registrationError.registrationPassword.message : null}
                                     // autoComplete="current-password"
@@ -203,7 +236,7 @@ const MyAccount = () => {
                                         InputLabelProps={{
                                             shrink: true
                                         }}
-                                        {...register2("confirmPassword", {
+                                        {...registerSignUp("confirmPassword", {
                                             validate: val => {
                                                 if (watch('registrationPassword') !== val) {
                                                     return "Password and Confirm Password do no match";
