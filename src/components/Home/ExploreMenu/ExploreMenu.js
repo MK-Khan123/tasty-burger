@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Box, Container, Grid } from '@mui/material';
 import useRedux from '../../../hooks/useRedux';
 import ExploreMenuItem from './ExploreMenuItem/ExploreMenuItem';
+import LoadingSpinner from '../../Shared/LoadingSpinner/LoadingSpinner';
 
 //All the custom CSS class is used from ActiveFoodItem.css under the MainMenu component. The styling is identical, hence I didn't make separate classes for the same styling for this component.
 
@@ -9,12 +10,17 @@ const ExploreMenu = () => {
 
     const { handleAddToCart, cartItems } = useRedux();
     const [burgerData, setBurgerData] = useState([]);
+    const [isLoading, setIsLoading] = useState(false);
 
     //For fetching data on few selected burgers on home page
     useEffect(() => {
+        setIsLoading(true);
         fetch('https://morning-badlands-52849.herokuapp.com/filteredBurger')
             .then(res => res.json())
-            .then(data => setBurgerData(data));
+            .then(data => {
+                setBurgerData(data)
+                setIsLoading(false);
+            });
     }, []);
 
     return (
@@ -46,18 +52,23 @@ const ExploreMenu = () => {
                 >
                     Aliquam a augue suscipit, luctus neque purus ipsum neque undo dolor primis libero tempus, blandit a cursus varius magna
                 </Box>
-                <Grid container spacing={3}>
-                    {
-                        burgerData.map(burger =>
-                            <ExploreMenuItem
-                                key={burger._id}
-                                burger={burger}
-                                cartItems={cartItems}
-                                handleAddToCart={handleAddToCart}
-                            />
-                        )
-                    }
-                </Grid>
+
+                {
+                    isLoading ? (
+                        <LoadingSpinner />
+                    ) : (
+                        <Grid container spacing={3}>
+                            {burgerData.map(burger =>
+                                <ExploreMenuItem
+                                    key={burger._id}
+                                    burger={burger}
+                                    cartItems={cartItems}
+                                    handleAddToCart={handleAddToCart}
+                                />
+                            )}
+                        </Grid>
+                    )
+                }
             </Container>
         </section>
     );

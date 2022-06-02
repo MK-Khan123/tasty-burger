@@ -1,16 +1,22 @@
 import React, { useEffect, useState } from 'react';
-import './Gallery.css';
 import StarRoundedIcon from '@mui/icons-material/StarRounded';
 import { Fade } from 'react-reveal';
 import { Box, Card, CardMedia, Container, Grid, Typography } from '@mui/material';
+import LoadingSpinner from '../../Shared/LoadingSpinner/LoadingSpinner';
+import './Gallery.css';
 
 const Gallery = () => {
     const [imageGallery, setImageGallery] = useState([]);
+    const [isLoading, setIsLoading] = useState(false);
 
     useEffect(() => {
+        setIsLoading(true);
         fetch('https://morning-badlands-52849.herokuapp.com/gallery')
             .then(res => res.json())
-            .then(data => setImageGallery(data));
+            .then(data => {
+                setImageGallery(data);
+                setIsLoading(false);
+            });
     }, []);
 
     return (
@@ -41,70 +47,76 @@ const Gallery = () => {
                 >
                     Aliquam a augue suscipit, luctus neque purus ipsum neque undo dolor primis libero tempus, blandit a cursus varius magna
                 </Box>
-                <Grid container spacing={2}>
-                    {
-                        imageGallery.map(imageData => {
-                            const { name, image, star, starCount, _id } = imageData;
-                            let ratedStars = [];
-                            for (let i = 1; i <= star; i++) {
-                                ratedStars.push(<StarRoundedIcon sx={{ color: '#FFCA2C' }} />);
-                            }
+                {
+                    isLoading ? (
+                        <LoadingSpinner />
+                    ) : (
+                        <Grid container spacing={2}>
+                            {
+                                imageGallery.map(imageData => {
+                                    const { name, image, star, starCount, _id } = imageData;
+                                    let ratedStars = [];
+                                    for (let i = 1; i <= star; i++) {
+                                        ratedStars.push(<StarRoundedIcon sx={{ color: '#FFCA2C' }} />);
+                                    }
 
-                            return (
-                                <Grid item key={_id} sm={6} md={3} className="image-gallery-card">
-                                    <Card sx={{ position: 'relative', borderRadius: '8px' }}>
-                                        <CardMedia
-                                            className='image-gallery-transform'
-                                            component="img"
-                                            alt={name + ' picture'}
-                                            image={image}
-                                        />
-                                        <Box
-                                            sx={{
-                                                position: 'absolute',
-                                                top: 0,
-                                                right: 0,
-                                                bottom: 0,
-                                                left: 0,                                                
-                                            }}
-                                        >
-                                            <Box className='card-hover'>
+                                    return (
+                                        <Grid item key={_id} sm={6} md={3} className="image-gallery-card">
+                                            <Card sx={{ position: 'relative', borderRadius: '8px' }}>
+                                                <CardMedia
+                                                    className='image-gallery-transform'
+                                                    component="img"
+                                                    alt={name + ' picture'}
+                                                    image={image}
+                                                />
                                                 <Box
                                                     sx={{
-                                                        display: 'flex',
-                                                        flexDirection: 'column',
-                                                        justifyContent: 'flex-end',
-                                                        height: '100%',
-                                                        color: 'white',
-                                                        boxSizing: 'border-box',
-                                                        padding: '1rem'
+                                                        position: 'absolute',
+                                                        top: 0,
+                                                        right: 0,
+                                                        bottom: 0,
+                                                        left: 0,
                                                     }}
                                                 >
-                                                    <Fade bottom>
-                                                        <Typography
+                                                    <Box className='card-hover'>
+                                                        <Box
                                                             sx={{
-                                                                fontWeight: '500',
-                                                                textTransform: 'uppercase'
+                                                                display: 'flex',
+                                                                flexDirection: 'column',
+                                                                justifyContent: 'flex-end',
+                                                                height: '100%',
+                                                                color: 'white',
+                                                                boxSizing: 'border-box',
+                                                                padding: '1rem'
                                                             }}
-                                                            variant="h6"
-                                                            component="div"
                                                         >
-                                                            {name}
-                                                        </Typography>
-                                                        <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                                                            <Box mr={1}>{ratedStars}</Box>
-                                                            <Box>({starCount})</Box>
+                                                            <Fade bottom>
+                                                                <Typography
+                                                                    sx={{
+                                                                        fontWeight: '500',
+                                                                        textTransform: 'uppercase'
+                                                                    }}
+                                                                    variant="h6"
+                                                                    component="div"
+                                                                >
+                                                                    {name}
+                                                                </Typography>
+                                                                <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                                                                    <Box mr={1}>{ratedStars}</Box>
+                                                                    <Box>({starCount})</Box>
+                                                                </Box>
+                                                            </Fade>
                                                         </Box>
-                                                    </Fade>
+                                                    </Box>
                                                 </Box>
-                                            </Box>
-                                        </Box>
-                                    </Card>
-                                </Grid>
-                            );
-                        })
-                    }
-                </Grid>
+                                            </Card>
+                                        </Grid>
+                                    );
+                                })
+                            }
+                        </Grid>
+                    )
+                }
             </Container>
         </section >
     );
