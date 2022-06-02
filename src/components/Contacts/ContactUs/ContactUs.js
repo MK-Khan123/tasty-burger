@@ -51,7 +51,7 @@ const ContactUs = () => {
                     <Container>
                         <Grid container spacing={2}>
                             <Grid item xs={12} md={4}>
-                                <Card sx={{ boxShadow: '5px 5px 30px gray', maxWidth: "540px", borderRadius: '8px' }}>
+                                <Card sx={{ boxShadow: '5px 5px 30px gray', maxWidth: "540px", borderRadius: '8px', margin: 'auto' }}>
                                     <Grid container>
                                         <Grid item xs={2} p={2}>
                                             <div className="contact-us-card-background">
@@ -81,7 +81,7 @@ const ContactUs = () => {
                                 </Card>
                             </Grid>
                             <Grid item xs={12} md={4}>
-                                <Card sx={{ boxShadow: '5px 5px 30px gray', maxWidth: "540px", borderRadius: '8px' }}>
+                                <Card sx={{ boxShadow: '5px 5px 30px gray', maxWidth: "540px", borderRadius: '8px', margin: 'auto' }}>
                                     <Grid container>
                                         <Grid item xs={2} p={2}>
                                             <div className="contact-us-card-background">
@@ -111,7 +111,7 @@ const ContactUs = () => {
                                 </Card>
                             </Grid>
                             <Grid item xs={12} md={4}>
-                                <Card sx={{ boxShadow: '5px 5px 30px gray', maxWidth: "540px", borderRadius: '8px' }}>
+                                <Card sx={{ boxShadow: '5px 5px 30px gray', maxWidth: "540px", borderRadius: '8px', margin: 'auto' }}>
                                     <Grid container>
                                         <Grid item xs={2} p={2}>
                                             <div className="contact-us-card-background">
@@ -150,7 +150,7 @@ const ContactUs = () => {
                         <h5>LEAVE A MESSAGE</h5>
                         <Grid container spacing={2}>
                             <Grid item xs={12} md={4} mb={{ xs: 2, md: 0 }}>
-                                <ContactTextField                                    
+                                <ContactTextField
                                     label="Your Name"
                                     type="text"
                                     InputLabelProps={{
@@ -161,7 +161,7 @@ const ContactUs = () => {
                                 />
                             </Grid>
                             <Grid item xs={12} md={4} mb={{ xs: 2, md: 0 }}>
-                                <ContactTextField                                    
+                                <ContactTextField
                                     label="Your Email"
                                     type="email"
                                     InputLabelProps={{
@@ -173,7 +173,7 @@ const ContactUs = () => {
                                 />
                             </Grid>
                             <Grid item xs={12} md={4} mb={{ xs: 2, md: 0 }}>
-                                <ContactTextField                                    
+                                <ContactTextField
                                     label="What is this about? ..."
                                     type="text"
                                     InputLabelProps={{
@@ -184,7 +184,7 @@ const ContactUs = () => {
                                 />
                             </Grid>
                             <Grid item xs={12} mb={1}>
-                                <ContactTextField                                    
+                                <ContactTextField
                                     label="Your message..."
                                     type="text"
                                     InputLabelProps={{

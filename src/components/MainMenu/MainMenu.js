@@ -102,7 +102,9 @@ const MainMenu = () => {
                 <section id='food-item-grid'>
                     <Container>
                         {
-                            isLoading ? <LoadingSpinner /> :
+                            isLoading ? (
+                                <LoadingSpinner />
+                            ) : (
                                 <Grid container spacing={3}>
                                     {
                                         activeFoodData.map(foodItem =>
@@ -115,6 +117,7 @@ const MainMenu = () => {
                                         )
                                     }
                                 </Grid>
+                            )
                         }
                     </Container>
                 </section>
