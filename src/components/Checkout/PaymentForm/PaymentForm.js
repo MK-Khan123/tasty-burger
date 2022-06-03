@@ -1,75 +1,3 @@
-// import { Fragment } from 'react';
-// import Typography from '@mui/material/Typography';
-// import Grid from '@mui/material/Grid';
-// import TextField from '@mui/material/TextField';
-// import FormControlLabel from '@mui/material/FormControlLabel';
-// import Checkbox from '@mui/material/Checkbox';
-
-// const PaymentForm = () => {
-//   return (
-//     <Fragment>
-//       <Typography variant="h6" gutterBottom>
-//         Payment method
-//       </Typography>
-//       <Grid container spacing={3}>
-//         <Grid item xs={12} md={6}>
-//           <TextField
-//             required
-//             id="cardName"
-//             label="Name on card"
-//             fullWidth
-//             autoComplete="cc-name"
-//             variant="standard"
-//           />
-//         </Grid>
-//         <Grid item xs={12} md={6}>
-//           <TextField
-//             required
-//             id="cardNumber"
-//             label="Card number"
-//             fullWidth
-//             autoComplete="cc-number"
-//             variant="standard"
-//           />
-//         </Grid>
-//         <Grid item xs={12} md={6}>
-//           <TextField
-//             required
-//             id="expDate"
-//             label="Expiry date"
-//             fullWidth
-//             autoComplete="cc-exp"
-//             variant="standard"
-//           />
-//         </Grid>
-//         <Grid item xs={12} md={6}>
-//           <TextField
-//             required
-//             id="cvv"
-//             label="CVV"
-//             helperText="Last three digits on signature strip"
-//             fullWidth
-//             autoComplete="cc-csc"
-//             variant="standard"
-//           />
-//         </Grid>
-//         <Grid item xs={12}>
-//           <FormControlLabel
-//             control={<Checkbox color="secondary" name="saveCard" value="yes" />}
-//             label="Remember credit card details for next time"
-//           />
-//         </Grid>
-//       </Grid>
-//     </Fragment>
-//   );
-// }
-
-// export default PaymentForm;
-
-// This example shows you how to set up React Stripe.js and use Elements.
-// Learn how to accept a payment using the official Stripe docs.
-// https://stripe.com/docs/payments/accept-a-payment#web
-
 import React, { useState } from 'react';
 import {
     CardNumberElement,
@@ -78,10 +6,8 @@ import {
     useElements,
     useStripe,
 } from '@stripe/react-stripe-js';
-
 import { logEvent, Result, ErrorResult } from './util';
 import { Button } from '@mui/material';
-import useAuth from '../../../hooks/useAuth';
 import './PaymentForm.css';
 
 const ELEMENT_OPTIONS = {
@@ -101,14 +27,13 @@ const ELEMENT_OPTIONS = {
 };
 
 const PaymentForm = () => {
-    const { user } = useAuth();
+    //For Stripe Payment
     const elements = useElements();
     const stripe = useStripe();
+
     const [name, setName] = useState('');
     const [errorMessage, setErrorMessage] = useState(null);
     const [paymentMethod, setPaymentMethod] = useState(null);
-
-    const { email } = user;
 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -130,7 +55,6 @@ const PaymentForm = () => {
             card,
             billing_details: {
                 name,
-                email
             },
         });
 
