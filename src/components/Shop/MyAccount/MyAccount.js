@@ -70,7 +70,6 @@ const MyAccount = () => {
 
     const login = data => {
         const { loginEmail, loginPassword } = data;
-        console.log(data);
         return signInUsingEmail(loginEmail, loginPassword);
     };
 
