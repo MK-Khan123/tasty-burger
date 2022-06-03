@@ -16,9 +16,11 @@ import AddressForm from './AddressForm/AddressForm';
 import PaymentForm from './PaymentForm/PaymentForm';
 import Review from './Review/Review';
 import { NavLink } from 'react-router-dom';
-import useAuth from '../../hooks/useAuth';
+// import useAuth from '../../hooks/useAuth';
 import { loadStripe } from '@stripe/stripe-js';
 import { Elements } from '@stripe/react-stripe-js';
+import useRedux from '../../hooks/useRedux';
+// import useCart from '../../hooks/useCart';
 
 const steps = ['Shipping address', 'Payment details', 'Review your order'];
 
@@ -37,18 +39,18 @@ const Copyright = () => {
     );
 }
 
-const getStepContent = (step, user) => {
+const getStepContent = (step, user, handleCheckoutData) => {
     switch (step) {
         case 0:
-            return <AddressForm user={user} />
+            return <AddressForm user={user} handleCheckoutData={handleCheckoutData} />
         case 1:
             return (
                 <Elements stripe={stripePromise}>
-                    <PaymentForm />
+                    <PaymentForm handleCheckoutData={handleCheckoutData} />
                 </Elements>
             );
         case 2:
-            return <Review />;
+            return <Review handleCheckoutData={handleCheckoutData} />;
         default:
             throw new Error('Unknown step');
     }
@@ -57,6 +59,41 @@ const getStepContent = (step, user) => {
 const theme = createTheme();
 
 const Checkout = () => {
+
+    const { cartItems } = useRedux();
+    // const { cartTotal } = useCart();
+
+    // const { user } = useAuth();
+
+    // console.log(cartTotal);
+
+    const [checkoutData, setCheckoutData] = useState({
+        name: '',
+        email: '',
+        address: {
+            address_line: '',
+            zip_code: '',
+            city: ''
+        },
+        card_details: {
+            name_on_card: '',
+            card_brand: '',
+            card_number: '',
+            card_expiration: ''
+        },
+        products_ordered: cartItems,
+        total_paid: ''
+    })
+
+    const handleCheckoutData = (value, property) => {
+        const propertyToBeUpdated = property;
+        const updatedValue = value;
+        const updatedCheckoutData = { ...checkoutData, [propertyToBeUpdated]: updatedValue };
+        setCheckoutData(updatedCheckoutData);
+    }
+
+    console.log(checkoutData);
+
     const logo = 'https://res.cloudinary.com/dn9k2jkdd/image/upload/v1649786132/testo-burger-project/logo_lipngj.png';
 
     const [activeStep, setActiveStep] = useState(0);
@@ -68,8 +105,6 @@ const Checkout = () => {
     const handleBack = () => {
         setActiveStep(activeStep - 1);
     };
-
-    const { user } = useAuth();
 
     return (
         <ThemeProvider theme={theme}>
@@ -115,7 +150,7 @@ const Checkout = () => {
                             </Fragment>
                         ) : (
                             <Fragment>
-                                {getStepContent(activeStep, user)}
+                                {getStepContent(activeStep, checkoutData, handleCheckoutData)}
                                 <Box sx={{ display: 'flex', justifyContent: 'flex-end' }}>
                                     {activeStep !== 0 && (
                                         <Button onClick={handleBack} sx={{ mt: 3, ml: 1 }}>

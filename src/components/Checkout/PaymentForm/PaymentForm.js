@@ -26,7 +26,7 @@ const ELEMENT_OPTIONS = {
     },
 };
 
-const PaymentForm = () => {
+const PaymentForm = ({ handleCheckoutData }) => {
     //For Stripe Payment
     const elements = useElements();
     const stripe = useStripe();
@@ -64,6 +64,15 @@ const PaymentForm = () => {
             setPaymentMethod(null);
         } else {
             console.log('[PaymentMethod]', payload.paymentMethod);
+            const cardData = payload.paymentMethod;
+            const { billing_details, card } = cardData;
+            const card_details = {
+                name_on_card: billing_details.name,
+                card_brand: card.brand,
+                card_number: card.last4,
+                card_expiration: `${card.exp_month} / ${card.exp_year}`
+            }
+            handleCheckoutData(card_details, 'card_details');
             setPaymentMethod(payload.paymentMethod);
             setErrorMessage(null);
         }
@@ -73,6 +82,7 @@ const PaymentForm = () => {
         <form onSubmit={handleSubmit}>
             <label htmlFor="name">Name on Card</label>
             <input
+                className='payment-input'
                 id="name"
                 type='text'
                 required

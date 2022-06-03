@@ -103,7 +103,7 @@ const TemporaryDrawer = () => {
                 onClick={toggleDrawer(true)}
             >
                 <Badge badgeContent={cartItems.length} color="error">
-                    <ShoppingCartCheckoutRoundedIcon sx={{ fontSize: '3rem', color: '#f2e8c6' }} />
+                    <ShoppingCartCheckoutRoundedIcon sx={{ fontSize: '3rem', color: '#f2e8c6', cursor: 'pointer' }} />
                 </Badge>
             </Box>
             <Drawer

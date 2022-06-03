@@ -1,11 +1,27 @@
-import { Fragment } from 'react';
+import { Fragment, useState } from 'react';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import TextField from '@mui/material/TextField';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
 
-const AddressForm = ({ user }) => {
+const AddressForm = ({ checkoutData, handleCheckoutData }) => {
+
+    const { name, address } = checkoutData || {};
+
+    const [addressCollector, setAddressCollector] = useState({
+        address_line: '',
+        zip_code: '',
+        city: ''
+    });
+
+    const handleAddressUpdate = (value, property) => {
+        const updatedValue = value;
+        const updateAddressProperty = { ...addressCollector, [property]: updatedValue };
+        setAddressCollector(updateAddressProperty);
+        handleCheckoutData(addressCollector, 'address');
+    }
+
     return (
         <Fragment>
             <Typography variant="h6" gutterBottom>
@@ -18,10 +34,10 @@ const AddressForm = ({ user }) => {
                         id="name"
                         name="name"
                         label="Name"
-                        defaultValue={user.displayName}
+                        value={name}
                         fullWidth
-                        autoComplete="given-name"
                         variant="standard"
+                        onChange={(event) => handleCheckoutData(event.target.value, 'name')}
                     />
                 </Grid>
                 <Grid item xs={12}>
@@ -29,10 +45,11 @@ const AddressForm = ({ user }) => {
                         required
                         id="address"
                         name="address"
+                        value={address?.address_line}
                         label="Address line"
                         fullWidth
-                        autoComplete="shipping address-line"
                         variant="standard"
+                        onChange={(event) => handleAddressUpdate(event.target.value, 'address_line')}
                     />
                 </Grid>
                 <Grid item xs={12} sm={6}>
@@ -40,19 +57,11 @@ const AddressForm = ({ user }) => {
                         required
                         id="city"
                         name="city"
+                        value={address?.city}
                         label="City"
                         fullWidth
-                        autoComplete="shipping address-level2"
                         variant="standard"
-                    />
-                </Grid>
-                <Grid item xs={12} sm={6}>
-                    <TextField
-                        id="state"
-                        name="state"
-                        label="State/Province/Region"
-                        fullWidth
-                        variant="standard"
+                        onChange={(event) => handleAddressUpdate(event.target.value, 'city')}
                     />
                 </Grid>
                 <Grid item xs={12} sm={6}>
@@ -60,21 +69,11 @@ const AddressForm = ({ user }) => {
                         required
                         id="zip"
                         name="zip"
+                        value={address?.zip_code}
                         label="Zip / Postal code"
                         fullWidth
-                        autoComplete="shipping postal-code"
                         variant="standard"
-                    />
-                </Grid>
-                <Grid item xs={12} sm={6}>
-                    <TextField
-                        required
-                        id="country"
-                        name="country"
-                        label="Country"
-                        fullWidth
-                        autoComplete="shipping country"
-                        variant="standard"
+                        onChange={(event) => handleAddressUpdate(event.target.value, 'zip_code')}
                     />
                 </Grid>
                 <Grid item xs={12}>

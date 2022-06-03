@@ -1,12 +1,12 @@
 label {
   color: #525252;
+  font-family: 'Roboto', sans-serif;
   font-weight: 400;
   letter-spacing: 0.025em;
   display: block;
 }
 
-input,
-select {
+.payment-input {
   display: block;
   border: none;
   font-size: 18px;
@@ -25,13 +25,14 @@ select {
 .result,
 .error {
   font-size: 1em;
+  font-family: 'Roboto', sans-serif;
   font-weight: bold;
   margin-top: 10px;
   margin-bottom: 20px;
 }
 
 .error {
-  color: #e4584c;
+  color: red;
 }
 
 .result {
