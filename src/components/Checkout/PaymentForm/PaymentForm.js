@@ -83,9 +83,9 @@ const PaymentForm = () => {
 
     return (
         <form onSubmit={handleSubmit}>
-            <label htmlFor="name">Name on Card</label>
+            <label className='payment-form-label' htmlFor="name">Name on Card</label>
             <input
-                className='payment-input'
+                className='payment-form-input'
                 id="name"
                 type='text'
                 required
@@ -94,7 +94,7 @@ const PaymentForm = () => {
                     setName(e.target.value);
                 }}
             />
-            <label htmlFor="cardNumber">Card Number</label>
+            <label className='payment-form-label' htmlFor="cardNumber">Card Number</label>
             <CardNumberElement
                 id="cardNumber"
                 onBlur={logEvent('blur')}
@@ -103,7 +103,7 @@ const PaymentForm = () => {
                 onReady={logEvent('ready')}
                 options={ELEMENT_OPTIONS}
             />
-            <label htmlFor="expiry">Card Expiration</label>
+            <label className='payment-form-label' htmlFor="expiry">Card Expiration</label>
             <CardExpiryElement
                 id="expiry"
                 onBlur={logEvent('blur')}
@@ -112,7 +112,7 @@ const PaymentForm = () => {
                 onReady={logEvent('ready')}
                 options={ELEMENT_OPTIONS}
             />
-            <label htmlFor="cvc">CVC</label>
+            <label className='payment-form-label' htmlFor="cvc">CVC</label>
             <CardCvcElement
                 id="cvc"
                 onBlur={logEvent('blur')}

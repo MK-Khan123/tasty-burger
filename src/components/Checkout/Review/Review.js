@@ -27,7 +27,7 @@ const Review = () => {
                 ))}
 
                 <ListItem sx={{ py: 1, px: 0 }}>
-                    <ListItemText primary="Total" />
+                    <ListItemText primary="Total (including 10% VAT)" />
                     <Typography variant="subtitle1" sx={{ fontWeight: 700 }}>
                         {total_paid}
                     </Typography>

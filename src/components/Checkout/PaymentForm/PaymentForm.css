@@ -1,12 +1,11 @@
-label {
-  color: #525252;
+.payment-form-label {
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
   letter-spacing: 0.025em;
   display: block;
 }
 
-.payment-input {
+.payment-form-input {
   display: block;
   border: none;
   font-size: 18px;
