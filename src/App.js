@@ -18,7 +18,7 @@ import AuthProvider from './contexts/AuthProvider';
 import { Provider } from 'react-redux';
 import configureAppStore from './store/configureAppStore';
 import { createTheme, ThemeProvider } from '@mui/material';
-import CartProvider from './contexts/CartProvider';
+import ReduxProvider from './contexts/ReduxProvider';
 import TemporaryDrawer from './components/Shared/Drawer/Drawer';
 import NotFound from './components/NotFound/NotFound';
 
@@ -47,7 +47,7 @@ function App() {
     <div className='App'>
       <AuthProvider>
         <Provider store={store}>
-          <CartProvider>
+          <ReduxProvider>
             <ThemeProvider theme={theme}>
               <TemporaryDrawer />
               <Routes>
@@ -84,7 +84,7 @@ function App() {
                 <Route path='*' element={<NotFound />} />
               </Routes>
             </ThemeProvider>
-          </CartProvider>
+          </ReduxProvider>
         </Provider>
       </AuthProvider>
     </div>

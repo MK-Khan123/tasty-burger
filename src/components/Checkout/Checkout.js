@@ -19,8 +19,7 @@ import { NavLink } from 'react-router-dom';
 // import useAuth from '../../hooks/useAuth';
 import { loadStripe } from '@stripe/stripe-js';
 import { Elements } from '@stripe/react-stripe-js';
-import useRedux from '../../hooks/useRedux';
-// import useCart from '../../hooks/useCart';
+import useReduxState from '../../hooks/useReduxState';
 
 const steps = ['Shipping address', 'Payment details', 'Review your order'];
 
@@ -60,12 +59,9 @@ const theme = createTheme();
 
 const Checkout = () => {
 
-    const { cartItems } = useRedux();
-    // const { cartTotal } = useCart();
+    const { cartItems, cartTotal } = useReduxState();
 
     // const { user } = useAuth();
-
-    // console.log(cartTotal);
 
     const [checkoutData, setCheckoutData] = useState({
         name: '',

@@ -10,13 +10,13 @@ import { NavLink } from 'react-router-dom';
 import UserSettings from './UserSettings/UserSettings';
 import NavItems from './NavItems/NavItems';
 import NavItemsSidebar from './NavItemsSidebar/NavItemsSidebar';
+import useReduxState from '../../../hooks/useReduxState';
 import './Navbar.css';
-import useRedux from '../../../hooks/useRedux';
 
 const Navbar = () => {
     const logo = 'https://res.cloudinary.com/dn9k2jkdd/image/upload/v1649786132/testo-burger-project/logo_lipngj.png';
 
-    const { cartItems } = useRedux();
+    const { cartItems } = useReduxState();
 
     return (
         <Box sx={{ position: 'relative' }}>

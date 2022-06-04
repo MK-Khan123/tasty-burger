@@ -6,7 +6,7 @@ import ActiveFoodItem from './ActiveFoodItem/ActiveFoodItem';
 import Delivery from '../Shared/Delivery/Delivery';
 import Footer from '../Shared/Footer/Footer';
 import LoadingSpinner from '../Shared/LoadingSpinner/LoadingSpinner';
-import useRedux from '../../hooks/useRedux';
+import useReduxState from '../../hooks/useReduxState';
 
 const MainMenu = () => {
 
@@ -25,7 +25,7 @@ const MainMenu = () => {
     const [activeFoodData, setActiveFoodData] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
 
-    const { handleAddToCart, cartItems } = useRedux();
+    const { handleAddToCart, cartItems } = useReduxState();
 
     useEffect(() => {
         setIsLoading(true);

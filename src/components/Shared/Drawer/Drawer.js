@@ -5,21 +5,19 @@ import Drawer from '@mui/material/Drawer';
 import Divider from '@mui/material/Divider';
 import ShoppingCartCheckoutRoundedIcon from '@mui/icons-material/ShoppingCartCheckoutRounded';
 import AddShoppingCartRoundedIcon from '@mui/icons-material/AddShoppingCartRounded';
-import useRedux from '../../../hooks/useRedux';
 import EmptyCart from './EmptyCart/EmptyCart';
 import FilledCart from './FilledCart/FilledCart';
 import Button from '@mui/material/Button';
-import useCart from '../../../hooks/useCart';
 import { NavLink } from 'react-router-dom';
 import { Typography } from '@mui/material';
+import useReduxState from '../../../hooks/useReduxState';
 import './Drawer.css';
 
 const TemporaryDrawer = () => {
 
     const [drawer, setDrawer] = useState(false);
 
-    const { cartItems } = useRedux();
-    const { handleRemoveFromCart, handleAddQuantity, handleReduceQuantity, cartTotal } = useCart();
+    const { cartItems, handleRemoveFromCart, handleAddQuantity, handleReduceQuantity, cartTotal } = useReduxState();
 
     const toggleDrawer = (anchor) => (event) => {
         if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {

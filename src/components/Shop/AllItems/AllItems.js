@@ -6,7 +6,7 @@ import FoodItems from './FoodItems/FoodItems';
 import PageNavigation from './PageNavigation/PageNavigation';
 import Footer from '../../Shared/Footer/Footer';
 import LoadingSpinner from '../../Shared/LoadingSpinner/LoadingSpinner';
-import useRedux from '../../../hooks/useRedux';
+import useReduxState from '../../../hooks/useReduxState';
 
 //All the custom CSS class is used from ActiveFoodItem.css under the MainMenu component. The styling is identical, hence I didn't make separate classes for the same styling for this component.
 
@@ -19,7 +19,7 @@ const AllItems = () => {
     const [currentPage, setCurrentPage] = useState(1);
     const [foodItemsPerPage] = useState(12);
 
-    const { handleAddToCart, cartItems } = useRedux();
+    const { handleAddToCart, cartItems } = useReduxState();
 
     useEffect(() => {
         setIsLoading(true);

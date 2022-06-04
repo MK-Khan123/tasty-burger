@@ -10,7 +10,7 @@ import RelatedProducts from './RelatedProducts/RelatedProducts';
 import Footer from '../../Shared/Footer/Footer';
 import { useParams } from 'react-router-dom';
 import { Box, Button, Container, Grid } from '@mui/material';
-import useRedux from '../../../hooks/useRedux';
+import useReduxState from '../../../hooks/useReduxState';
 import LoadingSpinner from '../../Shared/LoadingSpinner/LoadingSpinner';
 import './ProductDetails.css';
 
@@ -23,7 +23,7 @@ const ProductDetails = () => {
     const [relatedProducts, setRelatedProducts] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
 
-    const { handleAddToCart, cartItems } = useRedux();
+    const { handleAddToCart, cartItems } = useReduxState();
 
     useEffect(() => {
         setIsLoading(true);

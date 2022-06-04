@@ -8,12 +8,12 @@ import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
 import CartTable from './CartTable/CartTable';
 import CartTotal from './CartTotal/CartTotal';
-import useRedux from '../../hooks/useRedux';
+import useReduxState from '../../hooks/useReduxState';
 
 const Cart = () => {
     const bannerImage = 'https://res.cloudinary.com/dn9k2jkdd/image/upload/v1649786139/testo-burger-project/cart/cart-page_npf8up.jpg';
 
-    const { cartItems, cartTotal, handleRemoveFromCart, handleAddQuantity, handleReduceQuantity } = useRedux();
+    const { cartItems, cartTotal, handleRemoveFromCart, handleAddQuantity, handleReduceQuantity } = useReduxState();
 
     return (
         <section id='cart'>

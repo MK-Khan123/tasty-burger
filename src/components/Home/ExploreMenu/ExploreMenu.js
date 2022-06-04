@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Box, Container, Grid } from '@mui/material';
-import useRedux from '../../../hooks/useRedux';
+import useReduxState from '../../../hooks/useReduxState';
 import ExploreMenuItem from './ExploreMenuItem/ExploreMenuItem';
 import LoadingSpinner from '../../Shared/LoadingSpinner/LoadingSpinner';
 
@@ -8,7 +8,7 @@ import LoadingSpinner from '../../Shared/LoadingSpinner/LoadingSpinner';
 
 const ExploreMenu = () => {
 
-    const { handleAddToCart, cartItems } = useRedux();
+    const { handleAddToCart, cartItems } = useReduxState();
     const [burgerData, setBurgerData] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
 
