@@ -9,6 +9,7 @@ import {
 import { logEvent, Result, ErrorResult } from './util';
 import { Button } from '@mui/material';
 import './PaymentForm.css';
+import useReduxState from '../../../hooks/useReduxState';
 
 const ELEMENT_OPTIONS = {
     style: {
@@ -26,7 +27,7 @@ const ELEMENT_OPTIONS = {
     },
 };
 
-const PaymentForm = ({ handleCheckoutData }) => {
+const PaymentForm = () => {
     //For Stripe Payment
     const elements = useElements();
     const stripe = useStripe();
@@ -34,6 +35,8 @@ const PaymentForm = ({ handleCheckoutData }) => {
     const [name, setName] = useState('');
     const [errorMessage, setErrorMessage] = useState(null);
     const [paymentMethod, setPaymentMethod] = useState(null);
+
+    const { handleCardDetails } = useReduxState();
 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -72,7 +75,7 @@ const PaymentForm = ({ handleCheckoutData }) => {
                 card_number: card.last4,
                 card_expiration: `${card.exp_month} / ${card.exp_year}`
             }
-            handleCheckoutData(card_details, 'card_details');
+            handleCardDetails(card_details);
             setPaymentMethod(payload.paymentMethod);
             setErrorMessage(null);
         }

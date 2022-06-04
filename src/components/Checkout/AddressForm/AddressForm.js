@@ -4,23 +4,16 @@ import Typography from '@mui/material/Typography';
 import TextField from '@mui/material/TextField';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
+import useReduxState from '../../../hooks/useReduxState';
 
-const AddressForm = ({ checkoutData, handleCheckoutData }) => {
+const AddressForm = () => {
 
-    const { name, address } = checkoutData || {};
-
-    const [addressCollector, setAddressCollector] = useState({
-        address_line: '',
-        zip_code: '',
-        city: ''
-    });
-
-    const handleAddressUpdate = (value, property) => {
-        const updatedValue = value;
-        const updateAddressProperty = { ...addressCollector, [property]: updatedValue };
-        setAddressCollector(updateAddressProperty);
-        handleCheckoutData(addressCollector, 'address');
-    }
+    const {
+        handleName,
+        handleAddressLine,
+        handleZipCode,
+        handleCity
+    } = useReduxState();
 
     return (
         <Fragment>
@@ -34,10 +27,9 @@ const AddressForm = ({ checkoutData, handleCheckoutData }) => {
                         id="name"
                         name="name"
                         label="Name"
-                        value={name}
                         fullWidth
                         variant="standard"
-                        onChange={(event) => handleCheckoutData(event.target.value, 'name')}
+                        onChange={(event) => handleName(event.target.value)}
                     />
                 </Grid>
                 <Grid item xs={12}>
@@ -45,11 +37,10 @@ const AddressForm = ({ checkoutData, handleCheckoutData }) => {
                         required
                         id="address"
                         name="address"
-                        value={address?.address_line}
                         label="Address line"
                         fullWidth
                         variant="standard"
-                        onChange={(event) => handleAddressUpdate(event.target.value, 'address_line')}
+                        onChange={(event) => handleAddressLine(event.target.value)}
                     />
                 </Grid>
                 <Grid item xs={12} sm={6}>
@@ -57,11 +48,10 @@ const AddressForm = ({ checkoutData, handleCheckoutData }) => {
                         required
                         id="city"
                         name="city"
-                        value={address?.city}
                         label="City"
                         fullWidth
                         variant="standard"
-                        onChange={(event) => handleAddressUpdate(event.target.value, 'city')}
+                        onChange={(event) => handleCity(event.target.value)}
                     />
                 </Grid>
                 <Grid item xs={12} sm={6}>
@@ -69,11 +59,10 @@ const AddressForm = ({ checkoutData, handleCheckoutData }) => {
                         required
                         id="zip"
                         name="zip"
-                        value={address?.zip_code}
                         label="Zip / Postal code"
                         fullWidth
                         variant="standard"
-                        onChange={(event) => handleAddressUpdate(event.target.value, 'zip_code')}
+                        onChange={(event) => handleZipCode(event.target.value)}
                     />
                 </Grid>
                 <Grid item xs={12}>

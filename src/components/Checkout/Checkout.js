@@ -19,7 +19,7 @@ import { NavLink } from 'react-router-dom';
 // import useAuth from '../../hooks/useAuth';
 import { loadStripe } from '@stripe/stripe-js';
 import { Elements } from '@stripe/react-stripe-js';
-import useReduxState from '../../hooks/useReduxState';
+// import useReduxState from '../../hooks/useReduxState';
 
 const steps = ['Shipping address', 'Payment details', 'Review your order'];
 
@@ -38,18 +38,18 @@ const Copyright = () => {
     );
 }
 
-const getStepContent = (step, user, handleCheckoutData) => {
+const getStepContent = (step) => {
     switch (step) {
         case 0:
-            return <AddressForm user={user} handleCheckoutData={handleCheckoutData} />
+            return <AddressForm />
         case 1:
             return (
                 <Elements stripe={stripePromise}>
-                    <PaymentForm handleCheckoutData={handleCheckoutData} />
+                    <PaymentForm />
                 </Elements>
             );
         case 2:
-            return <Review handleCheckoutData={handleCheckoutData} />;
+            return <Review />;
         default:
             throw new Error('Unknown step');
     }
@@ -59,36 +59,9 @@ const theme = createTheme();
 
 const Checkout = () => {
 
-    const { cartItems, cartTotal } = useReduxState();
+    // const { checkoutData } = useReduxState();
 
     // const { user } = useAuth();
-
-    const [checkoutData, setCheckoutData] = useState({
-        name: '',
-        email: '',
-        address: {
-            address_line: '',
-            zip_code: '',
-            city: ''
-        },
-        card_details: {
-            name_on_card: '',
-            card_brand: '',
-            card_number: '',
-            card_expiration: ''
-        },
-        products_ordered: cartItems,
-        total_paid: ''
-    })
-
-    const handleCheckoutData = (value, property) => {
-        const propertyToBeUpdated = property;
-        const updatedValue = value;
-        const updatedCheckoutData = { ...checkoutData, [propertyToBeUpdated]: updatedValue };
-        setCheckoutData(updatedCheckoutData);
-    }
-
-    console.log(checkoutData);
 
     const logo = 'https://res.cloudinary.com/dn9k2jkdd/image/upload/v1649786132/testo-burger-project/logo_lipngj.png';
 
@@ -146,7 +119,7 @@ const Checkout = () => {
                             </Fragment>
                         ) : (
                             <Fragment>
-                                {getStepContent(activeStep, checkoutData, handleCheckoutData)}
+                                {getStepContent(activeStep)}
                                 <Box sx={{ display: 'flex', justifyContent: 'flex-end' }}>
                                     {activeStep !== 0 && (
                                         <Button onClick={handleBack} sx={{ mt: 3, ml: 1 }}>

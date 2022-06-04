@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const checkoutSlice = createSlice({
     name: 'checkout',
-    initialState: [{
+    initialState: {
         name: '',
         email: '',
         address: {
@@ -18,25 +18,48 @@ const checkoutSlice = createSlice({
         },
         products_ordered: [],
         total_paid: ''
-    }],
+    },
     reducers: {
-        addName: (checkout, action) => {
+        handle_name: (checkout, action) => {
             checkout.name = action.payload.name;
         },
 
-        addEmail: (checkout, action) => {
+        handle_email: (checkout, action) => {
             checkout.email = action.payload.email;
         },
 
-        addAddress: (checkout, action) => {
-            checkout.address = action.payload.address;
+        handle_address_line: (checkout, action) => {
+            checkout.address.address_line = action.payload.address_line;
         },
 
+        handle_zip_code: (checkout, action) => {
+            checkout.address.zip_code = action.payload.zip_code;
+        },
 
+        handle_city: (checkout, action) => {
+            checkout.address.city = action.payload.city;
+        },
+
+        handle_card_details: (checkout, action) => {
+            checkout.card_details = action.payload.card_details;
+        },
+
+        handle_products_ordered: (checkout, action) => {
+            checkout.products_ordered = action.payload.products_ordered;
+        }
     }
 });
 
 
+export const
+    {
+        handle_name,
+        handle_email,
+        handle_address_line,
+        handle_zip_code,
+        handle_city,
+        handle_card_details,
+        handle_products_ordered
+    } = checkoutSlice.actions;
 
-export const { addName, addEmail, addAddress } = checkoutSlice.actions;
 export default checkoutSlice.reducer;
