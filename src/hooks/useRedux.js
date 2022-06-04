@@ -1,13 +1,16 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import useAuth from './useAuth';
 import { addToCart, removeFromCart, addQuantity, reduceQuantity } from '../store/cart';
 import {
     handle_name,
+    handle_email,
     handle_address_line,
     handle_zip_code,
     handle_city,
     handle_card_details,
-    handle_products_ordered
+    handle_products_ordered,
+    handle_total_paid
 }
     from '../store/checkout';
 
@@ -15,10 +18,13 @@ const useRedux = () => {
 
     //Cart Related functions and state    
     const cartItems = useSelector(state => state.entities.cart);
-    const dispatch = useDispatch();
 
     //Checkout Data collection state
     const checkoutData = useSelector(state => state.entities.checkout);
+
+    const { user } = useAuth();
+
+    const dispatch = useDispatch();
 
     //To calculate the total bill on Cart
     const [cartTotal, setCartTotal] = useState(0);
@@ -31,9 +37,13 @@ const useRedux = () => {
 
     //To store the products added on cart on the checkoutData slice so that the data can be stored in, after the order has taken place
     useEffect(() => {
-        dispatch(handle_products_ordered({ products_ordered: cartItems }));
-        console.log("Hello");
-    }, [cartItems, dispatch]);
+        dispatch(handle_products_ordered({ products_ordered: cartItems })); //Adding products from Cart into Checkout Data
+
+        dispatch(handle_total_paid({ total_paid: `$ ${(cartTotal + (cartTotal * 0.1)).toFixed(2)}` })); //Cart Total after calculating VAT and adding it into Checkout Data
+
+        dispatch(handle_email({ email: user?.email })); //Adding the user's email into Checkout Data
+
+    }, [cartItems, dispatch, cartTotal, user?.email]);
 
     //Cart management related functions
 

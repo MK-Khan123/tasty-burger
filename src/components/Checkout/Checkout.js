@@ -16,10 +16,8 @@ import AddressForm from './AddressForm/AddressForm';
 import PaymentForm from './PaymentForm/PaymentForm';
 import Review from './Review/Review';
 import { NavLink } from 'react-router-dom';
-// import useAuth from '../../hooks/useAuth';
 import { loadStripe } from '@stripe/stripe-js';
 import { Elements } from '@stripe/react-stripe-js';
-// import useReduxState from '../../hooks/useReduxState';
 
 const steps = ['Shipping address', 'Payment details', 'Review your order'];
 
@@ -58,10 +56,6 @@ const getStepContent = (step) => {
 const theme = createTheme();
 
 const Checkout = () => {
-
-    // const { checkoutData } = useReduxState();
-
-    // const { user } = useAuth();
 
     const logo = 'https://res.cloudinary.com/dn9k2jkdd/image/upload/v1649786132/testo-burger-project/logo_lipngj.png';
 

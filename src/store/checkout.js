@@ -46,6 +46,10 @@ const checkoutSlice = createSlice({
 
         handle_products_ordered: (checkout, action) => {
             checkout.products_ordered = action.payload.products_ordered;
+        },
+
+        handle_total_paid: (checkout, action) => {
+            checkout.total_paid = action.payload.total_paid;
         }
     }
 });
@@ -59,7 +63,8 @@ export const
         handle_zip_code,
         handle_city,
         handle_card_details,
-        handle_products_ordered
+        handle_products_ordered,
+        handle_total_paid
     } = checkoutSlice.actions;
 
 export default checkoutSlice.reducer;
