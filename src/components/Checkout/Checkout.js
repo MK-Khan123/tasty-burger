@@ -123,7 +123,12 @@ const Checkout = () => {
 
                                     <Button
                                         variant="contained"
-                                        onClick={handleNext}
+                                        onClick={() => {
+                                            handleNext();
+                                            if (activeStep === steps.length - 1) {
+                                                console.log("Place Order Clicked");
+                                            }
+                                        }}
                                         sx={{ mt: 3, ml: 1 }}
                                     >
                                         {activeStep === steps.length - 1 ? 'Place order' : 'Next'}

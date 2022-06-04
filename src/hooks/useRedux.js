@@ -35,7 +35,7 @@ const useRedux = () => {
         setCartTotal(parseFloat(totalProductPrice));
     }, [cartItems]);
 
-    //To store the products added on cart on the checkoutData slice so that the data can be stored in, after the order has taken place
+    //To store the products added on cart on the checkoutData slice so that the data can be stored in, after the order has been placed
     useEffect(() => {
         dispatch(handle_products_ordered({ products_ordered: cartItems })); //Adding products from Cart into Checkout Data
 

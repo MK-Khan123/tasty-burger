@@ -49,11 +49,6 @@ const UserSettings = () => {
                 open={Boolean(anchorElUser)}
                 onClose={handleCloseUserMenu}
             >
-                <NavLink to='/profile' className='navLink-custom-style'>
-                    <MenuItem onClick={handleCloseUserMenu}>
-                        <Typography sx={{ textAlign: "center" }}>Profile</Typography>
-                    </MenuItem>
-                </NavLink>
                 <NavLink to='/dashboard' className='navLink-custom-style'>
                     <MenuItem onClick={handleCloseUserMenu}>
                         <Typography sx={{ textAlign: "center" }}>Dashboard</Typography>
