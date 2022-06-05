@@ -21,6 +21,7 @@ import { createTheme, ThemeProvider } from '@mui/material';
 import ReduxProvider from './contexts/ReduxProvider';
 import TemporaryDrawer from './components/Shared/Drawer/Drawer';
 import NotFound from './components/NotFound/NotFound';
+import RequiredAuth from './components/Shared/RequiredAuth/RequiredAuth';
 
 const theme = createTheme({
   typography: {
@@ -77,9 +78,21 @@ function App() {
 
                 <Route path="/admin" element={<AdminPanel />} />
 
-                <Route path="/cart" element={<Cart />} />
+                <Route path="/cart"
+                  element={
+                    <RequiredAuth>
+                      <Cart />
+                    </RequiredAuth>
+                  }
+                />
 
-                <Route path="/checkout" element={<Checkout />} />
+                <Route path="/checkout"
+                  element={
+                    <RequiredAuth>
+                      <Checkout />
+                    </RequiredAuth>
+                  }
+                />
 
                 <Route path='*' element={<NotFound />} />
               </Routes>

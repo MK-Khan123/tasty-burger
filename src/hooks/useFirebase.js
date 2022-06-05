@@ -10,6 +10,7 @@ import {
     GithubAuthProvider
 } from "firebase/auth";
 import { useEffect, useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import sweetAlert from "../components/Shared/SweetAlert/SweetAlert";
 import initializeAuthentication from "../Firebase/firebase.initialize";
 
@@ -22,6 +23,11 @@ const useFirebase = () => {
 
     const auth = getAuth();
 
+    //Navigate towards the actual page after successful authentication(login)
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from || '/home';
+
     const registerUsingEmail = (name, email, password) => {
         createUserWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
@@ -32,6 +38,7 @@ const useFirebase = () => {
                 });
                 const user = userCredential.user;
                 setUser(user);
+                navigate(from, { replace: true });
                 sweetAlert('Successfully Registered!', 'success', 'Please login using your email and password');
             })
             .catch((error) => {
@@ -46,6 +53,7 @@ const useFirebase = () => {
                 // Signed in 
                 const user = userCredential.user;
                 setUser(user);
+                navigate(from, { replace: true });
                 sweetAlert('Successfully Logged In!', 'success');
             })
             .catch((error) => {
@@ -71,6 +79,7 @@ const useFirebase = () => {
             .then((result) => {
                 const user = result.user;
                 setUser(user);
+                navigate(from, { replace: true });
                 sweetAlert('Successfully Signed In!', 'success');
                 // ...
             }).catch((error) => {
@@ -87,6 +96,7 @@ const useFirebase = () => {
             .then((result) => {
                 const user = result.user;
                 setUser(user);
+                navigate(from, { replace: true });
                 sweetAlert('Successfully Signed In!', 'success');
                 // ...
             }).catch((error) => {
