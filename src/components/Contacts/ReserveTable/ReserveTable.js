@@ -20,6 +20,8 @@ const ReserveTableTextField = styled(TextField)({
 });
 
 const ReserveTable = () => {
+    document.title = 'Testo Burger | Reservation';
+
     const bannerImage = 'https://res.cloudinary.com/dn9k2jkdd/image/upload/v1649786143/testo-burger-project/reserve-table/booking-page_geqouk.jpg';
 
     return (

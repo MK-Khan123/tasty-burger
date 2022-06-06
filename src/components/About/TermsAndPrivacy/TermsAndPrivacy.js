@@ -6,6 +6,8 @@ import Footer from '../../Shared/Footer/Footer';
 import { Box, Container } from '@mui/material';
 
 const TermsAndPrivacy = () => {
+    document.title = 'Testo Burger | Terms';
+
     const bannerImage = 'https://res.cloudinary.com/dn9k2jkdd/image/upload/v1649786145/testo-burger-project/terms-and-privacy/terms-page_jucdxr.jpg';
 
     return (

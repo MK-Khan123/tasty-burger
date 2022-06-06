@@ -22,7 +22,7 @@ const Review = () => {
                 {products_ordered?.map((product) => (
                     <ListItem key={product._id} sx={{ py: 1, px: 0 }}>
                         <ListItemText primary={product.name} secondary={`Quantity: ${product.quantity}`} />
-                        <Typography variant="body2">{product.price}</Typography>
+                        <Typography variant="body2">$ {product.price}</Typography>
                     </ListItem>
                 ))}
 

@@ -15,6 +15,7 @@ import LoadingSpinner from '../../Shared/LoadingSpinner/LoadingSpinner';
 import './ProductDetails.css';
 
 const ProductDetails = () => {
+    document.title = 'Testo Burger | Product Details';
 
     const bannerImage = 'https://res.cloudinary.com/dn9k2jkdd/image/upload/v1649786144/testo-burger-project/shop-tab/shop-tab_j7hrho.jpg';
 

@@ -14,6 +14,8 @@ import SpecialOffers from '../SpecialOffers/SpecialOffers';
 import Sponsors from '../Sponsors/Sponsors';
 
 const Home = () => {
+    document.title = 'Testo Burger | Home';
+
     return (
         <div>
             <header>

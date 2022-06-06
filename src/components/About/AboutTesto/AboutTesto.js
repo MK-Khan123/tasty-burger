@@ -8,6 +8,7 @@ import AboutPromo2 from './AboutPromo2/AboutPromo2';
 import { Box, Container } from '@mui/material';
 
 const AboutTesto = () => {
+    document.title = 'Testo Burger | About';
 
     const bannerImage = `https://res.cloudinary.com/dn9k2jkdd/image/upload/v1649786130/testo-burger-project/about-testo/about-page_m8n0cp.jpg`;
 

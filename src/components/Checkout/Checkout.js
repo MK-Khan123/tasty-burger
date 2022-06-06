@@ -56,6 +56,7 @@ const getStepContent = (step) => {
 const theme = createTheme();
 
 const Checkout = () => {
+    document.title = 'Testo Burger | Checkout';
 
     const logo = 'https://res.cloudinary.com/dn9k2jkdd/image/upload/v1649786132/testo-burger-project/logo_lipngj.png';
 

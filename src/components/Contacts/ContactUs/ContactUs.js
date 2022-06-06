@@ -24,6 +24,8 @@ const ContactTextField = styled(TextField)({
 });
 
 const ContactUs = () => {
+    document.title = 'Testo Burger | Contacts';
+
     const bannerImage = 'https://res.cloudinary.com/dn9k2jkdd/image/upload/v1649786140/testo-burger-project/contact-us/contacts-page_ypzxhp.jpg';
 
     return (

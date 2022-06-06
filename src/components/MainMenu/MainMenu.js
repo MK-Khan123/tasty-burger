@@ -9,6 +9,7 @@ import LoadingSpinner from '../Shared/LoadingSpinner/LoadingSpinner';
 import useReduxState from '../../hooks/useReduxState';
 
 const MainMenu = () => {
+    document.title = 'Testo Burger | Menu';
 
     const icons = {
         burger: `https://res.cloudinary.com/dn9k2jkdd/image/upload/v1649786139/testo-burger-project/icons/burger_qgfla1.png`,

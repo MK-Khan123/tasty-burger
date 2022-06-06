@@ -11,6 +11,7 @@ import useReduxState from '../../../hooks/useReduxState';
 //All the custom CSS class is used from ActiveFoodItem.css under the MainMenu component. The styling is identical, hence I didn't make separate classes for the same styling for this component.
 
 const AllItems = () => {
+    document.title = 'Testo Burger | All Items';
 
     const bannerImage = 'https://res.cloudinary.com/dn9k2jkdd/image/upload/v1649786144/testo-burger-project/shop-tab/shop-tab_j7hrho.jpg';
 

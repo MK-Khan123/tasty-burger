@@ -6,6 +6,7 @@ import Footer from '../../Shared/Footer/Footer';
 import { Box, Button, Container, Grid, Typography } from '@mui/material';
 
 const FAQs = () => {
+    document.title = 'Testo Burger | FAQs';
 
     const bannerImage = 'https://res.cloudinary.com/dn9k2jkdd/image/upload/v1649786139/testo-burger-project/faqs/faqs-page_nlurqn.jpg';
 

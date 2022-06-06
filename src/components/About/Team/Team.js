@@ -10,6 +10,8 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import { Card, CardContent, CardMedia, Container, Grid, Typography, Box } from '@mui/material';
 
 const Team = () => {
+    document.title = 'Testo Burger | Team';
+
     const teamData = [
         {
             name: 'Sam Richerdon',

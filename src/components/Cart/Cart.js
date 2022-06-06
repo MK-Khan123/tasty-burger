@@ -11,6 +11,8 @@ import CartTotal from './CartTotal/CartTotal';
 import useReduxState from '../../hooks/useReduxState';
 
 const Cart = () => {
+    document.title = 'Testo Burger | Cart';
+
     const bannerImage = 'https://res.cloudinary.com/dn9k2jkdd/image/upload/v1649786139/testo-burger-project/cart/cart-page_npf8up.jpg';
 
     const { cartItems, cartTotal, handleRemoveFromCart, handleAddQuantity, handleReduceQuantity } = useReduxState();

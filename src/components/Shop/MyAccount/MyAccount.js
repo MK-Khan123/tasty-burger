@@ -26,6 +26,8 @@ const CssTextField = styled(TextField)({
 });
 
 const MyAccount = () => {
+    document.title = 'Testo Burger | Account';
+
     const bannerImage = 'https://res.cloudinary.com/dn9k2jkdd/image/upload/v1649786144/testo-burger-project/shop-tab/shop-tab_j7hrho.jpg';
 
     const { signInUsingGoogle, signInUsingGithub, signInUsingEmail, registerUsingEmail } = useAuth();
