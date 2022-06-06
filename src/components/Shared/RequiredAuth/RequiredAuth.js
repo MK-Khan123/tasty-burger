@@ -5,7 +5,7 @@ import useAuth from '../../../hooks/useAuth';
 const RequiredAuth = ({ children }) => {
     const { user } = useAuth();
     const location = useLocation();
-    console.log(location);
+    // console.log(location);
     return (
         user.email ? children : (
             <Navigate

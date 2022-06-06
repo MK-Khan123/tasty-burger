@@ -1,7 +1,13 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import useAuth from './useAuth';
-import { addToCart, removeFromCart, addQuantity, reduceQuantity } from '../store/cart';
+import {
+    addToCart,
+    removeFromCart,
+    addQuantity,
+    reduceQuantity,
+    emptyCart
+} from '../store/cart';
 import {
     handle_name,
     handle_email,
@@ -10,9 +16,9 @@ import {
     handle_city,
     handle_card_details,
     handle_products_ordered,
-    handle_total_paid
-}
-    from '../store/checkout';
+    handle_total_paid,
+    empty_checkout_state
+} from '../store/checkout';
 
 const useRedux = () => {
 
@@ -70,6 +76,8 @@ const useRedux = () => {
         dispatch(reduceQuantity({ _id }));
     };
 
+    const handleEmptyCart = () => dispatch(emptyCart());
+
     //Checkout Data collection related functions
 
     const handleName = value => dispatch(handle_name({ name: value }));
@@ -77,12 +85,14 @@ const useRedux = () => {
     const handleZipCode = value => dispatch(handle_zip_code({ zip_code: value }));
     const handleCity = value => dispatch(handle_city({ city: value }));
     const handleCardDetails = value => dispatch(handle_card_details({ card_details: value }));
+    const emptyCheckoutState = () => dispatch(empty_checkout_state());
 
     return {
         handleAddToCart,
         handleRemoveFromCart,
         handleAddQuantity,
         handleReduceQuantity,
+        handleEmptyCart,
         cartTotal,
         cartItems,
         checkoutData,
@@ -90,7 +100,8 @@ const useRedux = () => {
         handleAddressLine,
         handleZipCode,
         handleCity,
-        handleCardDetails
+        handleCardDetails,
+        emptyCheckoutState
     };
 };
 

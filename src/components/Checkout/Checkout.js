@@ -18,6 +18,7 @@ import Review from './Review/Review';
 import { NavLink } from 'react-router-dom';
 import { loadStripe } from '@stripe/stripe-js';
 import { Elements } from '@stripe/react-stripe-js';
+import useReduxState from '../../hooks/useReduxState';
 
 const steps = ['Shipping address', 'Payment details', 'Review your order'];
 
@@ -69,6 +70,28 @@ const Checkout = () => {
     const handleBack = () => {
         setActiveStep(activeStep - 1);
     };
+
+    const { cartItems, checkoutData, handleEmptyCart, emptyCheckoutState } = useReduxState();
+
+    const handlePlaceOrder = () => {
+        //send data to the server side
+        fetch('https://morning-badlands-52849.herokuapp.com/order', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(checkoutData)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                emptyCheckoutState();
+                handleEmptyCart();
+            });
+    };
+
+    console.log('Checkout Data', checkoutData);
+    console.log('Cart after Place Order', cartItems);
 
     return (
         <ThemeProvider theme={theme}>
@@ -127,7 +150,7 @@ const Checkout = () => {
                                         onClick={() => {
                                             handleNext();
                                             if (activeStep === steps.length - 1) {
-                                                console.log("Place Order Clicked");
+                                                handlePlaceOrder();
                                             }
                                         }}
                                         sx={{ mt: 3, ml: 1 }}

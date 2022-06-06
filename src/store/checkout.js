@@ -17,7 +17,8 @@ const checkoutSlice = createSlice({
             card_expiration: ''
         },
         products_ordered: [],
-        total_paid: ''
+        total_paid: '',
+        order_status: 'pending'
     },
     reducers: {
         handle_name: (checkout, action) => {
@@ -52,7 +53,24 @@ const checkoutSlice = createSlice({
             checkout.total_paid = action.payload.total_paid;
         },
 
-        emptyCheckoutState: (checkout, action) => checkout = {}
+        empty_checkout_state: (checkout, action) => checkout = {
+            name: '',
+            email: '',
+            address: {
+                address_line: '',
+                zip_code: '',
+                city: ''
+            },
+            card_details: {
+                name_on_card: '',
+                card_brand: '',
+                card_number: '',
+                card_expiration: ''
+            },
+            products_ordered: [],
+            total_paid: '',
+            order_status: 'pending'
+        }
     }
 });
 
@@ -66,7 +84,8 @@ export const
         handle_city,
         handle_card_details,
         handle_products_ordered,
-        handle_total_paid
+        handle_total_paid,
+        empty_checkout_state
     } = checkoutSlice.actions;
 
 export default checkoutSlice.reducer;
