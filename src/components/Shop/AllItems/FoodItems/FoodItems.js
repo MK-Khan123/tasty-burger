@@ -79,6 +79,7 @@ const FoodItems = ({ food, cartItems, handleAddToCart }) => {
                                             sx={{ fontWeight: "400" }}
                                             variant='contained'
                                             color="success"
+                                            disableElevation
                                         >
                                             Product Added !
                                         </Button> :
