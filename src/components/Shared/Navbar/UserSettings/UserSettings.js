@@ -8,13 +8,13 @@ import MenuItem from '@mui/material/MenuItem';
 import Typography from '@mui/material/Typography';
 import useAuth from '../../../../hooks/useAuth';
 import { NavLink } from 'react-router-dom';
+import useReduxState from '../../../../hooks/useReduxState';
 
 const UserSettings = () => {
 
     const { user, logout } = useAuth();
     const { displayName, email, photoURL } = user;
-
-    console.log(user);
+    const { handleEmptyCart, emptyCheckoutState } = useReduxState();
 
     const [anchorElUser, setAnchorElUser] = useState(null);
 
@@ -56,7 +56,13 @@ const UserSettings = () => {
                 </NavLink>
                 {
                     email ? (
-                        <Typography onClick={logout} sx={{ textAlign: "center" }}>
+                        <Typography
+                            onClick={() => {
+                                handleEmptyCart();
+                                emptyCheckoutState();
+                                logout();
+                            }}
+                            sx={{ textAlign: "center" }}>
                             <MenuItem onClick={handleCloseUserMenu}>
                                 Logout
                             </MenuItem>

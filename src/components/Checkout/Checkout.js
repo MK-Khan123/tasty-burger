@@ -71,7 +71,7 @@ const Checkout = () => {
         setActiveStep(activeStep - 1);
     };
 
-    const { cartItems, checkoutData, handleEmptyCart, emptyCheckoutState } = useReduxState();
+    const { checkoutData, handleEmptyCart, emptyCheckoutState } = useReduxState();
 
     const handlePlaceOrder = () => {
         //send data to the server side
@@ -89,9 +89,6 @@ const Checkout = () => {
                 handleEmptyCart();
             });
     };
-
-    console.log('Checkout Data', checkoutData);
-    console.log('Cart after Place Order', cartItems);
 
     return (
         <ThemeProvider theme={theme}>

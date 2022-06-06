@@ -13,7 +13,6 @@ import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import sweetAlert from "../components/Shared/SweetAlert/SweetAlert";
 import initializeAuthentication from "../Firebase/firebase.initialize";
-import useReduxState from "./useReduxState";
 
 initializeAuthentication();
 
@@ -23,12 +22,6 @@ const useFirebase = () => {
     const [error, setError] = useState('');
 
     const auth = getAuth();
-
-    const { handleEmptyCart, emptyCheckoutState } = useReduxState() || {};
-
-    console.log(useReduxState());
-    // console.log(emptyCheckoutState);
-    // console.log(handleEmptyCart);
 
     //Navigate towards the actual page after successful authentication(login)
     const navigate = useNavigate();
@@ -73,8 +66,6 @@ const useFirebase = () => {
     const logout = () => {
         signOut(auth).then(() => {
             setUser({});
-            handleEmptyCart();
-            emptyCheckoutState();            
             sweetAlert('Logged out successfully!', 'success');
         }).catch((error) => {
             alert(error);
