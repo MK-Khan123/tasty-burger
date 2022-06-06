@@ -25,12 +25,11 @@ const Footer = () => {
                     <YouTubeIcon sx={{ color: '#F20000', fontSize: '2.1875rem', margin: '15px' }} />
                 </Box>
                 <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                    <NavLink to='' className='footer-nav-link'>ABOUT</NavLink>
-                    <NavLink to='' className='footer-nav-link'>MENU</NavLink>
+                    <NavLink to='/about-testo' className='footer-nav-link'>ABOUT</NavLink>
+                    <NavLink to='/main-menu' className='footer-nav-link'>MENU</NavLink>
                     <NavLink to='' className='footer-nav-link'>ORDER NOW</NavLink>
-                    <NavLink to='' className='footer-nav-link'>GALLERY</NavLink>
-                    <NavLink to='' className='footer-nav-link'>LOCATIONS</NavLink>
-                    <NavLink to='' className='footer-nav-link'>CONTACT</NavLink>
+                    <NavLink to='' className='footer-nav-link'>GALLERY</NavLink>                    
+                    <NavLink to='/contact-us' className='footer-nav-link'>CONTACT</NavLink>
                 </Box>
                 <Box sx={{ textAlign: 'center' }}>{(new Date()).getFullYear()} Copyright © Testo. All Rights Reserved</Box>
             </Container>

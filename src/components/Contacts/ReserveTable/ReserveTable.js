@@ -50,7 +50,7 @@ const ReserveTable = () => {
                         <Grid container spacing={2}>
                             <Grid item xs={12} md={6} mb={2}>
                                 <ReserveTableTextField
-                                    type="date"
+                                    type="datetime-local"
                                     label="Date"
                                     InputLabelProps={{
                                         shrink: true
