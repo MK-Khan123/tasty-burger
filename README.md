@@ -2,13 +2,13 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Important Notice!
+## `Important Notice!`
 
 This website design is inspired from one of many beautiful designs created by [Jthemes](https://themeforest.net/user/jthemes) (A theme forest member). [Jthemes](https://themeforest.net/user/jthemes) is the author of these amazing wordpress themes [Testo - Restaurant Caffe Wordpress Theme](https://preview.themeforest.net/item/testo-restaurant-wordpress-theme/full_screen_preview/31422987?_ga=2.63873324.2064031116.1654529768-1907816928.1645096157). (Please check out their amazing Word Press Themes if you haven't already !) 
 
 I have developed a website based on one of their theme with some customizations of my own. This is purely an approach motivated by learning purposes. Almost all the images and graphics used in the website belong to the respective owner and I do not claim any right over them.
 
-## Firebase Live Site Link
+## `Firebase Live Site Link`
 
 The project was deployed at Firebase. One can access the link by clicking here [Firebase Live Site Link](https://testo-burger.web.app/).
 
@@ -49,7 +49,7 @@ The project was deployed at Firebase. One can access the link by clicking here [
 7. In addition, I used Material UI to make the website device responsive. Furthermore, we deployed the client site on Firebase which can be accessed through the above mentioned link to explore the website. Server side is deployed using Heroku.
 
 8. Working on to add these features
-    * Sign in using Twitter account
+    * Sign in using Twitter account.
     * User can view his/her orders (along with status).
     * Admin/User differentiation.
     * Admin will be able to manage Food Items and Placed Orders.

@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import { Box, Button, Checkbox, Container, FormControlLabel, FormGroup, Grid, TextField, Typography } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import { useForm } from "react-hook-form";
-import FacebookRoundedIcon from '@mui/icons-material/FacebookRounded';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import GoogleIcon from '@mui/icons-material/Google';
@@ -283,7 +282,6 @@ const MyAccount = () => {
                                     </Typography>
                                     <GoogleIcon onClick={signInUsingGoogle} className="google-icon" />
                                     <TwitterIcon className="twitter-icon" />
-                                    <FacebookRoundedIcon className="facebook-icon" />
                                     <GitHubIcon onClick={signInUsingGithub} className="github-icon" />
                                 </Box>
                             </Grid>

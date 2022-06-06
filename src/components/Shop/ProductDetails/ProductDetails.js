@@ -23,6 +23,7 @@ const ProductDetails = () => {
     const [productDetails, setProductDetails] = useState({});
     const [relatedProducts, setRelatedProducts] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
+    const [productAdded, setProductAdded] = useState(false);
 
     const { handleAddToCart, cartItems } = useReduxState();
 
@@ -36,7 +37,7 @@ const ProductDetails = () => {
             });
     }, [id]);
 
-    const { name, price, briefInfo, description, category, image, star, starCount } = productDetails;
+    const { name, price, briefInfo, description, category, image, star, starCount, _id } = productDetails;
 
     //To dynamically show the related products in related products section according to category
     useEffect(() => {
@@ -48,6 +49,14 @@ const ProductDetails = () => {
                 setIsLoading(false);
             });
     }, [category]);
+
+    //Once a product is added a different button will appear indicating the product is added on cart.
+    useEffect(() => {
+        const pd = cartItems.find(pd => pd._id === _id)
+        if (pd) {
+            setProductAdded(true);
+        }
+    }, [_id, cartItems]);
 
     const firstFewRelatedProducts = relatedProducts.slice(0, 4);
 
@@ -97,15 +106,33 @@ const ProductDetails = () => {
                                             <p><span>{ratedStars}</span>({starCount} customer review)</p>
                                             <p>{briefInfo}</p>
                                             <p>Category: <Box sx={{ textTransform: 'capitalize' }} component='span'>{category}</Box></p>
-                                            <Button
-                                                sx={{
-                                                    borderRadius: '0.5rem',
-                                                    color: 'black',
-                                                    backgroundImage: 'radial-gradient( circle farthest-corner at 10% 20%,  rgba(255,209,67,1) 0%, rgba(255,145,83,1) 90% )'
-                                                }}
-                                            >
-                                                <ShoppingBagOutlinedIcon sx={{ fontSize: '1.25rem', marginRight: '5px' }} /> Add to cart
-                                            </Button>
+                                            {
+                                                productAdded ?
+                                                    (
+                                                        <Button
+                                                            sx={{
+                                                                borderRadius: '0.5rem',
+                                                                fontWeight: "400",
+                                                                color: 'white',
+                                                                backgroundImage: "radial-gradient( circle farthest-corner at 10% 20%,  rgba(14,174,87,1) 0%, rgba(12,116,117,1) 90% )"
+                                                            }}
+                                                            disableElevation
+                                                        >
+                                                            Product Added !
+                                                        </Button>
+                                                    ) : (
+                                                        <Button
+                                                            onClick={() => handleAddToCart(productDetails)}
+                                                            sx={{
+                                                                borderRadius: '0.5rem',
+                                                                color: 'black',
+                                                                backgroundImage: 'radial-gradient( circle farthest-corner at 10% 20%,  rgba(255,209,67,1) 0%, rgba(255,145,83,1) 90% )'
+                                                            }}
+                                                        >
+                                                            <ShoppingBagOutlinedIcon sx={{ fontSize: '1.25rem', marginRight: '5px' }} /> Add to cart
+                                                        </Button>
+                                                    )
+                                            }
                                             <Box sx={{ display: 'flex', alignItems: 'center', marginTop: '1.5rem' }}>
                                                 <Box sx={{ fontWeight: '600', color: '#6C757D', fontSize: '1.2rem' }}>Share this: </Box>
                                                 <Box>
