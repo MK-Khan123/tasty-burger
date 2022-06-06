@@ -50,7 +50,9 @@ const checkoutSlice = createSlice({
 
         handle_total_paid: (checkout, action) => {
             checkout.total_paid = action.payload.total_paid;
-        }
+        },
+
+        emptyCheckoutState: (checkout, action) => checkout = {}
     }
 });
 

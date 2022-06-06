@@ -22,7 +22,9 @@ const cartSlice = createSlice({
             } else {
                 product.quantity = product.quantity - 1;
             }
-        }
+        },
+
+        emptyCart: (cart, action) => cart = []
     }
 });
 
