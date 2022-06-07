@@ -12,7 +12,7 @@ I have developed a website based on one of their theme with some customizations 
 
 The project was deployed at Firebase. One can access the link by clicking here [Firebase Live Site Link](https://testo-burger.web.app/).
 
-## `Technology Used`
+### `Technology Used`
 * React.js
 * Material UI
 * React Router (6.2.1)
@@ -32,9 +32,9 @@ The project was deployed at Firebase. One can access the link by clicking here [
 * React Reveal
 * SweetAlert2
 
-## `Project Features`
+### `Project Features`
 
-1. User can add foods from the homepage (`Explore Our Menu` section), `Our Menu` tab (at Navbar) and `All Items` section under `Shop` tab available at Navbar. But he/she needs to login first to proceed to `Cart`. 
+1. User can add foods from the homepage (`Explore Our Menu` section), `Our Menu` tab (at Navbar) and `All Items` section under `Shop` tab available at Navbar. But he/she needs to login first to proceed to `Cart` and eventually `Checkout`. 
 
 2. Applied Private Route (also known as Protected Route/ Authenticated Route) to restrict convenient access. Implemented Google sign in and Github sign in method using Firebase Authentication. User can also register and sign in using their credentials. 
 
@@ -46,7 +46,7 @@ The project was deployed at Firebase. One can access the link by clicking here [
 
 6. Exhausted CRUD operations on multiple occasions while building the website.
 
-7. In addition, I used Material UI to make the website device responsive. Furthermore, we deployed the client site on Firebase which can be accessed through the above mentioned link to explore the website. Server side is deployed using Heroku.
+7. In addition, I used Material UI to make the website device responsive. Furthermore, I deployed the client site on Firebase which can be accessed through the above mentioned link. Server side is deployed using Heroku.
 
 8. Working on to add these features
     * Sign in using Twitter account.
@@ -55,8 +55,22 @@ The project was deployed at Firebase. One can access the link by clicking here [
     * Admin will be able to manage Food Items and Placed Orders.
     * An admin will be capable of adding another user as an admin.
 
+### `Some screenshots of the project`
+
+![Main Banner](https://res.cloudinary.com/dn9k2jkdd/image/upload/v1654632388/testo-burger-project/portfolio-slide-image/main-banner_jd4nga.png)
+
+![Image Gallery](https://res.cloudinary.com/dn9k2jkdd/image/upload/v1654632388/testo-burger-project/portfolio-slide-image/image-gallery_wimo0n.png)
+
+![Product Details](https://res.cloudinary.com/dn9k2jkdd/image/upload/v1654632387/testo-burger-project/portfolio-slide-image/product-details_tvnram.png)
+
+![Main Menu](https://res.cloudinary.com/dn9k2jkdd/image/upload/v1654632388/testo-burger-project/portfolio-slide-image/main-menu_o6ikyo.png)
+
+![Login page](https://res.cloudinary.com/dn9k2jkdd/image/upload/v1654632386/testo-burger-project/portfolio-slide-image/login-page_tctuo1.png)
+
+![Cart Items](https://res.cloudinary.com/dn9k2jkdd/image/upload/v1654632387/testo-burger-project/portfolio-slide-image/cart_ugcrj0.png)
+
 In order to access the server side code of this website, please [click here](https://github.com/MK-Khan123/testo-burger-server/).
 
-You can contact me through [LinkedIn](https://www.linkedin.com/in/mehnaz-ahmed-khan/), [Twitter](https://twitter.com/MehnazAhmedKha1) or through my email mehnazkhan231@gmail.com.
+We can get in touch through [LinkedIn](https://www.linkedin.com/in/mehnaz-ahmed-khan/), [Twitter](https://twitter.com/MehnazAhmedKha1) or my email mehnazkhan231@gmail.com.
 
 Thank you.
