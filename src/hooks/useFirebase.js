@@ -5,6 +5,7 @@ import {
     signInWithPopup,
     signOut,
     updateProfile,
+    sendPasswordResetEmail,
     GoogleAuthProvider,
     onAuthStateChanged,
     GithubAuthProvider
@@ -60,6 +61,19 @@ const useFirebase = () => {
                 const errorMessage = error.message;
                 sweetAlert('Login Failed', 'error', errorMessage);
                 setError(errorMessage);
+            });
+    }
+
+    const passwordReset = (email) => {
+        sendPasswordResetEmail(auth, email)
+            .then(() => {
+                // Password reset email sent!
+                // ..
+            })
+            .catch((error) => {
+                const errorMessage = error.message;
+                sweetAlert('Password Reset Failed!', 'error', errorMessage);
+                // ..
             });
     }
 
@@ -124,6 +138,7 @@ const useFirebase = () => {
     return {
         user,
         error,
+        passwordReset,
         logout,
         signInUsingGoogle,
         signInUsingGithub,

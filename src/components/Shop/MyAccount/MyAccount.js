@@ -1,7 +1,12 @@
-import React, { useEffect } from 'react';
-import { Box, Button, Checkbox, Container, FormControlLabel, FormGroup, Grid, TextField, Typography } from '@mui/material';
+import React, { useEffect, useState } from 'react';
+import { Box, Button, Container, Grid, TextField, Typography } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import { useForm } from "react-hook-form";
+import Dialog from '@mui/material/Dialog';
+import DialogActions from '@mui/material/DialogActions';
+import DialogContent from '@mui/material/DialogContent';
+import DialogContentText from '@mui/material/DialogContentText';
+import DialogTitle from '@mui/material/DialogTitle';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import GoogleIcon from '@mui/icons-material/Google';
@@ -9,6 +14,7 @@ import Footer from '../../Shared/Footer/Footer';
 import Navbar from '../../Shared/Navbar/Navbar';
 import useAuth from '../../../hooks/useAuth';
 import './MyAccount.css';
+
 
 const CssTextField = styled(TextField)({
     '& .MuiInputLabel-root': {
@@ -29,7 +35,24 @@ const MyAccount = () => {
 
     const bannerImage = 'https://res.cloudinary.com/dn9k2jkdd/image/upload/v1649786144/testo-burger-project/shop-tab/shop-tab_j7hrho.jpg';
 
-    const { signInUsingGoogle, signInUsingGithub, signInUsingEmail, registerUsingEmail } = useAuth();
+    //To handle Password Reset Dialog
+    const [open, setOpen] = useState(false);
+    const [email, setEmail] = useState('');
+
+    const handleClickOpen = () => {
+        setOpen(true);
+    };
+
+    const handleClose = () => {
+        setOpen(false);
+    };
+
+    const handleResetEmail = (event) => {
+        setEmail(event.target.value);
+    };
+
+    //Using Firebase for login, registration, reset password and authentication
+    const { signInUsingGoogle, signInUsingGithub, signInUsingEmail, registerUsingEmail, passwordReset } = useAuth();
 
     //For handling Login
     const {
@@ -63,9 +86,9 @@ const MyAccount = () => {
             resetRegistration();
         }
     }, [
-        isLoginSubmitSuccessful, 
-        isRegistrationSubmitSuccessful, 
-        resetLogin, 
+        isLoginSubmitSuccessful,
+        isRegistrationSubmitSuccessful,
+        resetLogin,
         resetRegistration
     ]);
 
@@ -150,9 +173,41 @@ const MyAccount = () => {
                                         helperText={loginError?.loginPassword ? loginError.loginPassword.message : null}
                                     // autoComplete="current-password"
                                     />
-                                    <FormGroup sx={{ mb: 2 }}>
-                                        <FormControlLabel control={<Checkbox defaultChecked />} label="Remember me" />
-                                    </FormGroup>
+                                    <Box mb={2}>
+                                        <Typography sx={{ cursor: 'pointer', color: 'dodgerblue' }} fontFamily="Roboto, sans-serif" onClick={handleClickOpen} variant="body2" display="block" gutterBottom>
+                                            Forgot your password?
+                                        </Typography>
+                                        <Dialog open={open} onClose={handleClose}>
+                                            <DialogTitle>Reset Password</DialogTitle>
+                                            <DialogContent>
+                                                <DialogContentText>
+                                                    To reset your password, please enter your email address here. We
+                                                    will send updates occasionally.
+                                                </DialogContentText>
+                                                <CssTextField
+                                                    autoFocus
+                                                    margin="dense"
+                                                    id="name"
+                                                    label="Email Address"
+                                                    type="email"
+                                                    fullWidth
+                                                    variant="standard"
+                                                    onChange={(event) => handleResetEmail(event)}
+                                                />
+                                            </DialogContent>
+                                            <DialogActions>
+                                                <Button onClick={handleClose}>Cancel</Button>
+                                                <Button
+                                                    onClick={() => {
+                                                        passwordReset(email);
+                                                        handleClose();
+                                                    }}
+                                                >
+                                                    Send
+                                                </Button>
+                                            </DialogActions>
+                                        </Dialog>
+                                    </Box>
 
                                     <Button
                                         size='large'
