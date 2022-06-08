@@ -38,9 +38,9 @@ The project was deployed at Firebase. One can access the link by clicking here [
 
 2. Applied Private Route (also known as Protected Route/ Authenticated Route) to restrict convenient access. Implemented Google sign in and Github sign in method using Firebase Authentication. User can also register and sign in using their credentials. 
 
-3. The data displayed in the homepage is fetched from MongoDB but for some parts I used static data. Used route parameter to fetch data dynamically from MongoDB and displayed accordingly.
+3. The data displayed in the homepage (`Explore Our Menu` & `Image Gallery` section) is fetched from MongoDB but for most parts I used static data. Used route parameter to fetch data dynamically from MongoDB and displayed accordingly.
 
-4. Used React Redux for state management of `Cart` and handling `Checkout` Data. Followed _Ducks pattern_ while implementing Redux.
+4. Used React Redux for state management of `Cart` and handling `Checkout` Data. Followed _Ducks Pattern_ while implementing Redux.
 
 5. User can pay with card (integrated payment gateway method specifically Stripe Payment) while ordering.
 
@@ -55,6 +55,12 @@ The project was deployed at Firebase. One can access the link by clicking here [
     * Admin will be able to manage Food Items and Placed Orders.
     * An admin will be capable of adding another user as an admin.
 
+In order to access the server side code of this website, please [click here](https://github.com/MK-Khan123/testo-burger-server/).
+
+We can get in touch through [LinkedIn](https://www.linkedin.com/in/mehnaz-ahmed-khan/), [Twitter](https://twitter.com/MehnazAhmedKha1) or my email mehnazkhan231@gmail.com.
+
+Thank you.
+
 ### `Some screenshots of the project`
 
 ![Main Banner](https://res.cloudinary.com/dn9k2jkdd/image/upload/v1654632388/testo-burger-project/portfolio-slide-image/main-banner_jd4nga.png)
@@ -68,9 +74,3 @@ The project was deployed at Firebase. One can access the link by clicking here [
 ![Login page](https://res.cloudinary.com/dn9k2jkdd/image/upload/v1654632386/testo-burger-project/portfolio-slide-image/login-page_tctuo1.png)
 
 ![Cart Items](https://res.cloudinary.com/dn9k2jkdd/image/upload/v1654632387/testo-burger-project/portfolio-slide-image/cart_ugcrj0.png)
-
-In order to access the server side code of this website, please [click here](https://github.com/MK-Khan123/testo-burger-server/).
-
-We can get in touch through [LinkedIn](https://www.linkedin.com/in/mehnaz-ahmed-khan/), [Twitter](https://twitter.com/MehnazAhmedKha1) or my email mehnazkhan231@gmail.com.
-
-Thank you.
