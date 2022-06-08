@@ -46,7 +46,7 @@ The project was deployed at Firebase. One can access the link by clicking here [
 
 6. Exhausted CRUD operations on multiple occasions while building the website.
 
-7. In addition, I used Material UI to make the website device responsive. Furthermore, I deployed the client site on Firebase which can be accessed through the above mentioned link. Server side is deployed using Heroku.
+7. In addition, I used Material UI to make the website device responsive. Furthermore, I deployed the client side on Firebase which can be accessed through the above mentioned link. Server side is deployed using Heroku.
 
 8. Working on to add these features
     * Sign in using Twitter account.
