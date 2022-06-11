@@ -110,12 +110,7 @@ const NavItemsSidebar = () => {
                         <MenuItem onClick={handleCloseNavMenu}>
                             Product Details
                         </MenuItem>
-                    </NavLink>
-                    <NavLink to='/my-account' className='navLink-custom-style'>
-                        <MenuItem onClick={handleCloseNavMenu}>
-                            My Account
-                        </MenuItem>
-                    </NavLink>
+                    </NavLink>                    
                 </NestedMenuItem>
 
                 {/* CONTACTS SECTION */}

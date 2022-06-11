@@ -25,7 +25,7 @@ const MainMenu = lazy(() => import('./components/MainMenu/MainMenu'));
 //SHOP Section
 const AllItems = lazy(() => import('./components/Shop/AllItems/AllItems'));
 const ProductDetails = lazy(() => import('./components/Shop/ProductDetails/ProductDetails'));
-const MyAccount = lazy(() => import('./components/Shop/MyAccount/MyAccount'));
+const MyAccount = lazy(() => import('./components/MyAccount/MyAccount'));
 
 //CONTACTS Section
 const ReserveTable = lazy(() => import('./components/Contacts/ReserveTable/ReserveTable'));

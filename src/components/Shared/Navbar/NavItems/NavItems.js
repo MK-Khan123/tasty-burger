@@ -133,11 +133,6 @@ const NavItems = () => {
                             Product Details
                         </MenuItem>
                     </NavLink>
-                    <NavLink to='/my-account' className='navLink-custom-style'>
-                        <MenuItem onClick={handleCloseShop}>
-                            My Account
-                        </MenuItem>
-                    </NavLink>
                 </Menu>
             </Box>
 

@@ -10,9 +10,9 @@ import DialogTitle from '@mui/material/DialogTitle';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import GoogleIcon from '@mui/icons-material/Google';
-import Footer from '../../Shared/Footer/Footer';
-import Navbar from '../../Shared/Navbar/Navbar';
-import useAuth from '../../../hooks/useAuth';
+import Footer from '../Shared/Footer/Footer';
+import Navbar from '../Shared/Navbar/Navbar';
+import useAuth from '../../hooks/useAuth';
 import './MyAccount.css';
 
 
