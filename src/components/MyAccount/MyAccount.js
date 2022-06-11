@@ -127,7 +127,7 @@ const MyAccount = () => {
                     justifyContent: 'center',
                     alignItems: 'center'
                 }}>
-                    <Box sx={{ fontSize: '4rem', color: 'white', fontWeight: '500' }} component='h5'>MY ACCOUNT</Box>
+                    <Box sx={{ fontSize: '4rem', color: 'white', fontWeight: '500', textAlign: 'center' }} component='h5'>MY ACCOUNT</Box>
                 </Box>
 
                 <section id='user-info'>

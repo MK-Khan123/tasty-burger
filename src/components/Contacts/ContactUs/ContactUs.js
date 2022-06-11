@@ -46,7 +46,7 @@ const ContactUs = () => {
                     justifyContent: 'center',
                     alignItems: 'center'
                 }}>
-                    <Box sx={{ fontSize: '4rem', color: 'white', fontWeight: '500' }} component='h5'>CONTACT US</Box>
+                    <Box sx={{ fontSize: '4rem', color: 'white', fontWeight: '500', textAlign: 'center' }} component='h5'>CONTACT US</Box>
                 </Box>
 
                 <section id='contact-us-grid'>

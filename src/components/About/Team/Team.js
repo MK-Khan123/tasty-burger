@@ -75,7 +75,7 @@ const Team = () => {
                     justifyContent: 'center',
                     alignItems: 'center'
                 }}>
-                    <Box sx={{ fontSize: '4rem', color: 'white', fontWeight: '500' }} component='h5'>MEET THE TEAM</Box>
+                    <Box sx={{ fontSize: '4rem', color: 'white', fontWeight: '500', textAlign: 'center' }} component='h5'>MEET THE TEAM</Box>
                 </Box>
 
                 <section id='team-grid'>

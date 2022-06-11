@@ -28,7 +28,7 @@ const TermsAndPrivacy = () => {
                     justifyContent: 'center',
                     alignItems: 'center'
                 }}>
-                    <Box sx={{ fontSize: '4rem', color: 'white', fontWeight: '500' }} component='h5'>TERMS AND PRIVACY</Box>
+                    <Box sx={{ fontSize: '4rem', color: 'white', fontWeight: '500', textAlign: 'center' }} component='h5'>TERMS AND PRIVACY</Box>
                 </Box>
                 <Container>
                     <section id='terms-and-privacy-document'>

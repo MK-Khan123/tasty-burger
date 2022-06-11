@@ -56,7 +56,7 @@ const MainMenu = () => {
                     justifyContent: 'center',
                     alignItems: 'center'
                 }}>
-                    <Box sx={{ fontSize: '4rem', color: 'white', fontWeight: '500' }} component='h5'>MAIN MENU</Box>
+                    <Box sx={{ fontSize: '4rem', color: 'white', fontWeight: '500', textAlign: 'center' }} component='h5'>MAIN MENU</Box>
                 </Box>
 
                 <section id='main-menu-icons'>

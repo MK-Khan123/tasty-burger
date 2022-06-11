@@ -42,7 +42,7 @@ const ReserveTable = () => {
                     justifyContent: 'center',
                     alignItems: 'center'
                 }}>
-                    <Box sx={{ fontSize: '4rem', color: 'white', fontWeight: '500' }} component='h5'>RESERVE A TABLE</Box>
+                    <Box sx={{ fontSize: '4rem', color: 'white', fontWeight: '500', textAlign: 'center' }} component='h5'>RESERVE A TABLE</Box>
                 </Box>
 
                 <section id='reserve-table-form'>

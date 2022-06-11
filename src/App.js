@@ -25,7 +25,6 @@ const MainMenu = lazy(() => import('./components/MainMenu/MainMenu'));
 //SHOP Section
 const AllItems = lazy(() => import('./components/Shop/AllItems/AllItems'));
 const ProductDetails = lazy(() => import('./components/Shop/ProductDetails/ProductDetails'));
-const MyAccount = lazy(() => import('./components/MyAccount/MyAccount'));
 
 //CONTACTS Section
 const ReserveTable = lazy(() => import('./components/Contacts/ReserveTable/ReserveTable'));
@@ -34,6 +33,9 @@ const ContactUs = lazy(() => import('./components/Contacts/ContactUs/ContactUs')
 //CART & CHECKOUT Section
 const Cart = lazy(() => import('./components/Cart/Cart'));
 const Checkout = lazy(() => import('./components/Checkout/Checkout'));
+
+//LOGIN Section
+const MyAccount = lazy(() => import('./components/MyAccount/MyAccount'));
 
 //When the route address doesn't match
 const NotFound = lazy(() => import('./components/NotFound/NotFound'));
