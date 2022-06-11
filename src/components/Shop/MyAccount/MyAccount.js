@@ -52,7 +52,14 @@ const MyAccount = () => {
     };
 
     //Using Firebase for login, registration, reset password and authentication
-    const { signInUsingGoogle, signInUsingTwitter, signInUsingGithub, signInUsingEmail, registerUsingEmail, passwordReset } = useAuth();
+    const {
+        signInUsingGoogle,
+        signInUsingTwitter,
+        signInUsingGithub,
+        signInUsingEmail,
+        registerUsingEmail,
+        passwordReset
+    } = useAuth();
 
     //For handling Login
     const {

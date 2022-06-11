@@ -7,7 +7,7 @@ const RequiredAuth = ({ children }) => {
     const location = useLocation();
     // console.log(location);
     return (
-        user.email ? children : (
+        user.displayName ? children : (
             <Navigate
                 to={{ pathname: "/my-account" }}
                 state={{ from: location }}

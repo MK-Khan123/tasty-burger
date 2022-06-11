@@ -13,7 +13,7 @@ import useReduxState from '../../../../hooks/useReduxState';
 const UserSettings = () => {
 
     const { user, logout } = useAuth();
-    const { displayName, email, photoURL } = user;
+    const { displayName, photoURL } = user;
     const { handleEmptyCart, emptyCheckoutState } = useReduxState();
 
     const [anchorElUser, setAnchorElUser] = useState(null);
@@ -55,7 +55,7 @@ const UserSettings = () => {
                     </MenuItem>
                 </NavLink>
                 {
-                    email ? (
+                    displayName ? (
                         <Typography
                             onClick={() => {
                                 handleEmptyCart();

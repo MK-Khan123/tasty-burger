@@ -5,6 +5,7 @@ import { Provider } from 'react-redux';
 import configureAppStore from './store/configureAppStore';
 import ReduxProvider from './contexts/ReduxProvider';
 import { Box, createTheme, ThemeProvider } from '@mui/material';
+import './components/MainMenu/ActiveFoodItem/ActiveFoodItem.css';
 import Home from './components/Home/Home/Home';
 import AdminPanel from './components/AdminPanel/AdminPanel';
 import TemporaryDrawer from './components/Shared/Drawer/Drawer';
