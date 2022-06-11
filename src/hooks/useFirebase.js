@@ -7,8 +7,9 @@ import {
     updateProfile,
     sendPasswordResetEmail,
     GoogleAuthProvider,
-    onAuthStateChanged,
-    GithubAuthProvider
+    GithubAuthProvider,
+    TwitterAuthProvider,
+    onAuthStateChanged
 } from "firebase/auth";
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
@@ -102,6 +103,23 @@ const useFirebase = () => {
                 setError(errorMessage);
             });
     }
+    
+    const signInUsingTwitter = () => {
+
+        const twitterAuthProvider = new TwitterAuthProvider();
+        signInWithPopup(auth, twitterAuthProvider)
+            .then((result) => {
+                const user = result.user;
+                setUser(user);
+                navigate(from, { replace: true });
+                sweetAlert('Successfully Signed In!', 'success');
+                // ...
+            }).catch((error) => {
+                const errorMessage = error.message;
+                sweetAlert('Login Failed', 'error', errorMessage);
+                setError(errorMessage);
+            });
+    }
 
     const signInUsingGithub = () => {
 
@@ -141,6 +159,7 @@ const useFirebase = () => {
         passwordReset,
         logout,
         signInUsingGoogle,
+        signInUsingTwitter,
         signInUsingGithub,
         registerUsingEmail,
         signInUsingEmail

@@ -52,7 +52,7 @@ const MyAccount = () => {
     };
 
     //Using Firebase for login, registration, reset password and authentication
-    const { signInUsingGoogle, signInUsingGithub, signInUsingEmail, registerUsingEmail, passwordReset } = useAuth();
+    const { signInUsingGoogle, signInUsingTwitter, signInUsingGithub, signInUsingEmail, registerUsingEmail, passwordReset } = useAuth();
 
     //For handling Login
     const {
@@ -336,7 +336,7 @@ const MyAccount = () => {
                                         OR SIGN IN USING
                                     </Typography>
                                     <GoogleIcon onClick={signInUsingGoogle} className="google-icon" />
-                                    <TwitterIcon className="twitter-icon" />
+                                    <TwitterIcon onClick={signInUsingTwitter} className="twitter-icon" />
                                     <GitHubIcon onClick={signInUsingGithub} className="github-icon" />
                                 </Box>
                             </Grid>
