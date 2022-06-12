@@ -48,8 +48,7 @@ The project was deployed at Firebase. One can access the link by clicking here [
 
 7. In addition, I used Material UI to make the website device responsive. Furthermore, I deployed the client side on Firebase which can be accessed through the above mentioned link. Server side is deployed using Heroku.
 
-8. Working on to add these features
-    * Sign in using Twitter account.
+8. Working on to add these features    
     * User can view his/her orders (along with status).
     * Admin/User differentiation.
     * Admin will be able to manage Food Items and Placed Orders.
