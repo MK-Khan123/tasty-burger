@@ -36,7 +36,7 @@ The project was deployed at Firebase. One can access the link by clicking here [
 
 1. User can add foods from the homepage (`Explore Our Menu` section), `Our Menu` tab (at Navbar) and `All Items` section under `Shop` tab available at Navbar. But he/she needs to login first to proceed to `Cart` and eventually `Checkout`. 
 
-2. Applied Private Route (also known as Protected Route/ Authenticated Route) to restrict convenient access. Implemented Google sign in and Github sign in method using Firebase Authentication. User can also register and sign in using their credentials. 
+2. Applied Private Route (also known as Protected Route/ Authenticated Route) to restrict convenient access. Implemented Google/Twitter/Github sign in method using Firebase Authentication. User can also register and sign in using their credentials. 
 
 3. The data displayed in the homepage (`Explore Our Menu` & `Image Gallery` section) is fetched from MongoDB but for most parts I used static data. Used route parameter to fetch data dynamically from MongoDB and displayed accordingly.
 
