@@ -29,7 +29,7 @@ const ProductDetails = () => {
 
     useEffect(() => {
         setIsLoading(true);
-        fetch(`https://morning-badlands-52849.herokuapp.com/productDetails/${id}`)
+        fetch(`https://testo-burger-server.up.railway.app/productDetails/${id}`)
             .then(res => res.json())
             .then(data => {
                 setProductDetails(data)
@@ -42,7 +42,7 @@ const ProductDetails = () => {
     //To dynamically show the related products in related products section according to category
     useEffect(() => {
         setIsLoading(true);
-        fetch(`https://morning-badlands-52849.herokuapp.com/products/${category}`)
+        fetch(`https://testo-burger-server.up.railway.app/products/${category}`)
             .then(res => res.json())
             .then(data => {
                 setRelatedProducts(data)

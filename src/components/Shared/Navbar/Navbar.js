@@ -40,7 +40,7 @@ const Navbar = () => {
                             </NavLink>
                         </Typography>
 
-                        {/* NAV ITEMS for smaller screen display (smaller than width of 900px) */}
+                        {/* NAV ITEMS for smaller screen display (smaller than width of 899px) */}
                         <NavItemsSidebar />
 
                         {/* NAV ITEMS for larger screen display (greater than width of 899px) */}

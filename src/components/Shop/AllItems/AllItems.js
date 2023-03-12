@@ -24,7 +24,7 @@ const AllItems = () => {
 
     useEffect(() => {
         setIsLoading(true);
-        fetch('https://morning-badlands-52849.herokuapp.com/products')
+        fetch('https://testo-burger-server.up.railway.app/products')
             .then(res => res.json())
             .then(data => {
                 setFoodItems(data);

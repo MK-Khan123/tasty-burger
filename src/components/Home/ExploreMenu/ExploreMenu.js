@@ -15,7 +15,7 @@ const ExploreMenu = () => {
     //For fetching data on few selected burgers on home page
     useEffect(() => {
         setIsLoading(true);
-        fetch('https://morning-badlands-52849.herokuapp.com/filteredBurger')
+        fetch('https://testo-burger-server.up.railway.app/filteredBurger')
             .then(res => res.json())
             .then(data => {
                 setBurgerData(data)

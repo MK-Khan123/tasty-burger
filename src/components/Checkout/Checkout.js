@@ -75,7 +75,7 @@ const Checkout = () => {
 
     const handlePlaceOrder = () => {
         //send data to the server side
-        fetch('https://morning-badlands-52849.herokuapp.com/order', {
+        fetch('https://testo-burger-server.up.railway.app/order', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

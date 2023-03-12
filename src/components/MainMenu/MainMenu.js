@@ -30,7 +30,7 @@ const MainMenu = () => {
 
     useEffect(() => {
         setIsLoading(true);
-        fetch(`https://morning-badlands-52849.herokuapp.com/products/${foodCategory}`)
+        fetch(`https://testo-burger-server.up.railway.app/products/${foodCategory}`)
             .then(res => res.json())
             .then(data => {
                 setActiveFoodData(data);

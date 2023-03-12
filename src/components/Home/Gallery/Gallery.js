@@ -11,7 +11,7 @@ const Gallery = () => {
 
     useEffect(() => {
         setIsLoading(true);
-        fetch('https://morning-badlands-52849.herokuapp.com/gallery')
+        fetch('https://testo-burger-server.up.railway.app/gallery')
             .then(res => res.json())
             .then(data => {
                 setImageGallery(data);
