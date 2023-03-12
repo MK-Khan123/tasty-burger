@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { Box, Container, Grid } from '@mui/material';
 import Navbar from '../Shared/Navbar/Navbar';
-import './MainMenu.css';
 import ActiveFoodItem from './ActiveFoodItem/ActiveFoodItem';
 import Delivery from '../Shared/Delivery/Delivery';
 import Footer from '../Shared/Footer/Footer';
 import LoadingSpinner from '../Shared/LoadingSpinner/LoadingSpinner';
 import useReduxState from '../../hooks/useReduxState';
+import './MainMenu.css';
 
 const MainMenu = () => {
     document.title = 'Testo Burger | Menu';
@@ -63,37 +63,61 @@ const MainMenu = () => {
                     <Container>
                         <Grid container sx={{ padding: '0 10%' }}>
                             <Grid item xs={6} sm={4} md={2}>
-                                <Box sx={{ textAlign: 'center', margin: '1.8rem', cursor: 'pointer' }} onClick={() => setFoodCategory('burger')}>
+                                <Box
+                                    className={foodCategory === 'burger' ? 'selectedBox' : null}
+                                    sx={{ textAlign: 'center', margin: '1rem', padding: "0.8rem", cursor: 'pointer' }}
+                                    onClick={() => setFoodCategory('burger')}
+                                >
                                     <img className='main-menu-icon-size' src={icons.burger} alt="" />
                                     <Box sx={{ fontSize: '1.125rem', fontWeight: '500' }}>BURGERS</Box>
                                 </Box>
                             </Grid>
                             <Grid item xs={6} sm={4} md={2}>
-                                <Box sx={{ textAlign: 'center', margin: '1.8rem', cursor: 'pointer' }} onClick={() => setFoodCategory('dessert')}>
+                                <Box
+                                    className={foodCategory === 'dessert' ? 'selectedBox' : null}
+                                    sx={{ textAlign: 'center', margin: '1rem', padding: "0.8rem", cursor: 'pointer' }}
+                                    onClick={() => setFoodCategory('dessert')}
+                                >
                                     <img className='main-menu-icon-size' src={icons.dessert} alt="" />
                                     <Box sx={{ fontSize: '1.125rem', fontWeight: '500' }}>DESSERT</Box>
                                 </Box>
                             </Grid>
                             <Grid item xs={6} sm={4} md={2}>
-                                <Box sx={{ textAlign: 'center', margin: '1.8rem', cursor: 'pointer' }} onClick={() => setFoodCategory('pasta')}>
+                                <Box
+                                    className={foodCategory === 'pasta' ? 'selectedBox' : null}
+                                    sx={{ textAlign: 'center', margin: '1rem', padding: "0.8rem", cursor: 'pointer' }}
+                                    onClick={() => setFoodCategory('pasta')}
+                                >
                                     <img className='main-menu-icon-size' src={icons.pasta} alt="" />
                                     <Box sx={{ fontSize: '1.125rem', fontWeight: '500' }}>PASTA</Box>
                                 </Box>
                             </Grid>
                             <Grid item xs={6} sm={4} md={2}>
-                                <Box sx={{ textAlign: 'center', margin: '1.8rem', cursor: 'pointer' }} onClick={() => setFoodCategory('pizza')}>
+                                <Box
+                                    className={foodCategory === 'pizza' ? 'selectedBox' : null}
+                                    sx={{ textAlign: 'center', margin: '1rem', padding: "0.8rem", cursor: 'pointer' }}
+                                    onClick={() => setFoodCategory('pizza')}
+                                >
                                     <img className='main-menu-icon-size' src={icons.pizza} alt="" />
                                     <Box sx={{ fontSize: '1.125rem', fontWeight: '500' }}>PIZZA</Box>
                                 </Box>
                             </Grid>
                             <Grid item xs={6} sm={4} md={2}>
-                                <Box sx={{ textAlign: 'center', margin: '1.8rem', cursor: 'pointer' }} onClick={() => setFoodCategory('salad')}>
+                                <Box
+                                    className={foodCategory === 'salad' ? 'selectedBox' : null}
+                                    sx={{ textAlign: 'center', margin: '1rem', padding: "0.8rem", cursor: 'pointer' }}
+                                    onClick={() => setFoodCategory('salad')}
+                                >
                                     <img className='main-menu-icon-size' src={icons.salad} alt="" />
                                     <Box sx={{ fontSize: '1.125rem', fontWeight: '500' }}>SALAD</Box>
                                 </Box>
                             </Grid>
                             <Grid item xs={6} sm={4} md={2}>
-                                <Box sx={{ textAlign: 'center', margin: '1.8rem', cursor: 'pointer' }} onClick={() => setFoodCategory('sides')}>
+                                <Box
+                                    className={foodCategory === 'sides' ? 'selectedBox' : null}
+                                    sx={{ textAlign: 'center', margin: '1rem', padding: "0.8rem", cursor: 'pointer' }}
+                                    onClick={() => setFoodCategory('sides')}
+                                >
                                     <img className='main-menu-icon-size' src={icons.fries} alt="" />
                                     <Box sx={{ fontSize: '1.125rem', fontWeight: '500' }}>SIDES</Box>
                                 </Box>

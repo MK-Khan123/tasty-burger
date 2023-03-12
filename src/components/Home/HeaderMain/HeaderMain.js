@@ -42,7 +42,7 @@ const HeaderMain = () => {
                     <Box
                         component='h5'
                         sx={{
-                            fontSize: { xs: '2rem', sm: '3rem', md: '4rem', lg: '6.5rem', xl: '12rem' },
+                            fontSize: { xs: '2rem', sm: '3rem', md: '4rem', lg: '6.5rem', xl: '9rem' },
                             margin: '0',
                             fontWeight: '500'
                         }}
@@ -71,7 +71,7 @@ const HeaderMain = () => {
                     <Box
                         component='h5'
                         sx={{
-                            fontSize: { xs: '2rem', sm: '3rem', md: '4rem', lg: '6.5rem', xl: '12rem' },
+                            fontSize: { xs: '2rem', sm: '3rem', md: '4rem', lg: '6.5rem', xl: '9rem' },
                             margin: '0',
                             fontWeight: '500'
                         }}
@@ -100,7 +100,7 @@ const HeaderMain = () => {
                     <Box
                         component='h5'
                         sx={{
-                            fontSize: { xs: '2rem', sm: '3rem', md: '4rem', lg: '6.5rem', xl: '12rem' },
+                            fontSize: { xs: '2rem', sm: '3rem', md: '4rem', lg: '6.5rem', xl: '9rem' },
                             margin: '0',
                             fontWeight: '500'
                         }}
